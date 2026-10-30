@@ -1,0 +1,61 @@
+{
+  "id": "E22_paired_modality",
+  "hypothesis": "P1: rho higher for clinical than dermoscopic images of the same lesions; P2: measured diameter attenuates with capacity.",
+  "data": {
+    "datasets": [
+      "milk10k",
+      "msk2020"
+    ]
+  },
+  "config": {
+    "bootstrap": 2000,
+    "folds": "assignment 0"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T18:48:55+00:00",
+  "results": {
+    "P1_milk10k": {
+      "n_lesions": 5117,
+      "positives": 3634,
+      "I_A_nats": 0.08233,
+      "dermoscopic": {
+        "av": 0.00868,
+        "rho": 0.105
+      },
+      "clinical": {
+        "av": 0.00565,
+        "rho": 0.069
+      },
+      "rho_clin_minus_derm": -0.036,
+      "ci95": [
+        -0.071,
+        -0.004
+      ],
+      "P1_supported": false
+    },
+    "P2_msk2020": {
+      "hsv": {
+        "av": 0.00861,
+        "ci95": [
+          0.00128,
+          0.0164
+        ]
+      },
+      "convnext_tiny": {
+        "av": 0.00179,
+        "ci95": [
+          -0.00167,
+          0.00513
+        ]
+      },
+      "retained": 0.208,
+      "P2_supported": true
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 4.75,
+  "peak_rss_mb": 694.1
+}

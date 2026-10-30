@@ -1,0 +1,51 @@
+fold 0: 444 images
+fold 1: 888 images
+fold 2: 1334 images
+fold 3: 1779 images
+fold 4: 2225 images
+{'n_images': 2225, 'n_correct': 1291, 'n_wrong': 934, 'H1_median_enrichment': 0.636, 'H1_frac_enrichment_gt1': 0.32, 'H2_median_enrichment_correct': 0.894, 'H2_median_enrichment_wrong': 0.239, 'H2_mannwhitney_p_one_sided': 2.1581504879436735e-50, 'H3_frac_sig_shift_null': 0.099, 'H3_frac_sig_pixel_perm': 0.298, 'median_lesion_area_frac': 0.342, 'by_true_class': {0: {'median_enrichment': 0.743, 'accuracy': 0.988}, 1: {'median_enrichment': 0.451, 'accuracy': 0.172}}}
+{
+  "id": "E12_ham_cam_lesion",
+  "hypothesis": "H1 enrichment > 1; H2 errors have lower enrichment; H3 pixel permutation over-declares significance.",
+  "data": {
+    "source": "HAM10000 + Tschandl lesion masks",
+    "n_images": 10015
+  },
+  "config": {
+    "backbone": "resnet50 frozen",
+    "map_resolution": 56,
+    "null": "exact circular shift (FFT)",
+    "folds": "E10 seed-0"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T05:13:30+00:00",
+  "results": {
+    "n_images": 2225,
+    "n_correct": 1291,
+    "n_wrong": 934,
+    "H1_median_enrichment": 0.636,
+    "H1_frac_enrichment_gt1": 0.32,
+    "H2_median_enrichment_correct": 0.894,
+    "H2_median_enrichment_wrong": 0.239,
+    "H2_mannwhitney_p_one_sided": 2.1581504879436735e-50,
+    "H3_frac_sig_shift_null": 0.099,
+    "H3_frac_sig_pixel_perm": 0.298,
+    "median_lesion_area_frac": 0.342,
+    "by_true_class": {
+      "0": {
+        "median_enrichment": 0.743,
+        "accuracy": 0.988
+      },
+      "1": {
+        "median_enrichment": 0.451,
+        "accuracy": 0.172
+      }
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 59.52,
+  "peak_rss_mb": 2175.5
+}

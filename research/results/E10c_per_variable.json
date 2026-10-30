@@ -1,0 +1,168 @@
+{
+  "id": "E10c_per_variable",
+  "hypothesis": "Age and site attenuate strongly with capacity; sex least.",
+  "data": {
+    "source": "HAM10000"
+  },
+  "config": {
+    "folds": "E10 seed 0",
+    "variables": [
+      "age",
+      "sex",
+      "localization"
+    ]
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T05:18:29+00:00",
+  "results": {
+    "hsv": {
+      "age": {
+        "added_value": 0.01465,
+        "ci95": [
+          0.00947,
+          0.01974
+        ]
+      },
+      "sex": {
+        "added_value": 0.00248,
+        "ci95": [
+          0.00082,
+          0.00412
+        ]
+      },
+      "localization": {
+        "added_value": 0.0057,
+        "ci95": [
+          0.00198,
+          0.00949
+        ]
+      },
+      "recoverability": {
+        "age_r2": 0.057,
+        "sex_auroc": 0.567,
+        "site_auroc_top5": 0.654
+      }
+    },
+    "resnet18": {
+      "age": {
+        "added_value": 0.00262,
+        "ci95": [
+          -0.00031,
+          0.00532
+        ]
+      },
+      "sex": {
+        "added_value": 0.00056,
+        "ci95": [
+          -6e-05,
+          0.00131
+        ]
+      },
+      "localization": {
+        "added_value": 0.00273,
+        "ci95": [
+          -0.00016,
+          0.00568
+        ]
+      },
+      "recoverability": {
+        "age_r2": 0.277,
+        "sex_auroc": 0.743,
+        "site_auroc_top5": 0.733
+      }
+    },
+    "resnet50": {
+      "age": {
+        "added_value": 0.00261,
+        "ci95": [
+          -0.00036,
+          0.0052
+        ]
+      },
+      "sex": {
+        "added_value": 0.00046,
+        "ci95": [
+          -0.00013,
+          0.00104
+        ]
+      },
+      "localization": {
+        "added_value": 0.00151,
+        "ci95": [
+          -0.0013,
+          0.00431
+        ]
+      },
+      "recoverability": {
+        "age_r2": 0.319,
+        "sex_auroc": 0.71,
+        "site_auroc_top5": 0.729
+      }
+    },
+    "convnext_tiny": {
+      "age": {
+        "added_value": 0.00196,
+        "ci95": [
+          -0.00098,
+          0.00445
+        ]
+      },
+      "sex": {
+        "added_value": 0.00036,
+        "ci95": [
+          -2e-05,
+          0.00077
+        ]
+      },
+      "localization": {
+        "added_value": 0.0011,
+        "ci95": [
+          -0.0015,
+          0.00347
+        ]
+      },
+      "recoverability": {
+        "age_r2": 0.393,
+        "sex_auroc": 0.772,
+        "site_auroc_top5": 0.786
+      }
+    },
+    "vit_b_16": {
+      "age": {
+        "added_value": 0.00215,
+        "ci95": [
+          -0.00103,
+          0.00479
+        ]
+      },
+      "sex": {
+        "added_value": 0.00073,
+        "ci95": [
+          7e-05,
+          0.00164
+        ]
+      },
+      "localization": {
+        "added_value": 0.00091,
+        "ci95": [
+          -0.0015,
+          0.00328
+        ]
+      },
+      "recoverability": {
+        "age_r2": 0.366,
+        "sex_auroc": 0.769,
+        "site_auroc_top5": 0.787
+      }
+    },
+    "retained_fraction_age": 0.14,
+    "retained_fraction_sex": 0.22,
+    "retained_fraction_localization": 0.176
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 12.07,
+  "peak_rss_mb": 329.4
+}

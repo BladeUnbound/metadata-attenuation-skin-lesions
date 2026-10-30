@@ -1,0 +1,14 @@
+\begin{table*}[tp]\centering\footnotesize
+\caption{Where metadata help (ConvNeXt-T unless stated; strictly cross-fitted, fold assignment 0). $\rho_{\mathrm{LE}}$, $\rho_{h}$: Spearman correlation of realised per-image benefit with local label entropy on the inductive graph (pre-registered H1, 95\% grouped CI) and with the image model's predictive entropy (H2). H4 $p$: one-sided, unadjusted, graph statistics vs.\ model-based baselines. $\rho_K$, $\rho_G$: post hoc rank correlation of benefit with the fusion model's expected gain $K_i$ and with graph-local benefit. Top 25\%: share of total benefit captured by the quarter of images with the largest $K_i$ (HIBA omitted: total benefit near zero). $E$: normalised Dirichlet energy of benefit relative to the label-by-uncertainty stratified null (HSV, ConvNeXt-T). $s_H$: share of the HSV$\to$ConvNeXt-T log-attenuation due to image uncertainty (exploratory).}\label{tab:graph}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccccccccc}\toprule
+Image set & $\rho_{\mathrm{LE}}$ & $\rho_h$ & H4 $p$ & $\rho_K$ & $\rho_G$ & Top 25\% & $E_{\mathrm{HSV}}$ & $E_{\mathrm{CNX}}$ & $s_H$\\\midrule
+HAM10000 & 0.03 [\ensuremath{-}0.00, 0.05] & 0.09 & 0.822 & 0.13 & 0.11 & 90\% & 0.986 & 0.997 & 0.13\\
+ISIC 2020 & 0.11 [0.08, 0.13] & 0.16 & 0.014 & 0.15 & 0.19 & 97\% & 0.986 & 0.999 & 0.09\\
+ISIC 2019 (non-HAM) & 0.10 [0.07, 0.13] & 0.17 & 0.281 & 0.21 & 0.15 & 105\% & 0.976 & 0.989 & 0.33\\
+PAD-UFES-20 & 0.26 [0.22, 0.30] & 0.53 & 0.943 & 0.69 & 0.13 & 70\% & 1.003 & 1.002 & 0.61\\
+HIBA & 0.02 [\ensuremath{-}0.04, 0.09] & 0.13 & 0.988 & 0.15 & \ensuremath{-}0.02 & -- & 0.979 & 1.005 & 0.13\\
+MSK 2020 & \ensuremath{-}0.00 [\ensuremath{-}0.06, 0.06] & 0.09 & 0.011 & 0.18 & 0.15 & 86\% & 1.002 & 0.994 & 0.12\\
+MILK10k (derm.) & 0.12 [0.09, 0.15] & 0.17 & 0.003 & 0.18 & 0.12 & 82\% & 0.989 & 0.995 & 0.13\\
+MILK10k (clin.) & 0.16 [0.13, 0.18] & 0.17 & 0.373 & 0.16 & 0.12 & 76\% & 0.973 & 0.997 & 0.11\\
+\bottomrule\end{tabular}\end{table*}

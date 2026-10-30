@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/paradox/Desktop/CV EL/research/experiments/e53_estimators.py", line 160, in <module>
+    exp.finish(run(ds), interpretation="See iteration6 reports.")
+               ~~~^^^^
+  File "/Users/paradox/Desktop/CV EL/research/experiments/e53_estimators.py", line 125, in run
+    L, C_full = run_rung(ds, a, rung, folds, inner)
+                ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/paradox/Desktop/CV EL/research/experiments/e53_estimators.py", line 101, in run_rung
+    R, is_cat = raw_meta(df, ds, tr)
+                ~~~~~~~~^^^^^^^^^^^^
+  File "/Users/paradox/Desktop/CV EL/research/experiments/e53_estimators.py", line 47, in raw_meta
+    x[m] = np.nan
+    ~^^^
+ValueError: assignment destination is read-only

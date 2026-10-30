@@ -1,0 +1,13 @@
+\begin{table*}[tp]\centering\footnotesize
+\caption{Exploratory: retained fraction $\rho_k=\hat\Delta_k/\hat I_A$ of the metadata's standalone information that is not redundant with image representation $k$ (all images, pre-registered encoding). $\hat I_A$: out-of-fold log-loss reduction of a metadata-only model over prevalence ($10^{-3}$ nats). 95\% grouped-bootstrap CIs, fold assignment 0. $\rho_k$ can exceed 1 under synergy and fall below 0 in finite samples.}\label{tab:retained}
+\begin{tabular}{lccccc}\toprule
+Dataset & $\hat I_A$ & HSV & ResNet-18 & ConvNeXt-T & ViT-B/16\\\midrule
+HAM10000 & 25.9 & 0.71 [0.60, 0.80] & 0.16 [0.00, 0.27] & 0.07 [\ensuremath{-}0.12, 0.20] & 0.10 [\ensuremath{-}0.03, 0.21]\\
+ISIC 2020 & 4.3 & 0.83 [0.72, 0.95] & 0.28 [0.15, 0.38] & 0.23 [0.08, 0.33] & 0.14 [\ensuremath{-}0.04, 0.25]\\
+ISIC 2019 (non-HAM) & 20.4 & 0.94 [0.84, 1.04] & 0.47 [0.25, 0.66] & 0.44 [0.23, 0.62] & 0.33 [0.12, 0.48]\\
+PAD-UFES-20 & 416.3 & 0.93 [0.90, 0.95] & 0.56 [0.51, 0.61] & 0.50 [0.45, 0.54] & 0.49 [0.45, 0.54]\\
+HIBA & 217.4 & 0.33 [0.18, 0.51] & 0.09 [\ensuremath{-}0.01, 0.16] & 0.01 [\ensuremath{-}0.08, 0.07] & 0.01 [\ensuremath{-}0.09, 0.07]\\
+MSK 2020 & 38.7 & 0.81 [0.68, 0.92] & 0.56 [0.39, 0.69] & 0.47 [0.29, 0.61] & 0.41 [0.22, 0.57]\\
+MILK10k (derm.) & 82.3 & 0.63 [0.58, 0.68] & 0.18 [0.06, 0.26] & 0.10 [0.00, 0.17] & 0.11 [0.00, 0.18]\\
+MILK10k (clin.) & 82.3 & 0.71 [0.66, 0.76] & 0.11 [\ensuremath{-}0.01, 0.18] & 0.07 [\ensuremath{-}0.04, 0.14] & 0.12 [0.05, 0.17]\\
+\bottomrule\end{tabular}\end{table*}

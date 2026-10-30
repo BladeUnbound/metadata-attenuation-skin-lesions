@@ -1,0 +1,316 @@
+{
+  "id": "E17_retained_fraction",
+  "hypothesis": "The share of metadata information that remains non-redundant with strong image models differs between dermoscopy and smartphone/clinical-history data.",
+  "data": {
+    "datasets": [
+      "ham10000",
+      "isic2020",
+      "isic2019_nonham",
+      "pad_ufes",
+      "hiba",
+      "msk2020",
+      "milk10k_derm",
+      "milk10k_clin"
+    ]
+  },
+  "config": {
+    "rungs": [
+      "hsv",
+      "resnet18",
+      "convnext_tiny",
+      "vit_b_16"
+    ],
+    "bootstrap": 2000,
+    "folds": "assignment 0"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T18:49:02+00:00",
+  "results": {
+    "ham10000": {
+      "I_A_nats": 0.0259,
+      "hsv": {
+        "delta": 0.01842,
+        "rho": 0.711,
+        "rho_ci95": [
+          0.602,
+          0.803
+        ]
+      },
+      "resnet18": {
+        "delta": 0.00413,
+        "rho": 0.16,
+        "rho_ci95": [
+          0.004,
+          0.274
+        ]
+      },
+      "convnext_tiny": {
+        "delta": 0.00174,
+        "rho": 0.067,
+        "rho_ci95": [
+          -0.121,
+          0.196
+        ]
+      },
+      "vit_b_16": {
+        "delta": 0.00272,
+        "rho": 0.105,
+        "rho_ci95": [
+          -0.03,
+          0.212
+        ]
+      }
+    },
+    "isic2020": {
+      "I_A_nats": 0.00426,
+      "hsv": {
+        "delta": 0.00355,
+        "rho": 0.832,
+        "rho_ci95": [
+          0.717,
+          0.947
+        ]
+      },
+      "resnet18": {
+        "delta": 0.0012,
+        "rho": 0.282,
+        "rho_ci95": [
+          0.148,
+          0.376
+        ]
+      },
+      "convnext_tiny": {
+        "delta": 0.00097,
+        "rho": 0.227,
+        "rho_ci95": [
+          0.079,
+          0.331
+        ]
+      },
+      "vit_b_16": {
+        "delta": 0.0006,
+        "rho": 0.14,
+        "rho_ci95": [
+          -0.038,
+          0.247
+        ]
+      }
+    },
+    "isic2019_nonham": {
+      "I_A_nats": 0.02036,
+      "hsv": {
+        "delta": 0.01919,
+        "rho": 0.943,
+        "rho_ci95": [
+          0.844,
+          1.045
+        ]
+      },
+      "resnet18": {
+        "delta": 0.00966,
+        "rho": 0.475,
+        "rho_ci95": [
+          0.25,
+          0.657
+        ]
+      },
+      "convnext_tiny": {
+        "delta": 0.00905,
+        "rho": 0.444,
+        "rho_ci95": [
+          0.235,
+          0.616
+        ]
+      },
+      "vit_b_16": {
+        "delta": 0.00661,
+        "rho": 0.325,
+        "rho_ci95": [
+          0.118,
+          0.481
+        ]
+      }
+    },
+    "pad_ufes": {
+      "I_A_nats": 0.41631,
+      "hsv": {
+        "delta": 0.38642,
+        "rho": 0.928,
+        "rho_ci95": [
+          0.902,
+          0.955
+        ]
+      },
+      "resnet18": {
+        "delta": 0.23417,
+        "rho": 0.562,
+        "rho_ci95": [
+          0.513,
+          0.611
+        ]
+      },
+      "convnext_tiny": {
+        "delta": 0.20644,
+        "rho": 0.496,
+        "rho_ci95": [
+          0.448,
+          0.543
+        ]
+      },
+      "vit_b_16": {
+        "delta": 0.20605,
+        "rho": 0.495,
+        "rho_ci95": [
+          0.446,
+          0.543
+        ]
+      }
+    },
+    "hiba": {
+      "I_A_nats": 0.21742,
+      "hsv": {
+        "delta": 0.07223,
+        "rho": 0.332,
+        "rho_ci95": [
+          0.182,
+          0.509
+        ]
+      },
+      "resnet18": {
+        "delta": 0.01886,
+        "rho": 0.087,
+        "rho_ci95": [
+          -0.008,
+          0.159
+        ]
+      },
+      "convnext_tiny": {
+        "delta": 0.0026,
+        "rho": 0.012,
+        "rho_ci95": [
+          -0.081,
+          0.072
+        ]
+      },
+      "vit_b_16": {
+        "delta": 0.0012,
+        "rho": 0.006,
+        "rho_ci95": [
+          -0.091,
+          0.068
+        ]
+      }
+    },
+    "msk2020": {
+      "I_A_nats": 0.03868,
+      "hsv": {
+        "delta": 0.03139,
+        "rho": 0.812,
+        "rho_ci95": [
+          0.678,
+          0.916
+        ]
+      },
+      "resnet18": {
+        "delta": 0.02147,
+        "rho": 0.555,
+        "rho_ci95": [
+          0.387,
+          0.694
+        ]
+      },
+      "convnext_tiny": {
+        "delta": 0.01801,
+        "rho": 0.466,
+        "rho_ci95": [
+          0.291,
+          0.61
+        ]
+      },
+      "vit_b_16": {
+        "delta": 0.01599,
+        "rho": 0.413,
+        "rho_ci95": [
+          0.222,
+          0.566
+        ]
+      }
+    },
+    "milk10k_derm": {
+      "I_A_nats": 0.08233,
+      "hsv": {
+        "delta": 0.05224,
+        "rho": 0.634,
+        "rho_ci95": [
+          0.578,
+          0.684
+        ]
+      },
+      "resnet18": {
+        "delta": 0.01473,
+        "rho": 0.179,
+        "rho_ci95": [
+          0.064,
+          0.255
+        ]
+      },
+      "convnext_tiny": {
+        "delta": 0.00868,
+        "rho": 0.105,
+        "rho_ci95": [
+          0.003,
+          0.173
+        ]
+      },
+      "vit_b_16": {
+        "delta": 0.00893,
+        "rho": 0.108,
+        "rho_ci95": [
+          0.002,
+          0.179
+        ]
+      }
+    },
+    "milk10k_clin": {
+      "I_A_nats": 0.08233,
+      "hsv": {
+        "delta": 0.05853,
+        "rho": 0.711,
+        "rho_ci95": [
+          0.662,
+          0.756
+        ]
+      },
+      "resnet18": {
+        "delta": 0.00872,
+        "rho": 0.106,
+        "rho_ci95": [
+          -0.006,
+          0.177
+        ]
+      },
+      "convnext_tiny": {
+        "delta": 0.00565,
+        "rho": 0.069,
+        "rho_ci95": [
+          -0.04,
+          0.138
+        ]
+      },
+      "vit_b_16": {
+        "delta": 0.01021,
+        "rho": 0.124,
+        "rho_ci95": [
+          0.054,
+          0.174
+        ]
+      }
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 48.02,
+  "peak_rss_mb": 901.0
+}

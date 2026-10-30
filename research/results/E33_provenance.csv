@@ -1,0 +1,9 @@
+dataset,modality,label,n_all,n_complete_case,prevalence,groups,metadata,max_missing_rate,source_field
+ham10000,dermoscopy,melanoma vs rest,10015,9761,0.1111,7470,"age, sex, site",0.023,yes
+isic2020,dermoscopy,melanoma vs rest,33126,32531,0.0176,2056,"age, sex, site",0.016,no
+isic2019_nonham,dermoscopy,melanoma vs rest,15316,14156,0.2226,6461,"age, sex, site",0.062,yes
+pad_ufes,smartphone clinical,malignant vs benign,2298,1089,0.4739,1373,"age, sex, site, fitzpatrick, itch, grew, hurt, changed, bleed, elevation",0.35,no
+hiba,dermoscopy,malignant vs benign,1224,1085,0.4355,563,"age, sex, site, fitzpatrick",0.084,no
+msk2020,mixed (ISIC),malignant vs benign,1174,1157,0.1261,1174,"age, sex, site",0.014,no
+milk10k_derm,dermoscopy,malignant vs benign,5117,5086,0.7102,5117,"age, sex, site",0.006,no
+milk10k_clin,clinical close-up,malignant vs benign,5117,5086,0.7102,5117,"age, sex, site",0.006,no

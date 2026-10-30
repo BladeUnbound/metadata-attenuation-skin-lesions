@@ -1,0 +1,15 @@
+\begin{table*}[tp]\centering\footnotesize
+\caption{Erasing the linear trace of age (E50, ConvNeXt-T, fold assignment 0; $10^{-3}$ nats). $R^2$: age decodability in held-out images before and after erasure (within-test-fold ridge probe). $\hat\Delta_{\rm age}$: added value of age with unchanged features, after erasure, and after removing performance-matched random subspaces (mean of 5; per-fold ranks chosen by inner cross-validation on training data only). Contrasts are paired differences with 95\% grouped-bootstrap CIs. Sham: eraser fitted to permuted age (mean of 5); $^\dagger$95\% CI above 0. Matching check: image-only log-loss, erasure minus matched control (negative: the control removed more image information, so the contrast is conservative). SD ratio: test/training standard deviation of the erased coordinate (overfit eraser if far from 1). Confirm.: registered confirmatory family (Holm, 4 tests); Replic.: datasets used in earlier erasure experiments; Correl.: shares lesions with MILK10k (derm.). $^\ddagger$Complete cases.}\label{tab:erasure}
+\setlength{\tabcolsep}{2.5pt}
+\resizebox{\textwidth}{!}{\begin{tabular}{llccccccccc}\toprule
+ & & & & \multicolumn{3}{c}{$\hat\Delta_{\rm age}$} & & & & \\\cmidrule(lr){5-7}
+Image set & Role & Matched rank & $R^2$ ($t{=}0\to1$) & $t{=}0$ & Erased & Matched & Erased $-$ matched & Erased $-$ sham & Matching check & SD ratio\\\midrule
+ISIC 2020 & Confirm. & 32--128 & 0.23 $\to$ \ensuremath{-}0.03 & 1.06 & 2.27 & 1.27 & 0.99 [0.69, 1.29] & 1.21$^\dagger$ & \ensuremath{-}0.37 [\ensuremath{-}1.19, 0.38] & 0.99\\
+HIBA & Confirm. & 512 & 0.35 $\to$ \ensuremath{-}0.06 & 5.33 & 122.51 & 239.07 & \ensuremath{-}116.56 [\ensuremath{-}160.01, \ensuremath{-}78.81] & 116.93$^\dagger$ & \ensuremath{-}125.62 [\ensuremath{-}157.63, \ensuremath{-}94.36] & 1.80\\
+MSK 2020 & Confirm. & 256--512 & 0.19 $\to$ 0.03 & 14.98 & 25.25 & 49.09 & \ensuremath{-}23.84 [\ensuremath{-}30.07, \ensuremath{-}17.86] & 10.25$^\dagger$ & \ensuremath{-}38.39 [\ensuremath{-}50.72, \ensuremath{-}26.39] & 2.21\\
+HAM10000 & Replic. & 91--181 & 0.33 $\to$ 0.00 & 2.01 & 13.19 & 4.14 & 9.05 [6.48, 11.70] & 11.16$^\dagger$ & \ensuremath{-}11.43 [\ensuremath{-}15.76, \ensuremath{-}7.36] & 1.01\\
+ISIC 2019 & Replic. & 23--91 & 0.32 $\to$ 0.01 & 3.22 & 10.45 & 3.52 & 6.92 [4.76, 9.14] & 7.23$^\dagger$ & \ensuremath{-}3.99 [\ensuremath{-}7.38, \ensuremath{-}0.40] & 1.01\\
+MILK10k (derm.) & Replic. & 512 & 0.28 $\to$ 0.02 & 12.44 & 69.02 & 59.50 & 9.53 [4.50, 14.20] & 56.54$^\dagger$ & \ensuremath{-}38.67 [\ensuremath{-}46.77, \ensuremath{-}29.79] & 1.04\\
+PAD-UFES-20$^\ddagger$ & Replic. & 1--11 & 0.09 $\to$ 0.00 & 0.64 & 0.88 & 0.67 & 0.22 [\ensuremath{-}2.63, 3.11] & 0.33 & \ensuremath{-}1.21 [\ensuremath{-}6.53, 4.01] & 2.98\\
+MILK10k (clin.) & Correl. & 512 & 0.34 $\to$ 0.01 & 10.50 & 70.59 & 58.96 & 11.63 [6.67, 16.59] & 60.02$^\dagger$ & \ensuremath{-}34.88 [\ensuremath{-}43.28, \ensuremath{-}26.21] & 1.05\\
+\bottomrule\end{tabular}}\end{table*}

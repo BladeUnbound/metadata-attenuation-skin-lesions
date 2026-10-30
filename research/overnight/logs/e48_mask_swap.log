@@ -1,0 +1,56 @@
+resnet18 {'n_images': 2225, 'frac_sig_shift': 0.55, 'frac_sig_swap': 0.156, 'gauss_frac_sig_shift': 0.881, 'gauss_frac_sig_swap': 0.05, 'frac_sig_swap_melanoma': 0.129, 'frac_sig_swap_missed_melanoma': 0.121}
+resnet50 {'n_images': 2225, 'frac_sig_shift': 0.369, 'frac_sig_swap': 0.103, 'gauss_frac_sig_shift': 0.881, 'gauss_frac_sig_swap': 0.05, 'frac_sig_swap_melanoma': 0.094, 'frac_sig_swap_missed_melanoma': 0.093}
+convnext_tiny {'n_images': 2225, 'frac_sig_shift': 0.567, 'frac_sig_swap': 0.19, 'gauss_frac_sig_shift': 0.881, 'gauss_frac_sig_swap': 0.05, 'frac_sig_swap_melanoma': 0.18, 'frac_sig_swap_missed_melanoma': 0.186}
+{
+  "id": "E48_mask_swap",
+  "hypothesis": "REGISTRY.md E48 (exploratory): shift null vs mask-swap null; centred-Gaussian control",
+  "data": {
+    "source": "HAM10000 + lesion masks"
+  },
+  "config": {
+    "backbones": [
+      "resnet18",
+      "resnet50",
+      "convnext_tiny"
+    ],
+    "res": 56,
+    "n_swap": 199
+  },
+  "seed": 48,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-28T23:56:24+00:00",
+  "results": {
+    "resnet18": {
+      "n_images": 2225,
+      "frac_sig_shift": 0.55,
+      "frac_sig_swap": 0.156,
+      "gauss_frac_sig_shift": 0.881,
+      "gauss_frac_sig_swap": 0.05,
+      "frac_sig_swap_melanoma": 0.129,
+      "frac_sig_swap_missed_melanoma": 0.121
+    },
+    "resnet50": {
+      "n_images": 2225,
+      "frac_sig_shift": 0.369,
+      "frac_sig_swap": 0.103,
+      "gauss_frac_sig_shift": 0.881,
+      "gauss_frac_sig_swap": 0.05,
+      "frac_sig_swap_melanoma": 0.094,
+      "frac_sig_swap_missed_melanoma": 0.093
+    },
+    "convnext_tiny": {
+      "n_images": 2225,
+      "frac_sig_shift": 0.567,
+      "frac_sig_swap": 0.19,
+      "gauss_frac_sig_shift": 0.881,
+      "gauss_frac_sig_swap": 0.05,
+      "frac_sig_swap_melanoma": 0.18,
+      "frac_sig_swap_missed_melanoma": 0.186
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 123.21,
+  "peak_rss_mb": 1880.8
+}

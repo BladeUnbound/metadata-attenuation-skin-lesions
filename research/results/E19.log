@@ -1,0 +1,189 @@
+ham10000 {'I_A_nats': 0.0259, 16: {'image_auroc': 0.8805, 'added_value': 0.00413, 'ci95': [0.00037, 0.00814], 'rho': 0.16}, 32: {'image_auroc': 0.8726, 'added_value': 0.00325, 'ci95': [-0.00089, 0.00692], 'rho': 0.125}, 64: {'image_auroc': 0.8739, 'added_value': 0.00303, 'ci95': [-0.00111, 0.00678], 'rho': 0.117}, 112: {'image_auroc': 0.881, 'added_value': 0.00339, 'ci95': [-0.00058, 0.00704], 'rho': 0.131}, 224: {'image_auroc': 0.8873, 'added_value': 0.00174, 'ci95': [-0.00253, 0.00566], 'rho': 0.067}, 'spearman_res_vs_av': -0.7, 'prediction_holds': False}
+isic2019_nonham {'I_A_nats': 0.02036, 16: {'image_auroc': 0.8044, 'added_value': 0.01221, 'ci95': [0.00533, 0.01958], 'rho': 0.6}, 32: {'image_auroc': 0.8206, 'added_value': 0.00903, 'ci95': [0.0028, 0.01531], 'rho': 0.444}, 64: {'image_auroc': 0.8225, 'added_value': 0.00872, 'ci95': [0.00232, 0.01454], 'rho': 0.429}, 112: {'image_auroc': 0.8215, 'added_value': 0.00843, 'ci95': [0.00235, 0.01446], 'rho': 0.414}, 224: {'image_auroc': 0.8225, 'added_value': 0.00905, 'ci95': [0.00278, 0.01514], 'rho': 0.444}, 'spearman_res_vs_av': -0.4, 'prediction_holds': False}
+pad_ufes {'I_A_nats': 0.41631, 16: {'image_auroc': 0.8489, 'added_value': 0.24651, 'ci95': [0.21446, 0.27779], 'rho': 0.592}, 32: {'image_auroc': 0.8555, 'added_value': 0.22866, 'ci95': [0.19976, 0.2576], 'rho': 0.549}, 64: {'image_auroc': 0.8593, 'added_value': 0.22488, 'ci95': [0.19575, 0.2532], 'rho': 0.54}, 112: {'image_auroc': 0.8689, 'added_value': 0.2126, 'ci95': [0.18443, 0.23912], 'rho': 0.511}, 224: {'image_auroc': 0.8735, 'added_value': 0.20644, 'ci95': [0.17968, 0.23475], 'rho': 0.496}, 'spearman_res_vs_av': -1.0, 'prediction_holds': True}
+{
+  "id": "E19_resolution_ladder",
+  "hypothesis": "With architecture fixed, metadata added value and rho decrease monotonically with input resolution.",
+  "data": {
+    "datasets": [
+      "ham10000",
+      "isic2019_nonham",
+      "pad_ufes",
+      "isic2020",
+      "hiba",
+      "milk10k_derm",
+      "milk10k_clin"
+    ]
+  },
+  "config": {
+    "model": "frozen ConvNeXt-T",
+    "resolutions": [
+      16,
+      32,
+      64,
+      112,
+      224
+    ],
+    "folds": "assignment 0"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T16:03:50+00:00",
+  "results": {
+    "ham10000": {
+      "I_A_nats": 0.0259,
+      "16": {
+        "image_auroc": 0.8805,
+        "added_value": 0.00413,
+        "ci95": [
+          0.00037,
+          0.00814
+        ],
+        "rho": 0.16
+      },
+      "32": {
+        "image_auroc": 0.8726,
+        "added_value": 0.00325,
+        "ci95": [
+          -0.00089,
+          0.00692
+        ],
+        "rho": 0.125
+      },
+      "64": {
+        "image_auroc": 0.8739,
+        "added_value": 0.00303,
+        "ci95": [
+          -0.00111,
+          0.00678
+        ],
+        "rho": 0.117
+      },
+      "112": {
+        "image_auroc": 0.881,
+        "added_value": 0.00339,
+        "ci95": [
+          -0.00058,
+          0.00704
+        ],
+        "rho": 0.131
+      },
+      "224": {
+        "image_auroc": 0.8873,
+        "added_value": 0.00174,
+        "ci95": [
+          -0.00253,
+          0.00566
+        ],
+        "rho": 0.067
+      },
+      "spearman_res_vs_av": -0.7,
+      "prediction_holds": false
+    },
+    "isic2019_nonham": {
+      "I_A_nats": 0.02036,
+      "16": {
+        "image_auroc": 0.8044,
+        "added_value": 0.01221,
+        "ci95": [
+          0.00533,
+          0.01958
+        ],
+        "rho": 0.6
+      },
+      "32": {
+        "image_auroc": 0.8206,
+        "added_value": 0.00903,
+        "ci95": [
+          0.0028,
+          0.01531
+        ],
+        "rho": 0.444
+      },
+      "64": {
+        "image_auroc": 0.8225,
+        "added_value": 0.00872,
+        "ci95": [
+          0.00232,
+          0.01454
+        ],
+        "rho": 0.429
+      },
+      "112": {
+        "image_auroc": 0.8215,
+        "added_value": 0.00843,
+        "ci95": [
+          0.00235,
+          0.01446
+        ],
+        "rho": 0.414
+      },
+      "224": {
+        "image_auroc": 0.8225,
+        "added_value": 0.00905,
+        "ci95": [
+          0.00278,
+          0.01514
+        ],
+        "rho": 0.444
+      },
+      "spearman_res_vs_av": -0.4,
+      "prediction_holds": false
+    },
+    "pad_ufes": {
+      "I_A_nats": 0.41631,
+      "16": {
+        "image_auroc": 0.8489,
+        "added_value": 0.24651,
+        "ci95": [
+          0.21446,
+          0.27779
+        ],
+        "rho": 0.592
+      },
+      "32": {
+        "image_auroc": 0.8555,
+        "added_value": 0.22866,
+        "ci95": [
+          0.19976,
+          0.2576
+        ],
+        "rho": 0.549
+      },
+      "64": {
+        "image_auroc": 0.8593,
+        "added_value": 0.22488,
+        "ci95": [
+          0.19575,
+          0.2532
+        ],
+        "rho": 0.54
+      },
+      "112": {
+        "image_auroc": 0.8689,
+        "added_value": 0.2126,
+        "ci95": [
+          0.18443,
+          0.23912
+        ],
+        "rho": 0.511
+      },
+      "224": {
+        "image_auroc": 0.8735,
+        "added_value": 0.20644,
+        "ci95": [
+          0.17968,
+          0.23475
+        ],
+        "rho": 0.496
+      },
+      "spearman_res_vs_av": -1.0,
+      "prediction_holds": true
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 143.78,
+  "peak_rss_mb": 572.0
+}

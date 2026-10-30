@@ -1,0 +1,301 @@
+{
+  "id": "E21_complete_case",
+  "hypothesis": "After removing rows whose missingness can carry the label, attenuation (H1) persists; PAD-UFES-20's floor shrinks.",
+  "data": {
+    "datasets": [
+      "pad_ufes",
+      "ham10000",
+      "isic2020",
+      "isic2019_nonham"
+    ],
+    "note": "deviation from pre-registration; leakage correction"
+  },
+  "config": {
+    "folds": "assignment 0",
+    "rungs": [
+      "hsv",
+      "resnet18",
+      "resnet50",
+      "convnext_tiny",
+      "vit_b_16"
+    ]
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T11:25:48+00:00",
+  "results": {
+    "pad_ufes": {
+      "n_complete": 1089,
+      "n_dropped": 1209,
+      "positive_rate": 0.675,
+      "I_A_nats": 0.15544,
+      "hsv": {
+        "image_auroc": 0.5696,
+        "av": 0.15204,
+        "ci95": [
+          0.10267,
+          0.19776
+        ],
+        "rho": 0.978
+      },
+      "resnet18": {
+        "image_auroc": 0.7812,
+        "av": 0.07344,
+        "ci95": [
+          0.03084,
+          0.11562
+        ],
+        "rho": 0.472
+      },
+      "resnet50": {
+        "image_auroc": 0.7718,
+        "av": 0.08309,
+        "ci95": [
+          0.04068,
+          0.12644
+        ],
+        "rho": 0.535
+      },
+      "convnext_tiny": {
+        "image_auroc": 0.7784,
+        "av": 0.0738,
+        "ci95": [
+          0.03429,
+          0.11277
+        ],
+        "rho": 0.475
+      },
+      "vit_b_16": {
+        "image_auroc": 0.794,
+        "av": 0.07316,
+        "ci95": [
+          0.03258,
+          0.11345
+        ],
+        "rho": 0.471
+      },
+      "H1": {
+        "diff": 0.07825,
+        "ci95": [
+          0.05777,
+          0.09905
+        ],
+        "p_one_sided": 0.0004997501249375312
+      },
+      "H2": {
+        "diff": -0.00036,
+        "ci95": [
+          -0.01462,
+          0.01532
+        ],
+        "p_one_sided": 0.52023988005997
+      }
+    },
+    "ham10000": {
+      "n_complete": 9761,
+      "n_dropped": 254,
+      "positive_rate": 0.113,
+      "I_A_nats": 0.02626,
+      "hsv": {
+        "image_auroc": 0.7697,
+        "av": 0.0181,
+        "ci95": [
+          0.01292,
+          0.02375
+        ],
+        "rho": 0.689
+      },
+      "resnet18": {
+        "image_auroc": 0.8593,
+        "av": 0.00419,
+        "ci95": [
+          0.00089,
+          0.00753
+        ],
+        "rho": 0.16
+      },
+      "resnet50": {
+        "image_auroc": 0.8517,
+        "av": 0.00398,
+        "ci95": [
+          0.00081,
+          0.00728
+        ],
+        "rho": 0.152
+      },
+      "convnext_tiny": {
+        "image_auroc": 0.8915,
+        "av": 0.0026,
+        "ci95": [
+          -0.0003,
+          0.0054
+        ],
+        "rho": 0.099
+      },
+      "vit_b_16": {
+        "image_auroc": 0.8891,
+        "av": 0.00297,
+        "ci95": [
+          2e-05,
+          0.00583
+        ],
+        "rho": 0.113
+      },
+      "H1": {
+        "diff": 0.0155,
+        "ci95": [
+          0.01154,
+          0.01976
+        ],
+        "p_one_sided": 0.0004997501249375312
+      },
+      "H2": {
+        "diff": 0.0016,
+        "ci95": [
+          0.00014,
+          0.00311
+        ],
+        "p_one_sided": 0.018490754622688656
+      }
+    },
+    "isic2020": {
+      "n_complete": 32531,
+      "n_dropped": 595,
+      "positive_rate": 0.018,
+      "I_A_nats": 0.00409,
+      "hsv": {
+        "image_auroc": 0.765,
+        "av": 0.00336,
+        "ci95": [
+          0.00207,
+          0.00472
+        ],
+        "rho": 0.823
+      },
+      "resnet18": {
+        "image_auroc": 0.8465,
+        "av": 0.00126,
+        "ci95": [
+          0.00045,
+          0.00206
+        ],
+        "rho": 0.309
+      },
+      "resnet50": {
+        "image_auroc": 0.8466,
+        "av": 0.00123,
+        "ci95": [
+          0.00042,
+          0.00204
+        ],
+        "rho": 0.302
+      },
+      "convnext_tiny": {
+        "image_auroc": 0.8623,
+        "av": 0.00079,
+        "ci95": [
+          -2e-05,
+          0.00153
+        ],
+        "rho": 0.193
+      },
+      "vit_b_16": {
+        "image_auroc": 0.8797,
+        "av": 0.00063,
+        "ci95": [
+          -0.00011,
+          0.00131
+        ],
+        "rho": 0.153
+      },
+      "H1": {
+        "diff": 0.00258,
+        "ci95": [
+          0.00174,
+          0.00345
+        ],
+        "p_one_sided": 0.0004997501249375312
+      },
+      "H2": {
+        "diff": 0.00048,
+        "ci95": [
+          0.00017,
+          0.00081
+        ],
+        "p_one_sided": 0.0009995002498750624
+      }
+    },
+    "isic2019_nonham": {
+      "n_complete": 14156,
+      "n_dropped": 1160,
+      "positive_rate": 0.232,
+      "I_A_nats": 0.0122,
+      "hsv": {
+        "image_auroc": 0.6811,
+        "av": 0.01381,
+        "ci95": [
+          0.00505,
+          0.02263
+        ],
+        "rho": 1.132
+      },
+      "resnet18": {
+        "image_auroc": 0.8033,
+        "av": 0.00699,
+        "ci95": [
+          -0.00014,
+          0.01442
+        ],
+        "rho": 0.573
+      },
+      "resnet50": {
+        "image_auroc": 0.8038,
+        "av": 0.00671,
+        "ci95": [
+          0.00037,
+          0.01316
+        ],
+        "rho": 0.55
+      },
+      "convnext_tiny": {
+        "image_auroc": 0.8256,
+        "av": 0.00613,
+        "ci95": [
+          0.00025,
+          0.01244
+        ],
+        "rho": 0.502
+      },
+      "vit_b_16": {
+        "image_auroc": 0.8341,
+        "av": 0.00423,
+        "ci95": [
+          -0.00124,
+          0.00977
+        ],
+        "rho": 0.346
+      },
+      "H1": {
+        "diff": 0.00768,
+        "ci95": [
+          0.00275,
+          0.01241
+        ],
+        "p_one_sided": 0.001999000499750125
+      },
+      "H2": {
+        "diff": 0.00086,
+        "ci95": [
+          -0.00081,
+          0.00249
+        ],
+        "p_one_sided": 0.16241879060469766
+      }
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 364.45,
+  "peak_rss_mb": 717.5
+}

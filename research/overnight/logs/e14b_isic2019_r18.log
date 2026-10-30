@@ -1,0 +1,77 @@
+isic2019_nonham: loaded 15316 images in 9s
+/Users/paradox/Desktop/CV EL/research/experiments/e14_finetune.py:60: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:219.)
+  x = torch.from_numpy(a).permute(2, 0, 1).float() / 255
+  resnet18 epoch 1/6 loss 0.4001 (114s)
+  resnet18 epoch 2/6 loss 0.3348 (105s)
+  resnet18 epoch 3/6 loss 0.2865 (103s)
+  resnet18 epoch 4/6 loss 0.2388 (100s)
+  resnet18 epoch 5/6 loss 0.1931 (96s)
+  resnet18 epoch 6/6 loss 0.1731 (96s)
+isic2019_nonham resnet18 fold 0: AUROC 0.825
+  resnet18 epoch 1/6 loss 0.4214 (110s)
+  resnet18 epoch 2/6 loss 0.3392 (108s)
+  resnet18 epoch 3/6 loss 0.2919 (105s)
+  resnet18 epoch 4/6 loss 0.2423 (104s)
+  resnet18 epoch 5/6 loss 0.2028 (105s)
+  resnet18 epoch 6/6 loss 0.1768 (116s)
+isic2019_nonham resnet18 fold 1: AUROC 0.831
+  resnet18 epoch 1/6 loss 0.4044 (119s)
+  resnet18 epoch 2/6 loss 0.3358 (109s)
+  resnet18 epoch 3/6 loss 0.2910 (115s)
+  resnet18 epoch 4/6 loss 0.2409 (103s)
+  resnet18 epoch 5/6 loss 0.1948 (100s)
+  resnet18 epoch 6/6 loss 0.1747 (111s)
+isic2019_nonham resnet18 fold 2: AUROC 0.850
+  resnet18 epoch 1/6 loss 0.3990 (105s)
+  resnet18 epoch 2/6 loss 0.3288 (102s)
+  resnet18 epoch 3/6 loss 0.2841 (101s)
+  resnet18 epoch 4/6 loss 0.2322 (102s)
+  resnet18 epoch 5/6 loss 0.1886 (98s)
+  resnet18 epoch 6/6 loss 0.1672 (109s)
+isic2019_nonham resnet18 fold 3: AUROC 0.830
+  resnet18 epoch 1/6 loss 0.4266 (108s)
+  resnet18 epoch 2/6 loss 0.3388 (106s)
+  resnet18 epoch 3/6 loss 0.2899 (101s)
+  resnet18 epoch 4/6 loss 0.2430 (108s)
+  resnet18 epoch 5/6 loss 0.2018 (105s)
+  resnet18 epoch 6/6 loss 0.1793 (111s)
+isic2019_nonham resnet18 fold 4: AUROC 0.847
+isic2019_nonham resnet18 {'finetuned_auroc': 0.8358, 'frozen_auroc': 0.8017, 'added_value_finetuned': 0.00707, 'added_value_finetuned_ci95': [0.00147, 0.01246], 'added_value_frozen': 0.00966, 'frozen_minus_finetuned_ci95': [-0.00016, 0.00568]}
+{
+  "id": "E14b_isic2019_nonham",
+  "hypothesis": "Fine-tuned scores leave no more metadata added value than frozen ones.",
+  "data": {
+    "dataset": "isic2019_nonham",
+    "n": 15316
+  },
+  "config": {
+    "backbones": [
+      "resnet18"
+    ],
+    "schedule": "as E14"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-28T04:30:58+00:00",
+  "results": {
+    "resnet18": {
+      "finetuned_auroc": 0.8358,
+      "frozen_auroc": 0.8017,
+      "added_value_finetuned": 0.00707,
+      "added_value_finetuned_ci95": [
+        0.00147,
+        0.01246
+      ],
+      "added_value_frozen": 0.00966,
+      "frozen_minus_finetuned_ci95": [
+        -0.00016,
+        0.00568
+      ]
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 3219.27,
+  "peak_rss_mb": 4261.3
+}

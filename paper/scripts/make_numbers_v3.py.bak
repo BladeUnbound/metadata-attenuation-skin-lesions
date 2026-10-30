@@ -1,0 +1,356 @@
+"""Generate paper/numbers.tex and paper/tables/*.tex from research/results/*.json.
+
+No number in the paper is typed by hand: every result comes from this script.
+Results that don't exist yet are rendered as a visible [PENDING] marker.
+"""
+import json
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+PAPER = Path(__file__).resolve().parents[1]
+RES = PAPER.parent / "research/results"
+RUNGS = ["hsv", "resnet18", "resnet50", "convnext_tiny", "vit_b_16"]
+NAMES = {"hsv": "HSV histogram", "resnet18": "ResNet-18", "resnet50": "ResNet-50",
+         "convnext_tiny": "ConvNeXt-T", "vit_b_16": "ViT-B/16"}
+PENDING = r"\textbf{[PENDING]}"
+
+
+def load(name):
+    p = RES / f"{name}.json"
+    return json.loads(p.read_text())["results"] if p.exists() else None
+
+
+def f3(x):  # nats, 3 decimals
+    return f"{x:.3f}"
+
+
+def milli(x):  # value in 10^-3 nats
+    return f"{1000 * x:.1f}"
+
+
+def ci_milli(ci):
+    return f"[{1000 * ci[0]:.1f}, {1000 * ci[1]:.1f}]"
+
+
+def pct(x):
+    return f"{100 * x:.0f}\\%"
+
+
+macros = {}
+tables = {}
+
+# ------------------------------------------------------------------ HAM10000
+e10, e10a, e10b = load("E10_ham_attenuation"), load("E10a_ham_metadata_audit"), load("E10b_source_control")
+seeds = e10["primary"]
+mean_av = {r: float(np.mean([seeds[s][r]["added_value"] for s in seeds])) for r in RUNGS}
+mean_auc = {r: float(np.mean([seeds[s][r]["image_auroc"] for s in seeds])) for r in RUNGS}
+extra = e10["seed0_extra"]
+macros.update({
+    "HAMavHSV": milli(mean_av["hsv"]), "HAMavResEighteen": milli(mean_av["resnet18"]),
+    "HAMavConvNeXt": milli(mean_av["convnext_tiny"]),
+    "HAMdxtypeAUC": f"{e10a['dx_type_only']['oof_auroc']:.2f}",
+    "HAMsourceAUC": f"{e10a['source_only']['oof_auroc']:.2f}",
+    "HAMsourceRecov": f"{max(extra[r]['recoverability']['exploratory_source_auroc_mean'] for r in RUNGS):.3f}",
+    "HAMageRecovHSV": f"{extra['hsv']['recoverability']['age_r2']:.2f}",
+    "HAMageRecovConvNeXt": f"{extra['convnext_tiny']['recoverability']['age_r2']:.2f}",
+    "HAMadjHSV": milli(e10b["hsv"]["source_adjusted_added_value"]),
+    "HAMadjConvNeXt": milli(e10b["convnext_tiny"]["source_adjusted_added_value"]),
+})
+pr = e10b["paired_attenuation"]["unadjusted:resnet18-convnext_tiny"]
+macros["HAMpairedRConv"] = milli(pr["av_diff"])
+macros["HAMpairedRConvCI"] = ci_milli(pr["ci95"])
+
+rows = []
+for r in RUNGS:
+    s0 = seeds["seed0"][r]
+    rec = extra[r]["recoverability"]
+    rows.append(f"{NAMES[r]} & {mean_auc[r]:.3f} & {milli(mean_av[r])} & {ci_milli(s0['added_value_ci95'])} & "
+                f"{rec['age_r2']:.2f} & {rec['site_auroc_top5_mean']:.2f} & {rec['exploratory_source_auroc_mean']:.3f} \\\\")
+tables["ham_ladder"] = r"""\begin{table}[t]\centering\footnotesize
+\caption{HAM10000, melanoma vs.\ rest, lesion-grouped 5-fold CV. AUROC and $\hat\Delta$ are means over three fold assignments; the CI is the 95\% lesion bootstrap for assignment 0. Recoverability: out-of-fold $R^2$ for age and mean AUROC for the five commonest sites and for image source, predicted from the frozen features.}\label{tab:ham}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcccccc}\toprule
+ & Image & $\hat\Delta$ & 95\% CI & \multicolumn{3}{c}{Recoverability}\\
+Representation & AUROC & ($10^{-3}$ nats) & ($10^{-3}$) & age & site & source\\\midrule
+""" + "\n".join(rows) + r"""
+\bottomrule\end{tabular}\end{table}"""
+
+pairs = [("hsv", "resnet18"), ("hsv", "convnext_tiny"), ("resnet18", "convnext_tiny"),
+         ("resnet18", "vit_b_16"), ("resnet50", "convnext_tiny")]
+prow = []
+for a, b in pairs:
+    u = e10b["paired_attenuation"][f"unadjusted:{a}-{b}"]
+    s = e10b["paired_attenuation"][f"source_adjusted:{a}-{b}"]
+    prow.append(f"{NAMES[a]} $-$ {NAMES[b]} & {milli(u['av_diff'])} {ci_milli(u['ci95'])} & {milli(s['av_diff'])} {ci_milli(s['ci95'])} \\\\")
+tables["ham_paired"] = r"""\begin{table}[t]\centering\footnotesize
+\caption{HAM10000: paired differences in added value between representations, $\hat\Delta_a-\hat\Delta_b$ ($10^{-3}$ nats, 95\% paired lesion-bootstrap CI), fold assignment 0. Exploratory: not corrected for multiplicity.}\label{tab:hampaired}
+\begin{tabular}{lcc}\toprule
+Comparison & Unadjusted & Source-adjusted\\\midrule
+""" + "\n".join(prow) + r"""
+\bottomrule\end{tabular}\end{table}"""
+
+# ------------------------------------------------------------------ HAM robustness (E10c, E10d, full-feature control)
+e10c, e10d = load("E10c_per_variable"), load("E10d_auroc_brier")
+for key, r in [("HSV", "hsv"), ("ResEighteen", "resnet18"), ("ConvNeXt", "convnext_tiny")]:
+    macros[f"HAMdauc{key}"] = f"{e10d[r]['delta_auroc']:.3f}"
+    macros[f"HAMdauc{key}CI"] = f"[{e10d[r]['delta_auroc_ci95'][0]:.3f}, {e10d[r]['delta_auroc_ci95'][1]:.3f}]"
+for v, name in [("age", "Age"), ("sex", "Sex"), ("localization", "Site")]:
+    macros[f"HAMretained{name}"] = pct(e10c[f"retained_fraction_{v}"])
+macros["HAMsexRecovConvNeXt"] = f"{extra['convnext_tiny']['recoverability']['sex_auroc']:.2f}"
+rrow = []
+for r in RUNGS:
+    d = e10d[r]
+    s0 = seeds["seed0"][r]
+    rrow.append(f"{NAMES[r]} & {d['delta_auroc']:+.3f} [{d['delta_auroc_ci95'][0]:+.3f}, {d['delta_auroc_ci95'][1]:+.3f}] & "
+                f"{1000*d['delta_brier']:.2f} [{1000*d['delta_brier_ci95'][0]:.2f}, {1000*d['delta_brier_ci95'][1]:.2f}] & "
+                f"{s0['both_logloss']:.3f} & {extra[r]['full_features_plus_meta_logloss']:.3f}\\\\")
+tables["ham_robust"] = r"""\begin{table}[t]\centering\footnotesize
+\caption{HAM10000 robustness (fold assignment 0). $\Delta$AUROC and $\Delta$Brier ($10^{-3}$) from adding metadata, with 95\% lesion-bootstrap CIs. Last two columns: out-of-fold log-loss of score\,+\,metadata (two-stage, as in Table~\ref{tab:ham}) vs.\ all frozen features\,+\,metadata in one model; similar values mean the one-dimensional score loses little.}\label{tab:hamrobust}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{lcccc}\toprule
+ & $\Delta$AUROC & $\Delta$Brier & \multicolumn{2}{c}{Log-loss with metadata}\\
+Representation & [95\% CI] & [95\% CI] & two-stage & joint\\\midrule
+""" + "\n".join(rrow) + r"""
+\bottomrule\end{tabular}\end{table}"""
+
+# ------------------------------------------------------------------ Interpretability
+e12, e12b = load("E12_ham_cam_lesion"), load("E12b_ham_cam_fixed_sign")
+per = pd.read_csv(RES / "E12b_per_image.csv")
+mel = per[per.y == 1]
+macros.update({
+    "INTfracEnriched": pct(e12b["H1_frac_enrichment_gt1"]),
+    "INTpermSig": pct(e12b["H3_frac_sig_pixel_perm"]), "INTshiftSig": pct(e12b["H3_frac_sig_shift_null"]),
+    "INTareaDetected": f"{mel[mel.pred == 1].lesion_area_frac.median():.2f}",
+    "INTareaMissed": f"{mel[mel.pred == 0].lesion_area_frac.median():.2f}",
+})
+tables["interp"] = r"""\begin{table}[t]\centering\footnotesize
+\caption{Class-activation evidence vs.\ expert lesion masks (HAM10000, ResNet-50, %d images). Enrichment: share of positive evidence inside the lesion divided by the lesion's area share. Significance at $p\le0.05$.}\label{tab:interp}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccc}\toprule
+Evidence map & Enrichment $>1$ & Shift null & Pixel perm.\\\midrule
+Predicted class & %s & %s & %s\\
+Melanoma (all images) & %s & %s & %s\\
+\bottomrule\end{tabular}\end{table}""" % (
+    e12b["n_images"],
+    pct(e12["H1_frac_enrichment_gt1"]), pct(e12["H3_frac_sig_shift_null"]), pct(e12["H3_frac_sig_pixel_perm"]),
+    pct(e12b["H1_frac_enrichment_gt1"]), pct(e12b["H3_frac_sig_shift_null"]), pct(e12b["H3_frac_sig_pixel_perm"]))
+
+# ------------------------------------------------------------------ Replication (E13)
+rep = {d: load(f"E13_{d}") for d in ["isic2020", "isic2019_nonham", "pad_ufes"]}
+meta = {d: (json.loads((RES / f"E13_{d}.json").read_text())["data"] if (RES / f"E13_{d}.json").exists() else None)
+        for d in rep}
+LABEL = {"isic2020": "ISIC 2020", "isic2019_nonham": "ISIC 2019 (non-HAM)", "pad_ufes": "PAD-UFES-20"}
+
+def num(n):
+    return f"{n:,}".replace(",", "{,}")
+
+
+UNIT = {"isic2020": "patients", "isic2019_nonham": "lesions$^\\ast$", "pad_ufes": "patients"}
+drows = [f"HAM10000 & dermoscopy & {num(e10a['n_images'])} & {num(e10a['n_lesions'])} lesions & "
+         f"{num(e10a['class_counts']['mel'])} & age, sex, site\\\\"]
+for d in rep:
+    m = meta[d]
+    if m:
+        drows.append(f"{LABEL[d]} & {'smartphone' if d == 'pad_ufes' else 'dermoscopy'} & {num(m['n_images'])} & "
+                     f"{num(m['n_groups'])} {UNIT[d]} & {num(m['positives'])} & "
+                     + ("demogr.\\,+\\,symptoms" if d == "pad_ufes" else "age, sex, site") + "\\\\")
+    else:
+        drows.append(f"{LABEL[d]} & \\multicolumn{{5}}{{c}}{{{PENDING}}}\\\\")
+tables["datasets"] = r"""\begin{table}[t]\centering\footnotesize
+\caption{Datasets. Positives: melanoma (malignant for PAD-UFES-20). Groups define the cross-validation and bootstrap units. $^\ast$Images without a lesion identifier form their own group.}\label{tab:data}
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{llrrrl}\toprule
+Dataset & Modality & Images & Groups & Pos. & Metadata\\\midrule
+""" + "\n".join(drows) + r"""
+\bottomrule\end{tabular}\end{table}"""
+
+done = {d: r for d, r in rep.items() if r}
+if not done:
+    macros["REPLICATIONABSTRACT"] = PENDING + " Replication results pending."
+    macros["REPLICATIONSECTION"] = r"\subsection{Pre-registered replication}" + PENDING
+    macros["REPLICATIONCONCLUSION"] = "."
+else:
+    rrows, held1, held2 = [], 0, 0
+    pvals = []
+    for d, r in done.items():
+        s0 = r["seeds"]["0"] if "0" in r["seeds"] else r["seeds"][0]
+        t = r["confirmatory_tests"]
+        pvals += [(d, "H1", t["H1"]["p_one_sided"]), (d, "H2", t["H2"]["p_one_sided"])]
+        rrows.append((d, s0, t))
+    # Holm over all available confirmatory tests
+    order = sorted(range(len(pvals)), key=lambda i: pvals[i][2])
+    m, holm, running = len(pvals), {}, 0.0
+    for rank, i in enumerate(order):
+        running = max(running, min(1.0, (m - rank) * pvals[i][2]))
+        holm[(pvals[i][0], pvals[i][1])] = running
+    lines = []
+    for d, s0, t in rrows:
+        cells = " & ".join(milli(s0[r]["av_all"]) for r in RUNGS)
+        h1, h2 = holm[(d, "H1")], holm[(d, "H2")]
+        held1 += h1 < 0.05
+        held2 += h2 < 0.05
+        fmt = lambda p: "$\\le$0.001" if p <= 0.001 else f"{p:.3f}"  # bootstrap resolution 1/(B+1)
+        lines.append(f"{LABEL[d]} & {cells} & {fmt(h1)} & {fmt(h2)}\\\\")
+    tables["replication"] = r"""\begin{table*}[t]\centering\footnotesize
+\caption{Pre-registered replication: added value of all metadata $\hat\Delta$ ($10^{-3}$ nats, fold assignment 0) along the ladder, and Holm-adjusted one-sided p-values for H1 ($\Delta_{\mathrm{HSV}}>\Delta_{\mathrm{ConvNeXt}}$) and H2 ($\Delta_{\mathrm{ResNet\text{-}18}}>\Delta_{\mathrm{ConvNeXt}}$), grouped paired bootstrap. Family: %d tests.}\label{tab:rep}
+\begin{tabular}{lccccccc}\toprule
+Dataset & HSV & ResNet-18 & ResNet-50 & ConvNeXt-T & ViT-B/16 & H1 $p_{\mathrm{Holm}}$ & H2 $p_{\mathrm{Holm}}$\\\midrule
+""" % m + "\n".join(lines) + r"""
+\bottomrule\end{tabular}\end{table*}"""
+    n = len(done)
+    complete = n == 3
+    e17a = load("E17_retained_fraction") or {}
+    rhos = {d: e17a[d]["convnext_tiny"]["rho"] for d in ["ham10000", "isic2020", "isic2019_nonham", "pad_ufes"] if d in e17a}
+    rho_txt = ""
+    if rhos:
+        lo_d, hi_d = min(rhos, key=rhos.get), max(rhos, key=rhos.get)
+        nm = {"ham10000": "HAM10000", **LABEL}
+        rho_txt = (f" The share of the metadata's standalone information that ConvNeXt-T leaves non-redundant varies widely "
+                   f"between datasets, from {rhos[lo_d]:.2f} ({nm[lo_d]}) to {rhos[hi_d]:.2f} ({nm[hi_d]}).")
+        for d, key in [("isic2019_nonham", "ISICnineteen")]:
+            if d in e17a:
+                macros[f"RHO{key}CNX"] = f"{e17a[d]['convnext_tiny']['rho']:.2f}"
+    macros["REPLICATIONABSTRACT"] = (
+        f"In a pre-registered replication, attenuation from colour histograms to ConvNeXt-T held after Holm correction in "
+        f"{held1} of {n} independent dataset{'s' if n > 1 else ''}, and attenuation within deep representations in {held2} of {n}"
+        + ("." if complete else f" ({PENDING} remaining datasets).") + rho_txt)
+    sec = [r"\subsection{Pre-registered replication}", r"\input{tables/replication}",
+           f"Table~\\ref{{tab:rep}} reports the replication. H1 held in {held1} of {n} datasets and H2 in {held2} of {n} after Holm correction."]
+    floors = []
+    for d, s0, t in rrows:
+        c = s0["convnext_tiny"]
+        floors.append(f"{LABEL[d]}: ${milli(c['av_all'])}\\times10^{{-3}}$ nats {ci_milli(c['av_all_ci95'])}")
+    sec.append("At the strongest convolutional rung (ConvNeXt-T), the remaining added value is " + "; ".join(floors) +
+               ". Attenuation therefore replicates, but how much value metadata retain at high capacity differs widely between datasets.")
+    e16 = load("E16_within_class_recoverability")
+    if e16 and "pad_ufes" in e16:
+        sym = ["itch", "grew", "hurt", "changed", "bleed", "elevation"]
+        wc = [e16["pad_ufes"][v]["convnext_tiny"]["within_class"] for v in sym]
+        mg = [e16["pad_ufes"][v]["convnext_tiny"]["marginal"] for v in sym]
+        macros["PADsymWithinMin"], macros["PADsymWithinMax"] = f"{min(wc):.2f}", f"{max(wc):.2f}"
+        macros["PADsymMarginalMean"], macros["PADsymWithinMean"] = f"{np.mean(mg):.2f}", f"{np.mean(wc):.2f}"
+    if "pad_ufes" in done and "mechanism" in done["pad_ufes"]:
+        mm = done["pad_ufes"]["mechanism"]
+        rf = mm["retained_fraction_hsv_to_convnext"]
+        sec.append(
+            f"\\textbf{{Mechanism (PAD-UFES-20).}} From HSV to ConvNeXt-T, the demographic block retains "
+            f"{rf['D_demographic']} of its added value and the symptom block {rf['S_symptoms']}. Symptoms are "
+            f"{'poorly' if mm['M3_mean_symptom_auroc_convnext'] < 0.65 else 'partly'} recoverable from the photographs "
+            f"(mean AUROC {mm['M3_mean_symptom_auroc_convnext']}). Pre-registered M1 {'held' if mm['M1_S_retains_half'] else 'did not hold'}; "
+            f"M2 {'held' if mm['M2_D_attenuates_more'] else 'did not hold'}. "
+            + (r"The premise of these hypotheses, that symptoms are invisible in photographs, was false: even \emph{within} a diagnostic class, ConvNeXt-T features predict the symptoms with AUROC \PADsymWithinMin{} to \PADsymWithinMax{} (bleeding and elevation are visible), so PAD-UFES-20 contains no auxiliary variable the image cannot partly carry, and the mechanism cannot be isolated with it."
+               if e16 and "pad_ufes" in e16 else ""))
+    if not complete:
+        sec.append(PENDING + " (remaining datasets).")
+    macros["REPLICATIONSECTION"] = "\n\n".join(sec)
+    macros["REPLICATIONCONCLUSION"] = (f" and replicate the weak-versus-strong attenuation in {held1} of {n} independent datasets."
+                                       if complete else f"; replication is in progress ({PENDING}).")
+
+# ------------------------------------------------------------------ E17 retained fraction
+e17 = load("E17_retained_fraction")
+if e17:
+    lab = {"ham10000": "HAM10000", **LABEL}
+    r17 = []
+    for d in ["ham10000", "isic2020", "isic2019_nonham", "pad_ufes"]:
+        if d not in e17:
+            r17.append(f"{lab[d]} & \\multicolumn{{5}}{{c}}{{{PENDING}}}\\\\")
+            continue
+        x = e17[d]
+        cells = " & ".join(f"{x[k]['rho']:.2f} [{x[k]['rho_ci95'][0]:.2f}, {x[k]['rho_ci95'][1]:.2f}]"
+                           for k in ["hsv", "resnet18", "convnext_tiny", "vit_b_16"])
+        r17.append(f"{lab[d]} & {1000 * x['I_A_nats']:.1f} & {cells}\\\\")
+    tables["retained"] = r"""\begin{table*}[t]\centering\footnotesize
+\caption{Exploratory: retained fraction $\rho_k=\hat\Delta_k/\hat I_A$ of the metadata's standalone information that is not redundant with image representation $k$. $\hat I_A$: out-of-fold log-loss reduction of a metadata-only model over prevalence ($10^{-3}$ nats). 95\% grouped-bootstrap CIs, fold assignment 0. $\rho_k$ can exceed 1 under synergy.}\label{tab:retained}
+\begin{tabular}{lccccc}\toprule
+Dataset & $\hat I_A$ & HSV & ResNet-18 & ConvNeXt-T & ViT-B/16\\\midrule
+""" + "\n".join(r17) + r"""
+\bottomrule\end{tabular}\end{table*}"""
+    for d, key in [("ham10000", "HAM"), ("isic2020", "ISICtwenty"), ("pad_ufes", "PAD")]:
+        if d in e17:
+            macros[f"RHO{key}CNX"] = f"{e17[d]['convnext_tiny']['rho']:.2f}"
+
+# ------------------------------------------------------------------ E15 interpretability across backbones
+e15 = load("E15_cam_backbones")
+if e15:
+    rows15 = []
+    for k in ["resnet18", "resnet50", "convnext_tiny"]:
+        if k not in e15:
+            continue
+        x = e15[k]
+        rows15.append(f"{NAMES[k]} & {x['n_images']:,} & {pct(x['frac_enrichment_gt1'])} & {pct(x['frac_sig_shift'])} & "
+                      f"{pct(x['frac_sig_perm'])} & {x['area_detected_vs_missed'][0]:.2f} / {x['area_detected_vs_missed'][1]:.2f}\\\\".replace(",", "{,}"))
+    bb = [e15[k] for k in ["resnet18", "resnet50", "convnext_tiny"] if k in e15]
+    macros["INTbbEnrichRange"] = f"{pct(min(x['frac_enrichment_gt1'] for x in bb))}--{pct(max(x['frac_enrichment_gt1'] for x in bb))}"
+    macros["INTbbShiftRange"] = f"{pct(min(x['frac_sig_shift'] for x in bb))}--{pct(max(x['frac_sig_shift'] for x in bb))}"
+    macros["INTbbPermRange"] = f"{pct(min(x['frac_sig_perm'] for x in bb))}--{pct(max(x['frac_sig_perm'] for x in bb))}"
+    macros["INTbbAreaPmax"] = f"{max(x['area_mw_p'] for x in bb):.0e}".replace("e-", r"\times10^{-") + "}"
+    tables["interp_backbones"] = r"""\begin{table}[t]\centering\footnotesize
+\caption{Melanoma evidence (exact CAM) vs.\ expert lesion masks across backbones (HAM10000; all melanomas plus a matched sample of other lesions). Significance at $p\le0.05$: exact circular-shift null vs.\ pixel permutation. Last column: median lesion area fraction of detected / missed melanomas.}\label{tab:interpbb}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccccc}\toprule
+Backbone & Images & Enrich.$>1$ & Shift null & Pixel perm. & Area det./miss.\\\midrule
+""" + "\n".join(rows15) + r"""
+\bottomrule\end{tabular}\end{table}"""
+
+# ------------------------------------------------------------------ E14 fine-tuning
+e14 = load("E14_finetune")
+ft = [r"\subsection{Fine-tuned image models}\label{sec:ft}"]
+if not e14:
+    ft.append(PENDING)
+else:
+    parts = []
+    for k in ["resnet18", "convnext_tiny"]:
+        if k in e14:
+            x = e14[k]
+            parts.append(f"{NAMES[k]}: image AUROC {x['frozen_auroc']:.3f} frozen vs.\\ {x['finetuned_auroc']:.3f} fine-tuned; "
+                         f"added value ${milli(x['added_value_frozen'])}\\times10^{{-3}}$ vs.\\ "
+                         f"${milli(x['added_value_finetuned'])}\\times10^{{-3}}$ nats {ci_milli(x['added_value_finetuned_ci95'])}, "
+                         f"paired difference (frozen $-$ fine-tuned) ${milli(x['frozen_minus_finetuned_av'])}\\times10^{{-3}}$ "
+                         f"{ci_milli(x['frozen_minus_finetuned_ci95'])}")
+    ft.append("To check that the ladder's conclusions are not an artefact of frozen features, ResNet-18 and ConvNeXt-T were "
+              "fine-tuned end to end on HAM10000 with the same lesion-grouped folds and a fixed schedule (AdamW, learning rate "
+              "$10^{-4}$, six epochs, no early stopping on test folds). " + "; ".join(parts) + ".")
+macros["FINETUNESECTION"] = "\n\n".join(ft)
+
+# ------------------------------------------------------------------ E21 complete-case sensitivity
+e21 = load("E21_complete_case")
+if e21:
+    lab = {"ham10000": "HAM10000", **LABEL}
+    rows21 = []
+    for d in ["ham10000", "isic2020", "isic2019_nonham", "pad_ufes"]:
+        if d not in e21:
+            continue
+        x = e21[d]
+        pf = lambda p: "$\\le$0.001" if p <= 0.001 else f"{p:.3f}"
+        rows21.append(f"{lab[d]} & {num(x['n_complete'])} ({num(x['n_dropped'])}) & {1000 * x['I_A_nats']:.1f} & "
+                      f"{milli(x['hsv']['av'])} & {milli(x['convnext_tiny']['av'])} & {pf(x['H1']['p_one_sided'])} & "
+                      f"{pf(x['H2']['p_one_sided'])} & {x['convnext_tiny']['rho']:.2f}\\\\")
+    tables["complete_case"] = r"""\begin{table*}[t]\centering\footnotesize
+\caption{Complete-case sensitivity analysis: only images with every metadata field recorded (fold assignment 0; one-sided paired grouped-bootstrap p-values, uncorrected). $\hat I_A$ and $\hat\Delta$ in $10^{-3}$ nats; $\rho$ at ConvNeXt-T.}\label{tab:cc}
+\begin{tabular}{lccccccc}\toprule
+Dataset & Kept (dropped) & $\hat I_A$ & $\hat\Delta_{\mathrm{HSV}}$ & $\hat\Delta_{\mathrm{ConvNeXt}}$ & H1 $p$ & H2 $p$ & $\rho$\\\midrule
+""" + "\n".join(rows21) + r"""
+\bottomrule\end{tabular}\end{table*}"""
+    macros["CCholdHone"] = str(sum(e21[d]["H1"]["p_one_sided"] <= 0.05 for d in e21))
+    macros["CCholdHtwo"] = str(sum(e21[d]["H2"]["p_one_sided"] <= 0.05 for d in e21))
+    macros["CCn"] = str(len(e21))
+    if "pad_ufes" in e21 and e17:
+        macros["PADIAleak"] = f"{1000 * e17['pad_ufes']['I_A_nats']:.0f}"
+        macros["PADIAcc"] = f"{1000 * e21['pad_ufes']['I_A_nats']:.0f}"
+        macros["PADccKept"] = num(e21["pad_ufes"]["n_complete"])
+    for d, key in [("ham10000", "HAM"), ("isic2020", "ISICtwenty"), ("isic2019_nonham", "ISICnineteen"), ("pad_ufes", "PAD")]:
+        if d in e21:
+            macros[f"CCRHO{key}"] = f"{e21[d]['convnext_tiny']['rho']:.2f}"
+
+(PAPER / "tables").mkdir(exist_ok=True)
+for k, v in tables.items():
+    if "table*" not in v:  # single-column tables: scale to the column width (review item m1)
+        v = v.replace("\\begin{tabular}", "\\resizebox{\\columnwidth}{!}{\\begin{tabular}").replace(
+            "\\end{tabular}", "\\end{tabular}}")
+    (PAPER / "tables" / f"{k}.tex").write_text(v + "\n")
+if "replication" not in tables:
+    (PAPER / "tables" / "replication.tex").write_text("% pending\n")
+(PAPER / "numbers.tex").write_text("\n".join(f"\\newcommand{{\\{k}}}{{{v}}}" for k, v in macros.items()) + "\n")
+print(f"wrote {len(macros)} macros, {len(tables)} tables; replication datasets done: {list(done)}")

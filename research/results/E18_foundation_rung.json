@@ -1,0 +1,231 @@
+{
+  "id": "E18_foundation_rung",
+  "hypothesis": "Added value of metadata at a ViT-L/16 SWAG representation is no larger than at ConvNeXt-T (attenuation continues or plateaus).",
+  "data": {
+    "datasets": [
+      "ham10000",
+      "isic2020",
+      "isic2019_nonham",
+      "pad_ufes",
+      "hiba",
+      "msk2020",
+      "milk10k_derm",
+      "milk10k_clin"
+    ],
+    "note": "exploratory extension; not pre-registered"
+  },
+  "config": {
+    "rung": "torchvision vit_l_16 IMAGENET1K_SWAG_LINEAR_V1, class token",
+    "folds": "assignment 0"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T20:56:20+00:00",
+  "results": {
+    "ham10000": {
+      "convnext_tiny": {
+        "image_auroc": 0.8873,
+        "added_value": 0.00174,
+        "ci95": [
+          -0.00239,
+          0.0056
+        ]
+      },
+      "vitl16_swag": {
+        "image_auroc": 0.8959,
+        "added_value": 0.0034,
+        "ci95": [
+          -0.00053,
+          0.00701
+        ]
+      },
+      "convnext_minus_vitl": {
+        "diff": -0.00165,
+        "ci95": [
+          -0.00364,
+          0.00043
+        ]
+      }
+    },
+    "isic2020": {
+      "convnext_tiny": {
+        "image_auroc": 0.8591,
+        "added_value": 0.00097,
+        "ci95": [
+          0.00021,
+          0.00172
+        ]
+      },
+      "vitl16_swag": {
+        "image_auroc": 0.8787,
+        "added_value": 0.0005,
+        "ci95": [
+          -0.00013,
+          0.00108
+        ]
+      },
+      "convnext_minus_vitl": {
+        "diff": 0.00047,
+        "ci95": [
+          0.00017,
+          0.00076
+        ]
+      }
+    },
+    "isic2019_nonham": {
+      "convnext_tiny": {
+        "image_auroc": 0.8225,
+        "added_value": 0.00905,
+        "ci95": [
+          0.00311,
+          0.01519
+        ]
+      },
+      "vitl16_swag": {
+        "image_auroc": 0.8283,
+        "added_value": 0.00668,
+        "ci95": [
+          0.00104,
+          0.01198
+        ]
+      },
+      "convnext_minus_vitl": {
+        "diff": 0.00236,
+        "ci95": [
+          0.00016,
+          0.00466
+        ]
+      }
+    },
+    "pad_ufes": {
+      "convnext_tiny": {
+        "image_auroc": 0.8735,
+        "added_value": 0.20644,
+        "ci95": [
+          0.18006,
+          0.23426
+        ]
+      },
+      "vitl16_swag": {
+        "image_auroc": 0.8859,
+        "added_value": 0.18966,
+        "ci95": [
+          0.16143,
+          0.21722
+        ]
+      },
+      "convnext_minus_vitl": {
+        "diff": 0.01678,
+        "ci95": [
+          -0.00148,
+          0.03466
+        ]
+      }
+    },
+    "hiba": {
+      "convnext_tiny": {
+        "image_auroc": 0.9285,
+        "added_value": 0.0026,
+        "ci95": [
+          -0.0131,
+          0.0175
+        ]
+      },
+      "vitl16_swag": {
+        "image_auroc": 0.9359,
+        "added_value": -1e-05,
+        "ci95": [
+          -0.01503,
+          0.01412
+        ]
+      },
+      "convnext_minus_vitl": {
+        "diff": 0.00261,
+        "ci95": [
+          -0.0061,
+          0.01078
+        ]
+      }
+    },
+    "msk2020": {
+      "convnext_tiny": {
+        "image_auroc": 0.7272,
+        "added_value": 0.01801,
+        "ci95": [
+          0.00709,
+          0.02861
+        ]
+      },
+      "vitl16_swag": {
+        "image_auroc": 0.7296,
+        "added_value": 0.01867,
+        "ci95": [
+          0.00864,
+          0.02921
+        ]
+      },
+      "convnext_minus_vitl": {
+        "diff": -0.00066,
+        "ci95": [
+          -0.00599,
+          0.00462
+        ]
+      }
+    },
+    "milk10k_derm": {
+      "convnext_tiny": {
+        "image_auroc": 0.8451,
+        "added_value": 0.00868,
+        "ci95": [
+          0.00033,
+          0.01529
+        ]
+      },
+      "vitl16_swag": {
+        "image_auroc": 0.8404,
+        "added_value": 0.00818,
+        "ci95": [
+          -0.00075,
+          0.01521
+        ]
+      },
+      "convnext_minus_vitl": {
+        "diff": 0.0005,
+        "ci95": [
+          -0.00191,
+          0.00296
+        ]
+      }
+    },
+    "milk10k_clin": {
+      "convnext_tiny": {
+        "image_auroc": 0.8422,
+        "added_value": 0.00565,
+        "ci95": [
+          -0.00254,
+          0.01232
+        ]
+      },
+      "vitl16_swag": {
+        "image_auroc": 0.8401,
+        "added_value": 0.00587,
+        "ci95": [
+          -0.00235,
+          0.01274
+        ]
+      },
+      "convnext_minus_vitl": {
+        "diff": -0.00021,
+        "ci95": [
+          -0.00197,
+          0.00149
+        ]
+      }
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 46.57,
+  "peak_rss_mb": 866.1
+}

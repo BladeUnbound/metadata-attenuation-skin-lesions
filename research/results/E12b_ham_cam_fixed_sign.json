@@ -1,0 +1,54 @@
+{
+  "id": "E12b_ham_cam_fixed_sign",
+  "hypothesis": "H2b: among true melanomas, missed ones have lower melanoma-evidence lesion enrichment than detected ones; enrichment correlates with the melanoma logit.",
+  "data": {
+    "source": "HAM10000 + Tschandl lesion masks",
+    "n_images": 10015
+  },
+  "config": {
+    "backbone": "resnet50 frozen",
+    "map_resolution": 56,
+    "null": "exact circular shift (FFT)",
+    "folds": "E10 seed-0"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T05:15:16+00:00",
+  "results": {
+    "n_images": 2225,
+    "n_correct": 1291,
+    "n_wrong": 934,
+    "H1_median_enrichment": 1.493,
+    "H1_frac_enrichment_gt1": 0.837,
+    "H2_median_enrichment_correct": 1.441,
+    "H2_median_enrichment_wrong": 1.568,
+    "H2_mannwhitney_p_one_sided": 0.9999960753227487,
+    "H3_frac_sig_shift_null": 0.372,
+    "H3_frac_sig_pixel_perm": 0.817,
+    "median_lesion_area_frac": 0.342,
+    "by_true_class": {
+      "0": {
+        "median_enrichment": 1.47,
+        "accuracy": 0.988
+      },
+      "1": {
+        "median_enrichment": 1.521,
+        "accuracy": 0.172
+      }
+    },
+    "H2b": {
+      "n_detected": 191,
+      "n_missed": 921,
+      "median_enrichment_detected": 1.329,
+      "median_enrichment_missed": 1.572,
+      "mannwhitney_p_one_sided": 0.9999959716775834,
+      "spearman_enrichment_vs_logit_melanomas": -0.148,
+      "spearman_enrichment_vs_logit_nonmelanomas": 0.299
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 58.3,
+  "peak_rss_mb": 2174.1
+}

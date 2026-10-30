@@ -1,0 +1,47 @@
+vgg_centred {'discrimination_auc_selfaug_vs_otherclass_nn': 0.7195, 'passes_gate': False, 'threshold_selfaug_p5': 0.5618, 'median_nn_same_class': 0.9234, 'median_nn_other_class': 0.7252, 'frac_val_near_copy_in_train': 0.9997, 'frac_other_class_above_thr': 0.9756}
+pixels_centred {'discrimination_auc_selfaug_vs_otherclass_nn': 0.3796, 'passes_gate': False, 'threshold_selfaug_p5': 0.0163, 'median_nn_same_class': 0.9746, 'median_nn_other_class': 0.7699, 'frac_val_near_copy_in_train': 1.0, 'frac_other_class_above_thr': 1.0}
+{
+  "id": "E02b_leakage_centered",
+  "hypothesis": "With a discriminative embedding, most validation images have a near-copy in training under an image-level split.",
+  "data": {
+    "source": "Kaggle dataset (as E02)",
+    "n_images": 44000
+  },
+  "config": {
+    "embeddings": [
+      "centred VGG16 GAP (cached from E02)",
+      "32x32 grayscale pixels, centred"
+    ],
+    "discrimination_gate_auc": 0.95
+  },
+  "seed": 42,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-26T09:29:17+00:00",
+  "results": {
+    "exact_duplicate_val_images_with_copy_in_train": 128,
+    "val_size": 8800,
+    "vgg_centred": {
+      "discrimination_auc_selfaug_vs_otherclass_nn": 0.7195,
+      "passes_gate": false,
+      "threshold_selfaug_p5": 0.5618,
+      "median_nn_same_class": 0.9234,
+      "median_nn_other_class": 0.7252,
+      "frac_val_near_copy_in_train": 0.9997,
+      "frac_other_class_above_thr": 0.9756
+    },
+    "pixels_centred": {
+      "discrimination_auc_selfaug_vs_otherclass_nn": 0.3796,
+      "passes_gate": false,
+      "threshold_selfaug_p5": 0.0163,
+      "median_nn_same_class": 0.9746,
+      "median_nn_other_class": 0.7699,
+      "frac_val_near_copy_in_train": 1.0,
+      "frac_other_class_above_thr": 1.0
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 22.01,
+  "peak_rss_mb": 2695.9
+}

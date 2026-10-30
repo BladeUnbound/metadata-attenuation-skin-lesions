@@ -1,0 +1,61 @@
+{
+  "id": "E14_finetune",
+  "hypothesis": "Fine-tuned models extract more than frozen ones; metadata added value on fine-tuned scores is no larger than on the frozen versions (attenuation holds).",
+  "data": {
+    "source": "HAM10000",
+    "split": "E10 seed-0 lesion-grouped 5-fold"
+  },
+  "config": {
+    "epochs": 6,
+    "lr": 0.0001,
+    "weight_decay": 0.05,
+    "batch": 32,
+    "device": "mps",
+    "aug": "RandomResizedCrop(0.7-1) + H/V flips",
+    "eval": "centre crop 224"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T10:59:23+00:00",
+  "results": {
+    "resnet18": {
+      "finetuned_auroc": 0.9172,
+      "frozen_auroc": 0.8536,
+      "finetuned_image_logloss": 0.2039,
+      "added_value_finetuned": 0.00035,
+      "added_value_finetuned_ci95": [
+        -0.00304,
+        0.00346
+      ],
+      "added_value_frozen": 0.00413,
+      "frozen_minus_finetuned_av": 0.00378,
+      "frozen_minus_finetuned_ci95": [
+        0.00169,
+        0.00592
+      ],
+      "train_minutes": 66.8
+    },
+    "convnext_tiny": {
+      "finetuned_auroc": 0.9299,
+      "frozen_auroc": 0.8873,
+      "finetuned_image_logloss": 0.193,
+      "added_value_finetuned": 0.00084,
+      "added_value_finetuned_ci95": [
+        -0.00246,
+        0.00391
+      ],
+      "added_value_frozen": 0.00174,
+      "frozen_minus_finetuned_av": 0.0009,
+      "frozen_minus_finetuned_ci95": [
+        -0.00108,
+        0.00284
+      ],
+      "train_minutes": 156.0
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 13426.97,
+  "peak_rss_mb": 3399.8
+}

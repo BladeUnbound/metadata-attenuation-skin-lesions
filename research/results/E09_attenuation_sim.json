@@ -1,0 +1,224 @@
+{
+  "id": "E09_attenuation_sim",
+  "hypothesis": "Attenuation of auxiliary added value with image-model capacity separates mediated from direct auxiliary information, and tracks recoverability of the auxiliary variable from the image.",
+  "data": {
+    "source": "synthetic"
+  },
+  "config": {
+    "n": 3000,
+    "latent_dim": 40,
+    "reps": 10,
+    "noise_ladder": [
+      3.0,
+      2.0,
+      1.2,
+      0.7,
+      0.35,
+      0.1
+    ],
+    "scenarios": {
+      "mediated": [
+        1.2,
+        0.0
+      ],
+      "direct": [
+        0.0,
+        0.8
+      ],
+      "mixed": [
+        1.2,
+        0.4
+      ],
+      "none": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-26T10:01:56+00:00",
+  "results": {
+    "mediated": [
+      {
+        "noise": 3.0,
+        "image_logloss": 0.6689,
+        "added_value_mean": 0.0024,
+        "added_value_sd": 0.002,
+        "recoverability_r2": 0.105
+      },
+      {
+        "noise": 2.0,
+        "image_logloss": 0.6516,
+        "added_value_mean": 0.0014,
+        "added_value_sd": 0.0015,
+        "recoverability_r2": 0.212
+      },
+      {
+        "noise": 1.2,
+        "image_logloss": 0.6149,
+        "added_value_mean": -0.0,
+        "added_value_sd": 0.0008,
+        "recoverability_r2": 0.36
+      },
+      {
+        "noise": 0.7,
+        "image_logloss": 0.559,
+        "added_value_mean": -0.0003,
+        "added_value_sd": 0.0007,
+        "recoverability_r2": 0.478
+      },
+      {
+        "noise": 0.35,
+        "image_logloss": 0.5119,
+        "added_value_mean": -0.0007,
+        "added_value_sd": 0.0007,
+        "recoverability_r2": 0.549
+      },
+      {
+        "noise": 0.1,
+        "image_logloss": 0.4833,
+        "added_value_mean": -0.0007,
+        "added_value_sd": 0.0007,
+        "recoverability_r2": 0.575
+      }
+    ],
+    "direct": [
+      {
+        "noise": 3.0,
+        "image_logloss": 0.6734,
+        "added_value_mean": 0.0294,
+        "added_value_sd": 0.0069,
+        "recoverability_r2": -0.019
+      },
+      {
+        "noise": 2.0,
+        "image_logloss": 0.6561,
+        "added_value_mean": 0.0299,
+        "added_value_sd": 0.0068,
+        "recoverability_r2": -0.017
+      },
+      {
+        "noise": 1.2,
+        "image_logloss": 0.6169,
+        "added_value_mean": 0.0323,
+        "added_value_sd": 0.0062,
+        "recoverability_r2": -0.018
+      },
+      {
+        "noise": 0.7,
+        "image_logloss": 0.568,
+        "added_value_mean": 0.036,
+        "added_value_sd": 0.0068,
+        "recoverability_r2": -0.015
+      },
+      {
+        "noise": 0.35,
+        "image_logloss": 0.5187,
+        "added_value_mean": 0.0411,
+        "added_value_sd": 0.007,
+        "recoverability_r2": -0.016
+      },
+      {
+        "noise": 0.1,
+        "image_logloss": 0.4954,
+        "added_value_mean": 0.0436,
+        "added_value_sd": 0.0071,
+        "recoverability_r2": -0.017
+      }
+    ],
+    "mixed": [
+      {
+        "noise": 3.0,
+        "image_logloss": 0.6725,
+        "added_value_mean": 0.0082,
+        "added_value_sd": 0.0089,
+        "recoverability_r2": 0.106
+      },
+      {
+        "noise": 2.0,
+        "image_logloss": 0.6532,
+        "added_value_mean": 0.0065,
+        "added_value_sd": 0.0071,
+        "recoverability_r2": 0.211
+      },
+      {
+        "noise": 1.2,
+        "image_logloss": 0.6113,
+        "added_value_mean": 0.0038,
+        "added_value_sd": 0.0045,
+        "recoverability_r2": 0.362
+      },
+      {
+        "noise": 0.7,
+        "image_logloss": 0.5502,
+        "added_value_mean": 0.0024,
+        "added_value_sd": 0.0023,
+        "recoverability_r2": 0.482
+      },
+      {
+        "noise": 0.35,
+        "image_logloss": 0.4964,
+        "added_value_mean": 0.0017,
+        "added_value_sd": 0.0017,
+        "recoverability_r2": 0.553
+      },
+      {
+        "noise": 0.1,
+        "image_logloss": 0.4702,
+        "added_value_mean": 0.0016,
+        "added_value_sd": 0.0013,
+        "recoverability_r2": 0.578
+      }
+    ],
+    "none": [
+      {
+        "noise": 3.0,
+        "image_logloss": 0.6702,
+        "added_value_mean": -0.0002,
+        "added_value_sd": 0.0004,
+        "recoverability_r2": -0.019
+      },
+      {
+        "noise": 2.0,
+        "image_logloss": 0.6527,
+        "added_value_mean": -0.0001,
+        "added_value_sd": 0.0004,
+        "recoverability_r2": -0.015
+      },
+      {
+        "noise": 1.2,
+        "image_logloss": 0.6074,
+        "added_value_mean": -0.0002,
+        "added_value_sd": 0.0003,
+        "recoverability_r2": -0.02
+      },
+      {
+        "noise": 0.7,
+        "image_logloss": 0.5532,
+        "added_value_mean": -0.0002,
+        "added_value_sd": 0.0004,
+        "recoverability_r2": -0.018
+      },
+      {
+        "noise": 0.35,
+        "image_logloss": 0.4942,
+        "added_value_mean": 0.0,
+        "added_value_sd": 0.0004,
+        "recoverability_r2": -0.016
+      },
+      {
+        "noise": 0.1,
+        "image_logloss": 0.4656,
+        "added_value_mean": 0.0,
+        "added_value_sd": 0.0004,
+        "recoverability_r2": -0.016
+      }
+    ]
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 5.48,
+  "peak_rss_mb": 176.9
+}

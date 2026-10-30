@@ -1,0 +1,128 @@
+hiba: loaded 1224 images in 17s
+/Users/paradox/Desktop/CV EL/research/experiments/e14_finetune.py:60: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:219.)
+  x = torch.from_numpy(a).permute(2, 0, 1).float() / 255
+  resnet18 epoch 1/6 loss 0.3421 (7s)
+  resnet18 epoch 2/6 loss 0.2313 (7s)
+  resnet18 epoch 3/6 loss 0.1730 (7s)
+  resnet18 epoch 4/6 loss 0.1240 (7s)
+  resnet18 epoch 5/6 loss 0.1027 (7s)
+  resnet18 epoch 6/6 loss 0.0899 (7s)
+hiba resnet18 fold 0: AUROC 0.896
+  resnet18 epoch 1/6 loss 0.4372 (8s)
+  resnet18 epoch 2/6 loss 0.2610 (7s)
+  resnet18 epoch 3/6 loss 0.2119 (7s)
+  resnet18 epoch 4/6 loss 0.1569 (7s)
+  resnet18 epoch 5/6 loss 0.1214 (7s)
+  resnet18 epoch 6/6 loss 0.1275 (7s)
+hiba resnet18 fold 1: AUROC 0.957
+  resnet18 epoch 1/6 loss 0.4115 (8s)
+  resnet18 epoch 2/6 loss 0.2612 (7s)
+  resnet18 epoch 3/6 loss 0.1989 (7s)
+  resnet18 epoch 4/6 loss 0.1487 (7s)
+  resnet18 epoch 5/6 loss 0.1168 (7s)
+  resnet18 epoch 6/6 loss 0.1101 (7s)
+hiba resnet18 fold 2: AUROC 0.944
+  resnet18 epoch 1/6 loss 0.3901 (7s)
+  resnet18 epoch 2/6 loss 0.2588 (7s)
+  resnet18 epoch 3/6 loss 0.1832 (7s)
+  resnet18 epoch 4/6 loss 0.1397 (7s)
+  resnet18 epoch 5/6 loss 0.1242 (7s)
+  resnet18 epoch 6/6 loss 0.1217 (7s)
+hiba resnet18 fold 3: AUROC 0.953
+  resnet18 epoch 1/6 loss 0.4348 (7s)
+  resnet18 epoch 2/6 loss 0.2403 (7s)
+  resnet18 epoch 3/6 loss 0.1801 (7s)
+  resnet18 epoch 4/6 loss 0.1520 (7s)
+  resnet18 epoch 5/6 loss 0.1275 (7s)
+  resnet18 epoch 6/6 loss 0.1262 (7s)
+hiba resnet18 fold 4: AUROC 0.960
+hiba resnet18 {'finetuned_auroc': 0.9402, 'frozen_auroc': 0.9083, 'added_value_finetuned': 0.00137, 'added_value_finetuned_ci95': [-0.01535, 0.01563], 'added_value_frozen': 0.01886, 'frozen_minus_finetuned_ci95': [0.00614, 0.0298]}
+  convnext_tiny epoch 1/6 loss 0.3924 (29s)
+  convnext_tiny epoch 2/6 loss 0.2463 (29s)
+  convnext_tiny epoch 3/6 loss 0.1950 (30s)
+  convnext_tiny epoch 4/6 loss 0.1226 (32s)
+  convnext_tiny epoch 5/6 loss 0.1044 (32s)
+  convnext_tiny epoch 6/6 loss 0.0900 (32s)
+hiba convnext_tiny fold 0: AUROC 0.935
+  convnext_tiny epoch 1/6 loss 0.4270 (32s)
+  convnext_tiny epoch 2/6 loss 0.2474 (32s)
+  convnext_tiny epoch 3/6 loss 0.1866 (32s)
+  convnext_tiny epoch 4/6 loss 0.1229 (32s)
+  convnext_tiny epoch 5/6 loss 0.0945 (32s)
+  convnext_tiny epoch 6/6 loss 0.0878 (32s)
+hiba convnext_tiny fold 1: AUROC 0.967
+  convnext_tiny epoch 1/6 loss 0.3967 (32s)
+  convnext_tiny epoch 2/6 loss 0.2554 (32s)
+  convnext_tiny epoch 3/6 loss 0.1840 (32s)
+  convnext_tiny epoch 4/6 loss 0.1200 (32s)
+  convnext_tiny epoch 5/6 loss 0.0911 (32s)
+  convnext_tiny epoch 6/6 loss 0.0721 (32s)
+hiba convnext_tiny fold 2: AUROC 0.947
+  convnext_tiny epoch 1/6 loss 0.4059 (32s)
+  convnext_tiny epoch 2/6 loss 0.2463 (32s)
+  convnext_tiny epoch 3/6 loss 0.1936 (33s)
+  convnext_tiny epoch 4/6 loss 0.1307 (32s)
+  convnext_tiny epoch 5/6 loss 0.1040 (33s)
+  convnext_tiny epoch 6/6 loss 0.0896 (32s)
+hiba convnext_tiny fold 3: AUROC 0.958
+  convnext_tiny epoch 1/6 loss 0.3914 (32s)
+  convnext_tiny epoch 2/6 loss 0.2507 (32s)
+  convnext_tiny epoch 3/6 loss 0.1858 (32s)
+  convnext_tiny epoch 4/6 loss 0.1420 (32s)
+  convnext_tiny epoch 5/6 loss 0.0969 (32s)
+  convnext_tiny epoch 6/6 loss 0.0950 (32s)
+hiba convnext_tiny fold 4: AUROC 0.951
+hiba convnext_tiny {'finetuned_auroc': 0.9508, 'frozen_auroc': 0.9285, 'added_value_finetuned': -0.00724, 'added_value_finetuned_ci95': [-0.02432, 0.00617], 'added_value_frozen': 0.0026, 'frozen_minus_finetuned_ci95': [0.00263, 0.01739]}
+{
+  "id": "E14b_hiba",
+  "hypothesis": "Fine-tuned scores leave no more metadata added value than frozen ones.",
+  "data": {
+    "dataset": "hiba",
+    "n": 1224
+  },
+  "config": {
+    "backbones": [
+      "resnet18",
+      "convnext_tiny"
+    ],
+    "schedule": "as E14"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T22:02:18+00:00",
+  "results": {
+    "resnet18": {
+      "finetuned_auroc": 0.9402,
+      "frozen_auroc": 0.9083,
+      "added_value_finetuned": 0.00137,
+      "added_value_finetuned_ci95": [
+        -0.01535,
+        0.01563
+      ],
+      "added_value_frozen": 0.01886,
+      "frozen_minus_finetuned_ci95": [
+        0.00614,
+        0.0298
+      ]
+    },
+    "convnext_tiny": {
+      "finetuned_auroc": 0.9508,
+      "frozen_auroc": 0.9285,
+      "added_value_finetuned": -0.00724,
+      "added_value_finetuned_ci95": [
+        -0.02432,
+        0.00617
+      ],
+      "added_value_frozen": 0.0026,
+      "frozen_minus_finetuned_ci95": [
+        0.00263,
+        0.01739
+      ]
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 1199.17,
+  "peak_rss_mb": 1924.2
+}

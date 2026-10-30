@@ -1,0 +1,275 @@
+/Users/paradox/Desktop/CV EL/research/experiments/e14_finetune.py:60: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:219.)
+  x = torch.from_numpy(a).permute(2, 0, 1).float() / 255
+  resnet18 epoch 1/6 loss 0.2841 (46s)
+  resnet18 epoch 2/6 loss 0.2029 (46s)
+  resnet18 epoch 3/6 loss 0.1698 (47s)
+  resnet18 epoch 4/6 loss 0.1406 (48s)
+  resnet18 epoch 5/6 loss 0.1080 (49s)
+  resnet18 epoch 6/6 loss 0.0952 (52s)
+fraction 1.0 rep 0 fold 0 done
+  resnet18 epoch 1/6 loss 0.3117 (53s)
+  resnet18 epoch 2/6 loss 0.2087 (53s)
+  resnet18 epoch 3/6 loss 0.1727 (55s)
+  resnet18 epoch 4/6 loss 0.1400 (58s)
+  resnet18 epoch 5/6 loss 0.1127 (59s)
+  resnet18 epoch 6/6 loss 0.0971 (60s)
+fraction 1.0 rep 0 fold 1 done
+  resnet18 epoch 1/6 loss 0.2850 (57s)
+  resnet18 epoch 2/6 loss 0.2031 (58s)
+  resnet18 epoch 3/6 loss 0.1701 (58s)
+  resnet18 epoch 4/6 loss 0.1405 (58s)
+  resnet18 epoch 5/6 loss 0.1095 (59s)
+  resnet18 epoch 6/6 loss 0.0966 (64s)
+fraction 1.0 rep 0 fold 2 done
+  resnet18 epoch 1/6 loss 0.2682 (66s)
+  resnet18 epoch 2/6 loss 0.2053 (72s)
+  resnet18 epoch 3/6 loss 0.1789 (59s)
+  resnet18 epoch 4/6 loss 0.1366 (46s)
+  resnet18 epoch 5/6 loss 0.1086 (47s)
+  resnet18 epoch 6/6 loss 0.0982 (49s)
+fraction 1.0 rep 0 fold 3 done
+  resnet18 epoch 1/6 loss 0.3275 (51s)
+  resnet18 epoch 2/6 loss 0.2165 (56s)
+  resnet18 epoch 3/6 loss 0.1820 (57s)
+  resnet18 epoch 4/6 loss 0.1466 (59s)
+  resnet18 epoch 5/6 loss 0.1206 (75s)
+  resnet18 epoch 6/6 loss 0.1058 (75s)
+fraction 1.0 rep 0 fold 4 done
+fraction 1.0 rep 0 0.9049 1.24
+fraction 0.1 rep 0 0.82 9.68
+fraction 0.25 rep 0 0.8592 4.95
+fraction 0.5 rep 0 0.8956 3.34
+  resnet18 epoch 1/6 loss 0.5316 (9s)
+  resnet18 epoch 2/6 loss 0.2735 (6s)
+  resnet18 epoch 3/6 loss 0.1696 (7s)
+  resnet18 epoch 4/6 loss 0.1416 (7s)
+  resnet18 epoch 5/6 loss 0.1096 (7s)
+  resnet18 epoch 6/6 loss 0.1066 (6s)
+fraction 0.1 rep 1 fold 0 done
+  resnet18 epoch 1/6 loss 0.7010 (6s)
+  resnet18 epoch 2/6 loss 0.2781 (7s)
+  resnet18 epoch 3/6 loss 0.1732 (7s)
+  resnet18 epoch 4/6 loss 0.1193 (6s)
+  resnet18 epoch 5/6 loss 0.1080 (8s)
+  resnet18 epoch 6/6 loss 0.0916 (8s)
+fraction 0.1 rep 1 fold 1 done
+  resnet18 epoch 1/6 loss 0.5085 (8s)
+  resnet18 epoch 2/6 loss 0.2518 (7s)
+  resnet18 epoch 3/6 loss 0.1759 (8s)
+  resnet18 epoch 4/6 loss 0.1201 (8s)
+  resnet18 epoch 5/6 loss 0.0872 (8s)
+  resnet18 epoch 6/6 loss 0.0997 (8s)
+fraction 0.1 rep 1 fold 2 done
+  resnet18 epoch 1/6 loss 0.4011 (6s)
+  resnet18 epoch 2/6 loss 0.2223 (6s)
+  resnet18 epoch 3/6 loss 0.1561 (6s)
+  resnet18 epoch 4/6 loss 0.1152 (6s)
+  resnet18 epoch 5/6 loss 0.0989 (6s)
+  resnet18 epoch 6/6 loss 0.0941 (6s)
+fraction 0.1 rep 1 fold 3 done
+  resnet18 epoch 1/6 loss 0.8384 (6s)
+  resnet18 epoch 2/6 loss 0.3405 (6s)
+  resnet18 epoch 3/6 loss 0.2114 (6s)
+  resnet18 epoch 4/6 loss 0.1508 (6s)
+  resnet18 epoch 5/6 loss 0.1277 (6s)
+  resnet18 epoch 6/6 loss 0.1400 (6s)
+fraction 0.1 rep 1 fold 4 done
+fraction 0.1 rep 1 0.8244 8.15
+  resnet18 epoch 1/6 loss 0.3855 (16s)
+  resnet18 epoch 2/6 loss 0.1919 (15s)
+  resnet18 epoch 3/6 loss 0.1479 (15s)
+  resnet18 epoch 4/6 loss 0.0978 (15s)
+  resnet18 epoch 5/6 loss 0.0774 (15s)
+  resnet18 epoch 6/6 loss 0.0749 (15s)
+fraction 0.25 rep 1 fold 0 done
+  resnet18 epoch 1/6 loss 0.4837 (15s)
+  resnet18 epoch 2/6 loss 0.2289 (15s)
+  resnet18 epoch 3/6 loss 0.1670 (16s)
+  resnet18 epoch 4/6 loss 0.1400 (15s)
+  resnet18 epoch 5/6 loss 0.1051 (15s)
+  resnet18 epoch 6/6 loss 0.0911 (15s)
+fraction 0.25 rep 1 fold 1 done
+  resnet18 epoch 1/6 loss 0.3831 (15s)
+  resnet18 epoch 2/6 loss 0.2080 (15s)
+  resnet18 epoch 3/6 loss 0.1633 (15s)
+  resnet18 epoch 4/6 loss 0.1186 (15s)
+  resnet18 epoch 5/6 loss 0.0912 (15s)
+  resnet18 epoch 6/6 loss 0.0850 (15s)
+fraction 0.25 rep 1 fold 2 done
+  resnet18 epoch 1/6 loss 0.3140 (15s)
+  resnet18 epoch 2/6 loss 0.2004 (15s)
+  resnet18 epoch 3/6 loss 0.1478 (15s)
+  resnet18 epoch 4/6 loss 0.1163 (15s)
+  resnet18 epoch 5/6 loss 0.0916 (15s)
+  resnet18 epoch 6/6 loss 0.0836 (15s)
+fraction 0.25 rep 1 fold 3 done
+  resnet18 epoch 1/6 loss 0.5592 (15s)
+  resnet18 epoch 2/6 loss 0.2213 (15s)
+  resnet18 epoch 3/6 loss 0.1757 (15s)
+  resnet18 epoch 4/6 loss 0.1357 (15s)
+  resnet18 epoch 5/6 loss 0.1146 (15s)
+  resnet18 epoch 6/6 loss 0.0954 (15s)
+fraction 0.25 rep 1 fold 4 done
+fraction 0.25 rep 1 0.8609 5.91
+  resnet18 epoch 1/6 loss 0.3187 (30s)
+  resnet18 epoch 2/6 loss 0.2044 (30s)
+  resnet18 epoch 3/6 loss 0.1564 (30s)
+  resnet18 epoch 4/6 loss 0.1233 (30s)
+  resnet18 epoch 5/6 loss 0.0970 (30s)
+  resnet18 epoch 6/6 loss 0.0916 (30s)
+fraction 0.5 rep 1 fold 0 done
+  resnet18 epoch 1/6 loss 0.3762 (30s)
+  resnet18 epoch 2/6 loss 0.2159 (30s)
+  resnet18 epoch 3/6 loss 0.1849 (30s)
+  resnet18 epoch 4/6 loss 0.1465 (30s)
+  resnet18 epoch 5/6 loss 0.1181 (30s)
+  resnet18 epoch 6/6 loss 0.1073 (31s)
+fraction 0.5 rep 1 fold 1 done
+  resnet18 epoch 1/6 loss 0.3204 (32s)
+  resnet18 epoch 2/6 loss 0.2064 (32s)
+  resnet18 epoch 3/6 loss 0.1633 (32s)
+  resnet18 epoch 4/6 loss 0.1279 (32s)
+  resnet18 epoch 5/6 loss 0.0981 (32s)
+  resnet18 epoch 6/6 loss 0.0901 (31s)
+fraction 0.5 rep 1 fold 2 done
+  resnet18 epoch 1/6 loss 0.3029 (32s)
+  resnet18 epoch 2/6 loss 0.2042 (31s)
+  resnet18 epoch 3/6 loss 0.1712 (34s)
+  resnet18 epoch 4/6 loss 0.1327 (34s)
+  resnet18 epoch 5/6 loss 0.1022 (33s)
+  resnet18 epoch 6/6 loss 0.0902 (33s)
+fraction 0.5 rep 1 fold 3 done
+  resnet18 epoch 1/6 loss 0.4018 (34s)
+  resnet18 epoch 2/6 loss 0.2169 (33s)
+  resnet18 epoch 3/6 loss 0.1740 (36s)
+  resnet18 epoch 4/6 loss 0.1394 (36s)
+  resnet18 epoch 5/6 loss 0.1129 (36s)
+  resnet18 epoch 6/6 loss 0.1013 (34s)
+fraction 0.5 rep 1 fold 4 done
+fraction 0.5 rep 1 0.8959 2.99
+{
+  "id": "E31d_ft_fraction_ext",
+  "hypothesis": "Added value decreases with the fine-tuning training fraction (from E31c; exploratory).",
+  "data": {
+    "dataset": "ham10000 (complete cases)"
+  },
+  "config": {
+    "runs": "f=1.0 rep 0; f in 0.1/0.25/0.5 rep 1 (subsample seed 314); rep 0 of f<1 reused from E31c",
+    "schedule": "as E14"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-28T01:45:56+00:00",
+  "results": {
+    "1.0|0": {
+      "image": {
+        "auroc": 0.9049230911222843,
+        "logloss": 0.2175603654411341,
+        "brier": 0.06465270853420774,
+        "calib_intercept": -0.02416307846743297,
+        "calib_slope": 0.988076253124177
+      },
+      "delta": 0.001243096124914791,
+      "delta_ci95": [
+        -0.00133,
+        0.003766
+      ]
+    },
+    "0.1|0": {
+      "image": {
+        "auroc": 0.820019801440219,
+        "logloss": 0.2840632475269535,
+        "brier": 0.08274027594809859,
+        "calib_intercept": -0.06796014064150561,
+        "calib_slope": 0.9687067649253739
+      },
+      "delta": 0.009676437059339111,
+      "delta_ci95": [
+        0.005362,
+        0.014019
+      ]
+    },
+    "0.25|0": {
+      "image": {
+        "auroc": 0.8591866935999815,
+        "logloss": 0.25799420684123625,
+        "brier": 0.076073487363004,
+        "calib_intercept": -0.04384984201442377,
+        "calib_slope": 0.9796056083628852
+      },
+      "delta": 0.004952950477793608,
+      "delta_ci95": [
+        0.001448,
+        0.008478
+      ]
+    },
+    "0.5|0": {
+      "image": {
+        "auroc": 0.8956302584465519,
+        "logloss": 0.22883774860656683,
+        "brier": 0.06803109633224655,
+        "calib_intercept": -0.006037476847368838,
+        "calib_slope": 0.9974538094193065
+      },
+      "delta": 0.0033361852477530912,
+      "delta_ci95": [
+        0.000466,
+        0.006242
+      ]
+    },
+    "0.1|1": {
+      "image": {
+        "auroc": 0.8243632179857489,
+        "logloss": 0.28137496806483325,
+        "brier": 0.08182429932230022,
+        "calib_intercept": -0.034061777026637104,
+        "calib_slope": 0.9827569863224737
+      },
+      "delta": 0.00814969824187381,
+      "delta_ci95": [
+        0.00407,
+        0.012455
+      ]
+    },
+    "0.25|1": {
+      "image": {
+        "auroc": 0.860850518004837,
+        "logloss": 0.2542004816123383,
+        "brier": 0.07413907119741035,
+        "calib_intercept": -0.010949299284008064,
+        "calib_slope": 0.9949850722826624
+      },
+      "delta": 0.0059132719995667864,
+      "delta_ci95": [
+        0.002152,
+        0.0094
+      ]
+    },
+    "0.5|1": {
+      "image": {
+        "auroc": 0.895851136799844,
+        "logloss": 0.22830395520433291,
+        "brier": 0.06787126018343728,
+        "calib_intercept": -0.005852692075055585,
+        "calib_slope": 0.9976483490673177
+      },
+      "delta": 0.00299286949136218,
+      "delta_ci95": [
+        -1.8e-05,
+        0.006056
+      ]
+    },
+    "mean_by_fraction": {
+      "0.1": 0.008913067650606461,
+      "0.25": 0.005433111238680197,
+      "0.5": 0.0031645273695576357,
+      "1.0": 0.001243096124914791
+    },
+    "spearman_fraction_vs_delta": -0.9728456051340169
+  },
+  "interpretation": "See research/iteration4/SUMMARY.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 3388.9,
+  "peak_rss_mb": 3935.3
+}

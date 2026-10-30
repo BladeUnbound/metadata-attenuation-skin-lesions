@@ -1,0 +1,96 @@
+hsv {'auroc_image': 0.7636, 'auroc_with_meta': 0.8064, 'delta_auroc': 0.0428, 'delta_auroc_ci95': [0.0297, 0.0555], 'delta_brier': 0.00484, 'delta_brier_ci95': [0.00302, 0.0067]}
+resnet18 {'auroc_image': 0.8524, 'auroc_with_meta': 0.8597, 'delta_auroc': 0.0073, 'delta_auroc_ci95': [0.0009, 0.0134], 'delta_brier': 0.00129, 'delta_brier_ci95': [0.00023, 0.00242]}
+resnet50 {'auroc_image': 0.8513, 'auroc_with_meta': 0.8567, 'delta_auroc': 0.0054, 'delta_auroc_ci95': [-0.0012, 0.0115], 'delta_brier': 0.00116, 'delta_brier_ci95': [0.00014, 0.00223]}
+convnext_tiny {'auroc_image': 0.8866, 'auroc_with_meta': 0.8892, 'delta_auroc': 0.0026, 'delta_auroc_ci95': [-0.0021, 0.007], 'delta_brier': 0.00088, 'delta_brier_ci95': [-0.00014, 0.00193]}
+vit_b_16 {'auroc_image': 0.8858, 'auroc_with_meta': 0.8893, 'delta_auroc': 0.0035, 'delta_auroc_ci95': [-0.0011, 0.0079], 'delta_brier': 0.00079, 'delta_brier_ci95': [-0.00025, 0.00186]}
+{
+  "id": "E10d_auroc_brier",
+  "hypothesis": "Metadata \u0394AUROC and \u0394Brier attenuate along the ladder like \u0394 log-loss.",
+  "data": {
+    "source": "HAM10000"
+  },
+  "config": {
+    "folds": "E10 seed 0",
+    "bootstrap": 2000
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T10:29:21+00:00",
+  "results": {
+    "hsv": {
+      "auroc_image": 0.7636,
+      "auroc_with_meta": 0.8064,
+      "delta_auroc": 0.0428,
+      "delta_auroc_ci95": [
+        0.0297,
+        0.0555
+      ],
+      "delta_brier": 0.00484,
+      "delta_brier_ci95": [
+        0.00302,
+        0.0067
+      ]
+    },
+    "resnet18": {
+      "auroc_image": 0.8524,
+      "auroc_with_meta": 0.8597,
+      "delta_auroc": 0.0073,
+      "delta_auroc_ci95": [
+        0.0009,
+        0.0134
+      ],
+      "delta_brier": 0.00129,
+      "delta_brier_ci95": [
+        0.00023,
+        0.00242
+      ]
+    },
+    "resnet50": {
+      "auroc_image": 0.8513,
+      "auroc_with_meta": 0.8567,
+      "delta_auroc": 0.0054,
+      "delta_auroc_ci95": [
+        -0.0012,
+        0.0115
+      ],
+      "delta_brier": 0.00116,
+      "delta_brier_ci95": [
+        0.00014,
+        0.00223
+      ]
+    },
+    "convnext_tiny": {
+      "auroc_image": 0.8866,
+      "auroc_with_meta": 0.8892,
+      "delta_auroc": 0.0026,
+      "delta_auroc_ci95": [
+        -0.0021,
+        0.007
+      ],
+      "delta_brier": 0.00088,
+      "delta_brier_ci95": [
+        -0.00014,
+        0.00193
+      ]
+    },
+    "vit_b_16": {
+      "auroc_image": 0.8858,
+      "auroc_with_meta": 0.8893,
+      "delta_auroc": 0.0035,
+      "delta_auroc_ci95": [
+        -0.0011,
+        0.0079
+      ],
+      "delta_brier": 0.00079,
+      "delta_brier_ci95": [
+        -0.00025,
+        0.00186
+      ]
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 90.85,
+  "peak_rss_mb": 492.2
+}

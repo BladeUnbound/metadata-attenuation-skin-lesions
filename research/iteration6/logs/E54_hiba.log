@@ -1,0 +1,272 @@
+hiba: loaded 1224 images in 17s
+hiba resnet18 0 {'auroc': 0.9402, 'added_value': 0.00137, 'added_value_ci95': [-0.0148, 0.01599], 'frozen_minus_finetuned_ci95': [0.00627, 0.02947]}
+/Users/paradox/Desktop/CV EL/research/experiments/e14_finetune.py:60: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:219.)
+  x = torch.from_numpy(a).permute(2, 0, 1).float() / 255
+  resnet18 epoch 1/6 loss 0.3627 (8s)
+  resnet18 epoch 2/6 loss 0.2303 (8s)
+  resnet18 epoch 3/6 loss 0.1664 (8s)
+  resnet18 epoch 4/6 loss 0.1293 (8s)
+  resnet18 epoch 5/6 loss 0.1188 (8s)
+  resnet18 epoch 6/6 loss 0.1116 (8s)
+hiba resnet18 seed 1 fold 0: AUROC 0.914
+  resnet18 epoch 1/6 loss 0.4004 (8s)
+  resnet18 epoch 2/6 loss 0.2646 (8s)
+  resnet18 epoch 3/6 loss 0.2130 (8s)
+  resnet18 epoch 4/6 loss 0.1435 (8s)
+  resnet18 epoch 5/6 loss 0.1329 (8s)
+  resnet18 epoch 6/6 loss 0.1256 (8s)
+hiba resnet18 seed 1 fold 1: AUROC 0.965
+  resnet18 epoch 1/6 loss 0.3954 (8s)
+  resnet18 epoch 2/6 loss 0.2404 (8s)
+  resnet18 epoch 3/6 loss 0.1840 (8s)
+  resnet18 epoch 4/6 loss 0.1506 (8s)
+  resnet18 epoch 5/6 loss 0.1194 (8s)
+  resnet18 epoch 6/6 loss 0.0989 (8s)
+hiba resnet18 seed 1 fold 2: AUROC 0.940
+  resnet18 epoch 1/6 loss 0.3965 (8s)
+  resnet18 epoch 2/6 loss 0.2426 (8s)
+  resnet18 epoch 3/6 loss 0.2062 (8s)
+  resnet18 epoch 4/6 loss 0.1681 (8s)
+  resnet18 epoch 5/6 loss 0.1287 (8s)
+  resnet18 epoch 6/6 loss 0.1188 (8s)
+hiba resnet18 seed 1 fold 3: AUROC 0.960
+  resnet18 epoch 1/6 loss 0.3977 (8s)
+  resnet18 epoch 2/6 loss 0.2539 (8s)
+  resnet18 epoch 3/6 loss 0.2257 (8s)
+  resnet18 epoch 4/6 loss 0.1513 (8s)
+  resnet18 epoch 5/6 loss 0.1182 (8s)
+  resnet18 epoch 6/6 loss 0.1283 (8s)
+hiba resnet18 seed 1 fold 4: AUROC 0.960
+hiba resnet18 1 {'auroc': 0.9461, 'added_value': -0.00205, 'added_value_ci95': [-0.01819, 0.01233], 'frozen_minus_finetuned_ci95': [0.00861, 0.03317]}
+  resnet18 epoch 1/6 loss 0.3748 (8s)
+  resnet18 epoch 2/6 loss 0.2497 (8s)
+  resnet18 epoch 3/6 loss 0.1740 (8s)
+  resnet18 epoch 4/6 loss 0.1370 (8s)
+  resnet18 epoch 5/6 loss 0.0985 (8s)
+  resnet18 epoch 6/6 loss 0.0852 (8s)
+hiba resnet18 seed 2 fold 0: AUROC 0.913
+  resnet18 epoch 1/6 loss 0.4177 (8s)
+  resnet18 epoch 2/6 loss 0.2765 (8s)
+  resnet18 epoch 3/6 loss 0.1980 (8s)
+  resnet18 epoch 4/6 loss 0.1689 (8s)
+  resnet18 epoch 5/6 loss 0.1698 (8s)
+  resnet18 epoch 6/6 loss 0.1372 (8s)
+hiba resnet18 seed 2 fold 1: AUROC 0.959
+  resnet18 epoch 1/6 loss 0.4272 (7s)
+  resnet18 epoch 2/6 loss 0.2515 (8s)
+  resnet18 epoch 3/6 loss 0.2021 (8s)
+  resnet18 epoch 4/6 loss 0.1525 (8s)
+  resnet18 epoch 5/6 loss 0.1107 (7s)
+  resnet18 epoch 6/6 loss 0.1117 (8s)
+hiba resnet18 seed 2 fold 2: AUROC 0.938
+  resnet18 epoch 1/6 loss 0.3995 (8s)
+  resnet18 epoch 2/6 loss 0.2482 (8s)
+  resnet18 epoch 3/6 loss 0.1760 (7s)
+  resnet18 epoch 4/6 loss 0.1589 (8s)
+  resnet18 epoch 5/6 loss 0.1197 (8s)
+  resnet18 epoch 6/6 loss 0.1178 (8s)
+hiba resnet18 seed 2 fold 3: AUROC 0.950
+  resnet18 epoch 1/6 loss 0.3893 (8s)
+  resnet18 epoch 2/6 loss 0.2652 (8s)
+  resnet18 epoch 3/6 loss 0.1872 (8s)
+  resnet18 epoch 4/6 loss 0.1485 (8s)
+  resnet18 epoch 5/6 loss 0.1299 (7s)
+  resnet18 epoch 6/6 loss 0.1148 (8s)
+hiba resnet18 seed 2 fold 4: AUROC 0.953
+hiba resnet18 2 {'auroc': 0.941, 'added_value': 0.00121, 'added_value_ci95': [-0.01581, 0.01722], 'frozen_minus_finetuned_ci95': [0.00668, 0.02935]}
+hiba convnext_tiny 0 {'auroc': 0.9508, 'added_value': -0.00724, 'added_value_ci95': [-0.02285, 0.0064], 'frozen_minus_finetuned_ci95': [0.00261, 0.01774]}
+  convnext_tiny epoch 1/6 loss 0.3877 (29s)
+  convnext_tiny epoch 2/6 loss 0.2440 (30s)
+  convnext_tiny epoch 3/6 loss 0.1927 (30s)
+  convnext_tiny epoch 4/6 loss 0.1427 (30s)
+  convnext_tiny epoch 5/6 loss 0.1128 (30s)
+  convnext_tiny epoch 6/6 loss 0.0996 (30s)
+hiba convnext_tiny seed 1 fold 0: AUROC 0.946
+  convnext_tiny epoch 1/6 loss 0.3995 (30s)
+  convnext_tiny epoch 2/6 loss 0.2872 (30s)
+  convnext_tiny epoch 3/6 loss 0.2051 (31s)
+  convnext_tiny epoch 4/6 loss 0.1414 (31s)
+  convnext_tiny epoch 5/6 loss 0.1125 (30s)
+  convnext_tiny epoch 6/6 loss 0.0964 (30s)
+hiba convnext_tiny seed 1 fold 1: AUROC 0.961
+  convnext_tiny epoch 1/6 loss 0.4178 (30s)
+  convnext_tiny epoch 2/6 loss 0.2831 (30s)
+  convnext_tiny epoch 3/6 loss 0.1976 (30s)
+  convnext_tiny epoch 4/6 loss 0.1328 (30s)
+  convnext_tiny epoch 5/6 loss 0.1037 (30s)
+  convnext_tiny epoch 6/6 loss 0.0793 (30s)
+hiba convnext_tiny seed 1 fold 2: AUROC 0.950
+  convnext_tiny epoch 1/6 loss 0.4248 (30s)
+  convnext_tiny epoch 2/6 loss 0.2560 (30s)
+  convnext_tiny epoch 3/6 loss 0.1944 (30s)
+  convnext_tiny epoch 4/6 loss 0.1372 (30s)
+  convnext_tiny epoch 5/6 loss 0.1123 (30s)
+  convnext_tiny epoch 6/6 loss 0.0883 (30s)
+hiba convnext_tiny seed 1 fold 3: AUROC 0.966
+  convnext_tiny epoch 1/6 loss 0.4166 (30s)
+  convnext_tiny epoch 2/6 loss 0.2860 (30s)
+  convnext_tiny epoch 3/6 loss 0.1962 (30s)
+  convnext_tiny epoch 4/6 loss 0.1500 (30s)
+  convnext_tiny epoch 5/6 loss 0.1297 (30s)
+  convnext_tiny epoch 6/6 loss 0.1026 (30s)
+hiba convnext_tiny seed 1 fold 4: AUROC 0.953
+hiba convnext_tiny 1 {'auroc': 0.9543, 'added_value': -0.00871, 'added_value_ci95': [-0.02321, 0.00361], 'frozen_minus_finetuned_ci95': [0.00377, 0.01947]}
+  convnext_tiny epoch 1/6 loss 0.3802 (30s)
+  convnext_tiny epoch 2/6 loss 0.2435 (30s)
+  convnext_tiny epoch 3/6 loss 0.1698 (30s)
+  convnext_tiny epoch 4/6 loss 0.1315 (30s)
+  convnext_tiny epoch 5/6 loss 0.0946 (30s)
+  convnext_tiny epoch 6/6 loss 0.0816 (30s)
+hiba convnext_tiny seed 2 fold 0: AUROC 0.943
+  convnext_tiny epoch 1/6 loss 0.4088 (30s)
+  convnext_tiny epoch 2/6 loss 0.2648 (30s)
+  convnext_tiny epoch 3/6 loss 0.1921 (30s)
+  convnext_tiny epoch 4/6 loss 0.1269 (30s)
+  convnext_tiny epoch 5/6 loss 0.1004 (30s)
+  convnext_tiny epoch 6/6 loss 0.0840 (30s)
+hiba convnext_tiny seed 2 fold 1: AUROC 0.971
+  convnext_tiny epoch 1/6 loss 0.4438 (30s)
+  convnext_tiny epoch 2/6 loss 0.2520 (30s)
+  convnext_tiny epoch 3/6 loss 0.1793 (30s)
+  convnext_tiny epoch 4/6 loss 0.1323 (30s)
+  convnext_tiny epoch 5/6 loss 0.0915 (30s)
+  convnext_tiny epoch 6/6 loss 0.0701 (30s)
+hiba convnext_tiny seed 2 fold 2: AUROC 0.953
+  convnext_tiny epoch 1/6 loss 0.4151 (30s)
+  convnext_tiny epoch 2/6 loss 0.2646 (30s)
+  convnext_tiny epoch 3/6 loss 0.1939 (30s)
+  convnext_tiny epoch 4/6 loss 0.1348 (30s)
+  convnext_tiny epoch 5/6 loss 0.1119 (30s)
+  convnext_tiny epoch 6/6 loss 0.0936 (30s)
+hiba convnext_tiny seed 2 fold 3: AUROC 0.964
+  convnext_tiny epoch 1/6 loss 0.4238 (30s)
+  convnext_tiny epoch 2/6 loss 0.2788 (30s)
+  convnext_tiny epoch 3/6 loss 0.1946 (30s)
+  convnext_tiny epoch 4/6 loss 0.1362 (30s)
+  convnext_tiny epoch 5/6 loss 0.1147 (30s)
+  convnext_tiny epoch 6/6 loss 0.0969 (30s)
+hiba convnext_tiny seed 2 fold 4: AUROC 0.954
+hiba convnext_tiny 2 {'auroc': 0.9558, 'added_value': -0.00897, 'added_value_ci95': [-0.02367, 0.00404], 'frozen_minus_finetuned_ci95': [0.00342, 0.02044]}
+{
+  "id": "E54_hiba",
+  "hypothesis": "REGISTRY.md E54: seed spread of fine-tuned added value (E14b schedule)",
+  "data": {
+    "dataset": "hiba",
+    "n": 1224
+  },
+  "config": {
+    "backbones": [
+      "resnet18",
+      "convnext_tiny"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "seed_rule": "fold k, seed s: 1000*s + k (seed 0 = E14b)",
+    "estimator": "E14b original second stage"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-29T19:53:05+00:00",
+  "results": {
+    "resnet18": {
+      "frozen_added_value": 0.01886,
+      "per_seed": {
+        "0": {
+          "auroc": 0.9402,
+          "added_value": 0.00137,
+          "added_value_ci95": [
+            -0.0148,
+            0.01599
+          ],
+          "frozen_minus_finetuned_ci95": [
+            0.00627,
+            0.02947
+          ]
+        },
+        "1": {
+          "auroc": 0.9461,
+          "added_value": -0.00205,
+          "added_value_ci95": [
+            -0.01819,
+            0.01233
+          ],
+          "frozen_minus_finetuned_ci95": [
+            0.00861,
+            0.03317
+          ]
+        },
+        "2": {
+          "auroc": 0.941,
+          "added_value": 0.00121,
+          "added_value_ci95": [
+            -0.01581,
+            0.01722
+          ],
+          "frozen_minus_finetuned_ci95": [
+            0.00668,
+            0.02935
+          ]
+        }
+      },
+      "added_value_mean": 0.00018,
+      "added_value_range": [
+        -0.00205,
+        0.00137
+      ]
+    },
+    "convnext_tiny": {
+      "frozen_added_value": 0.0026,
+      "per_seed": {
+        "0": {
+          "auroc": 0.9508,
+          "added_value": -0.00724,
+          "added_value_ci95": [
+            -0.02285,
+            0.0064
+          ],
+          "frozen_minus_finetuned_ci95": [
+            0.00261,
+            0.01774
+          ]
+        },
+        "1": {
+          "auroc": 0.9543,
+          "added_value": -0.00871,
+          "added_value_ci95": [
+            -0.02321,
+            0.00361
+          ],
+          "frozen_minus_finetuned_ci95": [
+            0.00377,
+            0.01947
+          ]
+        },
+        "2": {
+          "auroc": 0.9558,
+          "added_value": -0.00897,
+          "added_value_ci95": [
+            -0.02367,
+            0.00404
+          ],
+          "frozen_minus_finetuned_ci95": [
+            0.00342,
+            0.02044
+          ]
+        }
+      },
+      "added_value_mean": -0.00831,
+      "added_value_range": [
+        -0.00897,
+        -0.00724
+      ]
+    }
+  },
+  "interpretation": "See iteration6 reports.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 2302.45,
+  "peak_rss_mb": 1892.1
+}

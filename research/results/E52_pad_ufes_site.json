@@ -1,0 +1,115 @@
+{
+  "id": "E52_pad_ufes_site",
+  "hypothesis": "iteration6/REGISTRY.md E52: residual nonlinear decodability after linear erasure",
+  "data": {
+    "dataset": "pad_ufes"
+  },
+  "config": {
+    "concept": "site",
+    "mlp": {
+      "hidden_layer_sizes": [
+        256
+      ],
+      "activation": "relu",
+      "solver": "adam",
+      "learning_rate_init": 0.001,
+      "alpha": 0.001,
+      "batch_size": 256,
+      "max_iter": 200,
+      "early_stopping": true,
+      "validation_fraction": 0.1,
+      "random_state": 0
+    },
+    "rung": "convnext_tiny",
+    "fold_seed": 0,
+    "code_sha256_12": {
+      "e52_nonlinear_probe.py": "26fbf46ea7f0",
+      "e50_dose_restoration.py": "ca82ac760e14",
+      "e45_erasure.py": "58fa915d73e4",
+      "e40_crossfit_baseline.py": "d3a0db47d6db",
+      "e10_ham_attenuation.py": "ed41358e6a49",
+      "e13_replication.py": "02c613176b9b",
+      "x_common.py": "044c73d5de5a"
+    }
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-29T17:46:48+00:00",
+  "results": {
+    "ranks_matched": [
+      362,
+      362,
+      362,
+      512,
+      362
+    ],
+    "arms": {
+      "t0": {
+        "mlp_logloss_gain": 0.208,
+        "mlp_logloss_gain_ci95": [
+          0.08557,
+          0.32177
+        ],
+        "mlp_macro_auroc": 0.7857,
+        "linear_probe_from_E50": {
+          "logloss_gain": 0.5189,
+          "macro_auroc": 0.8147,
+          "n_excluded_unseen_class": 0
+        }
+      },
+      "T-D1-1.0": {
+        "mlp_logloss_gain": -0.8545,
+        "mlp_logloss_gain_ci95": [
+          -0.98981,
+          -0.72061
+        ],
+        "mlp_macro_auroc": 0.5049,
+        "linear_probe_from_E50": {
+          "logloss_gain": 0.0001,
+          "macro_auroc": 0.3752,
+          "n_excluded_unseen_class": 0
+        }
+      },
+      "T-D2-0.5": {
+        "mlp_logloss_gain": -0.0265,
+        "mlp_logloss_gain_ci95": [
+          -0.11679,
+          0.05962
+        ],
+        "mlp_macro_auroc": 0.6694,
+        "linear_probe_from_E50": null
+      },
+      "R-D1-1.0-0": {
+        "mlp_logloss_gain": -3.5245,
+        "mlp_logloss_gain_ci95": [
+          -3.84654,
+          -3.18037
+        ],
+        "mlp_macro_auroc": 0.5019,
+        "linear_probe_from_E50": {
+          "logloss_gain": -2.6766,
+          "macro_auroc": 0.5292,
+          "n_excluded_unseen_class": 0
+        }
+      },
+      "sham-0": {
+        "mlp_logloss_gain": 0.0005,
+        "mlp_logloss_gain_ci95": [
+          -0.13365,
+          0.13185
+        ],
+        "mlp_macro_auroc": 0.7669,
+        "linear_probe_from_E50": {
+          "logloss_gain": 0.3769,
+          "macro_auroc": 0.789,
+          "n_excluded_unseen_class": 0
+        }
+      }
+    }
+  },
+  "interpretation": "See iteration6 reports.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 4.02,
+  "peak_rss_mb": 755.9
+}

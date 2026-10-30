@@ -1,0 +1,143 @@
+0 hsv {'image_auroc': 0.7719, 'image_logloss': 0.2451, 'both_logloss': 0.2338, 'added_value': 0.01136, 'added_value_ci95': [0.00531, 0.01747], 'relative_added_value': 0.0464}
+   extra {'recoverability': {'age_r2': 0.056, 'sex_auroc': 0.569, 'site_auroc_top5_mean': 0.665, 'exploratory_source_auroc_mean': 0.93}, 'full_features_plus_meta_logloss': 0.2321, 'full_features_plus_meta_auroc': 0.8095, '7class_image_logloss': 0.8645, '7class_added_value': 0.11073}
+0 resnet18 {'image_auroc': 0.8534, 'image_logloss': 0.2121, 'both_logloss': 0.2103, 'added_value': 0.00175, 'added_value_ci95': [-0.00229, 0.00566], 'relative_added_value': 0.0082}
+   extra {'recoverability': {'age_r2': 0.245, 'sex_auroc': 0.74, 'site_auroc_top5_mean': 0.743, 'exploratory_source_auroc_mean': 0.981}, 'full_features_plus_meta_logloss': 0.2078, 'full_features_plus_meta_auroc': 0.8615, '7class_image_logloss': 0.6545, '7class_added_value': 0.03938}
+0 resnet50 {'image_auroc': 0.8575, 'image_logloss': 0.2134, 'both_logloss': 0.2125, 'added_value': 0.00093, 'added_value_ci95': [-0.00348, 0.00472], 'relative_added_value': 0.0044}
+   extra {'recoverability': {'age_r2': 0.299, 'sex_auroc': 0.711, 'site_auroc_top5_mean': 0.722, 'exploratory_source_auroc_mean': 0.988}, 'full_features_plus_meta_logloss': 0.2122, 'full_features_plus_meta_auroc': 0.8595, '7class_image_logloss': 0.6481, '7class_added_value': 0.03149}
+{
+  "id": "E10_ham_attenuation_DEV",
+  "hypothesis": "See research/iteration2/PREREGISTRATION_E10.md",
+  "data": {
+    "source": "HAM10000 (Dataverse, CC BY-NC 4.0)",
+    "n_images": 5231,
+    "n_lesions": 4561
+  },
+  "config": {
+    "rungs": [
+      "hsv",
+      "resnet18",
+      "resnet50"
+    ],
+    "Cs": [
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1.0
+    ],
+    "seeds": [
+      0
+    ],
+    "outer": "5-fold StratifiedGroupKFold(lesion)",
+    "inner": "3-fold GroupKFold(lesion)",
+    "bootstrap": "2000 lesion resamples"
+  },
+  "seed": [
+    0
+  ],
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-26T10:46:03+00:00",
+  "results": {
+    "primary": {
+      "seed0": {
+        "hsv": {
+          "image_auroc": 0.7719,
+          "image_logloss": 0.2451,
+          "both_logloss": 0.2338,
+          "added_value": 0.01136,
+          "added_value_ci95": [
+            0.00531,
+            0.01747
+          ],
+          "relative_added_value": 0.0464,
+          "chosen_C": [
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01
+          ]
+        },
+        "resnet18": {
+          "image_auroc": 0.8534,
+          "image_logloss": 0.2121,
+          "both_logloss": 0.2103,
+          "added_value": 0.00175,
+          "added_value_ci95": [
+            -0.00229,
+            0.00566
+          ],
+          "relative_added_value": 0.0082,
+          "chosen_C": [
+            0.01,
+            0.001,
+            0.01,
+            0.01,
+            0.01
+          ]
+        },
+        "resnet50": {
+          "image_auroc": 0.8575,
+          "image_logloss": 0.2134,
+          "both_logloss": 0.2125,
+          "added_value": 0.00093,
+          "added_value_ci95": [
+            -0.00348,
+            0.00472
+          ],
+          "relative_added_value": 0.0044,
+          "chosen_C": [
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001
+          ]
+        }
+      }
+    },
+    "seed0_extra": {
+      "hsv": {
+        "recoverability": {
+          "age_r2": 0.056,
+          "sex_auroc": 0.569,
+          "site_auroc_top5_mean": 0.665,
+          "exploratory_source_auroc_mean": 0.93
+        },
+        "full_features_plus_meta_logloss": 0.2321,
+        "full_features_plus_meta_auroc": 0.8095,
+        "7class_image_logloss": 0.8645,
+        "7class_added_value": 0.11073
+      },
+      "resnet18": {
+        "recoverability": {
+          "age_r2": 0.245,
+          "sex_auroc": 0.74,
+          "site_auroc_top5_mean": 0.743,
+          "exploratory_source_auroc_mean": 0.981
+        },
+        "full_features_plus_meta_logloss": 0.2078,
+        "full_features_plus_meta_auroc": 0.8615,
+        "7class_image_logloss": 0.6545,
+        "7class_added_value": 0.03938
+      },
+      "resnet50": {
+        "recoverability": {
+          "age_r2": 0.299,
+          "sex_auroc": 0.711,
+          "site_auroc_top5_mean": 0.722,
+          "exploratory_source_auroc_mean": 0.988
+        },
+        "full_features_plus_meta_logloss": 0.2122,
+        "full_features_plus_meta_auroc": 0.8595,
+        "7class_image_logloss": 0.6481,
+        "7class_added_value": 0.03149
+      }
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 34.05,
+  "peak_rss_mb": 1029.6
+}

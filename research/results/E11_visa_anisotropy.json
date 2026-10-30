@@ -1,0 +1,505 @@
+{
+  "id": "E11_visa_anisotropy",
+  "hypothesis": "Removing or whitening dominant variance directions of normal patch features improves kNN anomaly detection.",
+  "data": {
+    "source": "VisA (Amazon, CC BY 4.0), official 1cls split",
+    "categories": [
+      "candle",
+      "capsules",
+      "cashew",
+      "chewinggum",
+      "fryum",
+      "macaroni1",
+      "macaroni2",
+      "pcb1",
+      "pcb2",
+      "pcb3",
+      "pcb4",
+      "pipe_fryum"
+    ]
+  },
+  "config": {
+    "backbone": "wide_resnet50_2 layer2+3, 1536-d",
+    "bank": "random 10%",
+    "k": 1,
+    "variants": [
+      "raw",
+      "centred",
+      "abtt_1",
+      "abtt_4",
+      "abtt_16",
+      "whitened"
+    ],
+    "device": "mps"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T05:22:40+00:00",
+  "results": {
+    "candle": {
+      "n_train": 900,
+      "n_test": 200,
+      "n_anomalous": 100,
+      "bank_patches": 70560,
+      "feature_s": 16.0,
+      "raw": {
+        "image_auroc": 0.9787,
+        "pixel_auroc": 0.9893,
+        "score_s": 20.7
+      },
+      "centred": {
+        "image_auroc": 0.9787,
+        "pixel_auroc": 0.9893,
+        "score_s": 20.1
+      },
+      "abtt_1": {
+        "image_auroc": 0.9785,
+        "pixel_auroc": 0.9893,
+        "score_s": 24.0
+      },
+      "abtt_4": {
+        "image_auroc": 0.978,
+        "pixel_auroc": 0.989,
+        "score_s": 23.7
+      },
+      "abtt_16": {
+        "image_auroc": 0.9788,
+        "pixel_auroc": 0.989,
+        "score_s": 22.9
+      },
+      "whitened": {
+        "image_auroc": 0.972,
+        "pixel_auroc": 0.9887,
+        "score_s": 23.9
+      }
+    },
+    "capsules": {
+      "n_train": 542,
+      "n_test": 160,
+      "n_anomalous": 100,
+      "bank_patches": 42492,
+      "feature_s": 12.6,
+      "raw": {
+        "image_auroc": 0.697,
+        "pixel_auroc": 0.9353,
+        "score_s": 11.1
+      },
+      "centred": {
+        "image_auroc": 0.697,
+        "pixel_auroc": 0.9353,
+        "score_s": 10.6
+      },
+      "abtt_1": {
+        "image_auroc": 0.7002,
+        "pixel_auroc": 0.9338,
+        "score_s": 13.9
+      },
+      "abtt_4": {
+        "image_auroc": 0.6845,
+        "pixel_auroc": 0.9325,
+        "score_s": 13.8
+      },
+      "abtt_16": {
+        "image_auroc": 0.6803,
+        "pixel_auroc": 0.9399,
+        "score_s": 13.6
+      },
+      "whitened": {
+        "image_auroc": 0.6825,
+        "pixel_auroc": 0.9725,
+        "score_s": 18.0
+      }
+    },
+    "cashew": {
+      "n_train": 450,
+      "n_test": 150,
+      "n_anomalous": 100,
+      "bank_patches": 35280,
+      "feature_s": 13.3,
+      "raw": {
+        "image_auroc": 0.9708,
+        "pixel_auroc": 0.9906,
+        "score_s": 8.9
+      },
+      "centred": {
+        "image_auroc": 0.9708,
+        "pixel_auroc": 0.9906,
+        "score_s": 10.1
+      },
+      "abtt_1": {
+        "image_auroc": 0.971,
+        "pixel_auroc": 0.9905,
+        "score_s": 11.2
+      },
+      "abtt_4": {
+        "image_auroc": 0.9716,
+        "pixel_auroc": 0.9903,
+        "score_s": 9.1
+      },
+      "abtt_16": {
+        "image_auroc": 0.9764,
+        "pixel_auroc": 0.99,
+        "score_s": 9.4
+      },
+      "whitened": {
+        "image_auroc": 0.9778,
+        "pixel_auroc": 0.9918,
+        "score_s": 12.7
+      }
+    },
+    "chewinggum": {
+      "n_train": 453,
+      "n_test": 150,
+      "n_anomalous": 100,
+      "bank_patches": 35515,
+      "feature_s": 10.2,
+      "raw": {
+        "image_auroc": 0.9864,
+        "pixel_auroc": 0.9834,
+        "score_s": 9.9
+      },
+      "centred": {
+        "image_auroc": 0.9864,
+        "pixel_auroc": 0.9834,
+        "score_s": 11.3
+      },
+      "abtt_1": {
+        "image_auroc": 0.9862,
+        "pixel_auroc": 0.9832,
+        "score_s": 13.4
+      },
+      "abtt_4": {
+        "image_auroc": 0.9864,
+        "pixel_auroc": 0.9844,
+        "score_s": 11.5
+      },
+      "abtt_16": {
+        "image_auroc": 0.9886,
+        "pixel_auroc": 0.9858,
+        "score_s": 12.8
+      },
+      "whitened": {
+        "image_auroc": 0.9932,
+        "pixel_auroc": 0.9872,
+        "score_s": 12.8
+      }
+    },
+    "fryum": {
+      "n_train": 450,
+      "n_test": 150,
+      "n_anomalous": 100,
+      "bank_patches": 35280,
+      "feature_s": 10.5,
+      "raw": {
+        "image_auroc": 0.9028,
+        "pixel_auroc": 0.9535,
+        "score_s": 9.4
+      },
+      "centred": {
+        "image_auroc": 0.9028,
+        "pixel_auroc": 0.9535,
+        "score_s": 9.8
+      },
+      "abtt_1": {
+        "image_auroc": 0.9034,
+        "pixel_auroc": 0.9535,
+        "score_s": 13.3
+      },
+      "abtt_4": {
+        "image_auroc": 0.902,
+        "pixel_auroc": 0.9534,
+        "score_s": 10.0
+      },
+      "abtt_16": {
+        "image_auroc": 0.9096,
+        "pixel_auroc": 0.9543,
+        "score_s": 11.2
+      },
+      "whitened": {
+        "image_auroc": 0.945,
+        "pixel_auroc": 0.9607,
+        "score_s": 11.4
+      }
+    },
+    "macaroni1": {
+      "n_train": 900,
+      "n_test": 200,
+      "n_anomalous": 100,
+      "bank_patches": 70560,
+      "feature_s": 20.2,
+      "raw": {
+        "image_auroc": 0.887,
+        "pixel_auroc": 0.9792,
+        "score_s": 24.9
+      },
+      "centred": {
+        "image_auroc": 0.887,
+        "pixel_auroc": 0.9792,
+        "score_s": 26.0
+      },
+      "abtt_1": {
+        "image_auroc": 0.889,
+        "pixel_auroc": 0.9795,
+        "score_s": 27.1
+      },
+      "abtt_4": {
+        "image_auroc": 0.8931,
+        "pixel_auroc": 0.9795,
+        "score_s": 29.0
+      },
+      "abtt_16": {
+        "image_auroc": 0.9099,
+        "pixel_auroc": 0.9816,
+        "score_s": 27.3
+      },
+      "whitened": {
+        "image_auroc": 0.9369,
+        "pixel_auroc": 0.9891,
+        "score_s": 29.0
+      }
+    },
+    "macaroni2": {
+      "n_train": 900,
+      "n_test": 200,
+      "n_anomalous": 100,
+      "bank_patches": 70560,
+      "feature_s": 21.7,
+      "raw": {
+        "image_auroc": 0.6237,
+        "pixel_auroc": 0.9496,
+        "score_s": 24.9
+      },
+      "centred": {
+        "image_auroc": 0.6237,
+        "pixel_auroc": 0.9496,
+        "score_s": 24.6
+      },
+      "abtt_1": {
+        "image_auroc": 0.6326,
+        "pixel_auroc": 0.95,
+        "score_s": 29.2
+      },
+      "abtt_4": {
+        "image_auroc": 0.6412,
+        "pixel_auroc": 0.953,
+        "score_s": 32.4
+      },
+      "abtt_16": {
+        "image_auroc": 0.6497,
+        "pixel_auroc": 0.9567,
+        "score_s": 29.6
+      },
+      "whitened": {
+        "image_auroc": 0.7716,
+        "pixel_auroc": 0.9785,
+        "score_s": 29.6
+      }
+    },
+    "pcb1": {
+      "n_train": 904,
+      "n_test": 200,
+      "n_anomalous": 100,
+      "bank_patches": 70873,
+      "feature_s": 24.3,
+      "raw": {
+        "image_auroc": 0.9351,
+        "pixel_auroc": 0.9957,
+        "score_s": 25.4
+      },
+      "centred": {
+        "image_auroc": 0.9351,
+        "pixel_auroc": 0.9957,
+        "score_s": 24.8
+      },
+      "abtt_1": {
+        "image_auroc": 0.9352,
+        "pixel_auroc": 0.9957,
+        "score_s": 30.4
+      },
+      "abtt_4": {
+        "image_auroc": 0.9362,
+        "pixel_auroc": 0.9958,
+        "score_s": 28.4
+      },
+      "abtt_16": {
+        "image_auroc": 0.9393,
+        "pixel_auroc": 0.9958,
+        "score_s": 30.8
+      },
+      "whitened": {
+        "image_auroc": 0.9683,
+        "pixel_auroc": 0.9962,
+        "score_s": 28.7
+      }
+    },
+    "pcb2": {
+      "n_train": 901,
+      "n_test": 200,
+      "n_anomalous": 100,
+      "bank_patches": 70638,
+      "feature_s": 21.2,
+      "raw": {
+        "image_auroc": 0.9293,
+        "pixel_auroc": 0.9812,
+        "score_s": 23.8
+      },
+      "centred": {
+        "image_auroc": 0.9293,
+        "pixel_auroc": 0.9812,
+        "score_s": 22.9
+      },
+      "abtt_1": {
+        "image_auroc": 0.9302,
+        "pixel_auroc": 0.981,
+        "score_s": 25.0
+      },
+      "abtt_4": {
+        "image_auroc": 0.9306,
+        "pixel_auroc": 0.9812,
+        "score_s": 28.3
+      },
+      "abtt_16": {
+        "image_auroc": 0.9314,
+        "pixel_auroc": 0.9814,
+        "score_s": 29.9
+      },
+      "whitened": {
+        "image_auroc": 0.9585,
+        "pixel_auroc": 0.9817,
+        "score_s": 26.7
+      }
+    },
+    "pcb3": {
+      "n_train": 905,
+      "n_test": 201,
+      "n_anomalous": 100,
+      "bank_patches": 70952,
+      "feature_s": 25.9,
+      "raw": {
+        "image_auroc": 0.9064,
+        "pixel_auroc": 0.9824,
+        "score_s": 28.2
+      },
+      "centred": {
+        "image_auroc": 0.9064,
+        "pixel_auroc": 0.9824,
+        "score_s": 28.7
+      },
+      "abtt_1": {
+        "image_auroc": 0.9073,
+        "pixel_auroc": 0.9822,
+        "score_s": 29.6
+      },
+      "abtt_4": {
+        "image_auroc": 0.91,
+        "pixel_auroc": 0.9827,
+        "score_s": 26.8
+      },
+      "abtt_16": {
+        "image_auroc": 0.9056,
+        "pixel_auroc": 0.9829,
+        "score_s": 26.2
+      },
+      "whitened": {
+        "image_auroc": 0.9052,
+        "pixel_auroc": 0.982,
+        "score_s": 32.4
+      }
+    },
+    "pcb4": {
+      "n_train": 904,
+      "n_test": 201,
+      "n_anomalous": 100,
+      "bank_patches": 70873,
+      "feature_s": 28.0,
+      "raw": {
+        "image_auroc": 0.9951,
+        "pixel_auroc": 0.9779,
+        "score_s": 29.2
+      },
+      "centred": {
+        "image_auroc": 0.9951,
+        "pixel_auroc": 0.9779,
+        "score_s": 28.2
+      },
+      "abtt_1": {
+        "image_auroc": 0.9954,
+        "pixel_auroc": 0.9777,
+        "score_s": 27.5
+      },
+      "abtt_4": {
+        "image_auroc": 0.9955,
+        "pixel_auroc": 0.9777,
+        "score_s": 31.3
+      },
+      "abtt_16": {
+        "image_auroc": 0.9951,
+        "pixel_auroc": 0.9773,
+        "score_s": 29.5
+      },
+      "whitened": {
+        "image_auroc": 0.9944,
+        "pixel_auroc": 0.979,
+        "score_s": 28.9
+      }
+    },
+    "pipe_fryum": {
+      "n_train": 450,
+      "n_test": 150,
+      "n_anomalous": 100,
+      "bank_patches": 35280,
+      "feature_s": 12.1,
+      "raw": {
+        "image_auroc": 0.9856,
+        "pixel_auroc": 0.9931,
+        "score_s": 9.2
+      },
+      "centred": {
+        "image_auroc": 0.9856,
+        "pixel_auroc": 0.9931,
+        "score_s": 9.1
+      },
+      "abtt_1": {
+        "image_auroc": 0.986,
+        "pixel_auroc": 0.993,
+        "score_s": 12.3
+      },
+      "abtt_4": {
+        "image_auroc": 0.987,
+        "pixel_auroc": 0.9931,
+        "score_s": 11.5
+      },
+      "abtt_16": {
+        "image_auroc": 0.9842,
+        "pixel_auroc": 0.9934,
+        "score_s": 11.1
+      },
+      "whitened": {
+        "image_auroc": 0.9918,
+        "pixel_auroc": 0.9929,
+        "score_s": 10.4
+      }
+    },
+    "mean_image_auroc": {
+      "raw": 0.8998,
+      "centred": 0.8998,
+      "abtt_1": 0.9013,
+      "abtt_4": 0.9013,
+      "abtt_16": 0.9041,
+      "whitened": 0.9248
+    },
+    "mean_pixel_auroc": {
+      "raw": 0.9759,
+      "centred": 0.9759,
+      "abtt_1": 0.9758,
+      "abtt_4": 0.976,
+      "abtt_16": 0.9773,
+      "whitened": 0.9834
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 1789.54,
+  "peak_rss_mb": 11700.5
+}

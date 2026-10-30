@@ -1,0 +1,69 @@
+{
+  "id": "E50_age_label_diag",
+  "hypothesis": "Descriptive (post hoc, amendment 3): age-label dependence per E50 set",
+  "data": {
+    "sets": [
+      "isic2020",
+      "hiba",
+      "msk2020",
+      "ham10000",
+      "isic2019_nonham",
+      "milk10k_derm",
+      "pad_ufes",
+      "milk10k_clin"
+    ]
+  },
+  "config": {
+    "score": "E50 t0 arm, ConvNeXt-T, fold assignment 0"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-30T04:09:24+00:00",
+  "results": {
+    "isic2020": {
+      "n_age_observed": 33058,
+      "age_auroc_for_label": 0.672,
+      "corr_score_age": 0.189
+    },
+    "hiba": {
+      "n_age_observed": 1221,
+      "age_auroc_for_label": 0.84,
+      "corr_score_age": 0.662
+    },
+    "msk2020": {
+      "n_age_observed": 1174,
+      "age_auroc_for_label": 0.719,
+      "corr_score_age": 0.386
+    },
+    "ham10000": {
+      "n_age_observed": 9958,
+      "age_auroc_for_label": 0.671,
+      "corr_score_age": 0.212
+    },
+    "isic2019_nonham": {
+      "n_age_observed": 14932,
+      "age_auroc_for_label": 0.599,
+      "corr_score_age": 0.161
+    },
+    "milk10k_derm": {
+      "n_age_observed": 5117,
+      "age_auroc_for_label": 0.715,
+      "corr_score_age": 0.461
+    },
+    "pad_ufes": {
+      "n_age_observed": 1089,
+      "age_auroc_for_label": 0.516,
+      "corr_score_age": 0.07
+    },
+    "milk10k_clin": {
+      "n_age_observed": 5117,
+      "age_auroc_for_label": 0.715,
+      "corr_score_age": 0.482
+    }
+  },
+  "interpretation": "Descriptive only; see iteration6/FINAL_REPORT.md section 4.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 0.42,
+  "peak_rss_mb": 532.2
+}

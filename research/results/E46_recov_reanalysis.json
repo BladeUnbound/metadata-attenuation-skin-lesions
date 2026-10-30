@@ -1,0 +1,111 @@
+{
+  "id": "E46_recov_reanalysis",
+  "hypothesis": "REGISTRY.md E46 (exploratory): is E30's negative association robust to the unregistered filter, the ratio outcome and dataset clustering?",
+  "data": {
+    "source": "results/E30_table.csv"
+  },
+  "config": {},
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-29T00:08:28+00:00",
+  "results": {
+    "A_registered_as_run": {
+      "n_rows": 95,
+      "n_datasets": 8,
+      "spearman": -0.75,
+      "partial": -0.595,
+      "jackknife_partial": {
+        "ham10000": -0.591,
+        "isic2020": -0.518,
+        "isic2019_nonham": -0.591,
+        "pad_ufes": -0.629,
+        "hiba": -0.599,
+        "msk2020": -0.597,
+        "milk10k_derm": -0.619,
+        "milk10k_clin": -0.591
+      },
+      "jackknife_sign_stable": true,
+      "mixed_coef_recov": -0.492,
+      "mixed_ci95": [
+        -0.674,
+        -0.31
+      ],
+      "mixed_p": 1.1140782172985475e-07
+    },
+    "B_all_rows_absolute": {
+      "n_rows": 160,
+      "n_datasets": 8,
+      "spearman": -0.423,
+      "partial": -0.283,
+      "jackknife_partial": {
+        "ham10000": -0.262,
+        "isic2020": -0.303,
+        "isic2019_nonham": -0.347,
+        "pad_ufes": -0.418,
+        "hiba": -0.282,
+        "msk2020": -0.205,
+        "milk10k_derm": -0.27,
+        "milk10k_clin": -0.221
+      },
+      "jackknife_sign_stable": true,
+      "mixed_coef_recov": -0.097,
+      "mixed_ci95": [
+        -0.248,
+        0.054
+      ],
+      "mixed_p": 0.2089498058238035
+    },
+    "C_all_rows_shrunk_ratio": {
+      "n_rows": 160,
+      "n_datasets": 8,
+      "spearman": -0.403,
+      "partial": -0.157,
+      "jackknife_partial": {
+        "ham10000": -0.125,
+        "isic2020": -0.13,
+        "isic2019_nonham": -0.275,
+        "pad_ufes": -0.282,
+        "hiba": -0.198,
+        "msk2020": -0.068,
+        "milk10k_derm": -0.152,
+        "milk10k_clin": -0.106
+      },
+      "jackknife_sign_stable": true,
+      "mixed_coef_recov": -0.026,
+      "mixed_ci95": [
+        -0.206,
+        0.154
+      ],
+      "mixed_p": 0.7769406929734699
+    },
+    "D_filtered_absolute": {
+      "n_rows": 95,
+      "n_datasets": 8,
+      "spearman": -0.777,
+      "partial": -0.508,
+      "jackknife_partial": {
+        "ham10000": -0.49,
+        "isic2020": -0.441,
+        "isic2019_nonham": -0.505,
+        "pad_ufes": -0.681,
+        "hiba": -0.508,
+        "msk2020": -0.524,
+        "milk10k_derm": -0.527,
+        "milk10k_clin": -0.491
+      },
+      "jackknife_sign_stable": true,
+      "mixed_coef_recov": -0.38,
+      "mixed_ci95": [
+        -0.565,
+        -0.194
+      ],
+      "mixed_p": 5.85976629373132e-05
+    },
+    "c_median_I_var": 0.0064423075513432414
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 0.04,
+  "peak_rss_mb": 482.4
+}

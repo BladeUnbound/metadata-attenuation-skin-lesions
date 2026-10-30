@@ -1,0 +1,4 @@
+isic2019_nonham resnet34: 15316 images, 64s
+isic2019_nonham resnet101: 15316 images, 171s
+isic2019_nonham convnext_small: 15316 images, 207s
+isic2019_nonham convnext_base: 15316 images, 321s

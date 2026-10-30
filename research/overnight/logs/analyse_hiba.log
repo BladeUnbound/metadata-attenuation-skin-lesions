@@ -1,0 +1,197 @@
+0 hsv {'image_auroc': 0.8422, 'av_all': 0.07223, 'av_all_ci95': [0.0353, 0.11534], 'image_logloss': 0.4957}
+0 resnet18 {'image_auroc': 0.9083, 'av_all': 0.01886, 'av_all_ci95': [-0.00206, 0.03778], 'image_logloss': 0.3839}
+0 resnet50 {'image_auroc': 0.9049, 'av_all': 0.02682, 'av_all_ci95': [0.00156, 0.04815], 'image_logloss': 0.4073}
+0 convnext_tiny {'image_auroc': 0.9285, 'av_all': 0.0026, 'av_all_ci95': [-0.01351, 0.01786], 'image_logloss': 0.3432}
+0 vit_b_16 {'image_auroc': 0.9365, 'av_all': 0.0012, 'av_all_ci95': [-0.01556, 0.0166], 'image_logloss': 0.3211}
+1 hsv {'image_auroc': 0.843, 'av_all': 0.07517, 'image_logloss': 0.4869}
+1 resnet18 {'image_auroc': 0.905, 'av_all': 0.0213, 'image_logloss': 0.3884}
+1 resnet50 {'image_auroc': 0.9019, 'av_all': 0.04084, 'image_logloss': 0.4165}
+1 convnext_tiny {'image_auroc': 0.9233, 'av_all': 0.00986, 'image_logloss': 0.3545}
+1 vit_b_16 {'image_auroc': 0.9356, 'av_all': 0.00247, 'image_logloss': 0.323}
+2 hsv {'image_auroc': 0.8378, 'av_all': 0.07463, 'image_logloss': 0.491}
+2 resnet18 {'image_auroc': 0.9068, 'av_all': 0.02343, 'image_logloss': 0.3845}
+2 resnet50 {'image_auroc': 0.9079, 'av_all': 0.03112, 'image_logloss': 0.3895}
+2 convnext_tiny {'image_auroc': 0.9251, 'av_all': 0.00836, 'image_logloss': 0.3481}
+2 vit_b_16 {'image_auroc': 0.9377, 'av_all': 0.00601, 'image_logloss': 0.3164}
+{
+ "confirmatory_tests": {
+  "H1": {
+   "diff": 0.06963,
+   "ci95": [
+    0.03917,
+    0.10549
+   ],
+   "p_one_sided": 0.0004997501249375312
+  },
+  "H2": {
+   "diff": 0.01625,
+   "ci95": [
+    0.00753,
+    0.02561
+   ],
+   "p_one_sided": 0.0009995002498750624
+  }
+ }
+}
+{
+  "id": "E13_hiba",
+  "hypothesis": "See research/iteration3/PREREGISTRATION_REPLICATION.md",
+  "data": {
+    "dataset": "hiba",
+    "n_images": 1224,
+    "n_groups": 563,
+    "positives": 533,
+    "task": "malignant vs benign",
+    "group_unit": "patient_id"
+  },
+  "config": {
+    "rungs": [
+      "hsv",
+      "resnet18",
+      "resnet50",
+      "convnext_tiny",
+      "vit_b_16"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "bootstrap": 2000
+  },
+  "seed": [
+    0,
+    1,
+    2
+  ],
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T18:47:56+00:00",
+  "results": {
+    "seeds": {
+      "0": {
+        "hsv": {
+          "image_auroc": 0.8422,
+          "av_all": 0.07223,
+          "av_all_ci95": [
+            0.0353,
+            0.11534
+          ],
+          "image_logloss": 0.4957
+        },
+        "resnet18": {
+          "image_auroc": 0.9083,
+          "av_all": 0.01886,
+          "av_all_ci95": [
+            -0.00206,
+            0.03778
+          ],
+          "image_logloss": 0.3839
+        },
+        "resnet50": {
+          "image_auroc": 0.9049,
+          "av_all": 0.02682,
+          "av_all_ci95": [
+            0.00156,
+            0.04815
+          ],
+          "image_logloss": 0.4073
+        },
+        "convnext_tiny": {
+          "image_auroc": 0.9285,
+          "av_all": 0.0026,
+          "av_all_ci95": [
+            -0.01351,
+            0.01786
+          ],
+          "image_logloss": 0.3432
+        },
+        "vit_b_16": {
+          "image_auroc": 0.9365,
+          "av_all": 0.0012,
+          "av_all_ci95": [
+            -0.01556,
+            0.0166
+          ],
+          "image_logloss": 0.3211
+        }
+      },
+      "1": {
+        "hsv": {
+          "image_auroc": 0.843,
+          "av_all": 0.07517,
+          "image_logloss": 0.4869
+        },
+        "resnet18": {
+          "image_auroc": 0.905,
+          "av_all": 0.0213,
+          "image_logloss": 0.3884
+        },
+        "resnet50": {
+          "image_auroc": 0.9019,
+          "av_all": 0.04084,
+          "image_logloss": 0.4165
+        },
+        "convnext_tiny": {
+          "image_auroc": 0.9233,
+          "av_all": 0.00986,
+          "image_logloss": 0.3545
+        },
+        "vit_b_16": {
+          "image_auroc": 0.9356,
+          "av_all": 0.00247,
+          "image_logloss": 0.323
+        }
+      },
+      "2": {
+        "hsv": {
+          "image_auroc": 0.8378,
+          "av_all": 0.07463,
+          "image_logloss": 0.491
+        },
+        "resnet18": {
+          "image_auroc": 0.9068,
+          "av_all": 0.02343,
+          "image_logloss": 0.3845
+        },
+        "resnet50": {
+          "image_auroc": 0.9079,
+          "av_all": 0.03112,
+          "image_logloss": 0.3895
+        },
+        "convnext_tiny": {
+          "image_auroc": 0.9251,
+          "av_all": 0.00836,
+          "image_logloss": 0.3481
+        },
+        "vit_b_16": {
+          "image_auroc": 0.9377,
+          "av_all": 0.00601,
+          "image_logloss": 0.3164
+        }
+      }
+    },
+    "confirmatory_tests": {
+      "H1": {
+        "diff": 0.06963,
+        "ci95": [
+          0.03917,
+          0.10549
+        ],
+        "p_one_sided": 0.0004997501249375312
+      },
+      "H2": {
+        "diff": 0.01625,
+        "ci95": [
+          0.00753,
+          0.02561
+        ],
+        "p_one_sided": 0.0009995002498750624
+      }
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 4.9,
+  "peak_rss_mb": 476.5
+}

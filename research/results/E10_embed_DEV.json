@@ -1,0 +1,33 @@
+{
+  "id": "E10_embed_DEV",
+  "hypothesis": "Cache ladder representations; measure M5 throughput.",
+  "data": {
+    "source": "HAM10000",
+    "n_images": 5231
+  },
+  "config": {
+    "input": "shorter side 224, centre crop 224, ImageNet norm",
+    "device": "mps"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-26T10:45:01+00:00",
+  "results": {
+    "decode_resize_s": 13.0,
+    "resnet18": {
+      "dim": 512,
+      "images_per_s": 638.1,
+      "params_m": 11.2
+    },
+    "resnet50": {
+      "dim": 2048,
+      "images_per_s": 196.0,
+      "params_m": 23.5
+    }
+  },
+  "interpretation": "Embeddings cached.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 54.68,
+  "peak_rss_mb": 2173.5
+}

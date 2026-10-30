@@ -1,0 +1,13 @@
+\begin{table}[tp]\centering\footnotesize
+\caption{Whether to use metadata on a new dataset, decided from source datasets only (E55; leave one dataset out within a label family; frozen ConvNeXt-T, harmonised age, sex and site, complete cases; $10^{-3}$ nats). $\Delta$: realised added value on the held-out target. Oracle: the better choice on the target. Source-validated: use if the mean leave-one-source-out added value among the sources is positive. Collection rule: standalone value of the pooled sources times their median retained fraction, use if $\ge10^{-3}$ nats. Mean regret: never 9.5, always 3.6, source-validated 3.9, collection rule 3.6.}\label{tab:rules}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{\begin{tabular}{lccccc}\toprule
+Target & $n$ & $\Delta$ & Oracle & Source-val. & Coll.\ rule\\\midrule
+HAM10000 & 9{,}761 & 5.43 [2.89, 8.10] & use & use & use\\
+ISIC 2019 & 14{,}156 & 8.43 [3.43, 13.47] & use & use & use\\
+ISIC 2020 & 32{,}531 & 2.12 [1.45, 2.76] & use & skip & use\\
+PAD-UFES-20 & 1{,}089 & \ensuremath{-}19.61 [\ensuremath{-}36.42, \ensuremath{-}2.41] & skip & use & use\\
+HIBA & 1{,}085 & 32.00 [21.03, 42.63] & use & use & use\\
+MSK 2020 & 1{,}157 & \ensuremath{-}5.65 [\ensuremath{-}13.69, 3.41] & skip & use & use\\
+MILK10k (derm.) & 5{,}086 & 18.79 [14.51, 23.18] & use & use & use\\
+\bottomrule\end{tabular}}\end{table}

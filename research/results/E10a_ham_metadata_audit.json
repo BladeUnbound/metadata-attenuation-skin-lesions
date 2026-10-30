@@ -1,0 +1,136 @@
+{
+  "id": "E10a_ham_metadata_audit",
+  "hypothesis": "dx_type leaks the label; images per lesion > 1 makes image-level splits leak; clinical metadata alone carries some melanoma signal.",
+  "data": {
+    "source": "HAM10000 metadata (Dataverse doi:10.7910/DVN/DBW86T, CC BY-NC 4.0)"
+  },
+  "config": {
+    "task": "melanoma vs rest",
+    "cv": "5-fold StratifiedGroupKFold by lesion_id"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-26T10:03:00+00:00",
+  "results": {
+    "n_images": 10015,
+    "n_lesions": 7470,
+    "images_per_lesion": {
+      "1": 5514,
+      "2": 1423,
+      "3": 490,
+      "4": 34,
+      "5": 5,
+      "6": 4
+    },
+    "frac_images_in_multi_image_lesions": 0.449,
+    "class_counts": {
+      "nv": 6705,
+      "mel": 1113,
+      "bkl": 1099,
+      "bcc": 514,
+      "akiec": 327,
+      "vasc": 142,
+      "df": 115
+    },
+    "melanoma_prevalence": 0.1111,
+    "missing": {
+      "age": 57,
+      "sex": 57,
+      "localization": 234
+    },
+    "dx_type_by_dx": {
+      "confocal": {
+        "akiec": 0,
+        "bcc": 0,
+        "bkl": 69,
+        "df": 0,
+        "mel": 0,
+        "nv": 0,
+        "vasc": 0
+      },
+      "consensus": {
+        "akiec": 0,
+        "bcc": 0,
+        "bkl": 264,
+        "df": 60,
+        "mel": 0,
+        "nv": 503,
+        "vasc": 75
+      },
+      "follow_up": {
+        "akiec": 0,
+        "bcc": 0,
+        "bkl": 0,
+        "df": 0,
+        "mel": 0,
+        "nv": 3704,
+        "vasc": 0
+      },
+      "histo": {
+        "akiec": 327,
+        "bcc": 514,
+        "bkl": 766,
+        "df": 55,
+        "mel": 1113,
+        "nv": 2498,
+        "vasc": 67
+      }
+    },
+    "source_by_dx": {
+      "rosendahl": {
+        "akiec": 295,
+        "bcc": 296,
+        "bkl": 490,
+        "df": 30,
+        "mel": 342,
+        "nv": 803,
+        "vasc": 3
+      },
+      "vidir_modern": {
+        "akiec": 32,
+        "bcc": 211,
+        "bkl": 475,
+        "df": 51,
+        "mel": 680,
+        "nv": 1832,
+        "vasc": 82
+      },
+      "vidir_molemax": {
+        "akiec": 0,
+        "bcc": 2,
+        "bkl": 124,
+        "df": 30,
+        "mel": 24,
+        "nv": 3720,
+        "vasc": 54
+      },
+      "vienna_dias": {
+        "akiec": 0,
+        "bcc": 5,
+        "bkl": 10,
+        "df": 4,
+        "mel": 67,
+        "nv": 350,
+        "vasc": 3
+      }
+    },
+    "prevalence_logloss": 0.3489,
+    "clinical_meta": {
+      "oof_logloss": 0.3219,
+      "oof_auroc": 0.7091
+    },
+    "dx_type_only": {
+      "oof_logloss": 0.2734,
+      "oof_auroc": 0.7599
+    },
+    "source_only": {
+      "oof_logloss": 0.2987,
+      "oof_auroc": 0.7261
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 1.2,
+  "peak_rss_mb": 178.9
+}

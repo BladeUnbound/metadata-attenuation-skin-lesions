@@ -1,0 +1,14 @@
+\begin{table}[tp]\centering\footnotesize
+\caption{Datasets. Positives: melanoma for HAM10000 and ISIC; malignant otherwise. Groups define the cross-validation and bootstrap units. $^\ast$Images without a lesion identifier form their own group. $^\dagger$No lesion identifier is available. The two MILK10k rows show the same lesions.}\label{tab:data}
+\setlength{\tabcolsep}{2.5pt}
+\resizebox{\columnwidth}{!}{\begin{tabular}{llrrrl}\toprule
+Dataset & Modality & Images & Groups & Pos. & Metadata\\\midrule
+HAM10000 & dermoscopy & 10{,}015 & 7{,}470 lesions & 1{,}113 & age, sex, site\\
+ISIC 2020 & dermoscopy & 33{,}126 & 2{,}056 patients & 584 & age, sex, site\\
+ISIC 2019 (non-HAM) & dermoscopy & 15{,}316 & 6{,}461 lesions$^\ast$ & 3{,}409 & age, sex, site\\
+PAD-UFES-20 & smartphone & 2{,}298 & 1{,}373 patients & 1{,}089 & demogr.\,+\,symptoms\\
+HIBA & dermoscopy & 1{,}224 & 563 patients & 533 & age, sex, site, skin type\\
+MSK 2020 & mixed & 1{,}174 & 1{,}174 images$^\dagger$ & 148 & age, sex, site\\
+MILK10k (derm.) & dermoscopy & 5{,}117 & 5{,}117 lesions & 3{,}634 & age, sex, site\\
+MILK10k (clin.) & clin.\ close-up & 5{,}117 & 5{,}117 lesions & 3{,}634 & age, sex, site\\
+\bottomrule\end{tabular}}\end{table}

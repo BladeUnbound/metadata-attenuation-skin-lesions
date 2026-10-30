@@ -1,0 +1,14 @@
+\begin{table}[tp]\centering\footnotesize
+\caption{Exploratory: frozen vs.\ end-to-end fine-tuned image models (same grouped folds, fold assignment 0, all images; one training run per fold). $\hat\Delta$ and the paired difference (frozen $-$ fine-tuned) in $10^{-3}$ nats with 95\% grouped-bootstrap CI. PAD-UFES-20 includes its label-informative missingness.}\label{tab:ft}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{\begin{tabular}{llccc}\toprule
+Dataset & Backbone & AUROC frz./FT & $\hat\Delta$ frz./FT & Difference\\\midrule
+HAM10000 & ResNet-18 & 0.854 / 0.917 & 4.1 / 0.3 & 3.8 [1.7, 5.9]\\
+HAM10000 & ConvNeXt-T & 0.887 / 0.930 & 1.7 / 0.8 & 0.9 [\ensuremath{-}1.1, 2.8]\\
+HIBA & ResNet-18 & 0.908 / 0.940 & 18.9 / 1.4 & 17.5 [6.1, 29.8]\\
+HIBA & ConvNeXt-T & 0.928 / 0.951 & 2.6 / \ensuremath{-}7.2 & 9.8 [2.6, 17.4]\\
+PAD-UFES-20 & ResNet-18 & 0.845 / 0.899 & 234.2 / 172.7 & 61.5 [43.8, 79.5]\\
+PAD-UFES-20 & ConvNeXt-T & 0.874 / 0.927 & 206.4 / 123.9 & 82.5 [65.5, 99.0]\\
+ISIC 2019 (non-HAM) & ResNet-18 & 0.802 / 0.836 & 9.7 / 7.1 & 2.6 [\ensuremath{-}0.2, 5.7]\\
+MILK10k (derm.) & ResNet-18 & 0.815 / 0.869 & 14.7 / 13.7 & 1.0 [\ensuremath{-}2.4, 4.5]\\
+\bottomrule\end{tabular}}\end{table}

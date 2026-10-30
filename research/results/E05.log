@@ -1,0 +1,40 @@
+null {'voxel_permutation_rejection': 0.345, 'mask_shift_rejection': 0.05, 'median_enrichment': 0.6347699431026705}
+signal_in_mask {'voxel_permutation_rejection': 0.61, 'mask_shift_rejection': 0.15, 'median_enrichment': 1.459757217373563}
+{
+  "id": "E05_saliency_null",
+  "hypothesis": "Voxel-permutation p-values are invalid for smooth saliency maps; mask-shift p-values are valid.",
+  "data": {
+    "source": "synthetic 3D volumes"
+  },
+  "config": {
+    "shape": [
+      40,
+      48,
+      40
+    ],
+    "smoothing_sigma_vox": 4.0,
+    "n_sims": 200,
+    "n_null": 199,
+    "mask_voxels": 750
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-26T09:17:03+00:00",
+  "results": {
+    "null": {
+      "voxel_permutation_rejection": 0.345,
+      "mask_shift_rejection": 0.05,
+      "median_enrichment": 0.6347699431026705
+    },
+    "signal_in_mask": {
+      "voxel_permutation_rejection": 0.61,
+      "mask_shift_rejection": 0.15,
+      "median_enrichment": 1.459757217373563
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": "Use mask-shift (or brain-constrained placement) nulls for any reported overlap p-value.",
+  "runtime_s": 112.35,
+  "peak_rss_mb": 72.0
+}

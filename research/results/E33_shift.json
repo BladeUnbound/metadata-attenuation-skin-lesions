@@ -1,0 +1,990 @@
+{
+  "id": "E33_shift",
+  "hypothesis": "H33 (exploratory): metadata added value under source/modality shift differs from in-distribution added value (direction not pre-specified).",
+  "data": {
+    "datasets": [
+      "ham10000",
+      "isic2020",
+      "isic2019_nonham",
+      "pad_ufes",
+      "hiba",
+      "msk2020",
+      "milk10k_derm",
+      "milk10k_clin"
+    ]
+  },
+  "config": {
+    "features": "frozen ConvNeXt-T",
+    "metadata": "harmonised age/sex/site",
+    "bootstrap": 1000
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T19:03:44+00:00",
+  "results": {
+    "overlaps": {
+      "ham10000|isic2020": 0,
+      "ham10000|isic2019_nonham": 0,
+      "ham10000|hiba": 0,
+      "ham10000|msk2020": 0,
+      "ham10000|milk10k_derm": 0,
+      "ham10000|milk10k_clin": 0,
+      "isic2020|msk2020": 0,
+      "isic2020|milk10k_derm": 0,
+      "isic2020|milk10k_clin": 0,
+      "isic2019_nonham|isic2020": 0,
+      "isic2019_nonham|msk2020": 0,
+      "isic2019_nonham|milk10k_derm": 0,
+      "isic2019_nonham|milk10k_clin": 0,
+      "hiba|isic2020": 0,
+      "hiba|isic2019_nonham": 0,
+      "hiba|msk2020": 0,
+      "hiba|milk10k_derm": 0,
+      "hiba|milk10k_clin": 0,
+      "milk10k_derm|msk2020": 0,
+      "milk10k_clin|msk2020": 0,
+      "milk10k_clin|milk10k_derm": 0
+    },
+    "in_distribution": {
+      "ham10000": {
+        "added_value": 0.002121,
+        "ci95": [
+          -2e-05,
+          0.004178
+        ],
+        "image_auroc": 0.8913
+      },
+      "isic2020": {
+        "added_value": 0.000788,
+        "ci95": [
+          -7.1e-05,
+          0.001532
+        ],
+        "image_auroc": 0.8616
+      },
+      "isic2019_nonham": {
+        "added_value": 0.005993,
+        "ci95": [
+          -7.1e-05,
+          0.012097
+        ],
+        "image_auroc": 0.8252
+      },
+      "pad_ufes": {
+        "added_value": 0.00292,
+        "ci95": [
+          -0.007227,
+          0.012814
+        ],
+        "image_auroc": 0.7764
+      },
+      "hiba": {
+        "added_value": 0.009698,
+        "ci95": [
+          -0.002923,
+          0.022109
+        ],
+        "image_auroc": 0.923
+      },
+      "msk2020": {
+        "added_value": 0.021748,
+        "ci95": [
+          0.010921,
+          0.031968
+        ],
+        "image_auroc": 0.7137
+      },
+      "milk10k_derm": {
+        "added_value": 0.012338,
+        "ci95": [
+          0.007009,
+          0.017765
+        ],
+        "image_auroc": 0.8401
+      },
+      "milk10k_clin": {
+        "added_value": 0.009772,
+        "ci95": [
+          0.004923,
+          0.014332
+        ],
+        "image_auroc": 0.8382
+      }
+    },
+    "transfer": {
+      "ham10000->isic2019_nonham": {
+        "n_target": 14156,
+        "prevalence_target": 0.2324,
+        "added_value": -0.026783,
+        "added_value_ci95": [
+          -0.044929,
+          -0.010967
+        ],
+        "image_only": {
+          "auroc": 0.7032519663410085,
+          "logloss": 0.5854723311171607,
+          "brier": 0.16616004108846774,
+          "calib_intercept": -0.08972047380104645,
+          "calib_slope": 0.4648519720857692,
+          "sens_at_90spec_source_threshold": 0.40425531914893614,
+          "sens_at_90spec_target_oracle": 0.36717325227963526
+        },
+        "fused": {
+          "auroc": 0.6940322480484844,
+          "logloss": 0.6122555547081328,
+          "brier": 0.16817378190582777,
+          "calib_intercept": -0.1907357887004903,
+          "calib_slope": 0.4072860848308737,
+          "sens_at_90spec_source_threshold": 0.39300911854103343,
+          "sens_at_90spec_target_oracle": 0.3617021276595745
+        },
+        "delta_auroc": -0.0092,
+        "removed_overlap": 0
+      },
+      "ham10000->isic2020": {
+        "n_target": 32531,
+        "prevalence_target": 0.0177,
+        "added_value": 0.001056,
+        "added_value_ci95": [
+          6.2e-05,
+          0.001875
+        ],
+        "image_only": {
+          "auroc": 0.7059426004234082,
+          "logloss": 0.0868531730740463,
+          "brier": 0.017278798911789555,
+          "calib_intercept": -1.5107959330856726,
+          "calib_slope": 0.5519192838048581,
+          "sens_at_90spec_source_threshold": 0.06608695652173913,
+          "sens_at_90spec_target_oracle": 0.34782608695652173
+        },
+        "fused": {
+          "auroc": 0.7189464862011352,
+          "logloss": 0.08579670774531961,
+          "brier": 0.017142242178539234,
+          "calib_intercept": -1.405805303119317,
+          "calib_slope": 0.5742002575979896,
+          "sens_at_90spec_source_threshold": 0.07652173913043478,
+          "sens_at_90spec_target_oracle": 0.36
+        },
+        "delta_auroc": 0.013,
+        "removed_overlap": 0
+      },
+      "isic2019_nonham->ham10000": {
+        "n_target": 9761,
+        "prevalence_target": 0.1128,
+        "added_value": 0.009678,
+        "added_value_ci95": [
+          0.006808,
+          0.012248
+        ],
+        "image_only": {
+          "auroc": 0.715268661913482,
+          "logloss": 0.31917070802345326,
+          "brier": 0.09057576041331038,
+          "calib_intercept": -0.37636135058917025,
+          "calib_slope": 0.9342800318155822,
+          "sens_at_90spec_source_threshold": 0.20345140781108084,
+          "sens_at_90spec_target_oracle": 0.36330608537693004
+        },
+        "fused": {
+          "auroc": 0.738686958947671,
+          "logloss": 0.30949242656285486,
+          "brier": 0.08789552111336917,
+          "calib_intercept": -0.28502479346582554,
+          "calib_slope": 0.9605054241172556,
+          "sens_at_90spec_source_threshold": 0.24250681198910082,
+          "sens_at_90spec_target_oracle": 0.40417801998183467
+        },
+        "delta_auroc": 0.0234,
+        "removed_overlap": 0
+      },
+      "isic2019_nonham->isic2020": {
+        "n_target": 32531,
+        "prevalence_target": 0.0177,
+        "added_value": 0.00667,
+        "added_value_ci95": [
+          0.00539,
+          0.007878
+        ],
+        "image_only": {
+          "auroc": 0.7362006182413863,
+          "logloss": 0.1603025749777031,
+          "brier": 0.03227823674487488,
+          "calib_intercept": -2.0703709987083023,
+          "calib_slope": 1.0438489813139142,
+          "sens_at_90spec_source_threshold": 0.1791304347826087,
+          "sens_at_90spec_target_oracle": 0.4
+        },
+        "fused": {
+          "auroc": 0.7464682960810244,
+          "logloss": 0.15363251001339068,
+          "brier": 0.031254647657105845,
+          "calib_intercept": -2.026717729167297,
+          "calib_slope": 1.0421916748877973,
+          "sens_at_90spec_source_threshold": 0.2,
+          "sens_at_90spec_target_oracle": 0.42434782608695654
+        },
+        "delta_auroc": 0.0103,
+        "removed_overlap": 0
+      },
+      "isic2020->ham10000": {
+        "n_target": 9761,
+        "prevalence_target": 0.1128,
+        "added_value": 0.015869,
+        "added_value_ci95": [
+          0.011911,
+          0.019963
+        ],
+        "image_only": {
+          "auroc": 0.7563145932838717,
+          "logloss": 0.4095815871656773,
+          "brier": 0.09884682832410016,
+          "calib_intercept": 0.6124602615734326,
+          "calib_slope": 0.6482309632501778,
+          "sens_at_90spec_source_threshold": 0.45776566757493187,
+          "sens_at_90spec_target_oracle": 0.3851044504995459
+        },
+        "fused": {
+          "auroc": 0.7790909167185824,
+          "logloss": 0.3937130508011597,
+          "brier": 0.09736073237276231,
+          "calib_intercept": 0.7073365687639861,
+          "calib_slope": 0.6822945324556015,
+          "sens_at_90spec_source_threshold": 0.5186194368755677,
+          "sens_at_90spec_target_oracle": 0.4223433242506812
+        },
+        "delta_auroc": 0.0228,
+        "removed_overlap": 0
+      },
+      "isic2020->isic2019_nonham": {
+        "n_target": 14156,
+        "prevalence_target": 0.2324,
+        "added_value": 0.011265,
+        "added_value_ci95": [
+          0.004033,
+          0.018969
+        ],
+        "image_only": {
+          "auroc": 0.7023721409801745,
+          "logloss": 0.5624916349488188,
+          "brier": 0.16839473265834046,
+          "calib_intercept": 0.13735976792700735,
+          "calib_slope": 0.5873475014118656,
+          "sens_at_90spec_source_threshold": 0.843161094224924,
+          "sens_at_90spec_target_oracle": 0.34103343465045594
+        },
+        "fused": {
+          "auroc": 0.7158410244274408,
+          "logloss": 0.5512267268849693,
+          "brier": 0.16608371159051488,
+          "calib_intercept": 0.10312483004344238,
+          "calib_slope": 0.5839067337075011,
+          "sens_at_90spec_source_threshold": 0.8589665653495441,
+          "sens_at_90spec_target_oracle": 0.3547112462006079
+        },
+        "delta_auroc": 0.0135,
+        "removed_overlap": 0
+      },
+      "pad_ufes->hiba": {
+        "n_target": 1085,
+        "prevalence_target": 0.4461,
+        "added_value": -0.006949,
+        "added_value_ci95": [
+          -0.028462,
+          0.012832
+        ],
+        "image_only": {
+          "auroc": 0.6898144965003232,
+          "logloss": 0.6881172241907404,
+          "brier": 0.23794378308590128,
+          "calib_intercept": -0.17267681583267064,
+          "calib_slope": 0.45270512184395956,
+          "sens_at_90spec_source_threshold": 0.24793388429752067,
+          "sens_at_90spec_target_oracle": 0.256198347107438
+        },
+        "fused": {
+          "auroc": 0.6924822265920436,
+          "logloss": 0.695066422299348,
+          "brier": 0.2385792684944473,
+          "calib_intercept": -0.14418540526077864,
+          "calib_slope": 0.43079757599231194,
+          "sens_at_90spec_source_threshold": 0.2768595041322314,
+          "sens_at_90spec_target_oracle": 0.22933884297520662
+        },
+        "delta_auroc": 0.0027,
+        "removed_overlap": 0
+      },
+      "pad_ufes->msk2020": {
+        "n_target": 1157,
+        "prevalence_target": 0.1279,
+        "added_value": 0.030138,
+        "added_value_ci95": [
+          0.017468,
+          0.04401
+        ],
+        "image_only": {
+          "auroc": 0.47123188599898214,
+          "logloss": 0.6564374938033006,
+          "brier": 0.21779975456005615,
+          "calib_intercept": -1.964815643443034,
+          "calib_slope": -0.038372895573862545,
+          "sens_at_90spec_source_threshold": 0.04054054054054054,
+          "sens_at_90spec_target_oracle": 0.10135135135135136
+        },
+        "fused": {
+          "auroc": 0.4910267055955857,
+          "logloss": 0.626299483475562,
+          "brier": 0.20390488192935674,
+          "calib_intercept": -1.9254829209937188,
+          "calib_slope": -0.004549389696789445,
+          "sens_at_90spec_source_threshold": 0.060810810810810814,
+          "sens_at_90spec_target_oracle": 0.13513513513513514
+        },
+        "delta_auroc": 0.0198,
+        "removed_overlap": 0
+      },
+      "pad_ufes->milk10k_derm": {
+        "n_target": 5086,
+        "prevalence_target": 0.7125,
+        "added_value": -0.002837,
+        "added_value_ci95": [
+          -0.010994,
+          0.005326
+        ],
+        "image_only": {
+          "auroc": 0.516442858523357,
+          "logloss": 0.9976247161617535,
+          "brier": 0.3420555974054198,
+          "calib_intercept": 0.9164089063500902,
+          "calib_slope": 0.037389652741395094,
+          "sens_at_90spec_source_threshold": 0.16390728476821192,
+          "sens_at_90spec_target_oracle": 0.12141280353200883
+        },
+        "fused": {
+          "auroc": 0.5329804646331042,
+          "logloss": 1.0004614179408766,
+          "brier": 0.3405090860184783,
+          "calib_intercept": 0.9309426308480192,
+          "calib_slope": 0.07361946765116638,
+          "sens_at_90spec_source_threshold": 0.16666666666666666,
+          "sens_at_90spec_target_oracle": 0.13024282560706402
+        },
+        "delta_auroc": 0.0165,
+        "removed_overlap": 0
+      },
+      "pad_ufes->milk10k_clin": {
+        "n_target": 5086,
+        "prevalence_target": 0.7125,
+        "added_value": -0.015745,
+        "added_value_ci95": [
+          -0.02342,
+          -0.008013
+        ],
+        "image_only": {
+          "auroc": 0.5626094693229209,
+          "logloss": 0.7868174127768598,
+          "brier": 0.2772337564661284,
+          "calib_intercept": 0.8813817610948247,
+          "calib_slope": 0.1671176891729314,
+          "sens_at_90spec_source_threshold": 0.20391832229580573,
+          "sens_at_90spec_target_oracle": 0.1890176600441501
+        },
+        "fused": {
+          "auroc": 0.5811488541204253,
+          "logloss": 0.8025623256037597,
+          "brier": 0.27875019460914957,
+          "calib_intercept": 0.8951027268183814,
+          "calib_slope": 0.19427502351710602,
+          "sens_at_90spec_source_threshold": 0.21054083885209712,
+          "sens_at_90spec_target_oracle": 0.17770419426048564
+        },
+        "delta_auroc": 0.0185,
+        "removed_overlap": 0
+      },
+      "hiba->pad_ufes": {
+        "n_target": 1089,
+        "prevalence_target": 0.6749,
+        "added_value": -0.02016,
+        "added_value_ci95": [
+          -0.038764,
+          -0.00144
+        ],
+        "image_only": {
+          "auroc": 0.6210480802490488,
+          "logloss": 0.6998674002081036,
+          "brier": 0.22892275918243227,
+          "calib_intercept": 0.4268794837340064,
+          "calib_slope": 0.29354972505195753,
+          "sens_at_90spec_source_threshold": 0.7510204081632653,
+          "sens_at_90spec_target_oracle": 0.1673469387755102
+        },
+        "fused": {
+          "auroc": 0.5990603020869365,
+          "logloss": 0.7200270159444765,
+          "brier": 0.23656212970835044,
+          "calib_intercept": 0.4380845730773157,
+          "calib_slope": 0.2575760169907565,
+          "sens_at_90spec_source_threshold": 0.7442176870748299,
+          "sens_at_90spec_target_oracle": 0.1619047619047619
+        },
+        "delta_auroc": -0.022,
+        "removed_overlap": 0
+      },
+      "hiba->msk2020": {
+        "n_target": 1157,
+        "prevalence_target": 0.1279,
+        "added_value": 0.058531,
+        "added_value_ci95": [
+          0.044592,
+          0.07292
+        ],
+        "image_only": {
+          "auroc": 0.6685707015241207,
+          "logloss": 0.7710147516518648,
+          "brier": 0.26404675170808245,
+          "calib_intercept": -2.0045941878921916,
+          "calib_slope": 0.41300469374332266,
+          "sens_at_90spec_source_threshold": 0.6081081081081081,
+          "sens_at_90spec_target_oracle": 0.28378378378378377
+        },
+        "fused": {
+          "auroc": 0.7125197546406665,
+          "logloss": 0.7124838684603243,
+          "brier": 0.24260442764574341,
+          "calib_intercept": -2.0178216328383707,
+          "calib_slope": 0.5209085995020875,
+          "sens_at_90spec_source_threshold": 0.5878378378378378,
+          "sens_at_90spec_target_oracle": 0.31756756756756754
+        },
+        "delta_auroc": 0.0439,
+        "removed_overlap": 0
+      },
+      "hiba->milk10k_derm": {
+        "n_target": 5086,
+        "prevalence_target": 0.7125,
+        "added_value": 0.028112,
+        "added_value_ci95": [
+          0.021584,
+          0.034851
+        ],
+        "image_only": {
+          "auroc": 0.7235663670982022,
+          "logloss": 0.5669828994622667,
+          "brier": 0.18610317182327693,
+          "calib_intercept": 0.4715745933858824,
+          "calib_slope": 0.5565337958336039,
+          "sens_at_90spec_source_threshold": 0.7582781456953642,
+          "sens_at_90spec_target_oracle": 0.29497792494481234
+        },
+        "fused": {
+          "auroc": 0.7547641804296029,
+          "logloss": 0.5388709858386808,
+          "brier": 0.1767488908255216,
+          "calib_intercept": 0.5330952399252075,
+          "calib_slope": 0.6469145175051148,
+          "sens_at_90spec_source_threshold": 0.7215783664459161,
+          "sens_at_90spec_target_oracle": 0.320364238410596
+        },
+        "delta_auroc": 0.0312,
+        "removed_overlap": 0
+      },
+      "hiba->milk10k_clin": {
+        "n_target": 5086,
+        "prevalence_target": 0.7125,
+        "added_value": 0.055004,
+        "added_value_ci95": [
+          0.048252,
+          0.061475
+        ],
+        "image_only": {
+          "auroc": 0.7394632001884383,
+          "logloss": 0.7362485042538862,
+          "brier": 0.26378022028025355,
+          "calib_intercept": 1.3641892295267293,
+          "calib_slope": 0.7768012795834768,
+          "sens_at_90spec_source_threshold": 0.3609271523178808,
+          "sens_at_90spec_target_oracle": 0.2814569536423841
+        },
+        "fused": {
+          "auroc": 0.767274636637344,
+          "logloss": 0.6812442457044755,
+          "brier": 0.2406985122527585,
+          "calib_intercept": 1.340877351060303,
+          "calib_slope": 0.8121431348846849,
+          "sens_at_90spec_source_threshold": 0.4014900662251656,
+          "sens_at_90spec_target_oracle": 0.3294701986754967
+        },
+        "delta_auroc": 0.0278,
+        "removed_overlap": 0
+      },
+      "msk2020->pad_ufes": {
+        "n_target": 1089,
+        "prevalence_target": 0.6749,
+        "added_value": -0.064247,
+        "added_value_ci95": [
+          -0.105919,
+          -0.02266
+        ],
+        "image_only": {
+          "auroc": 0.5953822206848841,
+          "logloss": 1.1059261575253811,
+          "brier": 0.38452442263700515,
+          "calib_intercept": 1.05599327930891,
+          "calib_slope": 0.26204993363348594,
+          "sens_at_90spec_source_threshold": 0.563265306122449,
+          "sens_at_90spec_target_oracle": 0.17414965986394557
+        },
+        "fused": {
+          "auroc": 0.5674257273530882,
+          "logloss": 1.1701733265052923,
+          "brier": 0.4070605855142458,
+          "calib_intercept": 1.042060617135539,
+          "calib_slope": 0.22567579880659971,
+          "sens_at_90spec_source_threshold": 0.45170068027210886,
+          "sens_at_90spec_target_oracle": 0.16870748299319727
+        },
+        "delta_auroc": -0.028,
+        "removed_overlap": 0
+      },
+      "msk2020->hiba": {
+        "n_target": 1085,
+        "prevalence_target": 0.4461,
+        "added_value": 0.006108,
+        "added_value_ci95": [
+          -0.028145,
+          0.033883
+        ],
+        "image_only": {
+          "auroc": 0.8164147907757043,
+          "logloss": 0.6017750551112436,
+          "brier": 0.2027580512945488,
+          "calib_intercept": 1.0157450386379994,
+          "calib_slope": 1.0453573150330449,
+          "sens_at_90spec_source_threshold": 0.7644628099173554,
+          "sens_at_90spec_target_oracle": 0.49793388429752067
+        },
+        "fused": {
+          "auroc": 0.8853769887652809,
+          "logloss": 0.5956673929178897,
+          "brier": 0.2021870429684499,
+          "calib_intercept": 1.8803525228471956,
+          "calib_slope": 1.2725133983583437,
+          "sens_at_90spec_source_threshold": 0.6962809917355371,
+          "sens_at_90spec_target_oracle": 0.6694214876033058
+        },
+        "delta_auroc": 0.069,
+        "removed_overlap": 0
+      },
+      "msk2020->milk10k_derm": {
+        "n_target": 5086,
+        "prevalence_target": 0.7125,
+        "added_value": -0.146567,
+        "added_value_ci95": [
+          -0.159249,
+          -0.134366
+        ],
+        "image_only": {
+          "auroc": 0.7351470890219634,
+          "logloss": 0.8212534968910989,
+          "brier": 0.2948702451581123,
+          "calib_intercept": 1.5839850978694356,
+          "calib_slope": 0.7977606058359096,
+          "sens_at_90spec_source_threshold": 0.8134657836644592,
+          "sens_at_90spec_target_oracle": 0.29083885209713023
+        },
+        "fused": {
+          "auroc": 0.7825348489927312,
+          "logloss": 0.9678201003458509,
+          "brier": 0.3534415115268284,
+          "calib_intercept": 2.3668999448285195,
+          "calib_slope": 1.0232891790484357,
+          "sens_at_90spec_source_threshold": 0.6120309050772627,
+          "sens_at_90spec_target_oracle": 0.3498896247240618
+        },
+        "delta_auroc": 0.0474,
+        "removed_overlap": 0
+      },
+      "msk2020->milk10k_clin": {
+        "n_target": 5086,
+        "prevalence_target": 0.7125,
+        "added_value": -0.115259,
+        "added_value_ci95": [
+          -0.128446,
+          -0.101502
+        ],
+        "image_only": {
+          "auroc": 0.7782914028078504,
+          "logloss": 0.9399887996542866,
+          "brier": 0.33192082603664075,
+          "calib_intercept": 2.0529741945937365,
+          "calib_slope": 0.8616972092754221,
+          "sens_at_90spec_source_threshold": 0.695364238410596,
+          "sens_at_90spec_target_oracle": 0.33967991169977924
+        },
+        "fused": {
+          "auroc": 0.8009002153148337,
+          "logloss": 1.0552478833284593,
+          "brier": 0.38017005831422085,
+          "calib_intercept": 2.6408937932628795,
+          "calib_slope": 1.0156127816537999,
+          "sens_at_90spec_source_threshold": 0.5408388520971302,
+          "sens_at_90spec_target_oracle": 0.369757174392936
+        },
+        "delta_auroc": 0.0226,
+        "removed_overlap": 0
+      },
+      "milk10k_derm->pad_ufes": {
+        "n_target": 1089,
+        "prevalence_target": 0.6749,
+        "added_value": -0.021127,
+        "added_value_ci95": [
+          -0.040211,
+          -0.004207
+        ],
+        "image_only": {
+          "auroc": 0.5594969061070756,
+          "logloss": 0.6772353258997487,
+          "brier": 0.239080282561419,
+          "calib_intercept": 0.5950514891691928,
+          "calib_slope": 0.25429244882888874,
+          "sens_at_90spec_source_threshold": 0.10748299319727891,
+          "sens_at_90spec_target_oracle": 0.15374149659863945
+        },
+        "fused": {
+          "auroc": 0.5459491141089203,
+          "logloss": 0.698362291092765,
+          "brier": 0.24518958911053684,
+          "calib_intercept": 0.6006038595485099,
+          "calib_slope": 0.18635597190132924,
+          "sens_at_90spec_source_threshold": 0.14829931972789115,
+          "sens_at_90spec_target_oracle": 0.14285714285714285
+        },
+        "delta_auroc": -0.0135,
+        "removed_overlap": 0
+      },
+      "milk10k_derm->hiba": {
+        "n_target": 1085,
+        "prevalence_target": 0.4461,
+        "added_value": 0.0572,
+        "added_value_ci95": [
+          0.033666,
+          0.08022
+        ],
+        "image_only": {
+          "auroc": 0.873385954538579,
+          "logloss": 0.5031082558426367,
+          "brier": 0.16700068492350184,
+          "calib_intercept": -0.9220632733865521,
+          "calib_slope": 1.577025677364859,
+          "sens_at_90spec_source_threshold": 0.2975206611570248,
+          "sens_at_90spec_target_oracle": 0.6735537190082644
+        },
+        "fused": {
+          "auroc": 0.9046664649826047,
+          "logloss": 0.4459079542257199,
+          "brier": 0.14330027908263207,
+          "calib_intercept": -0.9271056620152955,
+          "calib_slope": 1.4805724727471454,
+          "sens_at_90spec_source_threshold": 0.4152892561983471,
+          "sens_at_90spec_target_oracle": 0.7644628099173554
+        },
+        "delta_auroc": 0.0313,
+        "removed_overlap": 0
+      },
+      "milk10k_derm->msk2020": {
+        "n_target": 1157,
+        "prevalence_target": 0.1279,
+        "added_value": -0.003463,
+        "added_value_ci95": [
+          -0.017826,
+          0.010289
+        ],
+        "image_only": {
+          "auroc": 0.7098612487611496,
+          "logloss": 0.9162834119969231,
+          "brier": 0.3429432307716856,
+          "calib_intercept": -2.571697641499631,
+          "calib_slope": 0.9085389448955276,
+          "sens_at_90spec_source_threshold": 0.0945945945945946,
+          "sens_at_90spec_target_oracle": 0.21621621621621623
+        },
+        "fused": {
+          "auroc": 0.7577545335226208,
+          "logloss": 0.9197464635152641,
+          "brier": 0.33927547762154203,
+          "calib_intercept": -2.790008743424719,
+          "calib_slope": 1.021715319929284,
+          "sens_at_90spec_source_threshold": 0.1891891891891892,
+          "sens_at_90spec_target_oracle": 0.32432432432432434
+        },
+        "delta_auroc": 0.0479,
+        "removed_overlap": 0
+      },
+      "milk10k_derm->milk10k_clin": {
+        "n_target": 5086,
+        "prevalence_target": 0.7125,
+        "added_value": 0.062654,
+        "added_value_ci95": [
+          0.056945,
+          0.068065
+        ],
+        "image_only": {
+          "auroc": 0.7675067870980211,
+          "logloss": 0.6267871253389069,
+          "brier": 0.21884319318786302,
+          "calib_intercept": 1.2212827928233223,
+          "calib_slope": 1.1829641155195236,
+          "sens_at_90spec_source_threshold": 0.030077262693156734,
+          "sens_at_90spec_target_oracle": 0.3769315673289183
+        },
+        "fused": {
+          "auroc": 0.795239518878551,
+          "logloss": 0.5641327294611226,
+          "brier": 0.19165297792902977,
+          "calib_intercept": 1.0698998329447256,
+          "calib_slope": 1.1589969114942964,
+          "sens_at_90spec_source_threshold": 0.057119205298013245,
+          "sens_at_90spec_target_oracle": 0.3995584988962472
+        },
+        "delta_auroc": 0.0277,
+        "removed_overlap": 0
+      },
+      "milk10k_clin->pad_ufes": {
+        "n_target": 1089,
+        "prevalence_target": 0.6749,
+        "added_value": -0.007718,
+        "added_value_ci95": [
+          -0.020958,
+          0.004712
+        ],
+        "image_only": {
+          "auroc": 0.6254948307006418,
+          "logloss": 0.7293458948500334,
+          "brier": 0.23184033492370223,
+          "calib_intercept": -0.1119782206611637,
+          "calib_slope": 0.4428494802187491,
+          "sens_at_90spec_source_threshold": 0.5741496598639456,
+          "sens_at_90spec_target_oracle": 0.21360544217687075
+        },
+        "fused": {
+          "auroc": 0.6090568430762135,
+          "logloss": 0.737063795147496,
+          "brier": 0.23450173743754882,
+          "calib_intercept": 0.011058012823051803,
+          "calib_slope": 0.3864734630061467,
+          "sens_at_90spec_source_threshold": 0.5482993197278911,
+          "sens_at_90spec_target_oracle": 0.20408163265306123
+        },
+        "delta_auroc": -0.0164,
+        "removed_overlap": 0
+      },
+      "milk10k_clin->hiba": {
+        "n_target": 1085,
+        "prevalence_target": 0.4461,
+        "added_value": 0.056013,
+        "added_value_ci95": [
+          0.030242,
+          0.080728
+        ],
+        "image_only": {
+          "auroc": 0.8831011674756948,
+          "logloss": 0.5532113944167101,
+          "brier": 0.18926024463698696,
+          "calib_intercept": -1.5462041381866303,
+          "calib_slope": 1.4625846394737436,
+          "sens_at_90spec_source_threshold": 0.5206611570247934,
+          "sens_at_90spec_target_oracle": 0.6797520661157025
+        },
+        "fused": {
+          "auroc": 0.9063716120515394,
+          "logloss": 0.4971988028544246,
+          "brier": 0.1650905144224912,
+          "calib_intercept": -1.4958851386608498,
+          "calib_slope": 1.4287319474091056,
+          "sens_at_90spec_source_threshold": 0.5867768595041323,
+          "sens_at_90spec_target_oracle": 0.743801652892562
+        },
+        "delta_auroc": 0.0233,
+        "removed_overlap": 0
+      },
+      "milk10k_clin->msk2020": {
+        "n_target": 1157,
+        "prevalence_target": 0.1279,
+        "added_value": 0.020636,
+        "added_value_ci95": [
+          0.007079,
+          0.034458
+        ],
+        "image_only": {
+          "auroc": 0.6867851498674095,
+          "logloss": 1.0157485343964983,
+          "brier": 0.37745179749903957,
+          "calib_intercept": -2.5606920715955894,
+          "calib_slope": 0.7210273455173539,
+          "sens_at_90spec_source_threshold": 0.21621621621621623,
+          "sens_at_90spec_target_oracle": 0.30405405405405406
+        },
+        "fused": {
+          "auroc": 0.742613773337262,
+          "logloss": 0.9951127656758244,
+          "brier": 0.36604029774439933,
+          "calib_intercept": -2.7736481340158825,
+          "calib_slope": 0.8866521672811892,
+          "sens_at_90spec_source_threshold": 0.2702702702702703,
+          "sens_at_90spec_target_oracle": 0.31756756756756754
+        },
+        "delta_auroc": 0.0558,
+        "removed_overlap": 0
+      },
+      "milk10k_clin->milk10k_derm": {
+        "n_target": 5086,
+        "prevalence_target": 0.7125,
+        "added_value": 0.025938,
+        "added_value_ci95": [
+          0.021251,
+          0.030555
+        ],
+        "image_only": {
+          "auroc": 0.7851573942375347,
+          "logloss": 0.4810910297823065,
+          "brier": 0.1540913103423651,
+          "calib_intercept": -0.10335144016862138,
+          "calib_slope": 1.013455695671123,
+          "sens_at_90spec_source_threshold": 0.3943156732891832,
+          "sens_at_90spec_target_oracle": 0.3595474613686534
+        },
+        "fused": {
+          "auroc": 0.8066639639068319,
+          "logloss": 0.45515318255480053,
+          "brier": 0.14412653781448898,
+          "calib_intercept": -0.12050824635667831,
+          "calib_slope": 1.0656810428658419,
+          "sens_at_90spec_source_threshold": 0.40204194260485654,
+          "sens_at_90spec_target_oracle": 0.3841059602649007
+        },
+        "delta_auroc": 0.0215,
+        "removed_overlap": 0
+      }
+    },
+    "ham_leave_one_source_out": {
+      "rosendahl": {
+        "n_target": 2244,
+        "prevalence_target": 0.1524,
+        "added_value": -0.005905,
+        "added_value_ci95": [
+          -0.013896,
+          0.002039
+        ],
+        "image_only": {
+          "auroc": 0.7191783349013965,
+          "logloss": 0.4054491036509182,
+          "brier": 0.1214593745069757,
+          "calib_intercept": -0.6197187689643096,
+          "calib_slope": 0.5498763868450336,
+          "sens_at_90spec_source_threshold": 0.5116959064327485,
+          "sens_at_90spec_target_oracle": 0.3216374269005848
+        },
+        "fused": {
+          "auroc": 0.7170568376777906,
+          "logloss": 0.4113542631701688,
+          "brier": 0.12537776387850713,
+          "calib_intercept": -0.7594368252537005,
+          "calib_slope": 0.5241613912806856,
+          "sens_at_90spec_source_threshold": 0.5526315789473685,
+          "sens_at_90spec_target_oracle": 0.3391812865497076
+        },
+        "delta_auroc": -0.0021
+      },
+      "vidir_modern": {
+        "n_target": 3140,
+        "prevalence_target": 0.2127,
+        "added_value": 0.00633,
+        "added_value_ci95": [
+          0.001799,
+          0.011236
+        ],
+        "image_only": {
+          "auroc": 0.7727342644807471,
+          "logloss": 0.5048054869308239,
+          "brier": 0.14832029504298558,
+          "calib_intercept": 0.46976360798436717,
+          "calib_slope": 0.6890103876845017,
+          "sens_at_90spec_source_threshold": 0.4880239520958084,
+          "sens_at_90spec_target_oracle": 0.41467065868263475
+        },
+        "fused": {
+          "auroc": 0.7815909443249424,
+          "logloss": 0.49847530364205983,
+          "brier": 0.14629859976918866,
+          "calib_intercept": 0.5424166721296705,
+          "calib_slope": 0.7112762573769076,
+          "sens_at_90spec_source_threshold": 0.5044910179640718,
+          "sens_at_90spec_target_oracle": 0.4236526946107784
+        },
+        "delta_auroc": 0.0089
+      },
+      "vidir_molemax": {
+        "n_target": 3942,
+        "prevalence_target": 0.0061,
+        "added_value": 0.00743,
+        "added_value_ci95": [
+          0.006155,
+          0.008622
+        ],
+        "image_only": {
+          "auroc": 0.7914007997277522,
+          "logloss": 0.10727092061667251,
+          "brier": 0.01956662945042719,
+          "calib_intercept": -2.8048063587736025,
+          "calib_slope": 1.086499275442581,
+          "sens_at_90spec_source_threshold": 0.4166666666666667,
+          "sens_at_90spec_target_oracle": 0.5416666666666666
+        },
+        "fused": {
+          "auroc": 0.7802131189382338,
+          "logloss": 0.0998407263600944,
+          "brier": 0.017791786772269173,
+          "calib_intercept": -2.784662397981086,
+          "calib_slope": 1.030097974766237,
+          "sens_at_90spec_source_threshold": 0.3333333333333333,
+          "sens_at_90spec_target_oracle": 0.5833333333333334
+        },
+        "delta_auroc": -0.0112
+      },
+      "vienna_dias": {
+        "n_target": 435,
+        "prevalence_target": 0.154,
+        "added_value": 0.016163,
+        "added_value_ci95": [
+          0.005237,
+          0.028004
+        ],
+        "image_only": {
+          "auroc": 0.7608290071382219,
+          "logloss": 0.3688689079178559,
+          "brier": 0.10922273761313006,
+          "calib_intercept": -0.12025168815588184,
+          "calib_slope": 0.7743256478882852,
+          "sens_at_90spec_source_threshold": 0.4626865671641791,
+          "sens_at_90spec_target_oracle": 0.43283582089552236
+        },
+        "fused": {
+          "auroc": 0.7893818948734587,
+          "logloss": 0.35270541477453404,
+          "brier": 0.10285304666018724,
+          "calib_intercept": 0.15249173503697294,
+          "calib_slope": 0.868418177586797,
+          "sens_at_90spec_source_threshold": 0.5223880597014925,
+          "sens_at_90spec_target_oracle": 0.5223880597014925
+        },
+        "delta_auroc": 0.0286
+      }
+    }
+  },
+  "interpretation": "See research/iteration4/SUMMARY.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 96.77,
+  "peak_rss_mb": 1352.9
+}

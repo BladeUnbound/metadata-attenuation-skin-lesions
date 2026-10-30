@@ -1,0 +1,1022 @@
+{
+  "id": "E45_pad_ufes",
+  "hypothesis": "REGISTRY.md E45 (exploratory): erasing a metadata variable's linear trace from the image representation raises that variable's added value more than matched random erasure",
+  "data": {
+    "dataset": "pad_ufes"
+  },
+  "config": {
+    "rungs": [
+      "convnext_tiny",
+      "resnet18"
+    ],
+    "doses": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "concepts": [
+      "age",
+      "sex",
+      "site"
+    ],
+    "estimator": "E40 corrected",
+    "eraser": "LEACE closed form, fitted per outer training fold"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-28T23:08:49+00:00",
+  "results": {
+    "n": 1089,
+    "complete_case": true,
+    "convnext_tiny": {
+      "t0": {
+        "image_logloss": 0.52022,
+        "delta_age": 0.00064,
+        "delta_age_ci95": [
+          -0.00257,
+          0.00373
+        ],
+        "delta_sex": 0.00119,
+        "delta_sex_ci95": [
+          -0.00386,
+          0.00616
+        ],
+        "delta_site": 0.00219,
+        "delta_site_ci95": [
+          -0.02577,
+          0.02588
+        ],
+        "delta_all": 0.07713,
+        "delta_all_ci95": [
+          0.03663,
+          0.11325
+        ]
+      },
+      "age": {
+        "rank": 1,
+        "probe_t0": 0.023,
+        "site_majority_share": null,
+        "t0.25": {
+          "image_logloss": 0.52047,
+          "delta_age": 0.00062,
+          "delta_age_ci95": [
+            -0.00337,
+            0.00452
+          ],
+          "delta_sex": 0.00128,
+          "delta_sex_ci95": [
+            -0.00374,
+            0.00619
+          ],
+          "delta_site": 0.00189,
+          "delta_site_ci95": [
+            -0.0263,
+            0.02591
+          ],
+          "delta_all": 0.07732,
+          "delta_all_ci95": [
+            0.03669,
+            0.11376
+          ]
+        },
+        "t0.5": {
+          "image_logloss": 0.52167,
+          "delta_age": 0.00066,
+          "delta_age_ci95": [
+            -0.00412,
+            0.00532
+          ],
+          "delta_sex": 0.00132,
+          "delta_sex_ci95": [
+            -0.00363,
+            0.0062
+          ],
+          "delta_site": 0.0022,
+          "delta_site_ci95": [
+            -0.02602,
+            0.02629
+          ],
+          "delta_all": 0.07846,
+          "delta_all_ci95": [
+            0.03799,
+            0.11478
+          ]
+        },
+        "t0.75": {
+          "image_logloss": 0.52264,
+          "delta_age": 0.00072,
+          "delta_age_ci95": [
+            -0.00474,
+            0.00605
+          ],
+          "delta_sex": 0.00133,
+          "delta_sex_ci95": [
+            -0.00356,
+            0.00617
+          ],
+          "delta_site": 0.00232,
+          "delta_site_ci95": [
+            -0.0258,
+            0.02641
+          ],
+          "delta_all": 0.07937,
+          "delta_all_ci95": [
+            0.03892,
+            0.11585
+          ]
+        },
+        "t1.0": {
+          "image_logloss": 0.52286,
+          "delta_age": 0.00088,
+          "delta_age_ci95": [
+            -0.00507,
+            0.00666
+          ],
+          "delta_sex": 0.0013,
+          "delta_sex_ci95": [
+            -0.00356,
+            0.00614
+          ],
+          "delta_site": 0.00213,
+          "delta_site_ci95": [
+            -0.0259,
+            0.02595
+          ],
+          "delta_all": 0.0796,
+          "delta_all_ci95": [
+            0.03935,
+            0.11613
+          ]
+        },
+        "probe_t1": -0.003,
+        "random_same_rank": {
+          "image_logloss": 0.51925,
+          "delta_age": 0.00062,
+          "delta_age_ci95": [
+            -0.00258,
+            0.00372
+          ],
+          "delta_sex": 0.00119,
+          "delta_sex_ci95": [
+            -0.00387,
+            0.00613
+          ],
+          "delta_site": 0.00217,
+          "delta_site_ci95": [
+            -0.02584,
+            0.02581
+          ],
+          "delta_all": 0.077,
+          "delta_all_ci95": [
+            0.03677,
+            0.11316
+          ],
+          "probe": 0.021
+        },
+        "random_matched": {
+          "image_logloss": 0.52127,
+          "delta_age": 0.00059,
+          "delta_age_ci95": [
+            -0.00274,
+            0.00377
+          ],
+          "delta_sex": 0.00113,
+          "delta_sex_ci95": [
+            -0.00395,
+            0.00609
+          ],
+          "delta_site": 0.00242,
+          "delta_site_ci95": [
+            -0.02578,
+            0.02634
+          ],
+          "delta_all": 0.07704,
+          "delta_all_ci95": [
+            0.03624,
+            0.114
+          ],
+          "rank": 1,
+          "grid": [
+            [
+              1,
+              0.52645
+            ]
+          ],
+          "target_image_logloss": 0.52286
+        }
+      },
+      "sex": {
+        "rank": 1,
+        "probe_t0": 0.781,
+        "site_majority_share": null,
+        "t0.25": {
+          "image_logloss": 0.52039,
+          "delta_age": 0.00058,
+          "delta_age_ci95": [
+            -0.00251,
+            0.00364
+          ],
+          "delta_sex": 0.00108,
+          "delta_sex_ci95": [
+            -0.00452,
+            0.00652
+          ],
+          "delta_site": 0.00264,
+          "delta_site_ci95": [
+            -0.02563,
+            0.02676
+          ],
+          "delta_all": 0.0771,
+          "delta_all_ci95": [
+            0.03688,
+            0.1133
+          ]
+        },
+        "t0.5": {
+          "image_logloss": 0.52078,
+          "delta_age": 0.00057,
+          "delta_age_ci95": [
+            -0.0025,
+            0.00357
+          ],
+          "delta_sex": 0.00102,
+          "delta_sex_ci95": [
+            -0.00513,
+            0.00691
+          ],
+          "delta_site": 0.00284,
+          "delta_site_ci95": [
+            -0.02541,
+            0.02702
+          ],
+          "delta_all": 0.07712,
+          "delta_all_ci95": [
+            0.03694,
+            0.1132
+          ]
+        },
+        "t0.75": {
+          "image_logloss": 0.52176,
+          "delta_age": 0.00061,
+          "delta_age_ci95": [
+            -0.00259,
+            0.00375
+          ],
+          "delta_sex": 0.00097,
+          "delta_sex_ci95": [
+            -0.00537,
+            0.00695
+          ],
+          "delta_site": 0.00279,
+          "delta_site_ci95": [
+            -0.02514,
+            0.02655
+          ],
+          "delta_all": 0.0774,
+          "delta_all_ci95": [
+            0.03659,
+            0.11398
+          ]
+        },
+        "t1.0": {
+          "image_logloss": 0.52593,
+          "delta_age": 0.00063,
+          "delta_age_ci95": [
+            -0.00255,
+            0.00374
+          ],
+          "delta_sex": 0.00084,
+          "delta_sex_ci95": [
+            -0.00539,
+            0.00675
+          ],
+          "delta_site": 0.00402,
+          "delta_site_ci95": [
+            -0.0243,
+            0.0281
+          ],
+          "delta_all": 0.0797,
+          "delta_all_ci95": [
+            0.03866,
+            0.11644
+          ]
+        },
+        "probe_t1": 0.454,
+        "random_same_rank": {
+          "image_logloss": 0.51847,
+          "delta_age": 0.00072,
+          "delta_age_ci95": [
+            -0.0024,
+            0.00384
+          ],
+          "delta_sex": 0.00089,
+          "delta_sex_ci95": [
+            -0.00417,
+            0.0058
+          ],
+          "delta_site": 0.00356,
+          "delta_site_ci95": [
+            -0.02451,
+            0.02755
+          ],
+          "delta_all": 0.07768,
+          "delta_all_ci95": [
+            0.0379,
+            0.11361
+          ],
+          "probe": 0.776
+        },
+        "random_matched": {
+          "image_logloss": 0.52127,
+          "delta_age": 0.00059,
+          "delta_age_ci95": [
+            -0.00274,
+            0.00377
+          ],
+          "delta_sex": 0.00113,
+          "delta_sex_ci95": [
+            -0.00395,
+            0.00609
+          ],
+          "delta_site": 0.00242,
+          "delta_site_ci95": [
+            -0.02578,
+            0.02634
+          ],
+          "delta_all": 0.07704,
+          "delta_all_ci95": [
+            0.03624,
+            0.114
+          ],
+          "rank": 1,
+          "grid": [
+            [
+              1,
+              0.52645
+            ]
+          ],
+          "target_image_logloss": 0.52593
+        }
+      },
+      "site": {
+        "rank": 13,
+        "probe_t0": 0.444,
+        "site_majority_share": 0.249,
+        "t0.25": {
+          "image_logloss": 0.52584,
+          "delta_age": 0.00091,
+          "delta_age_ci95": [
+            -0.00209,
+            0.00391
+          ],
+          "delta_sex": 0.00101,
+          "delta_sex_ci95": [
+            -0.00406,
+            0.006
+          ],
+          "delta_site": 0.00403,
+          "delta_site_ci95": [
+            -0.02564,
+            0.03055
+          ],
+          "delta_all": 0.08168,
+          "delta_all_ci95": [
+            0.04121,
+            0.11843
+          ]
+        },
+        "t0.5": {
+          "image_logloss": 0.55277,
+          "delta_age": 0.00123,
+          "delta_age_ci95": [
+            -0.0017,
+            0.00421
+          ],
+          "delta_sex": 0.00116,
+          "delta_sex_ci95": [
+            -0.00379,
+            0.00602
+          ],
+          "delta_site": 0.00943,
+          "delta_site_ci95": [
+            -0.02416,
+            0.04051
+          ],
+          "delta_all": 0.10422,
+          "delta_all_ci95": [
+            0.06125,
+            0.14277
+          ]
+        },
+        "t0.75": {
+          "image_logloss": 0.56317,
+          "delta_age": 0.00105,
+          "delta_age_ci95": [
+            -0.00143,
+            0.00345
+          ],
+          "delta_sex": 0.00058,
+          "delta_sex_ci95": [
+            -0.00424,
+            0.00552
+          ],
+          "delta_site": 0.01106,
+          "delta_site_ci95": [
+            -0.02803,
+            0.04594
+          ],
+          "delta_all": 0.1097,
+          "delta_all_ci95": [
+            0.06576,
+            0.15074
+          ]
+        },
+        "t1.0": {
+          "image_logloss": 0.56936,
+          "delta_age": 0.00056,
+          "delta_age_ci95": [
+            -0.00145,
+            0.00252
+          ],
+          "delta_sex": 1e-05,
+          "delta_sex_ci95": [
+            -0.0045,
+            0.00459
+          ],
+          "delta_site": 0.01604,
+          "delta_site_ci95": [
+            -0.02626,
+            0.05456
+          ],
+          "delta_all": 0.11239,
+          "delta_all_ci95": [
+            0.06679,
+            0.15495
+          ]
+        },
+        "probe_t1": 0.249,
+        "random_same_rank": {
+          "image_logloss": 0.56886,
+          "delta_age": 0.00151,
+          "delta_age_ci95": [
+            -0.00177,
+            0.00474
+          ],
+          "delta_sex": -8e-05,
+          "delta_sex_ci95": [
+            -0.00538,
+            0.00521
+          ],
+          "delta_site": 0.01455,
+          "delta_site_ci95": [
+            -0.01645,
+            0.04192
+          ],
+          "delta_all": 0.09886,
+          "delta_all_ci95": [
+            0.05694,
+            0.137
+          ],
+          "probe": 0.41
+        },
+        "random_matched": {
+          "image_logloss": 0.59402,
+          "delta_age": -5e-05,
+          "delta_age_ci95": [
+            -0.00324,
+            0.00299
+          ],
+          "delta_sex": 0.00086,
+          "delta_sex_ci95": [
+            -0.00484,
+            0.00623
+          ],
+          "delta_site": 0.02428,
+          "delta_site_ci95": [
+            -0.00365,
+            0.04902
+          ],
+          "delta_all": 0.12147,
+          "delta_all_ci95": [
+            0.07804,
+            0.16036
+          ],
+          "rank": 26,
+          "grid": [
+            [
+              13,
+              0.5353
+            ],
+            [
+              26,
+              0.57789
+            ]
+          ],
+          "target_image_logloss": 0.56936
+        }
+      }
+    },
+    "resnet18": {
+      "t0": {
+        "image_logloss": 0.5191,
+        "delta_age": 0.00171,
+        "delta_age_ci95": [
+          -0.00241,
+          0.00576
+        ],
+        "delta_sex": 0.00062,
+        "delta_sex_ci95": [
+          -0.00433,
+          0.00566
+        ],
+        "delta_site": 0.00204,
+        "delta_site_ci95": [
+          -0.02966,
+          0.02866
+        ],
+        "delta_all": 0.07848,
+        "delta_all_ci95": [
+          0.03454,
+          0.11636
+        ]
+      },
+      "age": {
+        "rank": 1,
+        "probe_t0": 0.012,
+        "site_majority_share": null,
+        "t0.25": {
+          "image_logloss": 0.51888,
+          "delta_age": 0.00234,
+          "delta_age_ci95": [
+            -0.00243,
+            0.00703
+          ],
+          "delta_sex": 0.00082,
+          "delta_sex_ci95": [
+            -0.00404,
+            0.00581
+          ],
+          "delta_site": 0.0004,
+          "delta_site_ci95": [
+            -0.03113,
+            0.027
+          ],
+          "delta_all": 0.07656,
+          "delta_all_ci95": [
+            0.03307,
+            0.1144
+          ]
+        },
+        "t0.5": {
+          "image_logloss": 0.5199,
+          "delta_age": 0.00276,
+          "delta_age_ci95": [
+            -0.00266,
+            0.00809
+          ],
+          "delta_sex": 0.00066,
+          "delta_sex_ci95": [
+            -0.00405,
+            0.00564
+          ],
+          "delta_site": 9e-05,
+          "delta_site_ci95": [
+            -0.03142,
+            0.02661
+          ],
+          "delta_all": 0.07679,
+          "delta_all_ci95": [
+            0.03321,
+            0.11508
+          ]
+        },
+        "t0.75": {
+          "image_logloss": 0.51826,
+          "delta_age": 0.00322,
+          "delta_age_ci95": [
+            -0.00259,
+            0.00901
+          ],
+          "delta_sex": 0.00075,
+          "delta_sex_ci95": [
+            -0.00402,
+            0.00568
+          ],
+          "delta_site": 0.00063,
+          "delta_site_ci95": [
+            -0.0302,
+            0.02654
+          ],
+          "delta_all": 0.07795,
+          "delta_all_ci95": [
+            0.03432,
+            0.116
+          ]
+        },
+        "t1.0": {
+          "image_logloss": 0.51896,
+          "delta_age": 0.00353,
+          "delta_age_ci95": [
+            -0.00222,
+            0.00922
+          ],
+          "delta_sex": 0.00079,
+          "delta_sex_ci95": [
+            -0.00392,
+            0.00568
+          ],
+          "delta_site": 0.00067,
+          "delta_site_ci95": [
+            -0.03039,
+            0.02661
+          ],
+          "delta_all": 0.07908,
+          "delta_all_ci95": [
+            0.03542,
+            0.11711
+          ]
+        },
+        "probe_t1": -0.003,
+        "random_same_rank": {
+          "image_logloss": 0.52127,
+          "delta_age": 0.0017,
+          "delta_age_ci95": [
+            -0.00229,
+            0.00559
+          ],
+          "delta_sex": 0.00034,
+          "delta_sex_ci95": [
+            -0.00457,
+            0.00526
+          ],
+          "delta_site": 0.00225,
+          "delta_site_ci95": [
+            -0.02993,
+            0.02917
+          ],
+          "delta_all": 0.07946,
+          "delta_all_ci95": [
+            0.03543,
+            0.1174
+          ],
+          "probe": 0.009
+        },
+        "random_matched": {
+          "image_logloss": 0.51936,
+          "delta_age": 0.00167,
+          "delta_age_ci95": [
+            -0.00246,
+            0.00566
+          ],
+          "delta_sex": 0.00067,
+          "delta_sex_ci95": [
+            -0.00431,
+            0.00575
+          ],
+          "delta_site": 0.00174,
+          "delta_site_ci95": [
+            -0.03009,
+            0.02848
+          ],
+          "delta_all": 0.07867,
+          "delta_all_ci95": [
+            0.03453,
+            0.11635
+          ],
+          "rank": 1,
+          "grid": [
+            [
+              1,
+              0.51899
+            ]
+          ],
+          "target_image_logloss": 0.51896
+        }
+      },
+      "sex": {
+        "rank": 1,
+        "probe_t0": 0.735,
+        "site_majority_share": null,
+        "t0.25": {
+          "image_logloss": 0.5192,
+          "delta_age": 0.00166,
+          "delta_age_ci95": [
+            -0.00246,
+            0.00569
+          ],
+          "delta_sex": 0.00091,
+          "delta_sex_ci95": [
+            -0.00445,
+            0.00635
+          ],
+          "delta_site": 0.00213,
+          "delta_site_ci95": [
+            -0.02976,
+            0.02877
+          ],
+          "delta_all": 0.07854,
+          "delta_all_ci95": [
+            0.03454,
+            0.11635
+          ]
+        },
+        "t0.5": {
+          "image_logloss": 0.51925,
+          "delta_age": 0.00161,
+          "delta_age_ci95": [
+            -0.0025,
+            0.00564
+          ],
+          "delta_sex": 0.0012,
+          "delta_sex_ci95": [
+            -0.00457,
+            0.00689
+          ],
+          "delta_site": 0.00223,
+          "delta_site_ci95": [
+            -0.02989,
+            0.02887
+          ],
+          "delta_all": 0.07852,
+          "delta_all_ci95": [
+            0.0344,
+            0.11636
+          ]
+        },
+        "t0.75": {
+          "image_logloss": 0.51939,
+          "delta_age": 0.00147,
+          "delta_age_ci95": [
+            -0.00268,
+            0.00558
+          ],
+          "delta_sex": 0.00153,
+          "delta_sex_ci95": [
+            -0.00456,
+            0.00749
+          ],
+          "delta_site": 0.00221,
+          "delta_site_ci95": [
+            -0.02992,
+            0.02858
+          ],
+          "delta_all": 0.07789,
+          "delta_all_ci95": [
+            0.03349,
+            0.11638
+          ]
+        },
+        "t1.0": {
+          "image_logloss": 0.51819,
+          "delta_age": 0.00156,
+          "delta_age_ci95": [
+            -0.00267,
+            0.00569
+          ],
+          "delta_sex": 0.00196,
+          "delta_sex_ci95": [
+            -0.00396,
+            0.00773
+          ],
+          "delta_site": 0.00063,
+          "delta_site_ci95": [
+            -0.03152,
+            0.02695
+          ],
+          "delta_all": 0.07526,
+          "delta_all_ci95": [
+            0.03149,
+            0.11393
+          ]
+        },
+        "probe_t1": 0.447,
+        "random_same_rank": {
+          "image_logloss": 0.52062,
+          "delta_age": 0.00172,
+          "delta_age_ci95": [
+            -0.00226,
+            0.00574
+          ],
+          "delta_sex": 0.00068,
+          "delta_sex_ci95": [
+            -0.00411,
+            0.00568
+          ],
+          "delta_site": 0.00098,
+          "delta_site_ci95": [
+            -0.03058,
+            0.02785
+          ],
+          "delta_all": 0.07707,
+          "delta_all_ci95": [
+            0.03346,
+            0.11533
+          ],
+          "probe": 0.731
+        },
+        "random_matched": {
+          "image_logloss": 0.51936,
+          "delta_age": 0.00167,
+          "delta_age_ci95": [
+            -0.00246,
+            0.00566
+          ],
+          "delta_sex": 0.00067,
+          "delta_sex_ci95": [
+            -0.00431,
+            0.00575
+          ],
+          "delta_site": 0.00174,
+          "delta_site_ci95": [
+            -0.03009,
+            0.02848
+          ],
+          "delta_all": 0.07867,
+          "delta_all_ci95": [
+            0.03453,
+            0.11635
+          ],
+          "rank": 1,
+          "grid": [
+            [
+              1,
+              0.51899
+            ]
+          ],
+          "target_image_logloss": 0.51819
+        }
+      },
+      "site": {
+        "rank": 13,
+        "probe_t0": 0.38,
+        "site_majority_share": 0.249,
+        "t0.25": {
+          "image_logloss": 0.52224,
+          "delta_age": 0.00108,
+          "delta_age_ci95": [
+            -0.0031,
+            0.0052
+          ],
+          "delta_sex": 0.00089,
+          "delta_sex_ci95": [
+            -0.0039,
+            0.00596
+          ],
+          "delta_site": 0.00313,
+          "delta_site_ci95": [
+            -0.03039,
+            0.03205
+          ],
+          "delta_all": 0.07884,
+          "delta_all_ci95": [
+            0.0351,
+            0.1185
+          ]
+        },
+        "t0.5": {
+          "image_logloss": 0.53654,
+          "delta_age": 0.00058,
+          "delta_age_ci95": [
+            -0.00298,
+            0.00422
+          ],
+          "delta_sex": 0.0007,
+          "delta_sex_ci95": [
+            -0.00395,
+            0.00545
+          ],
+          "delta_site": 0.00741,
+          "delta_site_ci95": [
+            -0.02939,
+            0.0412
+          ],
+          "delta_all": 0.08862,
+          "delta_all_ci95": [
+            0.04376,
+            0.12957
+          ]
+        },
+        "t0.75": {
+          "image_logloss": 0.55263,
+          "delta_age": 0.0003,
+          "delta_age_ci95": [
+            -0.00269,
+            0.00333
+          ],
+          "delta_sex": 0.00033,
+          "delta_sex_ci95": [
+            -0.00409,
+            0.00478
+          ],
+          "delta_site": 0.01467,
+          "delta_site_ci95": [
+            -0.02591,
+            0.05132
+          ],
+          "delta_all": 0.10173,
+          "delta_all_ci95": [
+            0.05531,
+            0.14434
+          ]
+        },
+        "t1.0": {
+          "image_logloss": 0.56937,
+          "delta_age": 0.00017,
+          "delta_age_ci95": [
+            -0.00225,
+            0.00269
+          ],
+          "delta_sex": -0.00021,
+          "delta_sex_ci95": [
+            -0.00436,
+            0.00403
+          ],
+          "delta_site": 0.02336,
+          "delta_site_ci95": [
+            -0.02016,
+            0.06289
+          ],
+          "delta_all": 0.11453,
+          "delta_all_ci95": [
+            0.068,
+            0.15802
+          ]
+        },
+        "probe_t1": 0.249,
+        "random_same_rank": {
+          "image_logloss": 0.52327,
+          "delta_age": 0.00125,
+          "delta_age_ci95": [
+            -0.00284,
+            0.00535
+          ],
+          "delta_sex": 0.00123,
+          "delta_sex_ci95": [
+            -0.00348,
+            0.00602
+          ],
+          "delta_site": 0.00316,
+          "delta_site_ci95": [
+            -0.02848,
+            0.0303
+          ],
+          "delta_all": 0.08194,
+          "delta_all_ci95": [
+            0.03846,
+            0.11998
+          ],
+          "probe": 0.376
+        },
+        "random_matched": {
+          "image_logloss": 0.56682,
+          "delta_age": 0.00014,
+          "delta_age_ci95": [
+            -0.00386,
+            0.00407
+          ],
+          "delta_sex": 0.0014,
+          "delta_sex_ci95": [
+            -0.00489,
+            0.0078
+          ],
+          "delta_site": 0.01028,
+          "delta_site_ci95": [
+            -0.02247,
+            0.03766
+          ],
+          "delta_all": 0.10339,
+          "delta_all_ci95": [
+            0.05762,
+            0.14506
+          ],
+          "rank": 52,
+          "grid": [
+            [
+              13,
+              0.53471
+            ],
+            [
+              26,
+              0.53347
+            ],
+            [
+              52,
+              0.56667
+            ],
+            [
+              104,
+              0.57911
+            ]
+          ],
+          "target_image_logloss": 0.56937
+        }
+      }
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 54.63,
+  "peak_rss_mb": 778.2
+}

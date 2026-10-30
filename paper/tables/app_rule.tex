@@ -1,0 +1,9 @@
+\begin{table}[tp]\centering\footnotesize
+\caption{Predicting a variable's added value in a held-out dataset (E34, exploratory; leave-one-dataset-out, MILK10k held out as one; 160 dataset--representation--variable rows). MAE in $10^{-3}$ nats. Decision rule fixed in advance: collect if predicted $\hat\Delta_{\mathrm{var}}\ge10^{-3}$ nats.}\label{tab:rule}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{\begin{tabular}{lccccc}\toprule
+Predictor & MAE & Spearman & Precision & Recall & Accuracy\\\midrule
+Predict zero & 9.2 & -- & -- & 0.00 & 0.45\\
+$\hat I_{\mathrm{var}}\times$ median retained & 8.2 & 0.74 & 0.81 & 0.83 & 0.80\\
+Ridge (6 features) & 10.1 & 0.64 & 0.61 & 0.93 & 0.63\\
+\bottomrule\end{tabular}}\end{table}

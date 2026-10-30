@@ -1,0 +1,400 @@
+ham10000 resnet18 0.8592 4.19
+ham10000 resnet34 0.8541 4.76
+ham10000 resnet50 0.8515 3.98
+ham10000 resnet101 0.8434 3.73
+ham10000 convnext_tiny 0.8913 2.6
+ham10000 convnext_small 0.8752 3.17
+ham10000 convnext_base 0.891 1.55
+pad_ufes resnet18 0.7787 73.44
+pad_ufes resnet34 0.7725 87.59
+pad_ufes resnet50 0.7712 83.09
+pad_ufes resnet101 0.771 87.92
+pad_ufes convnext_tiny 0.7764 73.8
+pad_ufes convnext_small 0.7788 68.32
+pad_ufes convnext_base 0.7713 77.8
+isic2019_nonham resnet18 0.8025 6.99
+isic2019_nonham resnet34 0.807 7.19
+isic2019_nonham resnet50 0.8034 6.71
+isic2019_nonham resnet101 0.8117 6.08
+isic2019_nonham convnext_tiny 0.8252 6.13
+isic2019_nonham convnext_small 0.8198 6.24
+isic2019_nonham convnext_base 0.8271 5.55
+{
+  "id": "E31a_family_size",
+  "hypothesis": "H31: within a family, metadata added value falls as image log-loss improves.",
+  "data": {
+    "datasets": [
+      "ham10000",
+      "pad_ufes",
+      "isic2019_nonham"
+    ],
+    "rows": "complete cases"
+  },
+  "config": {
+    "ladders": {
+      "resnet": [
+        "resnet18",
+        "resnet34",
+        "resnet50",
+        "resnet101"
+      ],
+      "convnext": [
+        "convnext_tiny",
+        "convnext_small",
+        "convnext_base"
+      ]
+    }
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T19:31:09+00:00",
+  "results": {
+    "ham10000": {
+      "resnet18": {
+        "image": {
+          "auroc": 0.8592477340565892,
+          "logloss": 0.25517234319010695,
+          "brier": 0.07659269752712228,
+          "calib_intercept": 0.0028484135181599196,
+          "calib_slope": 1.0023651169838643
+        },
+        "delta": 0.004193339767573611,
+        "delta_ci95": [
+          0.001004,
+          0.007353
+        ]
+      },
+      "resnet34": {
+        "image": {
+          "auroc": 0.8541455070238477,
+          "logloss": 0.2603826163564811,
+          "brier": 0.07846193487181345,
+          "calib_intercept": -0.011489055161201042,
+          "calib_slope": 0.9947479447568068
+        },
+        "delta": 0.0047576183152829125,
+        "delta_ci95": [
+          0.001716,
+          0.007877
+        ]
+      },
+      "resnet50": {
+        "image": {
+          "auroc": 0.8514815420791092,
+          "logloss": 0.2616159528554145,
+          "brier": 0.07890593054694633,
+          "calib_intercept": 0.0012567824565725076,
+          "calib_slope": 1.001319033820467
+        },
+        "delta": 0.003981769069842261,
+        "delta_ci95": [
+          0.000783,
+          0.007088
+        ]
+      },
+      "resnet101": {
+        "image": {
+          "auroc": 0.8433691395393228,
+          "logloss": 0.2685801889453555,
+          "brier": 0.08100460865621262,
+          "calib_intercept": 0.0033044764125307225,
+          "calib_slope": 1.0029012079313517
+        },
+        "delta": 0.0037297590091960684,
+        "delta_ci95": [
+          0.000404,
+          0.00692
+        ]
+      },
+      "resnet:resnet18-resnet101": {
+        "diff": 0.0004635807583775427,
+        "ci95": [
+          -0.000895,
+          0.001811
+        ]
+      },
+      "convnext_tiny": {
+        "image": {
+          "auroc": 0.8913136913114889,
+          "logloss": 0.23156404592935267,
+          "brier": 0.06955127893370708,
+          "calib_intercept": 0.0015169957599118961,
+          "calib_slope": 1.001802755331745
+        },
+        "delta": 0.0025974917845484804,
+        "delta_ci95": [
+          -0.000307,
+          0.005494
+        ]
+      },
+      "convnext_small": {
+        "image": {
+          "auroc": 0.8751950253076669,
+          "logloss": 0.2438687152163278,
+          "brier": 0.0731096685019335,
+          "calib_intercept": -0.002245256725812452,
+          "calib_slope": 0.999327637042131
+        },
+        "delta": 0.003168877842926556,
+        "delta_ci95": [
+          -0.000276,
+          0.006218
+        ]
+      },
+      "convnext_base": {
+        "image": {
+          "auroc": 0.8910083841479403,
+          "logloss": 0.23037845419355685,
+          "brier": 0.06872710477840459,
+          "calib_intercept": -0.0011109043050392328,
+          "calib_slope": 1.0002529225341852
+        },
+        "delta": 0.0015501797129797664,
+        "delta_ci95": [
+          -0.001203,
+          0.004103
+        ]
+      },
+      "convnext:convnext_tiny-convnext_base": {
+        "diff": 0.001047312071568714,
+        "ci95": [
+          -0.000161,
+          0.002263
+        ]
+      }
+    },
+    "pad_ufes": {
+      "resnet18": {
+        "image": {
+          "auroc": 0.7786905722741073,
+          "logloss": 0.5187404901987973,
+          "brier": 0.17100967821715637,
+          "calib_intercept": 0.0071289452289565874,
+          "calib_slope": 0.9851152557219041
+        },
+        "delta": 0.07343927841293872,
+        "delta_ci95": [
+          0.030999,
+          0.115151
+        ]
+      },
+      "resnet34": {
+        "image": {
+          "auroc": 0.7725220031515431,
+          "logloss": 0.5319166992887643,
+          "brier": 0.17607091437176867,
+          "calib_intercept": 0.016745554786719588,
+          "calib_slope": 0.9782436539606678
+        },
+        "delta": 0.08758758687266381,
+        "delta_ci95": [
+          0.046408,
+          0.124916
+        ]
+      },
+      "resnet50": {
+        "image": {
+          "auroc": 0.771199892386333,
+          "logloss": 0.5362315959897528,
+          "brier": 0.17833687742248253,
+          "calib_intercept": 0.0019062166205483628,
+          "calib_slope": 1.0001809230578125
+        },
+        "delta": 0.08309196227481527,
+        "delta_ci95": [
+          0.041139,
+          0.122894
+        ]
+      },
+      "resnet101": {
+        "image": {
+          "auroc": 0.7709616049809755,
+          "logloss": 0.5271735443102723,
+          "brier": 0.17485786316644142,
+          "calib_intercept": 0.006900418634426609,
+          "calib_slope": 0.9873194208449578
+        },
+        "delta": 0.08792223434069148,
+        "delta_ci95": [
+          0.043248,
+          0.128482
+        ]
+      },
+      "resnet:resnet18-resnet101": {
+        "diff": -0.014482955927752755,
+        "ci95": [
+          -0.030199,
+          0.001843
+        ]
+      },
+      "convnext_tiny": {
+        "image": {
+          "auroc": 0.7764345286137053,
+          "logloss": 0.5249332519992783,
+          "brier": 0.1743413690810609,
+          "calib_intercept": 0.029659120396087226,
+          "calib_slope": 0.9558498003711932
+        },
+        "delta": 0.07379527593151243,
+        "delta_ci95": [
+          0.030375,
+          0.110662
+        ]
+      },
+      "convnext_small": {
+        "image": {
+          "auroc": 0.7787789692148046,
+          "logloss": 0.5197579944996207,
+          "brier": 0.17305660969084677,
+          "calib_intercept": 0.0040119904937913065,
+          "calib_slope": 0.9951064497898147
+        },
+        "delta": 0.06832224466321522,
+        "delta_ci95": [
+          0.024532,
+          0.108819
+        ]
+      },
+      "convnext_base": {
+        "image": {
+          "auroc": 0.771303662708021,
+          "logloss": 0.5252577618545555,
+          "brier": 0.1730543792279895,
+          "calib_intercept": 0.012035261737292012,
+          "calib_slope": 0.9814038632043789
+        },
+        "delta": 0.07779935774356954,
+        "delta_ci95": [
+          0.034899,
+          0.118574
+        ]
+      },
+      "convnext:convnext_tiny-convnext_base": {
+        "diff": -0.004004081812057108,
+        "ci95": [
+          -0.016455,
+          0.007977
+        ]
+      }
+    },
+    "isic2019_nonham": {
+      "resnet18": {
+        "image": {
+          "auroc": 0.8024849269101298,
+          "logloss": 0.4186894892821837,
+          "brier": 0.1308798386071959,
+          "calib_intercept": -0.008732890890951302,
+          "calib_slope": 0.9929700191966635
+        },
+        "delta": 0.006988382414694368,
+        "delta_ci95": [
+          -0.000252,
+          0.014047
+        ]
+      },
+      "resnet34": {
+        "image": {
+          "auroc": 0.8070401134125185,
+          "logloss": 0.41434580917842506,
+          "brier": 0.12957709377187387,
+          "calib_intercept": -0.007127436039527129,
+          "calib_slope": 0.9942537278059694
+        },
+        "delta": 0.007192615430425544,
+        "delta_ci95": [
+          0.00061,
+          0.014024
+        ]
+      },
+      "resnet50": {
+        "image": {
+          "auroc": 0.8034278307114521,
+          "logloss": 0.42214856309218873,
+          "brier": 0.13152876345677128,
+          "calib_intercept": -0.0037427686408826257,
+          "calib_slope": 0.996967681816959
+        },
+        "delta": 0.006705142337890394,
+        "delta_ci95": [
+          8.9e-05,
+          0.013046
+        ]
+      },
+      "resnet101": {
+        "image": {
+          "auroc": 0.8117482826160294,
+          "logloss": 0.4134390321840316,
+          "brier": 0.12911056388160572,
+          "calib_intercept": -0.010501829800253768,
+          "calib_slope": 0.9918125163924236
+        },
+        "delta": 0.006077952886258127,
+        "delta_ci95": [
+          -0.000245,
+          0.01264
+        ]
+      },
+      "resnet:resnet18-resnet101": {
+        "diff": 0.0009104295284362395,
+        "ci95": [
+          -0.001048,
+          0.002911
+        ]
+      },
+      "convnext_tiny": {
+        "image": {
+          "auroc": 0.8252037111941714,
+          "logloss": 0.39940924918085047,
+          "brier": 0.12481602792931422,
+          "calib_intercept": -0.005753019687809082,
+          "calib_slope": 0.995683908111979
+        },
+        "delta": 0.006126939741048166,
+        "delta_ci95": [
+          -0.000134,
+          0.012118
+        ]
+      },
+      "convnext_small": {
+        "image": {
+          "auroc": 0.8198005882099542,
+          "logloss": 0.40453012636051694,
+          "brier": 0.12640102235643913,
+          "calib_intercept": -0.006753703955201966,
+          "calib_slope": 0.9951455289758232
+        },
+        "delta": 0.006235728498021553,
+        "delta_ci95": [
+          0.000916,
+          0.011822
+        ]
+      },
+      "convnext_base": {
+        "image": {
+          "auroc": 0.8271395899313941,
+          "logloss": 0.39664656715130375,
+          "brier": 0.12315196568322266,
+          "calib_intercept": -0.0032199055146416846,
+          "calib_slope": 0.9972534788403224
+        },
+        "delta": 0.005554032853668534,
+        "delta_ci95": [
+          -0.000196,
+          0.012047
+        ]
+      },
+      "convnext:convnext_tiny-convnext_base": {
+        "diff": 0.0005729068873796325,
+        "ci95": [
+          -0.000788,
+          0.001864
+        ]
+      }
+    }
+  },
+  "interpretation": "See research/iteration4/SUMMARY.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 71.54,
+  "peak_rss_mb": 1269.7
+}

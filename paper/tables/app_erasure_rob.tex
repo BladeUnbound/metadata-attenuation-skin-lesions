@@ -1,0 +1,29 @@
+\begin{table*}[tp]\centering\footnotesize
+\caption{Robustness of the age-erasure contrast (E50b, E50c, E53b; $10^{-3}$ nats, 95\% grouped-bootstrap CIs). Fold assignments 1 and 2 and ResNet-18 use the primary arms only (erasure, nested matched random subspaces, shams). Full-feature fusion: both stages replaced by an $L_2$ logistic model on [features, age] with the same erasers. Class-conditional (exploratory, defined after the confirmatory results): the eraser removes the image's covariance with age minus its training-fold class mean, i.e.\ the age trace not explained by the label; it is applied without labels. Matching check as in Table~\ref{tab:erasure}.}\label{tab:apperasurerob}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llccc}\toprule
+Image set & Condition & Erased $-$ matched & Erased $-$ sham & Matching check\\\midrule
+ISIC 2020 & Fold assignment 1 & 1.08 [0.76, 1.38] & 1.30 [0.94, 1.69] & \ensuremath{-}0.37 [\ensuremath{-}1.22, 0.47]\\
+ & Fold assignment 2 & 0.85 [0.53, 1.15] & 1.20 [0.84, 1.55] & \ensuremath{-}1.73 [\ensuremath{-}2.61, \ensuremath{-}0.85]\\
+ & Full-feature fusion & 1.49 [0.82, 2.20] & -- & \ensuremath{-}0.30 [\ensuremath{-}1.11, 0.57]\\
+ & Class-conditional & 0.86 [0.56, 1.16] & 1.04 [0.73, 1.36] & 0.08 [\ensuremath{-}0.74, 0.89]\\
+HIBA & Class-conditional & 61.34 [37.14, 85.10] & 61.42 [37.22, 85.05] & 283.45 [209.43, 366.67]\\
+MSK 2020 & Class-conditional & \ensuremath{-}3.43 [\ensuremath{-}12.02, 4.19] & \ensuremath{-}3.01 [\ensuremath{-}11.77, 4.94] & 40.32 [23.43, 58.93]\\
+HAM10000 & Fold assignment 1 & 8.74 [6.11, 11.41] & 10.69 [7.61, 13.78] & \ensuremath{-}8.95 [\ensuremath{-}13.33, \ensuremath{-}4.83]\\
+ & Fold assignment 2 & 8.65 [6.22, 11.22] & 11.02 [8.10, 14.00] & \ensuremath{-}16.69 [\ensuremath{-}21.15, \ensuremath{-}12.59]\\
+ & ResNet-18 & 8.89 [6.37, 11.31] & 11.63 [8.65, 14.72] & \ensuremath{-}9.67 [\ensuremath{-}14.52, \ensuremath{-}4.92]\\
+ & Full-feature fusion & 8.12 [5.53, 10.75] & -- & \ensuremath{-}12.88 [\ensuremath{-}17.35, \ensuremath{-}8.14]\\
+ & Class-conditional & 4.05 [2.48, 5.65] & 4.48 [2.78, 6.22] & \ensuremath{-}0.43 [\ensuremath{-}2.90, 1.96]\\
+ISIC 2019 & Fold assignment 1 & 6.74 [4.54, 8.97] & 7.16 [4.75, 9.56] & \ensuremath{-}4.39 [\ensuremath{-}8.05, \ensuremath{-}0.44]\\
+ & Fold assignment 2 & 6.42 [4.21, 8.61] & 7.19 [4.78, 9.57] & \ensuremath{-}6.37 [\ensuremath{-}9.89, \ensuremath{-}2.63]\\
+ & ResNet-18 & 6.22 [4.08, 8.37] & 6.99 [4.63, 9.37] & \ensuremath{-}6.91 [\ensuremath{-}10.65, \ensuremath{-}2.76]\\
+ & Full-feature fusion & 5.13 [3.66, 6.60] & -- & \ensuremath{-}3.77 [\ensuremath{-}7.05, \ensuremath{-}0.41]\\
+ & Class-conditional & 2.53 [1.43, 3.69] & 2.74 [1.59, 3.91] & \ensuremath{-}0.34 [\ensuremath{-}1.86, 1.23]\\
+MILK10k (derm.) & ResNet-18 & 22.19 [17.02, 27.22] & 51.82 [44.06, 59.05] & 6.87 [\ensuremath{-}0.65, 14.16]\\
+ & Full-feature fusion & 23.49 [17.20, 29.94] & -- & \ensuremath{-}39.64 [\ensuremath{-}48.14, \ensuremath{-}31.13]\\
+ & Class-conditional & 13.62 [9.66, 17.36] & 21.28 [16.60, 25.66] & 2.32 [\ensuremath{-}4.09, 9.23]\\
+PAD-UFES-20$^\ddagger$ & ResNet-18 & 1.89 [\ensuremath{-}0.16, 4.11] & 1.84 [\ensuremath{-}0.19, 3.99] & \ensuremath{-}4.53 [\ensuremath{-}9.76, 1.12]\\
+ & Class-conditional & \ensuremath{-}0.07 [\ensuremath{-}1.33, 1.23] & \ensuremath{-}0.04 [\ensuremath{-}1.22, 1.19] & \ensuremath{-}12.31 [\ensuremath{-}18.31, \ensuremath{-}6.33]\\
+MILK10k (clin.) & Full-feature fusion & 25.85 [19.79, 31.80] & -- & \ensuremath{-}36.70 [\ensuremath{-}45.77, \ensuremath{-}27.95]\\
+ & Class-conditional & 14.05 [9.88, 18.27] & 25.24 [20.53, 30.03] & 1.50 [\ensuremath{-}6.28, 9.61]\\
+\bottomrule\end{tabular}\end{table*}

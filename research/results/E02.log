@@ -1,0 +1,61 @@
+{
+  "id": "E02_leakage",
+  "hypothesis": "Most validation images have a near-copy of the same scan in the training set under an image-level split.",
+  "data": {
+    "source": "Kaggle aryansinghal10/alzheimers-multiclass-dataset-equal-and-augmented (Apache-2.0)",
+    "n_images": 44000,
+    "classes": {
+      "MildDemented": 10000,
+      "ModerateDemented": 10000,
+      "NonDemented": 12800,
+      "VeryMildDemented": 11200
+    }
+  },
+  "config": {
+    "embedding": "frozen VGG16 conv features of alzheimer_cnn.h5, GAP 512-d",
+    "device": "mps"
+  },
+  "seed": 42,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-26T09:19:40+00:00",
+  "results": {
+    "exact_duplicate_images": 462,
+    "self_augmentation_similarity_p5_p50": [
+      0.9951,
+      0.998
+    ],
+    "overall_frac_val_with_near_copy_in_train": 0.999,
+    "overall_frac_other_class_above_threshold": 0.993,
+    "per_class": {
+      "MildDemented": {
+        "median_nn_sim_same_class": 0.9992,
+        "median_nn_sim_other_class": 0.9972,
+        "frac_val_with_near_copy_in_train": 0.998,
+        "frac_other_class_above_threshold": 0.994
+      },
+      "ModerateDemented": {
+        "median_nn_sim_same_class": 0.9994,
+        "median_nn_sim_other_class": 0.9972,
+        "frac_val_with_near_copy_in_train": 1.0,
+        "frac_other_class_above_threshold": 0.992
+      },
+      "NonDemented": {
+        "median_nn_sim_same_class": 0.9991,
+        "median_nn_sim_other_class": 0.9973,
+        "frac_val_with_near_copy_in_train": 0.998,
+        "frac_other_class_above_threshold": 0.998
+      },
+      "VeryMildDemented": {
+        "median_nn_sim_same_class": 0.9991,
+        "median_nn_sim_other_class": 0.9973,
+        "frac_val_with_near_copy_in_train": 0.998,
+        "frac_other_class_above_threshold": 0.988
+      }
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": "If leakage is confirmed, the 86% cannot be reported as generalisation; re-evaluate only with source-level grouping.",
+  "runtime_s": 538.25,
+  "peak_rss_mb": 1282.4
+}

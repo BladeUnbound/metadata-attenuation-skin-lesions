@@ -1,0 +1,68 @@
+{
+  "id": "E30_recoverability_utility",
+  "hypothesis": "H30 (exploratory): higher within-class recoverability goes with a lower retained fraction, controlling for I_var and image AUROC.",
+  "data": {
+    "datasets": [
+      "ham10000",
+      "isic2020",
+      "isic2019_nonham",
+      "pad_ufes",
+      "hiba",
+      "msk2020",
+      "milk10k_derm",
+      "milk10k_clin"
+    ],
+    "rows": "complete cases"
+  },
+  "config": {
+    "rungs": [
+      "hsv",
+      "resnet18",
+      "resnet50",
+      "convnext_tiny",
+      "vit_b_16",
+      "vitl16_swag"
+    ],
+    "bootstrap": 1000,
+    "folds": "seed 0"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T18:50:12+00:00",
+  "results": {
+    "n_rows_used": 95,
+    "n_rows_total": 160,
+    "datasets_used": [
+      "ham10000",
+      "hiba",
+      "isic2019_nonham",
+      "isic2020",
+      "milk10k_clin",
+      "milk10k_derm",
+      "msk2020",
+      "pad_ufes"
+    ],
+    "spearman_recov_within_vs_retained": -0.7502965785900455,
+    "spearman_recov_marginal_vs_retained": -0.8083566629339305,
+    "partial_spearman_within_given_Ivar_auroc": -0.5949017929656116,
+    "partial_spearman_dataset_cluster_ci95": [
+      -0.724646,
+      -0.39571
+    ],
+    "spearman_by_rung": {
+      "convnext_tiny": -0.7456140350877193,
+      "hsv": -0.4089513337962553,
+      "resnet18": -0.6508771929824562,
+      "resnet50": -0.7245614035087719,
+      "vit_b_16": -0.6280701754385966
+    },
+    "lodo_mae_ridge": 0.15378675391305552,
+    "lodo_mae_median_baseline": 0.2890477077558773,
+    "lodo_n_folds": 8
+  },
+  "interpretation": "See research/iteration4/SUMMARY.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 718.84,
+  "peak_rss_mb": 1300.0
+}

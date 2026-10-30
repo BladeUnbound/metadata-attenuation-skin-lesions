@@ -1,0 +1,180 @@
+% Verification status in the "note" comment of each entry:
+%   [V]  verified by web search in this project (title, venue, year, identifiers)
+%   [M]  from memory; must be checked before submission (tracked in paper/REVIEW_LOG.md)
+
+% [V] arXiv 1803.10417 listing; volume/article number [M]
+@article{tschandl2018ham,
+  author  = {Tschandl, Philipp and Rosendahl, Cliff and Kittler, Harald},
+  title   = {The {HAM10000} dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions},
+  journal = {Scientific Data},
+  volume  = {5},
+  pages   = {180161},
+  year    = {2018}
+}
+
+% [V] title, Sci. Data 2021, arXiv 2008.07360; 33,126 images, 584 melanomas, 2,056 patients
+@article{rotemberg2021isic,
+  author  = {Rotemberg, Veronica and others},
+  title   = {A patient-centric dataset of images and metadata for identifying melanomas using clinical context},
+  journal = {Scientific Data},
+  volume  = {8},
+  year    = {2021},
+  note    = {arXiv:2008.07360}
+}
+
+% [V] Data in Brief 32:106221, doi 10.1016/j.dib.2020.106221
+@article{pacheco2020pad,
+  author  = {Pacheco, Andre G. C. and others},
+  title   = {{PAD-UFES-20}: A skin lesion dataset composed of patient data and clinical images collected from smartphones},
+  journal = {Data in Brief},
+  volume  = {32},
+  pages   = {106221},
+  year    = {2020},
+  doi     = {10.1016/j.dib.2020.106221}
+}
+
+% [V] Comput. Biol. Med. 116:103545, doi 10.1016/j.compbiomed.2019.103545
+@article{pacheco2020impact,
+  author  = {Pacheco, Andre G. C. and Krohling, Renato A.},
+  title   = {The impact of patient clinical information on automated skin cancer detection},
+  journal = {Computers in Biology and Medicine},
+  volume  = {116},
+  pages   = {103545},
+  year    = {2020},
+  doi     = {10.1016/j.compbiomed.2019.103545}
+}
+
+% [V] JMIR 23(7):e20708, doi 10.2196/20708
+@article{hohn2021review,
+  author  = {H{\"o}hn, Julia and others},
+  title   = {Integrating patient data into skin cancer classification using convolutional neural networks: Systematic review},
+  journal = {Journal of Medical Internet Research},
+  volume  = {23},
+  number  = {7},
+  pages   = {e20708},
+  year    = {2021},
+  doi     = {10.2196/20708}
+}
+
+% [V] arXiv 1908.02288; peer-reviewed version Sci. Data 2024, doi 10.1038/s41597-024-03387-w
+@article{combalia2019bcn,
+  author  = {Combalia, Marc and others},
+  title   = {{BCN20000}: Dermoscopic lesions in the wild},
+  journal = {Scientific Data},
+  year    = {2024},
+  doi     = {10.1038/s41597-024-03387-w}
+}
+
+% [V] Biometrika 71(3):431--444, doi 10.1093/biomet/71.3.431
+@article{gail1984,
+  author  = {Gail, Mitchell H. and Wieand, Sam and Piantadosi, Steven},
+  title   = {Biased estimates of treatment effect in randomized experiments with nonlinear regressions and omitted covariates},
+  journal = {Biometrika},
+  volume  = {71},
+  number  = {3},
+  pages   = {431--444},
+  year    = {1984}
+}
+
+% [V] NeuroImage 2018, doi 10.1016/j.neuroimage.2018.05.070
+@article{alexanderbloch2018,
+  author  = {Alexander-Bloch, Aaron F. and others},
+  title   = {On testing for spatial correspondence between maps of human brain structure and function},
+  journal = {NeuroImage},
+  year    = {2018},
+  doi     = {10.1016/j.neuroimage.2018.05.070}
+}
+
+% [V] Nature Methods 2022 (s41592-022-01625-w); authors beyond first [M]
+@article{markello2022neuromaps,
+  author  = {Markello, Ross D. and others},
+  title   = {neuromaps: structural and functional interpretation of brain maps},
+  journal = {Nature Methods},
+  year    = {2022}
+}
+
+% [V] Stat. Med. 31(23):2577--2587
+@article{demler2012,
+  author  = {Demler, Olga V. and Pencina, Michael J. and D'Agostino, Ralph B.},
+  title   = {Misuse of {DeLong} test to compare {AUCs} for nested models},
+  journal = {Statistics in Medicine},
+  volume  = {31},
+  number  = {23},
+  pages   = {2577--2587},
+  year    = {2012}
+}
+
+% [V] Sci. Rep. 2021 (s41598-021-01681-w)
+@article{yagis2021leakage,
+  author  = {Yagis, Ekin and others},
+  title   = {Effect of data leakage in brain {MRI} classification using {2D} convolutional neural networks},
+  journal = {Scientific Reports},
+  volume  = {11},
+  year    = {2021}
+}
+
+% [V] CVPR 2016 pp. 770-778, doi 10.1109/CVPR.2016.90
+@inproceedings{he2016resnet,
+  author    = {He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+  title     = {Deep residual learning for image recognition},
+  booktitle = {Proc. IEEE Conf. Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {770--778},
+  year      = {2016}
+}
+
+% [V] CVPR 2022 pp. 11976-11986, doi 10.1109/CVPR52688.2022.01167
+@inproceedings{liu2022convnext,
+  author    = {Liu, Zhuang and Mao, Hanzi and Wu, Chao-Yuan and Feichtenhofer, Christoph and Darrell, Trevor and Xie, Saining},
+  title     = {A {ConvNet} for the 2020s},
+  booktitle = {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {11976--11986},
+  year      = {2022}
+}
+
+% [V] ICLR 2021, arXiv 2010.11929
+@inproceedings{dosovitskiy2021vit,
+  author    = {Dosovitskiy, Alexey and others},
+  title     = {An image is worth 16x16 words: Transformers for image recognition at scale},
+  booktitle = {Proc. Int. Conf. Learning Representations (ICLR)},
+  year      = {2021}
+}
+
+% [V] CVPR 2016 pp. 2921-2929, doi 10.1109/CVPR.2016.319
+@inproceedings{zhou2016cam,
+  author    = {Zhou, Bolei and Khosla, Aditya and Lapedriza, Agata and Oliva, Aude and Torralba, Antonio},
+  title     = {Learning deep features for discriminative localization},
+  booktitle = {Proc. IEEE Conf. Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {2921--2929},
+  year      = {2016}
+}
+
+% [V] 2nd ed., Wiley-Interscience 2006, ISBN 978-0-471-24195-9
+@book{cover2006,
+  author    = {Cover, Thomas M. and Thomas, Joy A.},
+  title     = {Elements of Information Theory},
+  edition   = {2nd},
+  publisher = {Wiley},
+  year      = {2006}
+}
+
+% [V] Scand. J. Stat. 6(2):65-70, JSTOR 4615733
+@article{holm1979,
+  author  = {Holm, Sture},
+  title   = {A simple sequentially rejective multiple test procedure},
+  journal = {Scandinavian Journal of Statistics},
+  volume  = {6},
+  number  = {2},
+  pages   = {65--70},
+  year    = {1979}
+}
+
+% [V] NeurIPS 2018 (vol. 31) pp. 9505-9515
+@inproceedings{adebayo2018sanity,
+  author    = {Adebayo, Julius and Gilmer, Justin and Muelly, Michael and Goodfellow, Ian and Hardt, Moritz and Kim, Been},
+  title     = {Sanity checks for saliency maps},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {31},
+  pages     = {9505--9515},
+  year      = {2018}
+}
+

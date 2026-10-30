@@ -1,0 +1,200 @@
+{
+  "id": "E16_within_class_recoverability",
+  "hypothesis": "Marginal recoverability of metadata overstates what images carry beyond the label.",
+  "data": {
+    "datasets": [
+      "pad_ufes",
+      "ham10000"
+    ]
+  },
+  "config": {
+    "ladder": [
+      "hsv",
+      "resnet18",
+      "convnext_tiny"
+    ],
+    "metric": "AUROC (binary) / R^2 (age), out of fold"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T10:38:22+00:00",
+  "results": {
+    "pad_ufes": {
+      "itch": {
+        "hsv": {
+          "marginal": 0.616,
+          "within_class": 0.584
+        },
+        "resnet18": {
+          "marginal": 0.741,
+          "within_class": 0.716
+        },
+        "convnext_tiny": {
+          "marginal": 0.769,
+          "within_class": 0.724
+        }
+      },
+      "grew": {
+        "hsv": {
+          "marginal": 0.561,
+          "within_class": 0.587
+        },
+        "resnet18": {
+          "marginal": 0.69,
+          "within_class": 0.631
+        },
+        "convnext_tiny": {
+          "marginal": 0.695,
+          "within_class": 0.641
+        }
+      },
+      "hurt": {
+        "hsv": {
+          "marginal": 0.609,
+          "within_class": 0.583
+        },
+        "resnet18": {
+          "marginal": 0.763,
+          "within_class": 0.705
+        },
+        "convnext_tiny": {
+          "marginal": 0.809,
+          "within_class": 0.722
+        }
+      },
+      "changed": {
+        "hsv": {
+          "marginal": 0.522,
+          "within_class": 0.559
+        },
+        "resnet18": {
+          "marginal": 0.61,
+          "within_class": 0.587
+        },
+        "convnext_tiny": {
+          "marginal": 0.627,
+          "within_class": 0.645
+        }
+      },
+      "bleed": {
+        "hsv": {
+          "marginal": 0.634,
+          "within_class": 0.592
+        },
+        "resnet18": {
+          "marginal": 0.802,
+          "within_class": 0.694
+        },
+        "convnext_tiny": {
+          "marginal": 0.841,
+          "within_class": 0.752
+        }
+      },
+      "elevation": {
+        "hsv": {
+          "marginal": 0.55,
+          "within_class": 0.564
+        },
+        "resnet18": {
+          "marginal": 0.768,
+          "within_class": 0.725
+        },
+        "convnext_tiny": {
+          "marginal": 0.795,
+          "within_class": 0.759
+        }
+      },
+      "age": {
+        "hsv": {
+          "marginal": 0.022,
+          "within_class": 0.02
+        },
+        "resnet18": {
+          "marginal": 0.289,
+          "within_class": 0.251
+        },
+        "convnext_tiny": {
+          "marginal": 0.319,
+          "within_class": 0.268
+        }
+      }
+    },
+    "ham10000": {
+      "sex": {
+        "hsv": {
+          "marginal": 0.57,
+          "within_class": 0.565
+        },
+        "resnet18": {
+          "marginal": 0.748,
+          "within_class": 0.744
+        },
+        "convnext_tiny": {
+          "marginal": 0.769,
+          "within_class": 0.769
+        }
+      },
+      "age": {
+        "hsv": {
+          "marginal": 0.054,
+          "within_class": 0.059
+        },
+        "resnet18": {
+          "marginal": 0.278,
+          "within_class": 0.269
+        },
+        "convnext_tiny": {
+          "marginal": 0.388,
+          "within_class": 0.363
+        }
+      },
+      "site=back": {
+        "hsv": {
+          "marginal": 0.641,
+          "within_class": 0.642
+        },
+        "resnet18": {
+          "marginal": 0.703,
+          "within_class": 0.689
+        },
+        "convnext_tiny": {
+          "marginal": 0.767,
+          "within_class": 0.756
+        }
+      },
+      "site=lower extremity": {
+        "hsv": {
+          "marginal": 0.612,
+          "within_class": 0.616
+        },
+        "resnet18": {
+          "marginal": 0.734,
+          "within_class": 0.729
+        },
+        "convnext_tiny": {
+          "marginal": 0.804,
+          "within_class": 0.802
+        }
+      },
+      "site=trunk": {
+        "hsv": {
+          "marginal": 0.771,
+          "within_class": 0.754
+        },
+        "resnet18": {
+          "marginal": 0.789,
+          "within_class": 0.765
+        },
+        "convnext_tiny": {
+          "marginal": 0.831,
+          "within_class": 0.808
+        }
+      }
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 65.14,
+  "peak_rss_mb": 867.4
+}

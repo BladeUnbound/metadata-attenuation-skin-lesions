@@ -1,0 +1,77 @@
+{
+  "id": "E08_grouped_split",
+  "hypothesis": "Accuracy under an image-level split is substantially higher than under a split that keeps near-copies together.",
+  "data": {
+    "source": "Kaggle dataset, E02 embeddings",
+    "n_images": 44000
+  },
+  "config": {
+    "classifier": "multinomial logistic regression on 512-d frozen VGG16 features",
+    "folds": 5,
+    "grouping": "centred 32x32 pixels, single linkage within class",
+    "thresholds": [
+      0.93,
+      0.97
+    ]
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-26T09:30:58+00:00",
+  "results": {
+    "mean_accuracy": {
+      "image_level": 0.7925,
+      "grouped_thr_0.93": 0.7363,
+      "grouped_thr_0.97": 0.7708
+    },
+    "detail": {
+      "image_level": [
+        0.7923863636363636,
+        0.79375,
+        0.7914772727272728,
+        0.7960227272727273,
+        0.78875
+      ],
+      "grouped_thr_0.93": {
+        "threshold": 0.93,
+        "n_groups": 14862,
+        "largest_group_frac": 0.0473,
+        "groups_per_class": {
+          "MildDemented": 4163,
+          "ModerateDemented": 3725,
+          "NonDemented": 3457,
+          "VeryMildDemented": 3517
+        },
+        "acc": [
+          0.7237612612612613,
+          0.7192382255673395,
+          0.7536018150879183,
+          0.7347171532846716,
+          0.7501140510948905
+        ]
+      },
+      "grouped_thr_0.97": {
+        "threshold": 0.97,
+        "n_groups": 22889,
+        "largest_group_frac": 0.0134,
+        "groups_per_class": {
+          "MildDemented": 4968,
+          "ModerateDemented": 4941,
+          "NonDemented": 7059,
+          "VeryMildDemented": 5921
+        },
+        "acc": [
+          0.7715909090909091,
+          0.7704545454545455,
+          0.7746590909090909,
+          0.7681818181818182,
+          0.7693181818181818
+        ]
+      }
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 37.78,
+  "peak_rss_mb": 1434.3
+}

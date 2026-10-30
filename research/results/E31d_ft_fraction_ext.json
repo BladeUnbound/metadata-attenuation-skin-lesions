@@ -1,0 +1,126 @@
+{
+  "id": "E31d_ft_fraction_ext",
+  "hypothesis": "Added value decreases with the fine-tuning training fraction (from E31c; exploratory).",
+  "data": {
+    "dataset": "ham10000 (complete cases)"
+  },
+  "config": {
+    "runs": "f=1.0 rep 0; f in 0.1/0.25/0.5 rep 1 (subsample seed 314); rep 0 of f<1 reused from E31c",
+    "schedule": "as E14"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-28T01:45:56+00:00",
+  "results": {
+    "1.0|0": {
+      "image": {
+        "auroc": 0.9049230911222843,
+        "logloss": 0.2175603654411341,
+        "brier": 0.06465270853420774,
+        "calib_intercept": -0.02416307846743297,
+        "calib_slope": 0.988076253124177
+      },
+      "delta": 0.001243096124914791,
+      "delta_ci95": [
+        -0.00133,
+        0.003766
+      ]
+    },
+    "0.1|0": {
+      "image": {
+        "auroc": 0.820019801440219,
+        "logloss": 0.2840632475269535,
+        "brier": 0.08274027594809859,
+        "calib_intercept": -0.06796014064150561,
+        "calib_slope": 0.9687067649253739
+      },
+      "delta": 0.009676437059339111,
+      "delta_ci95": [
+        0.005362,
+        0.014019
+      ]
+    },
+    "0.25|0": {
+      "image": {
+        "auroc": 0.8591866935999815,
+        "logloss": 0.25799420684123625,
+        "brier": 0.076073487363004,
+        "calib_intercept": -0.04384984201442377,
+        "calib_slope": 0.9796056083628852
+      },
+      "delta": 0.004952950477793608,
+      "delta_ci95": [
+        0.001448,
+        0.008478
+      ]
+    },
+    "0.5|0": {
+      "image": {
+        "auroc": 0.8956302584465519,
+        "logloss": 0.22883774860656683,
+        "brier": 0.06803109633224655,
+        "calib_intercept": -0.006037476847368838,
+        "calib_slope": 0.9974538094193065
+      },
+      "delta": 0.0033361852477530912,
+      "delta_ci95": [
+        0.000466,
+        0.006242
+      ]
+    },
+    "0.1|1": {
+      "image": {
+        "auroc": 0.8243632179857489,
+        "logloss": 0.28137496806483325,
+        "brier": 0.08182429932230022,
+        "calib_intercept": -0.034061777026637104,
+        "calib_slope": 0.9827569863224737
+      },
+      "delta": 0.00814969824187381,
+      "delta_ci95": [
+        0.00407,
+        0.012455
+      ]
+    },
+    "0.25|1": {
+      "image": {
+        "auroc": 0.860850518004837,
+        "logloss": 0.2542004816123383,
+        "brier": 0.07413907119741035,
+        "calib_intercept": -0.010949299284008064,
+        "calib_slope": 0.9949850722826624
+      },
+      "delta": 0.0059132719995667864,
+      "delta_ci95": [
+        0.002152,
+        0.0094
+      ]
+    },
+    "0.5|1": {
+      "image": {
+        "auroc": 0.895851136799844,
+        "logloss": 0.22830395520433291,
+        "brier": 0.06787126018343728,
+        "calib_intercept": -0.005852692075055585,
+        "calib_slope": 0.9976483490673177
+      },
+      "delta": 0.00299286949136218,
+      "delta_ci95": [
+        -1.8e-05,
+        0.006056
+      ]
+    },
+    "mean_by_fraction": {
+      "0.1": 0.008913067650606461,
+      "0.25": 0.005433111238680197,
+      "0.5": 0.0031645273695576357,
+      "1.0": 0.001243096124914791
+    },
+    "spearman_fraction_vs_delta": -0.9728456051340169
+  },
+  "interpretation": "See research/iteration4/SUMMARY.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 3388.9,
+  "peak_rss_mb": 3935.3
+}

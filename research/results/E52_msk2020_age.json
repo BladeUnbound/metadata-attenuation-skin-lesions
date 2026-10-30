@@ -1,0 +1,189 @@
+{
+  "id": "E52_msk2020_age",
+  "hypothesis": "iteration6/REGISTRY.md E52: residual nonlinear decodability after linear erasure",
+  "data": {
+    "dataset": "msk2020"
+  },
+  "config": {
+    "concept": "age",
+    "mlp": {
+      "hidden_layer_sizes": [
+        256
+      ],
+      "activation": "relu",
+      "solver": "adam",
+      "learning_rate_init": 0.001,
+      "alpha": 0.001,
+      "batch_size": 256,
+      "max_iter": 200,
+      "early_stopping": true,
+      "validation_fraction": 0.1,
+      "random_state": 0
+    },
+    "rung": "convnext_tiny",
+    "fold_seed": 0,
+    "code_sha256_12": {
+      "e52_nonlinear_probe.py": "26fbf46ea7f0",
+      "e50_dose_restoration.py": "ca82ac760e14",
+      "e45_erasure.py": "58fa915d73e4",
+      "e40_crossfit_baseline.py": "d3a0db47d6db",
+      "e10_ham_attenuation.py": "ed41358e6a49",
+      "e13_replication.py": "02c613176b9b",
+      "x_common.py": "044c73d5de5a"
+    }
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-29T17:42:22+00:00",
+  "results": {
+    "ranks_matched": [
+      256,
+      512,
+      512,
+      512,
+      362
+    ],
+    "arms": {
+      "t0": {
+        "mlp_r2": 0.0244,
+        "mlp_r2_ci95": [
+          -0.05853,
+          0.09774
+        ],
+        "linear_probe_from_E50": {
+          "r2_nested": 0.2794,
+          "r2_alpha100": 0.173,
+          "alpha": [
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0
+          ],
+          "r2_nested_ci95": [
+            0.23538,
+            0.32219
+          ],
+          "r2_within_test": 0.1878,
+          "r2_within_test_ci95": [
+            0.14645,
+            0.22557
+          ]
+        }
+      },
+      "T-D1-1.0": {
+        "mlp_r2": -0.7642,
+        "mlp_r2_ci95": [
+          -0.93786,
+          -0.60987
+        ],
+        "linear_probe_from_E50": {
+          "r2_nested": -0.002,
+          "r2_alpha100": -0.002,
+          "alpha": [
+            10000.0,
+            10000.0,
+            10000.0,
+            10000.0,
+            10000.0
+          ],
+          "r2_nested_ci95": [
+            -0.00663,
+            -0.00064
+          ],
+          "r2_within_test": 0.0287,
+          "r2_within_test_ci95": [
+            0.00568,
+            0.05019
+          ]
+        }
+      },
+      "T-D2-0.5": {
+        "mlp_r2": -0.1331,
+        "mlp_r2_ci95": [
+          -0.22908,
+          -0.05061
+        ],
+        "linear_probe_from_E50": {
+          "r2_nested": 0.1554,
+          "r2_alpha100": 0.0524,
+          "alpha": [
+            10000.0,
+            10000.0,
+            10000.0,
+            10000.0,
+            10000.0
+          ],
+          "r2_nested_ci95": [
+            0.12778,
+            0.18196
+          ],
+          "r2_within_test": 0.1124,
+          "r2_within_test_ci95": [
+            0.07244,
+            0.14768
+          ]
+        }
+      },
+      "R-D1-1.0-0": {
+        "mlp_r2": -2.6468,
+        "mlp_r2_ci95": [
+          -3.06007,
+          -2.28111
+        ],
+        "linear_probe_from_E50": {
+          "r2_nested": -0.1019,
+          "r2_alpha100": -1.1398,
+          "alpha": [
+            10000.0,
+            10000.0,
+            10000.0,
+            10000.0,
+            10000.0
+          ],
+          "r2_nested_ci95": [
+            -0.16164,
+            -0.04528
+          ],
+          "r2_within_test": 0.0086,
+          "r2_within_test_ci95": [
+            -0.02542,
+            0.04009
+          ]
+        }
+      },
+      "sham-0": {
+        "mlp_r2": 0.0141,
+        "mlp_r2_ci95": [
+          -0.07371,
+          0.08884
+        ],
+        "linear_probe_from_E50": {
+          "r2_nested": 0.2779,
+          "r2_alpha100": 0.1681,
+          "alpha": [
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0
+          ],
+          "r2_nested_ci95": [
+            0.23396,
+            0.31989
+          ],
+          "r2_within_test": 0.1894,
+          "r2_within_test_ci95": [
+            0.14851,
+            0.22696
+          ]
+        }
+      }
+    }
+  },
+  "interpretation": "See iteration6 reports.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 4.37,
+  "peak_rss_mb": 790.4
+}

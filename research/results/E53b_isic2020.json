@@ -1,0 +1,254 @@
+{
+  "id": "E53b_isic2020",
+  "hypothesis": "iteration6/REGISTRY.md E53b: E50 primary age-erasure contrast under full-feature regularised fusion (estimator b)",
+  "data": {
+    "dataset": "isic2020"
+  },
+  "config": {
+    "rung": "convnext_tiny",
+    "fold_seed": 0,
+    "n_controls": 5,
+    "B": 2000,
+    "bootstrap_seed": 531,
+    "code_sha256_12": {
+      "e53b_erasure_fullfusion.py": "0023095a3bf3",
+      "e50_dose_restoration.py": "ca82ac760e14",
+      "e45_erasure.py": "58fa915d73e4",
+      "e40_crossfit_baseline.py": "d3a0db47d6db",
+      "e10_ham_attenuation.py": "ed41358e6a49",
+      "e13_replication.py": "02c613176b9b",
+      "x_common.py": "044c73d5de5a",
+      "e53_estimators.py": "e150655e4fa0"
+    }
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-29T18:04:39+00:00",
+  "results": {
+    "n": 33126,
+    "ranks_matched": [
+      91,
+      128,
+      45,
+      128,
+      32
+    ],
+    "rank_targeted": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "reproduces_E50_scores_max_abs": {
+      "t0": 0.0,
+      "T-D1-1.0": 0.0,
+      "R-D1-1.0-0": 0.0,
+      "R-D1-1.0-1": 0.0,
+      "R-D1-1.0-2": 0.0,
+      "R-D1-1.0-3": 0.0,
+      "R-D1-1.0-4": 0.0
+    },
+    "C": {
+      "t0": {
+        "b0": [
+          0.01,
+          0.001,
+          0.001,
+          0.001,
+          0.01
+        ],
+        "b1": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ]
+      },
+      "T-D1-1.0": {
+        "b0": [
+          0.01,
+          0.001,
+          0.001,
+          0.01,
+          0.01
+        ],
+        "b1": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ]
+      },
+      "R-D1-1.0-0": {
+        "b0": [
+          0.01,
+          0.001,
+          0.001,
+          0.001,
+          0.01
+        ],
+        "b1": [
+          0.01,
+          0.001,
+          0.001,
+          0.001,
+          0.01
+        ]
+      },
+      "R-D1-1.0-1": {
+        "b0": [
+          0.001,
+          0.001,
+          0.001,
+          0.001,
+          0.01
+        ],
+        "b1": [
+          0.001,
+          0.001,
+          0.01,
+          0.001,
+          0.01
+        ]
+      },
+      "R-D1-1.0-2": {
+        "b0": [
+          0.01,
+          0.001,
+          0.001,
+          0.001,
+          0.01
+        ],
+        "b1": [
+          0.01,
+          0.001,
+          0.001,
+          0.001,
+          0.01
+        ]
+      },
+      "R-D1-1.0-3": {
+        "b0": [
+          0.01,
+          0.001,
+          0.001,
+          0.001,
+          0.01
+        ],
+        "b1": [
+          0.01,
+          0.001,
+          0.01,
+          0.001,
+          0.01
+        ]
+      },
+      "R-D1-1.0-4": {
+        "b0": [
+          0.001,
+          0.001,
+          0.001,
+          0.001,
+          0.01
+        ],
+        "b1": [
+          0.01,
+          0.001,
+          0.001,
+          0.001,
+          0.01
+        ]
+      }
+    },
+    "arms": {
+      "t0": {
+        "image_logloss_b0": 0.0714,
+        "fusion_logloss_b1": 0.07033,
+        "delta_x1e3": 1.068
+      },
+      "T-D1-1.0": {
+        "image_logloss_b0": 0.07313,
+        "fusion_logloss_b1": 0.07087,
+        "delta_x1e3": 2.262
+      },
+      "R-D1-1.0-0": {
+        "image_logloss_b0": 0.07396,
+        "fusion_logloss_b1": 0.07306,
+        "delta_x1e3": 0.9
+      },
+      "R-D1-1.0-1": {
+        "image_logloss_b0": 0.07361,
+        "fusion_logloss_b1": 0.07292,
+        "delta_x1e3": 0.689
+      },
+      "R-D1-1.0-2": {
+        "image_logloss_b0": 0.07341,
+        "fusion_logloss_b1": 0.0725,
+        "delta_x1e3": 0.908
+      },
+      "R-D1-1.0-3": {
+        "image_logloss_b0": 0.07305,
+        "fusion_logloss_b1": 0.07269,
+        "delta_x1e3": 0.354
+      },
+      "R-D1-1.0-4": {
+        "image_logloss_b0": 0.07314,
+        "fusion_logloss_b1": 0.07212,
+        "delta_x1e3": 1.022
+      }
+    },
+    "contrasts": {
+      "b_targeted_minus_matched": {
+        "diff_x1e3": 1.487,
+        "ci95_x1e3": [
+          0.82,
+          2.2
+        ],
+        "p_one_sided": 0.0005
+      },
+      "b_targeted_minus_t0": {
+        "diff_x1e3": 1.193,
+        "ci95_x1e3": [
+          0.59,
+          1.81
+        ]
+      },
+      "b_matched_minus_t0": {
+        "diff_x1e3": -0.294,
+        "ci95_x1e3": [
+          -1.0,
+          0.44
+        ]
+      },
+      "b_matching_check_image_ll_targeted_minus_matched": {
+        "diff_x1e3": -0.3,
+        "ci95_x1e3": [
+          -1.11,
+          0.57
+        ]
+      },
+      "a_targeted_minus_matched_E50": {
+        "diff_x1e3": 0.993,
+        "ci95_x1e3": [
+          0.7,
+          1.32
+        ]
+      },
+      "b_minus_a_contrast": {
+        "diff_x1e3": 0.495,
+        "ci95_x1e3": [
+          -0.08,
+          1.06
+        ]
+      }
+    }
+  },
+  "interpretation": "See iteration6 reports.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 188.02,
+  "peak_rss_mb": 3048.6
+}

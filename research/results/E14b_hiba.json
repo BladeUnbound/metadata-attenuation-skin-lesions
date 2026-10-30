@@ -1,0 +1,53 @@
+{
+  "id": "E14b_hiba",
+  "hypothesis": "Fine-tuned scores leave no more metadata added value than frozen ones.",
+  "data": {
+    "dataset": "hiba",
+    "n": 1224
+  },
+  "config": {
+    "backbones": [
+      "resnet18",
+      "convnext_tiny"
+    ],
+    "schedule": "as E14"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T22:02:18+00:00",
+  "results": {
+    "resnet18": {
+      "finetuned_auroc": 0.9402,
+      "frozen_auroc": 0.9083,
+      "added_value_finetuned": 0.00137,
+      "added_value_finetuned_ci95": [
+        -0.01535,
+        0.01563
+      ],
+      "added_value_frozen": 0.01886,
+      "frozen_minus_finetuned_ci95": [
+        0.00614,
+        0.0298
+      ]
+    },
+    "convnext_tiny": {
+      "finetuned_auroc": 0.9508,
+      "frozen_auroc": 0.9285,
+      "added_value_finetuned": -0.00724,
+      "added_value_finetuned_ci95": [
+        -0.02432,
+        0.00617
+      ],
+      "added_value_frozen": 0.0026,
+      "frozen_minus_finetuned_ci95": [
+        0.00263,
+        0.01739
+      ]
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 1199.17,
+  "peak_rss_mb": 1924.2
+}

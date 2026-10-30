@@ -1,0 +1,46 @@
+{
+  "id": "E02c_visual_check",
+  "hypothesis": "Pixel similarity >= ~0.93 corresponds to visually identical slices.",
+  "data": {
+    "source": "Kaggle dataset (as E02)"
+  },
+  "config": {
+    "embedding": "centred 32x32 pixels"
+  },
+  "seed": 42,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-26T09:34:57+00:00",
+  "results": {
+    "thr_0.9": {
+      "val_with_same_class_nn_above": 0.7044,
+      "other_class_nn_above": 0.001
+    },
+    "thr_0.93": {
+      "val_with_same_class_nn_above": 0.6733,
+      "other_class_nn_above": 0.0
+    },
+    "thr_0.95": {
+      "val_with_same_class_nn_above": 0.6511,
+      "other_class_nn_above": 0.0
+    },
+    "thr_0.97": {
+      "val_with_same_class_nn_above": 0.5542,
+      "other_class_nn_above": 0.0
+    },
+    "thr_0.99": {
+      "val_with_same_class_nn_above": 0.3783,
+      "other_class_nn_above": 0.0
+    },
+    "per_class_at_0.95": {
+      "MildDemented": 0.571,
+      "ModerateDemented": 0.604,
+      "NonDemented": 0.713,
+      "VeryMildDemented": 0.695
+    }
+  },
+  "interpretation": "Visual inspection (26 Oct 2026): all 8 borderline pairs at 0.93-0.96 and 6/8 random pairs were the same slice; different-class neighbours were all different brains.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 1.29,
+  "peak_rss_mb": 1264.8
+}

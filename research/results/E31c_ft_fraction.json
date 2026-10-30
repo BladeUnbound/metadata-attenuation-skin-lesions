@@ -1,0 +1,67 @@
+{
+  "id": "E31c_ft_fraction",
+  "hypothesis": "H31: fine-tuned image models trained on less data leave more metadata value.",
+  "data": {
+    "dataset": "ham10000 (complete cases)"
+  },
+  "config": {
+    "fractions": [
+      0.1,
+      0.25,
+      0.5
+    ],
+    "schedule": "as E14"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T21:35:15+00:00",
+  "results": {
+    "0.1": {
+      "image": {
+        "auroc": 0.820019801440219,
+        "logloss": 0.2840632475269535,
+        "brier": 0.08274027594809859,
+        "calib_intercept": -0.06796014064150561,
+        "calib_slope": 0.9687067649253739
+      },
+      "delta": 0.009676437059339111,
+      "delta_ci95": [
+        0.00539,
+        0.013952
+      ]
+    },
+    "0.25": {
+      "image": {
+        "auroc": 0.8591866935999815,
+        "logloss": 0.25799420684123625,
+        "brier": 0.076073487363004,
+        "calib_intercept": -0.04384984201442377,
+        "calib_slope": 0.9796056083628852
+      },
+      "delta": 0.004952950477793608,
+      "delta_ci95": [
+        0.001444,
+        0.008337
+      ]
+    },
+    "0.5": {
+      "image": {
+        "auroc": 0.8956302584465519,
+        "logloss": 0.22883774860656683,
+        "brier": 0.06803109633224655,
+        "calib_intercept": -0.006037476847368838,
+        "calib_slope": 0.9974538094193065
+      },
+      "delta": 0.0033361852477530912,
+      "delta_ci95": [
+        0.000432,
+        0.006068
+      ]
+    }
+  },
+  "interpretation": "See research/iteration4/SUMMARY.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 1604.12,
+  "peak_rss_mb": 4550.0
+}

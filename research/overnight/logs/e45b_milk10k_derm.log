@@ -1,0 +1,151 @@
+milk10k_derm convnext_tiny {'rank_concept': 1, 'rank_matched': 256, 'image_logloss': {'t0': 0.42357, 'concept': 0.51799, 'same_rank': [0.42367, 0.42116, 0.42421, 0.42176, 0.42111], 'matched': [0.49594, 0.49453, 0.4965, 0.49669, 0.49656]}, 'delta_age_x1e3': {'t0': 12.44, 'concept': 69.02, 'same_rank_each': [12.497, 12.516, 12.586, 12.466, 12.399], 'matched_each': [34.673, 35.07, 35.286, 33.138, 33.502]}, 'concept_minus_matched': {'diff': 34.686, 'ci95': [28.41, 41.04]}, 'concept_minus_same_rank': {'diff': 56.527, 'ci95': [48.13, 64.76]}, 'concept_minus_t0': {'diff': 56.58, 'ci95': [48.11, 64.76]}, 'claim_holds': True}
+milk10k_derm resnet18 {'rank_concept': 1, 'rank_matched': 256, 'image_logloss': {'t0': 0.45117, 'concept': 0.53802, 'same_rank': [0.45039, 0.45162, 0.4516, 0.45013, 0.45089], 'matched': [0.5298, 0.52351, 0.526, 0.53829, 0.53038]}, 'delta_age_x1e3': {'t0': 17.477, 'concept': 69.497, 'same_rank_each': [17.473, 17.591, 17.613, 17.29, 17.563], 'matched_each': [47.687, 46.316, 47.301, 49.385, 49.033]}, 'concept_minus_matched': {'diff': 21.553, 'ci95': [16.71, 27.09]}, 'concept_minus_same_rank': {'diff': 51.991, 'ci95': [44.4, 59.7]}, 'concept_minus_t0': {'diff': 52.02, 'ci95': [44.41, 59.72]}, 'claim_holds': True}
+{
+  "id": "E45b_milk10k_derm",
+  "hypothesis": "REGISTRY.md E45b: paired inference, age erasure vs matched random erasure",
+  "data": {
+    "dataset": "milk10k_derm"
+  },
+  "config": {
+    "rungs": [
+      "convnext_tiny",
+      "resnet18"
+    ],
+    "n_random": 5,
+    "B": 2000
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-29T04:10:09+00:00",
+  "results": {
+    "convnext_tiny": {
+      "rank_concept": 1,
+      "rank_matched": 256,
+      "image_logloss": {
+        "t0": 0.42357,
+        "concept": 0.51799,
+        "same_rank": [
+          0.42367,
+          0.42116,
+          0.42421,
+          0.42176,
+          0.42111
+        ],
+        "matched": [
+          0.49594,
+          0.49453,
+          0.4965,
+          0.49669,
+          0.49656
+        ]
+      },
+      "delta_age_x1e3": {
+        "t0": 12.44,
+        "concept": 69.02,
+        "same_rank_each": [
+          12.497,
+          12.516,
+          12.586,
+          12.466,
+          12.399
+        ],
+        "matched_each": [
+          34.673,
+          35.07,
+          35.286,
+          33.138,
+          33.502
+        ]
+      },
+      "concept_minus_matched": {
+        "diff": 34.686,
+        "ci95": [
+          28.41,
+          41.04
+        ]
+      },
+      "concept_minus_same_rank": {
+        "diff": 56.527,
+        "ci95": [
+          48.13,
+          64.76
+        ]
+      },
+      "concept_minus_t0": {
+        "diff": 56.58,
+        "ci95": [
+          48.11,
+          64.76
+        ]
+      },
+      "claim_holds": true
+    },
+    "resnet18": {
+      "rank_concept": 1,
+      "rank_matched": 256,
+      "image_logloss": {
+        "t0": 0.45117,
+        "concept": 0.53802,
+        "same_rank": [
+          0.45039,
+          0.45162,
+          0.4516,
+          0.45013,
+          0.45089
+        ],
+        "matched": [
+          0.5298,
+          0.52351,
+          0.526,
+          0.53829,
+          0.53038
+        ]
+      },
+      "delta_age_x1e3": {
+        "t0": 17.477,
+        "concept": 69.497,
+        "same_rank_each": [
+          17.473,
+          17.591,
+          17.613,
+          17.29,
+          17.563
+        ],
+        "matched_each": [
+          47.687,
+          46.316,
+          47.301,
+          49.385,
+          49.033
+        ]
+      },
+      "concept_minus_matched": {
+        "diff": 21.553,
+        "ci95": [
+          16.71,
+          27.09
+        ]
+      },
+      "concept_minus_same_rank": {
+        "diff": 51.991,
+        "ci95": [
+          44.4,
+          59.7
+        ]
+      },
+      "concept_minus_t0": {
+        "diff": 52.02,
+        "ci95": [
+          44.41,
+          59.72
+        ]
+      },
+      "claim_holds": true
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 209.33,
+  "peak_rss_mb": 1038.6
+}

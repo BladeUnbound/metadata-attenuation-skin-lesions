@@ -1,0 +1,168 @@
+{
+  "id": "E44_pad_ufes",
+  "hypothesis": "REGISTRY.md E44 (exploratory): smoothness of \u0394_i on the representation graph",
+  "data": {
+    "dataset": "pad_ufes"
+  },
+  "config": {
+    "k": 20,
+    "R": 1000,
+    "graph": "transductive, same-group edges removed, union symmetrised",
+    "signal": "E40 corrected \u0394_i, fold assignment 0"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-28T17:10:17+00:00",
+  "results": {
+    "hsv": {
+      "n_components": 1,
+      "n_edges": 30316,
+      "unnormalised": {
+        "observed": 13426.071861696133,
+        "ratio_free": 0.9168,
+        "p_free": 0.012987012987012988,
+        "ratio_stratified": 0.9216,
+        "p_stratified": 0.028971028971028972
+      },
+      "normalised": {
+        "observed": 1.0019689638856224,
+        "ratio_free": 1.0014,
+        "p_free": 0.5874125874125874,
+        "ratio_stratified": 1.0026,
+        "p_stratified": 0.6653346653346653
+      },
+      "sym_normalised": {
+        "observed": 1.000886635632832,
+        "ratio_free": 1.0003,
+        "p_free": 0.5184815184815185,
+        "ratio_stratified": 1.0016,
+        "p_stratified": 0.5814185814185814
+      },
+      "reference_ratio_free_normalised": {
+        "label": 0.9337,
+        "h_q0": 0.5132
+      }
+    },
+    "resnet18": {
+      "n_components": 1,
+      "n_edges": 33576,
+      "unnormalised": {
+        "observed": 13945.128125214385,
+        "ratio_free": 0.9155,
+        "p_free": 0.01098901098901099,
+        "ratio_stratified": 0.9204,
+        "p_stratified": 0.011988011988011988
+      },
+      "normalised": {
+        "observed": 0.9683702441686551,
+        "ratio_free": 0.9677,
+        "p_free": 0.000999000999000999,
+        "ratio_stratified": 0.9755,
+        "p_stratified": 0.000999000999000999
+      },
+      "sym_normalised": {
+        "observed": 0.972605122323679,
+        "ratio_free": 0.972,
+        "p_free": 0.000999000999000999,
+        "ratio_stratified": 0.979,
+        "p_stratified": 0.001998001998001998
+      },
+      "reference_ratio_free_normalised": {
+        "label": 0.7397,
+        "h_q0": 0.7119
+      }
+    },
+    "resnet50": {
+      "n_components": 1,
+      "n_edges": 35188,
+      "unnormalised": {
+        "observed": 16300.298317859819,
+        "ratio_free": 0.9834,
+        "p_free": 0.4075924075924076,
+        "ratio_stratified": 0.9994,
+        "p_stratified": 0.5424575424575424
+      },
+      "normalised": {
+        "observed": 0.9899598109695796,
+        "ratio_free": 0.9894,
+        "p_free": 0.025974025974025976,
+        "ratio_stratified": 0.9983,
+        "p_stratified": 0.3806193806193806
+      },
+      "sym_normalised": {
+        "observed": 0.9870930952033969,
+        "ratio_free": 0.9866,
+        "p_free": 0.012987012987012988,
+        "ratio_stratified": 0.9941,
+        "p_stratified": 0.15084915084915085
+      },
+      "reference_ratio_free_normalised": {
+        "label": 0.7621,
+        "h_q0": 0.6369
+      }
+    },
+    "convnext_tiny": {
+      "n_components": 1,
+      "n_edges": 34326,
+      "unnormalised": {
+        "observed": 13682.653906337151,
+        "ratio_free": 0.9587,
+        "p_free": 0.13086913086913088,
+        "ratio_stratified": 0.9572,
+        "p_stratified": 0.14285714285714285
+      },
+      "normalised": {
+        "observed": 0.9947297412373265,
+        "ratio_free": 0.9943,
+        "p_free": 0.13686313686313686,
+        "ratio_stratified": 1.0019,
+        "p_stratified": 0.6003996003996004
+      },
+      "sym_normalised": {
+        "observed": 0.9947007363437523,
+        "ratio_free": 0.9943,
+        "p_free": 0.14985014985014986,
+        "ratio_stratified": 1.001,
+        "p_stratified": 0.5484515484515484
+      },
+      "reference_ratio_free_normalised": {
+        "label": 0.7382,
+        "h_q0": 0.7493
+      }
+    },
+    "vit_b_16": {
+      "n_components": 1,
+      "n_edges": 33615,
+      "unnormalised": {
+        "observed": 13453.347886124284,
+        "ratio_free": 0.9466,
+        "p_free": 0.07592407592407592,
+        "ratio_stratified": 0.9399,
+        "p_stratified": 0.04795204795204795
+      },
+      "normalised": {
+        "observed": 0.9770222552249854,
+        "ratio_free": 0.9765,
+        "p_free": 0.000999000999000999,
+        "ratio_stratified": 0.9862,
+        "p_stratified": 0.016983016983016984
+      },
+      "sym_normalised": {
+        "observed": 0.9777999215889079,
+        "ratio_free": 0.9773,
+        "p_free": 0.000999000999000999,
+        "ratio_stratified": 0.987,
+        "p_stratified": 0.017982017982017984
+      },
+      "reference_ratio_free_normalised": {
+        "label": 0.7289,
+        "h_q0": 0.7877
+      }
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 2.29,
+  "peak_rss_mb": 607.0
+}

@@ -1,0 +1,39 @@
+{
+  "id": "E01_weight_transfer",
+  "hypothesis": "A faithful port reproduces the Keras model's outputs; the notebook's cell-18 mapping does not.",
+  "data": {
+    "model": "alzheimer_cnn.h5 (sha256 in research/ORIGINALS.sha256)",
+    "inputs": "64 random Kaggle images (seed 0)"
+  },
+  "config": {
+    "n_inputs": 64,
+    "keras": "3.15.1",
+    "torch": "2.14.1"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-26T09:19:19+00:00",
+  "results": {
+    "keras_pred_class_counts": [
+      14,
+      11,
+      16,
+      23
+    ],
+    "faithful_port": {
+      "max_abs_prob_diff": 0.0018421858549118042,
+      "argmax_agreement": 1.0
+    },
+    "notebook_cell18": {
+      "max_abs_prob_diff": 0.7486838400363922,
+      "argmax_agreement": 0.171875
+    },
+    "notebook_cell18_tensors_copied": 13,
+    "notebook_cell18_classifier_tensors_copied": 0
+  },
+  "interpretation": "Faithful port matches Keras (difference is float16 vs float32 compute). Notebook mapping copies only the 13 conv kernels; no biases and no classifier weights.",
+  "failures": [],
+  "next_step": "Use vgg_port for any re-evaluation or SNN conversion of the original model.",
+  "runtime_s": 10.82,
+  "peak_rss_mb": 4661.1
+}

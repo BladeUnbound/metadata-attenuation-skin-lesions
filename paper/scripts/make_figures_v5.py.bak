@@ -1,0 +1,192 @@
+"""Figure 1: added value of metadata along the capacity ladder, one panel per dataset.
+
+Single series per panel (no legend; the panel title names the dataset), point
+estimate with 95% grouped-bootstrap CI, zero reference line. Values come only
+from research/results/*.json. Panels without results are drawn as "pending".
+"""
+import json
+from pathlib import Path
+
+import matplotlib
+import numpy as np
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+PAPER = Path(__file__).resolve().parents[1]
+RES = PAPER.parent / "research/results"
+RUNGS = ["hsv", "resnet18", "resnet50", "convnext_tiny", "vit_b_16"]
+TICKS = ["HSV", "R18", "R50", "CNX-T", "ViT-B"]
+INK, MUTED, GRID, MARK = "#1d2b33", "#5b6b75", "#d5dde2", "#1f6f7a"
+
+
+def series(name):
+    p = RES / f"{name}.json"
+    if not p.exists():
+        return None
+    r = json.loads(p.read_text())["results"]
+    if name == "E10_ham_attenuation":
+        s0 = r["primary"]["seed0"]
+        return [(s0[k]["added_value"], s0[k]["added_value_ci95"]) for k in RUNGS]
+    s0 = r["seeds"]["0"]
+    return [(s0[k]["av_all"], s0[k]["av_all_ci95"]) for k in RUNGS]
+
+
+PANELS = [("HAM10000", "E10_ham_attenuation"), ("ISIC 2020", "E13_isic2020"),
+          ("ISIC 2019 (non-HAM)", "E13_isic2019_nonham"), ("PAD-UFES-20", "E13_pad_ufes"),
+          ("HIBA", "E13_hiba"), ("MSK 2020", "E13_msk2020"),
+          ("MILK10k (dermoscopic)", "E13_milk10k_derm"), ("MILK10k (clinical)", "E13_milk10k_clin")]
+
+
+def main():
+    plt.rcParams.update({"font.family": "serif", "font.size": 7, "axes.edgecolor": MUTED,
+                         "axes.labelcolor": INK, "xtick.color": MUTED, "ytick.color": MUTED})
+    fig, axes = plt.subplots(2, 4, figsize=(7.16, 3.5), sharey=False)
+    for ax, (title, key) in zip(axes.flat, PANELS):
+        ax.set_title(title, fontsize=7.5, color=INK, pad=3)
+        ax.axhline(0, color=MUTED, lw=0.8)
+        ax.grid(axis="y", color=GRID, lw=0.5)
+        ax.set_axisbelow(True)
+        for side in ("top", "right"):
+            ax.spines[side].set_visible(False)
+        s = series(key)
+        ax.set_xticks(range(5), TICKS, fontsize=6)
+        if s is None:
+            ax.text(2, 0.5, "pending", ha="center", va="center", color=MUTED, transform=ax.get_xaxis_transform())
+            ax.set_yticks([])
+            continue
+        for i, (v, (lo, hi)) in enumerate(s):
+            ax.plot([i, i], [1e3 * lo, 1e3 * hi], color=MARK, lw=1.2, solid_capstyle="round")
+            ax.plot(i, 1e3 * v, "o", color=MARK, ms=3.5, mec="white", mew=0.6)
+        ax.tick_params(axis="y", labelsize=6)
+    for row in axes:
+        row[0].set_ylabel(r"$\hat\Delta$ ($10^{-3}$ nats)", fontsize=7)
+    fig.tight_layout(pad=0.4, w_pad=0.8)
+    (PAPER / "figures").mkdir(exist_ok=True)
+    fig.savefig(PAPER / "figures/attenuation.pdf")
+    print("wrote figures/attenuation.pdf")
+
+
+def retained_figure():
+    """Fig. 2: retained fraction rho at ConvNeXt-T per dataset (dot plot).
+    Two series: all images with 95% CI (filled) and complete cases (hollow), so a legend is shown.
+    Colours are palette slots 1-2, validated earlier (light surface)."""
+    e17 = json.loads((RES / "E17_retained_fraction.json").read_text())["results"]
+    e21 = {**json.loads((RES / "E21_complete_case.json").read_text())["results"],
+           **json.loads((RES / "E21_complete_case_wave2.json").read_text())["results"]}
+    names = {"ham10000": "HAM10000", "isic2020": "ISIC 2020", "isic2019_nonham": "ISIC 2019 (non-HAM)",
+             "pad_ufes": "PAD-UFES-20", "hiba": "HIBA", "msk2020": "MSK 2020",
+             "milk10k_derm": "MILK10k (derm.)", "milk10k_clin": "MILK10k (clin.)"}
+    order = sorted(names, key=lambda d: e17[d]["convnext_tiny"]["rho"])
+    fig, ax = plt.subplots(figsize=(3.45, 2.3))
+    ax.axvline(0, color=MUTED, lw=0.8)
+    ax.grid(axis="x", color=GRID, lw=0.5)
+    ax.set_axisbelow(True)
+    for side in ("top", "right"):
+        ax.spines[side].set_visible(False)
+    for i, d in enumerate(order):
+        x = e17[d]["convnext_tiny"]
+        ax.plot(x["rho_ci95"], [i, i], color="#2a78d6", lw=1.2, solid_capstyle="round")
+        ax.plot(x["rho"], i, "o", color="#2a78d6", ms=4.2, mec="white", mew=0.7,
+                label="all images (95% CI)" if i == 0 else None)
+        ax.plot(e21[d]["convnext_tiny"]["rho"], i - 0.28, "D", mfc="white", mec="#eb6834", mew=1.2, ms=3.6,
+                label="complete cases" if i == 0 else None)
+    ax.set_yticks(range(len(order)), [names[d] for d in order], fontsize=6.5)
+    ax.set_xlabel(r"retained fraction $\rho$ at ConvNeXt-T", fontsize=7)
+    ax.tick_params(axis="x", labelsize=6.5)
+    ax.set_xlim(-0.2, 0.8)
+    ax.legend(fontsize=6, frameon=False, loc="lower right", handletextpad=0.3)
+    fig.tight_layout(pad=0.3)
+    fig.savefig(PAPER / "figures/retained.pdf")
+    print("wrote figures/retained.pdf")
+
+
+def dose_figure():
+    """Fig. 3: metadata added value vs. share of HAM10000 training lesions (ResNet-18, complete cases).
+    With E31d: fine-tuned runs on one population (2 subsamples at 10-50%, full data at 100%), mean line plus
+    individual runs; without it, falls back to E31c + E14. Frozen: E31b, mean of 2 subsamples."""
+    L = lambda n: json.loads((RES / f"{n}.json").read_text())["results"]
+    b = L("E31b_scaling_frozen")["ham10000"]
+    fr = [0.1, 0.25, 0.5, 1.0]
+    have_d = (RES / "E31d_ft_fraction_ext.json").exists()
+    if have_d:
+        d = L("E31d_ft_fraction_ext")
+        runs = {f: [d[k] for k in d if "|" in k and float(k.split("|")[0]) == f] for f in fr}
+        ft = [(1e3 * float(np.mean([r["delta"] for r in runs[f]])),
+               float(np.mean([r["image"]["auroc"] for r in runs[f]]))) for f in fr]
+        full_ci = [1e3 * v for v in runs[1.0][0]["delta_ci95"]]
+    else:
+        c, e14 = L("E31c_ft_fraction"), L("E14_finetune")["resnet18"]
+        runs = {f: [c[str(f)]] for f in fr[:3]}
+        runs[1.0] = [{"delta": e14["added_value_finetuned"], "image": {"auroc": e14["finetuned_auroc"]}}]
+        ft = [(1e3 * runs[f][0]["delta"], runs[f][0]["image"]["auroc"]) for f in fr]
+    fz = [1e3 * np.mean([v["delta"] for k, v in b.items() if k.startswith(f"resnet18|{f}|")]) for f in fr]
+    fig, ax = plt.subplots(figsize=(3.45, 2.0))
+    ax.axhline(0, color=MUTED, lw=0.8)
+    ax.grid(axis="y", color=GRID, lw=0.5)
+    ax.set_axisbelow(True)
+    for side in ("top", "right"):
+        ax.spines[side].set_visible(False)
+    xs = range(4)
+    for i, f in enumerate(fr):
+        for r in runs[f]:
+            if "delta_ci95" in r:
+                lo, hi = (1e3 * v for v in r["delta_ci95"])
+                ax.plot([i - 0.06] * 2, [lo, hi], color="#2a78d6", lw=0.9, alpha=0.35)
+            ax.plot(i - 0.06, 1e3 * r["delta"], "o", ms=2.6, color="#2a78d6", alpha=0.45, mew=0)
+        ax.text(i - 0.12, ft[i][0] + 0.5, f"{ft[i][1]:.3f}", fontsize=5.6, color=MUTED, ha="right", va="bottom")
+    ax.plot([x - 0.06 for x in xs], [v for v, _ in ft], "-o", color="#2a78d6", lw=1.6, ms=4, mec="white", mew=0.6,
+            label="fine-tuned" + (" (mean of runs)" if have_d else ""))
+    ax.plot([x + 0.06 for x in xs], fz, "-D", color="#eb6834", lw=1.6, ms=3.6, mec="white", mew=0.6,
+            label="frozen + new head")
+    ax.set_xticks(xs, ["10%", "25%", "50%", "100%"], fontsize=6.5)
+    ax.set_xlim(-0.45, 3.3)
+    ax.set_xlabel("share of training lesions", fontsize=7)
+    ax.set_ylabel(r"$\hat\Delta$ ($10^{-3}$ nats)", fontsize=7)
+    ax.tick_params(axis="y", labelsize=6.5)
+    ax.legend(fontsize=6, frameon=False, loc="upper right")
+    fig.tight_layout(pad=0.3)
+    fig.savefig(PAPER / "figures/dose.pdf")
+    print("wrote figures/dose.pdf", "(E31d)" if have_d else "(fallback)")
+
+
+def recov_figure():
+    """Appendix figure: E30 retained share of each variable's value vs. its within-class recoverability from the
+    image. Rows used as in E30 (metadata-only value significant). Two series: HSV vs. deep representations."""
+    import pandas as pd
+    t = pd.read_csv(RES / "E30_table.csv")
+    t = t[(t.I_var_lo > 0) & t.recov_within_norm.notna()].copy()
+    t["retained"] = t.delta_var / t.I_var
+    names = {"ham10000": "HAM10000", "isic2020": "ISIC 2020", "isic2019_nonham": "ISIC 2019 (non-HAM)",
+             "pad_ufes": "PAD-UFES-20", "hiba": "HIBA", "msk2020": "MSK 2020",
+             "milk10k_derm": "MILK10k (derm.)", "milk10k_clin": "MILK10k (clin.)"}
+    fig, axes = plt.subplots(2, 4, figsize=(7.16, 3.3), sharey=True)
+    for ax, (key, title) in zip(axes.flat, names.items()):
+        g = t[t.dataset == key]
+        ax.set_title(title, fontsize=7.5, color=INK, pad=3)
+        ax.axhline(0, color=MUTED, lw=0.8)
+        ax.grid(color=GRID, lw=0.5)
+        ax.set_axisbelow(True)
+        for side in ("top", "right"):
+            ax.spines[side].set_visible(False)
+        deep, hsv = g[g.rung != "hsv"], g[g.rung == "hsv"]
+        ax.plot(deep.recov_within_norm, deep.retained, "o", color="#2a78d6", ms=3.2, mec="white", mew=0.4,
+                label="deep representations")
+        ax.plot(hsv.recov_within_norm, hsv.retained, "D", color="#eb6834", ms=3.2, mec="white", mew=0.4,
+                label="colour histogram")
+        ax.tick_params(labelsize=6)
+    for row in axes:
+        row[0].set_ylabel("retained share", fontsize=7)
+    for ax in axes[1]:
+        ax.set_xlabel("within-class recoverability", fontsize=6.5)
+    axes[0][0].legend(fontsize=5.8, frameon=False, loc="upper right", handletextpad=0.2)
+    fig.tight_layout(pad=0.4, w_pad=0.6)
+    fig.savefig(PAPER / "figures/recoverability.pdf")
+    print("wrote figures/recoverability.pdf")
+
+
+if __name__ == "__main__":
+    main()
+    retained_figure()
+    dose_figure()
+    recov_figure()

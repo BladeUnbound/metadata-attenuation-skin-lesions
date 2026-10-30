@@ -1,0 +1,244 @@
+{
+  "confirmatory_p": {
+    "hiba:age": {
+      "p": 1.0,
+      "sham_ci_low": 49.55
+    },
+    "msk2020:age": {
+      "p": 1.0,
+      "sham_ci_low": 1.81
+    },
+    "isic2020:age": {
+      "p": 0.0005,
+      "sham_ci_low": 0.86
+    },
+    "hiba:site": {
+      "p": 1.0,
+      "sham_ci_low": -2.08
+    }
+  },
+  "replication_ci_above_0": {
+    "ham10000": true,
+    "isic2019_nonham": true,
+    "milk10k_derm": true,
+    "pad_ufes": false,
+    "milk10k_clin": true
+  },
+  "G1": "PROCEED",
+  "G1_basis": {
+    "confirmatory_age_first_holm_step": [
+      "isic2020:age"
+    ],
+    "with_sham_ci_above_0": [
+      "isic2020:age"
+    ]
+  },
+  "holm": {
+    "hiba:age": {
+      "p": 1.0,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "msk2020:age": {
+      "p": 1.0,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "isic2020:age": {
+      "p": 0.0005,
+      "p_holm": 0.002,
+      "reject": true
+    },
+    "hiba:site": {
+      "p": 1.0,
+      "p_holm": 1.0,
+      "reject": false
+    }
+  },
+  "specificity": {
+    "hiba": {
+      "M(age,age)": {
+        "diff_x1e3": -116.558,
+        "ci95_x1e3": [
+          -161.66,
+          -79.36
+        ]
+      },
+      "M(age,site)": {
+        "diff_x1e3": -38.068,
+        "ci95_x1e3": [
+          -49.14,
+          -26.37
+        ]
+      },
+      "M(age,age)-M(age,site)": {
+        "diff_x1e3": -78.49,
+        "ci95_x1e3": [
+          -126.23,
+          -39.28
+        ]
+      },
+      "selective_age": false,
+      "M(site,age)": {
+        "diff_x1e3": -128.012,
+        "ci95_x1e3": [
+          -154.19,
+          -103.34
+        ]
+      },
+      "M(site,site)": {
+        "diff_x1e3": -54.112,
+        "ci95_x1e3": [
+          -82.55,
+          -27.93
+        ]
+      },
+      "M(site,site)-M(site,age)": {
+        "diff_x1e3": 73.901,
+        "ci95_x1e3": [
+          39.91,
+          106.69
+        ]
+      },
+      "selective_site": false
+    },
+    "ham10000": {
+      "M(age,age)": {
+        "diff_x1e3": 9.05,
+        "ci95_x1e3": [
+          6.49,
+          11.5
+        ]
+      },
+      "M(age,site)": {
+        "diff_x1e3": 0.386,
+        "ci95_x1e3": [
+          -0.97,
+          1.69
+        ]
+      },
+      "M(age,age)-M(age,site)": {
+        "diff_x1e3": 8.664,
+        "ci95_x1e3": [
+          5.84,
+          11.32
+        ]
+      },
+      "selective_age": true,
+      "M(site,age)": {
+        "diff_x1e3": 0.554,
+        "ci95_x1e3": [
+          -0.49,
+          1.61
+        ]
+      },
+      "M(site,site)": {
+        "diff_x1e3": 4.265,
+        "ci95_x1e3": [
+          1.64,
+          6.82
+        ]
+      },
+      "M(site,site)-M(site,age)": {
+        "diff_x1e3": 3.712,
+        "ci95_x1e3": [
+          1.01,
+          6.38
+        ]
+      },
+      "selective_site": true
+    },
+    "pad_ufes": {
+      "M(age,age)": {
+        "diff_x1e3": 0.218,
+        "ci95_x1e3": [
+          -2.53,
+          2.93
+        ]
+      },
+      "M(age,site)": {
+        "diff_x1e3": -1.905,
+        "ci95_x1e3": [
+          -4.05,
+          -0.08
+        ]
+      },
+      "M(age,age)-M(age,site)": {
+        "diff_x1e3": 2.122,
+        "ci95_x1e3": [
+          -0.74,
+          5.2
+        ]
+      },
+      "selective_age": false,
+      "M(site,age)": {
+        "diff_x1e3": -0.931,
+        "ci95_x1e3": [
+          -3.42,
+          1.57
+        ]
+      },
+      "M(site,site)": {
+        "diff_x1e3": -87.069,
+        "ci95_x1e3": [
+          -105.46,
+          -69.29
+        ]
+      },
+      "M(site,site)-M(site,age)": {
+        "diff_x1e3": -86.138,
+        "ci95_x1e3": [
+          -104.37,
+          -68.31
+        ]
+      },
+      "selective_site": false
+    },
+    "milk10k_derm": {
+      "M(age,age)": {
+        "diff_x1e3": 9.525,
+        "ci95_x1e3": [
+          4.42,
+          14.54
+        ]
+      },
+      "M(age,site)": {
+        "diff_x1e3": -1.469,
+        "ci95_x1e3": [
+          -2.65,
+          -0.25
+        ]
+      },
+      "M(age,age)-M(age,site)": {
+        "diff_x1e3": 10.994,
+        "ci95_x1e3": [
+          5.77,
+          15.91
+        ]
+      },
+      "selective_age": true,
+      "M(site,age)": {
+        "diff_x1e3": -1.151,
+        "ci95_x1e3": [
+          -2.48,
+          0.19
+        ]
+      },
+      "M(site,site)": {
+        "diff_x1e3": 3.829,
+        "ci95_x1e3": [
+          1.37,
+          6.31
+        ]
+      },
+      "M(site,site)-M(site,age)": {
+        "diff_x1e3": 4.98,
+        "ci95_x1e3": [
+          2.44,
+          7.55
+        ]
+      },
+      "selective_site": true
+    }
+  }
+}

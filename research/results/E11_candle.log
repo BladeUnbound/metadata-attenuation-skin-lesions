@@ -1,0 +1,89 @@
+candle {'raw': 0.9787, 'centred': 0.9787, 'abtt_1': 0.9785, 'abtt_4': 0.978, 'abtt_16': 0.9788, 'whitened': 0.972}
+{'raw': 0.9787, 'centred': 0.9787, 'abtt_1': 0.9785, 'abtt_4': 0.978, 'abtt_16': 0.9788, 'whitened': 0.972} {'raw': 0.9893, 'centred': 0.9893, 'abtt_1': 0.9893, 'abtt_4': 0.989, 'abtt_16': 0.989, 'whitened': 0.9887}
+{
+  "id": "E11_visa_anisotropy",
+  "hypothesis": "Removing or whitening dominant variance directions of normal patch features improves kNN anomaly detection.",
+  "data": {
+    "source": "VisA (Amazon, CC BY 4.0), official 1cls split",
+    "categories": [
+      "candle"
+    ]
+  },
+  "config": {
+    "backbone": "wide_resnet50_2 layer2+3, 1536-d",
+    "bank": "random 10%",
+    "k": 1,
+    "variants": [
+      "raw",
+      "centred",
+      "abtt_1",
+      "abtt_4",
+      "abtt_16",
+      "whitened"
+    ],
+    "device": "mps"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T05:20:10+00:00",
+  "results": {
+    "candle": {
+      "n_train": 900,
+      "n_test": 200,
+      "n_anomalous": 100,
+      "bank_patches": 70560,
+      "feature_s": 16.6,
+      "raw": {
+        "image_auroc": 0.9787,
+        "pixel_auroc": 0.9893,
+        "score_s": 18.1
+      },
+      "centred": {
+        "image_auroc": 0.9787,
+        "pixel_auroc": 0.9893,
+        "score_s": 17.6
+      },
+      "abtt_1": {
+        "image_auroc": 0.9785,
+        "pixel_auroc": 0.9893,
+        "score_s": 19.3
+      },
+      "abtt_4": {
+        "image_auroc": 0.978,
+        "pixel_auroc": 0.989,
+        "score_s": 19.1
+      },
+      "abtt_16": {
+        "image_auroc": 0.9788,
+        "pixel_auroc": 0.989,
+        "score_s": 20.6
+      },
+      "whitened": {
+        "image_auroc": 0.972,
+        "pixel_auroc": 0.9887,
+        "score_s": 20.7
+      }
+    },
+    "mean_image_auroc": {
+      "raw": 0.9787,
+      "centred": 0.9787,
+      "abtt_1": 0.9785,
+      "abtt_4": 0.978,
+      "abtt_16": 0.9788,
+      "whitened": 0.972
+    },
+    "mean_pixel_auroc": {
+      "raw": 0.9893,
+      "centred": 0.9893,
+      "abtt_1": 0.9893,
+      "abtt_4": 0.989,
+      "abtt_16": 0.989,
+      "whitened": 0.9887
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 138.55,
+  "peak_rss_mb": 8287.0
+}

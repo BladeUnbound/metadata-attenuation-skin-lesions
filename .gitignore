@@ -1,0 +1,35 @@
+# --- Never commit: datasets (29 GB; each has its own licence, several non-commercial) and derived arrays
+research/data/
+*.npy
+*.npz
+
+# --- Model weights (GitHub rejects files over 100 MB)
+*.h5
+*.pt
+*.pth
+*.ckpt
+
+# --- Environments and caches
+.venv/
+novelty/.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# --- Earlier Alzheimer's MRI project (a different paper with other authors; delete these lines only if they agree)
+alzheimers_paper.pdf
+CV_EL.ipynb
+CV_EL_Review.pdf
+CV_EL_Q1_Plan.pdf
+PROMPT_CONTEXT.md
+
+# --- LaTeX build by-products
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/*.synctex.gz
+
+# --- macOS
+.DS_Store

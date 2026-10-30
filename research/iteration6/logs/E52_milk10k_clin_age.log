@@ -1,0 +1,194 @@
+milk10k_clin age t0 {'mlp_r2': 0.2357, 'mlp_r2_ci95': [0.19473, 0.2767], 'linear_probe_from_E50': {'r2_nested': 0.39, 'r2_alpha100': 0.3487, 'alpha': [1000.0, 1000.0, 1000.0, 1000.0, 1000.0], 'r2_nested_ci95': [0.36168, 0.41568], 'r2_within_test': 0.3354, 'r2_within_test_ci95': [0.30922, 0.3601]}}
+milk10k_clin age T-D1-1.0 {'mlp_r2': 0.1286, 'mlp_r2_ci95': [0.08312, 0.17226], 'linear_probe_from_E50': {'r2_nested': -0.0002, 'r2_alpha100': -0.0002, 'alpha': [10000.0, 10000.0, 10000.0, 10000.0, 10000.0], 'r2_nested_ci95': [-0.0012, 1e-05], 'r2_within_test': 0.0125, 'r2_within_test_ci95': [-0.00043, 0.02502]}}
+milk10k_clin age T-D2-0.5 {'mlp_r2': 0.1818, 'mlp_r2_ci95': [0.13909, 0.22166], 'linear_probe_from_E50': {'r2_nested': 0.1952, 'r2_alpha100': 0.1599, 'alpha': [10000.0, 10000.0, 10000.0, 10000.0, 10000.0], 'r2_nested_ci95': [0.17673, 0.21269], 'r2_within_test': 0.1668, 'r2_within_test_ci95': [0.14358, 0.18916]}}
+milk10k_clin age R-D1-1.0-0 {'mlp_r2': -0.1187, 'mlp_r2_ci95': [-0.1716, -0.06836], 'linear_probe_from_E50': {'r2_nested': 0.1107, 'r2_alpha100': 0.0719, 'alpha': [10000.0, 10000.0, 10000.0, 10000.0, 10000.0], 'r2_nested_ci95': [0.09013, 0.13116], 'r2_within_test': 0.0758, 'r2_within_test_ci95': [0.05866, 0.09199]}}
+milk10k_clin age sham-0 {'mlp_r2': 0.2308, 'mlp_r2_ci95': [0.18911, 0.27187], 'linear_probe_from_E50': {'r2_nested': 0.3897, 'r2_alpha100': 0.3483, 'alpha': [1000.0, 1000.0, 1000.0, 1000.0, 1000.0], 'r2_nested_ci95': [0.36146, 0.41537], 'r2_within_test': 0.3352, 'r2_within_test_ci95': [0.309, 0.36018]}}
+{
+  "id": "E52_milk10k_clin_age",
+  "hypothesis": "iteration6/REGISTRY.md E52: residual nonlinear decodability after linear erasure",
+  "data": {
+    "dataset": "milk10k_clin"
+  },
+  "config": {
+    "concept": "age",
+    "mlp": {
+      "hidden_layer_sizes": [
+        256
+      ],
+      "activation": "relu",
+      "solver": "adam",
+      "learning_rate_init": 0.001,
+      "alpha": 0.001,
+      "batch_size": 256,
+      "max_iter": 200,
+      "early_stopping": true,
+      "validation_fraction": 0.1,
+      "random_state": 0
+    },
+    "rung": "convnext_tiny",
+    "fold_seed": 0,
+    "code_sha256_12": {
+      "e52_nonlinear_probe.py": "26fbf46ea7f0",
+      "e50_dose_restoration.py": "ca82ac760e14",
+      "e45_erasure.py": "58fa915d73e4",
+      "e40_crossfit_baseline.py": "d3a0db47d6db",
+      "e10_ham_attenuation.py": "ed41358e6a49",
+      "e13_replication.py": "02c613176b9b",
+      "x_common.py": "044c73d5de5a"
+    }
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-29T17:42:51+00:00",
+  "results": {
+    "ranks_matched": [
+      512,
+      512,
+      512,
+      512,
+      512
+    ],
+    "arms": {
+      "t0": {
+        "mlp_r2": 0.2357,
+        "mlp_r2_ci95": [
+          0.19473,
+          0.2767
+        ],
+        "linear_probe_from_E50": {
+          "r2_nested": 0.39,
+          "r2_alpha100": 0.3487,
+          "alpha": [
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0
+          ],
+          "r2_nested_ci95": [
+            0.36168,
+            0.41568
+          ],
+          "r2_within_test": 0.3354,
+          "r2_within_test_ci95": [
+            0.30922,
+            0.3601
+          ]
+        }
+      },
+      "T-D1-1.0": {
+        "mlp_r2": 0.1286,
+        "mlp_r2_ci95": [
+          0.08312,
+          0.17226
+        ],
+        "linear_probe_from_E50": {
+          "r2_nested": -0.0002,
+          "r2_alpha100": -0.0002,
+          "alpha": [
+            10000.0,
+            10000.0,
+            10000.0,
+            10000.0,
+            10000.0
+          ],
+          "r2_nested_ci95": [
+            -0.0012,
+            1e-05
+          ],
+          "r2_within_test": 0.0125,
+          "r2_within_test_ci95": [
+            -0.00043,
+            0.02502
+          ]
+        }
+      },
+      "T-D2-0.5": {
+        "mlp_r2": 0.1818,
+        "mlp_r2_ci95": [
+          0.13909,
+          0.22166
+        ],
+        "linear_probe_from_E50": {
+          "r2_nested": 0.1952,
+          "r2_alpha100": 0.1599,
+          "alpha": [
+            10000.0,
+            10000.0,
+            10000.0,
+            10000.0,
+            10000.0
+          ],
+          "r2_nested_ci95": [
+            0.17673,
+            0.21269
+          ],
+          "r2_within_test": 0.1668,
+          "r2_within_test_ci95": [
+            0.14358,
+            0.18916
+          ]
+        }
+      },
+      "R-D1-1.0-0": {
+        "mlp_r2": -0.1187,
+        "mlp_r2_ci95": [
+          -0.1716,
+          -0.06836
+        ],
+        "linear_probe_from_E50": {
+          "r2_nested": 0.1107,
+          "r2_alpha100": 0.0719,
+          "alpha": [
+            10000.0,
+            10000.0,
+            10000.0,
+            10000.0,
+            10000.0
+          ],
+          "r2_nested_ci95": [
+            0.09013,
+            0.13116
+          ],
+          "r2_within_test": 0.0758,
+          "r2_within_test_ci95": [
+            0.05866,
+            0.09199
+          ]
+        }
+      },
+      "sham-0": {
+        "mlp_r2": 0.2308,
+        "mlp_r2_ci95": [
+          0.18911,
+          0.27187
+        ],
+        "linear_probe_from_E50": {
+          "r2_nested": 0.3897,
+          "r2_alpha100": 0.3483,
+          "alpha": [
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0
+          ],
+          "r2_nested_ci95": [
+            0.36146,
+            0.41537
+          ],
+          "r2_within_test": 0.3352,
+          "r2_within_test_ci95": [
+            0.309,
+            0.36018
+          ]
+        }
+      }
+    }
+  },
+  "interpretation": "See iteration6 reports.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 12.59,
+  "peak_rss_mb": 1608.5
+}

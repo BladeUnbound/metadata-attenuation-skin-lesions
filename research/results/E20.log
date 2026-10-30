@@ -1,0 +1,379 @@
+ham10000 age {'hsv': {'av': 0.01465, 'ci95': [0.00987, 0.01964]}, 'convnext_tiny': {'av': 0.00196, 'ci95': [-0.00104, 0.00445]}, 'retained': 0.134}
+ham10000 sex {'hsv': {'av': 0.00248, 'ci95': [0.00085, 0.00419]}, 'convnext_tiny': {'av': 0.00036, 'ci95': [1e-05, 0.00082]}, 'retained': 0.145}
+ham10000 site {'hsv': {'av': 0.0057, 'ci95': [0.00225, 0.00931]}, 'convnext_tiny': {'av': 0.0011, 'ci95': [-0.00161, 0.00367]}, 'retained': 0.193}
+isic2020 age {'hsv': {'av': 0.00326, 'ci95': [0.00212, 0.0044]}, 'convnext_tiny': {'av': 0.00105, 'ci95': [0.00046, 0.00166]}, 'retained': 0.322}
+isic2020 sex {'hsv': {'av': 0.00024, 'ci95': [-4e-05, 0.00053]}, 'convnext_tiny': {'av': 8e-05, 'ci95': [-9e-05, 0.00027]}, 'retained': 0.333}
+isic2020 site {'hsv': {'av': 0.00026, 'ci95': [-0.00021, 0.00075]}, 'convnext_tiny': {'av': -0.00011, 'ci95': [-0.00044, 0.00021]}, 'retained': -0.423}
+isic2019_nonham age {'hsv': {'av': 0.01119, 'ci95': [0.0057, 0.01651]}, 'convnext_tiny': {'av': 0.00318, 'ci95': [0.00056, 0.00572]}, 'retained': 0.284}
+isic2019_nonham sex {'hsv': {'av': -0.00085, 'ci95': [-0.0016, -0.0002]}, 'convnext_tiny': {'av': -0.00023, 'ci95': [-0.00083, 0.00035]}, 'retained': None}
+isic2019_nonham site {'hsv': {'av': 0.00713, 'ci95': [0.00218, 0.01257]}, 'convnext_tiny': {'av': 0.00541, 'ci95': [5e-05, 0.01066]}, 'retained': 0.759}
+pad_ufes age {'hsv': {'av': 0.01651, 'ci95': [0.00679, 0.02666]}, 'convnext_tiny': {'av': 0.00442, 'ci95': [-0.00068, 0.00928]}, 'retained': 0.268}
+pad_ufes sex {'hsv': {'av': 0.28782, 'ci95': [0.26218, 0.31241]}, 'convnext_tiny': {'av': 0.14829, 'ci95': [0.12926, 0.16983]}, 'retained': 0.515}
+pad_ufes site {'hsv': {'av': 0.03959, 'ci95': [0.02359, 0.05571]}, 'convnext_tiny': {'av': 0.00397, 'ci95': [-0.00571, 0.01362]}, 'retained': 0.1}
+pad_ufes fitzpatrick {'hsv': {'av': 0.29026, 'ci95': [0.26582, 0.31629]}, 'convnext_tiny': {'av': 0.1497, 'ci95': [0.13094, 0.16977]}, 'retained': 0.516}
+pad_ufes itch {'hsv': {'av': 0.01309, 'ci95': [0.00425, 0.02112]}, 'convnext_tiny': {'av': 0.00013, 'ci95': [-0.00294, 0.00291]}, 'retained': 0.01}
+pad_ufes grew {'hsv': {'av': 0.13873, 'ci95': [0.11339, 0.16188]}, 'convnext_tiny': {'av': 0.08388, 'ci95': [0.06483, 0.10279]}, 'retained': 0.605}
+pad_ufes hurt {'hsv': {'av': 0.05751, 'ci95': [0.04096, 0.0742]}, 'convnext_tiny': {'av': 0.01174, 'ci95': [0.0036, 0.01975]}, 'retained': 0.204}
+pad_ufes changed {'hsv': {'av': 0.09327, 'ci95': [0.07451, 0.1139]}, 'convnext_tiny': {'av': 0.06054, 'ci95': [0.0454, 0.07693]}, 'retained': 0.649}
+pad_ufes bleed {'hsv': {'av': 0.09001, 'ci95': [0.06676, 0.11224]}, 'convnext_tiny': {'av': 0.0234, 'ci95': [0.01298, 0.03411]}, 'retained': 0.26}
+pad_ufes elevation {'hsv': {'av': 0.06473, 'ci95': [0.04408, 0.08488]}, 'convnext_tiny': {'av': 0.0235, 'ci95': [0.00986, 0.03768]}, 'retained': 0.363}
+{
+  "id": "E20_per_variable_floor",
+  "hypothesis": "Exploratory: identify which variables carry the non-redundant floor.",
+  "data": {
+    "datasets": [
+      "ham10000",
+      "isic2020",
+      "isic2019_nonham",
+      "pad_ufes"
+    ]
+  },
+  "config": {
+    "rungs": [
+      "hsv",
+      "convnext_tiny"
+    ],
+    "folds": "assignment 0"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T11:21:01+00:00",
+  "results": {
+    "ham10000": {
+      "age": {
+        "hsv": {
+          "av": 0.01465,
+          "ci95": [
+            0.00987,
+            0.01964
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.00196,
+          "ci95": [
+            -0.00104,
+            0.00445
+          ]
+        },
+        "retained": 0.134
+      },
+      "sex": {
+        "hsv": {
+          "av": 0.00248,
+          "ci95": [
+            0.00085,
+            0.00419
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.00036,
+          "ci95": [
+            1e-05,
+            0.00082
+          ]
+        },
+        "retained": 0.145
+      },
+      "site": {
+        "hsv": {
+          "av": 0.0057,
+          "ci95": [
+            0.00225,
+            0.00931
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.0011,
+          "ci95": [
+            -0.00161,
+            0.00367
+          ]
+        },
+        "retained": 0.193
+      }
+    },
+    "isic2020": {
+      "age": {
+        "hsv": {
+          "av": 0.00326,
+          "ci95": [
+            0.00212,
+            0.0044
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.00105,
+          "ci95": [
+            0.00046,
+            0.00166
+          ]
+        },
+        "retained": 0.322
+      },
+      "sex": {
+        "hsv": {
+          "av": 0.00024,
+          "ci95": [
+            -4e-05,
+            0.00053
+          ]
+        },
+        "convnext_tiny": {
+          "av": 8e-05,
+          "ci95": [
+            -9e-05,
+            0.00027
+          ]
+        },
+        "retained": 0.333
+      },
+      "site": {
+        "hsv": {
+          "av": 0.00026,
+          "ci95": [
+            -0.00021,
+            0.00075
+          ]
+        },
+        "convnext_tiny": {
+          "av": -0.00011,
+          "ci95": [
+            -0.00044,
+            0.00021
+          ]
+        },
+        "retained": -0.423
+      }
+    },
+    "isic2019_nonham": {
+      "age": {
+        "hsv": {
+          "av": 0.01119,
+          "ci95": [
+            0.0057,
+            0.01651
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.00318,
+          "ci95": [
+            0.00056,
+            0.00572
+          ]
+        },
+        "retained": 0.284
+      },
+      "sex": {
+        "hsv": {
+          "av": -0.00085,
+          "ci95": [
+            -0.0016,
+            -0.0002
+          ]
+        },
+        "convnext_tiny": {
+          "av": -0.00023,
+          "ci95": [
+            -0.00083,
+            0.00035
+          ]
+        },
+        "retained": null
+      },
+      "site": {
+        "hsv": {
+          "av": 0.00713,
+          "ci95": [
+            0.00218,
+            0.01257
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.00541,
+          "ci95": [
+            5e-05,
+            0.01066
+          ]
+        },
+        "retained": 0.759
+      }
+    },
+    "pad_ufes": {
+      "age": {
+        "hsv": {
+          "av": 0.01651,
+          "ci95": [
+            0.00679,
+            0.02666
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.00442,
+          "ci95": [
+            -0.00068,
+            0.00928
+          ]
+        },
+        "retained": 0.268
+      },
+      "sex": {
+        "hsv": {
+          "av": 0.28782,
+          "ci95": [
+            0.26218,
+            0.31241
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.14829,
+          "ci95": [
+            0.12926,
+            0.16983
+          ]
+        },
+        "retained": 0.515
+      },
+      "site": {
+        "hsv": {
+          "av": 0.03959,
+          "ci95": [
+            0.02359,
+            0.05571
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.00397,
+          "ci95": [
+            -0.00571,
+            0.01362
+          ]
+        },
+        "retained": 0.1
+      },
+      "fitzpatrick": {
+        "hsv": {
+          "av": 0.29026,
+          "ci95": [
+            0.26582,
+            0.31629
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.1497,
+          "ci95": [
+            0.13094,
+            0.16977
+          ]
+        },
+        "retained": 0.516
+      },
+      "itch": {
+        "hsv": {
+          "av": 0.01309,
+          "ci95": [
+            0.00425,
+            0.02112
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.00013,
+          "ci95": [
+            -0.00294,
+            0.00291
+          ]
+        },
+        "retained": 0.01
+      },
+      "grew": {
+        "hsv": {
+          "av": 0.13873,
+          "ci95": [
+            0.11339,
+            0.16188
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.08388,
+          "ci95": [
+            0.06483,
+            0.10279
+          ]
+        },
+        "retained": 0.605
+      },
+      "hurt": {
+        "hsv": {
+          "av": 0.05751,
+          "ci95": [
+            0.04096,
+            0.0742
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.01174,
+          "ci95": [
+            0.0036,
+            0.01975
+          ]
+        },
+        "retained": 0.204
+      },
+      "changed": {
+        "hsv": {
+          "av": 0.09327,
+          "ci95": [
+            0.07451,
+            0.1139
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.06054,
+          "ci95": [
+            0.0454,
+            0.07693
+          ]
+        },
+        "retained": 0.649
+      },
+      "bleed": {
+        "hsv": {
+          "av": 0.09001,
+          "ci95": [
+            0.06676,
+            0.11224
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.0234,
+          "ci95": [
+            0.01298,
+            0.03411
+          ]
+        },
+        "retained": 0.26
+      },
+      "elevation": {
+        "hsv": {
+          "av": 0.06473,
+          "ci95": [
+            0.04408,
+            0.08488
+          ]
+        },
+        "convnext_tiny": {
+          "av": 0.0235,
+          "ci95": [
+            0.00986,
+            0.03768
+          ]
+        },
+        "retained": 0.363
+      }
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 69.46,
+  "peak_rss_mb": 618.2
+}

@@ -1,0 +1,4 @@
+pad_ufes resnet34: 2298 images, 33s
+pad_ufes resnet101: 2298 images, 49s
+pad_ufes convnext_small: 2298 images, 54s
+pad_ufes convnext_base: 2298 images, 72s

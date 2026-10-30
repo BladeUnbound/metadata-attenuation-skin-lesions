@@ -1,0 +1,261 @@
+ham10000 t0 LL b0 0.23254 b1 0.22857 delta x1e3 3.969 max |score - E50| 0.00e+00
+ham10000 T-D1-1.0 LL b0 0.24676 b1 0.23170 delta x1e3 15.055 max |score - E50| 0.00e+00
+ham10000 R-D1-1.0-0 LL b0 0.25353 b1 0.24823 delta x1e3 5.297 max |score - E50| 0.00e+00
+ham10000 R-D1-1.0-1 LL b0 0.26335 b1 0.25576 delta x1e3 7.593 max |score - E50| 0.00e+00
+ham10000 R-D1-1.0-2 LL b0 0.26281 b1 0.25781 delta x1e3 5.000 max |score - E50| 0.00e+00
+ham10000 R-D1-1.0-3 LL b0 0.25920 b1 0.25336 delta x1e3 5.845 max |score - E50| 0.00e+00
+ham10000 R-D1-1.0-4 LL b0 0.25931 b1 0.24838 delta x1e3 10.923 max |score - E50| 0.00e+00
+{
+  "id": "E53b_ham10000",
+  "hypothesis": "iteration6/REGISTRY.md E53b: E50 primary age-erasure contrast under full-feature regularised fusion (estimator b)",
+  "data": {
+    "dataset": "ham10000"
+  },
+  "config": {
+    "rung": "convnext_tiny",
+    "fold_seed": 0,
+    "n_controls": 5,
+    "B": 2000,
+    "bootstrap_seed": 531,
+    "code_sha256_12": {
+      "e53b_erasure_fullfusion.py": "0023095a3bf3",
+      "e50_dose_restoration.py": "ca82ac760e14",
+      "e45_erasure.py": "58fa915d73e4",
+      "e40_crossfit_baseline.py": "d3a0db47d6db",
+      "e10_ham_attenuation.py": "ed41358e6a49",
+      "e13_replication.py": "02c613176b9b",
+      "x_common.py": "044c73d5de5a",
+      "e53_estimators.py": "e150655e4fa0"
+    }
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-29T18:00:57+00:00",
+  "results": {
+    "n": 10015,
+    "ranks_matched": [
+      181,
+      91,
+      181,
+      128,
+      91
+    ],
+    "rank_targeted": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "reproduces_E50_scores_max_abs": {
+      "t0": 0.0,
+      "T-D1-1.0": 0.0,
+      "R-D1-1.0-0": 0.0,
+      "R-D1-1.0-1": 0.0,
+      "R-D1-1.0-2": 0.0,
+      "R-D1-1.0-3": 0.0,
+      "R-D1-1.0-4": 0.0
+    },
+    "C": {
+      "t0": {
+        "b0": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ],
+        "b1": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ]
+      },
+      "T-D1-1.0": {
+        "b0": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ],
+        "b1": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ]
+      },
+      "R-D1-1.0-0": {
+        "b0": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ],
+        "b1": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ]
+      },
+      "R-D1-1.0-1": {
+        "b0": [
+          0.01,
+          0.01,
+          0.001,
+          0.01,
+          0.01
+        ],
+        "b1": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ]
+      },
+      "R-D1-1.0-2": {
+        "b0": [
+          0.01,
+          0.01,
+          0.001,
+          0.01,
+          0.01
+        ],
+        "b1": [
+          0.01,
+          0.01,
+          0.001,
+          0.01,
+          0.01
+        ]
+      },
+      "R-D1-1.0-3": {
+        "b0": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ],
+        "b1": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ]
+      },
+      "R-D1-1.0-4": {
+        "b0": [
+          0.001,
+          0.01,
+          0.001,
+          0.01,
+          0.01
+        ],
+        "b1": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ]
+      }
+    },
+    "arms": {
+      "t0": {
+        "image_logloss_b0": 0.23254,
+        "fusion_logloss_b1": 0.22857,
+        "delta_x1e3": 3.969
+      },
+      "T-D1-1.0": {
+        "image_logloss_b0": 0.24676,
+        "fusion_logloss_b1": 0.2317,
+        "delta_x1e3": 15.055
+      },
+      "R-D1-1.0-0": {
+        "image_logloss_b0": 0.25353,
+        "fusion_logloss_b1": 0.24823,
+        "delta_x1e3": 5.297
+      },
+      "R-D1-1.0-1": {
+        "image_logloss_b0": 0.26335,
+        "fusion_logloss_b1": 0.25576,
+        "delta_x1e3": 7.593
+      },
+      "R-D1-1.0-2": {
+        "image_logloss_b0": 0.26281,
+        "fusion_logloss_b1": 0.25781,
+        "delta_x1e3": 5.0
+      },
+      "R-D1-1.0-3": {
+        "image_logloss_b0": 0.2592,
+        "fusion_logloss_b1": 0.25336,
+        "delta_x1e3": 5.845
+      },
+      "R-D1-1.0-4": {
+        "image_logloss_b0": 0.25931,
+        "fusion_logloss_b1": 0.24838,
+        "delta_x1e3": 10.923
+      }
+    },
+    "contrasts": {
+      "b_targeted_minus_matched": {
+        "diff_x1e3": 8.123,
+        "ci95_x1e3": [
+          5.53,
+          10.75
+        ],
+        "p_one_sided": 0.0005
+      },
+      "b_targeted_minus_t0": {
+        "diff_x1e3": 11.086,
+        "ci95_x1e3": [
+          8.29,
+          13.92
+        ]
+      },
+      "b_matched_minus_t0": {
+        "diff_x1e3": 2.963,
+        "ci95_x1e3": [
+          1.88,
+          4.06
+        ]
+      },
+      "b_matching_check_image_ll_targeted_minus_matched": {
+        "diff_x1e3": -12.883,
+        "ci95_x1e3": [
+          -17.35,
+          -8.14
+        ]
+      },
+      "a_targeted_minus_matched_E50": {
+        "diff_x1e3": 9.05,
+        "ci95_x1e3": [
+          6.37,
+          11.77
+        ]
+      },
+      "b_minus_a_contrast": {
+        "diff_x1e3": -0.926,
+        "ci95_x1e3": [
+          -2.55,
+          0.78
+        ]
+      }
+    }
+  },
+  "interpretation": "See iteration6 reports.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 84.23,
+  "peak_rss_mb": 1547.4
+}

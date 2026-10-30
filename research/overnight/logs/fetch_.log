@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/paradox/Desktop/CV EL/research/experiments/fetch_isic_collection.py", line 68, in <module>
+    main(sys.argv[1], sys.argv[2])
+                      ~~~~~~~~^^^
+IndexError: list index out of range

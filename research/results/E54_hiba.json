@@ -1,0 +1,123 @@
+{
+  "id": "E54_hiba",
+  "hypothesis": "REGISTRY.md E54: seed spread of fine-tuned added value (E14b schedule)",
+  "data": {
+    "dataset": "hiba",
+    "n": 1224
+  },
+  "config": {
+    "backbones": [
+      "resnet18",
+      "convnext_tiny"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "seed_rule": "fold k, seed s: 1000*s + k (seed 0 = E14b)",
+    "estimator": "E14b original second stage"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-29T19:53:05+00:00",
+  "results": {
+    "resnet18": {
+      "frozen_added_value": 0.01886,
+      "per_seed": {
+        "0": {
+          "auroc": 0.9402,
+          "added_value": 0.00137,
+          "added_value_ci95": [
+            -0.0148,
+            0.01599
+          ],
+          "frozen_minus_finetuned_ci95": [
+            0.00627,
+            0.02947
+          ]
+        },
+        "1": {
+          "auroc": 0.9461,
+          "added_value": -0.00205,
+          "added_value_ci95": [
+            -0.01819,
+            0.01233
+          ],
+          "frozen_minus_finetuned_ci95": [
+            0.00861,
+            0.03317
+          ]
+        },
+        "2": {
+          "auroc": 0.941,
+          "added_value": 0.00121,
+          "added_value_ci95": [
+            -0.01581,
+            0.01722
+          ],
+          "frozen_minus_finetuned_ci95": [
+            0.00668,
+            0.02935
+          ]
+        }
+      },
+      "added_value_mean": 0.00018,
+      "added_value_range": [
+        -0.00205,
+        0.00137
+      ]
+    },
+    "convnext_tiny": {
+      "frozen_added_value": 0.0026,
+      "per_seed": {
+        "0": {
+          "auroc": 0.9508,
+          "added_value": -0.00724,
+          "added_value_ci95": [
+            -0.02285,
+            0.0064
+          ],
+          "frozen_minus_finetuned_ci95": [
+            0.00261,
+            0.01774
+          ]
+        },
+        "1": {
+          "auroc": 0.9543,
+          "added_value": -0.00871,
+          "added_value_ci95": [
+            -0.02321,
+            0.00361
+          ],
+          "frozen_minus_finetuned_ci95": [
+            0.00377,
+            0.01947
+          ]
+        },
+        "2": {
+          "auroc": 0.9558,
+          "added_value": -0.00897,
+          "added_value_ci95": [
+            -0.02367,
+            0.00404
+          ],
+          "frozen_minus_finetuned_ci95": [
+            0.00342,
+            0.02044
+          ]
+        }
+      },
+      "added_value_mean": -0.00831,
+      "added_value_range": [
+        -0.00897,
+        -0.00724
+      ]
+    }
+  },
+  "interpretation": "See iteration6 reports.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 2302.45,
+  "peak_rss_mb": 1892.1
+}

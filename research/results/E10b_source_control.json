@@ -1,0 +1,183 @@
+{
+  "id": "E10b_source_control",
+  "hypothesis": "Attenuation persists after adjusting for image source; within-source AUROC rises with capacity.",
+  "data": {
+    "source": "HAM10000",
+    "note": "exploratory; deviation from E10 pre-registration"
+  },
+  "config": {
+    "folds": "E10 seed 0",
+    "rungs": [
+      "hsv",
+      "resnet18",
+      "resnet50",
+      "convnext_tiny",
+      "vit_b_16"
+    ]
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T05:13:01+00:00",
+  "results": {
+    "hsv": {
+      "source_adjusted_added_value": 0.01533,
+      "ci95": [
+        0.00987,
+        0.02097
+      ],
+      "within_source_auroc": {
+        "vidir_modern": 0.612,
+        "rosendahl": 0.5638
+      }
+    },
+    "resnet18": {
+      "source_adjusted_added_value": 0.0047,
+      "ci95": [
+        0.00029,
+        0.00872
+      ],
+      "within_source_auroc": {
+        "vidir_modern": 0.7829,
+        "rosendahl": 0.7231
+      }
+    },
+    "resnet50": {
+      "source_adjusted_added_value": 0.00397,
+      "ci95": [
+        0.0,
+        0.0079
+      ],
+      "within_source_auroc": {
+        "vidir_modern": 0.7738,
+        "rosendahl": 0.7193
+      }
+    },
+    "convnext_tiny": {
+      "source_adjusted_added_value": 0.00215,
+      "ci95": [
+        -0.00209,
+        0.00606
+      ],
+      "within_source_auroc": {
+        "vidir_modern": 0.8303,
+        "rosendahl": 0.8063
+      }
+    },
+    "vit_b_16": {
+      "source_adjusted_added_value": 0.00322,
+      "ci95": [
+        -0.00044,
+        0.00682
+      ],
+      "within_source_auroc": {
+        "vidir_modern": 0.8354,
+        "rosendahl": 0.7888
+      }
+    },
+    "paired_attenuation": {
+      "unadjusted:hsv-resnet18": {
+        "av_diff": 0.01429,
+        "ci95": [
+          0.01067,
+          0.01798
+        ]
+      },
+      "unadjusted:hsv-resnet50": {
+        "av_diff": 0.0151,
+        "ci95": [
+          0.01137,
+          0.01887
+        ]
+      },
+      "unadjusted:hsv-convnext_tiny": {
+        "av_diff": 0.01668,
+        "ci95": [
+          0.01259,
+          0.02064
+        ]
+      },
+      "unadjusted:hsv-vit_b_16": {
+        "av_diff": 0.0157,
+        "ci95": [
+          0.01188,
+          0.01974
+        ]
+      },
+      "unadjusted:resnet18-convnext_tiny": {
+        "av_diff": 0.00239,
+        "ci95": [
+          0.0007,
+          0.00405
+        ]
+      },
+      "unadjusted:resnet18-vit_b_16": {
+        "av_diff": 0.00141,
+        "ci95": [
+          -0.00011,
+          0.00295
+        ]
+      },
+      "unadjusted:resnet50-convnext_tiny": {
+        "av_diff": 0.00158,
+        "ci95": [
+          -6e-05,
+          0.00321
+        ]
+      },
+      "source_adjusted:hsv-resnet18": {
+        "av_diff": 0.01064,
+        "ci95": [
+          0.00794,
+          0.01371
+        ]
+      },
+      "source_adjusted:hsv-resnet50": {
+        "av_diff": 0.01136,
+        "ci95": [
+          0.00829,
+          0.01454
+        ]
+      },
+      "source_adjusted:hsv-convnext_tiny": {
+        "av_diff": 0.01318,
+        "ci95": [
+          0.00961,
+          0.01665
+        ]
+      },
+      "source_adjusted:hsv-vit_b_16": {
+        "av_diff": 0.01211,
+        "ci95": [
+          0.00877,
+          0.01548
+        ]
+      },
+      "source_adjusted:resnet18-convnext_tiny": {
+        "av_diff": 0.00255,
+        "ci95": [
+          0.00086,
+          0.00403
+        ]
+      },
+      "source_adjusted:resnet18-vit_b_16": {
+        "av_diff": 0.00148,
+        "ci95": [
+          -0.0001,
+          0.00303
+        ]
+      },
+      "source_adjusted:resnet50-convnext_tiny": {
+        "av_diff": 0.00182,
+        "ci95": [
+          0.00019,
+          0.00335
+        ]
+      }
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 13.37,
+  "peak_rss_mb": 364.4
+}

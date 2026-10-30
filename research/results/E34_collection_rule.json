@@ -1,0 +1,125 @@
+{
+  "id": "E34_collection_rule",
+  "hypothesis": "Exploratory: a transparent rule predicts delta_var better than baselines under leave-one-dataset-out evaluation.",
+  "data": {
+    "source": "results/E30_table.csv",
+    "clusters": [
+      "ham10000",
+      "hiba",
+      "isic2019_nonham",
+      "isic2020",
+      "milk10k",
+      "msk2020",
+      "pad_ufes"
+    ]
+  },
+  "config": {
+    "features": [
+      "image_auroc",
+      "recov_within_norm",
+      "recov_marginal_norm",
+      "I_var",
+      "missing_rate",
+      "source_shift"
+    ],
+    "threshold_nats": 0.001,
+    "alphas": [
+      0.001,
+      0.0031622776601683794,
+      0.01,
+      0.03162277660168379,
+      0.1,
+      0.31622776601683794,
+      1.0,
+      3.1622776601683795,
+      10.0,
+      31.622776601683793,
+      100.0,
+      316.22776601683796,
+      1000.0
+    ]
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T19:05:22+00:00",
+  "results": {
+    "n_rows": 160,
+    "n_clusters": 7,
+    "limitation": "few independent datasets; generalisation evidence is weak by construction",
+    "pred_b0": {
+      "mae": 0.009168382119902205,
+      "spearman": null,
+      "decision": {
+        "precision": null,
+        "recall": 0.0,
+        "accuracy": 0.45,
+        "n_collect_true": 88,
+        "n_collect_pred": 0
+      }
+    },
+    "pred_b1": {
+      "mae": 0.008214091305788374,
+      "spearman": 0.7367071979146372,
+      "decision": {
+        "precision": 0.8111111111111111,
+        "recall": 0.8295454545454546,
+        "accuracy": 0.8,
+        "n_collect_true": 88,
+        "n_collect_pred": 90
+      }
+    },
+    "pred_ridge": {
+      "mae": 0.010144503959959823,
+      "spearman": 0.6380610570725419,
+      "decision": {
+        "precision": 0.6074074074074074,
+        "recall": 0.9318181818181818,
+        "accuracy": 0.63125,
+        "n_collect_true": 88,
+        "n_collect_pred": 135
+      }
+    },
+    "largest_ridge_errors": [
+      {
+        "dataset": "hiba",
+        "rung": "vit_b_16",
+        "variable": "age",
+        "delta_var": 0.00906,
+        "pred_ridge": 0.07488
+      },
+      {
+        "dataset": "hiba",
+        "rung": "convnext_tiny",
+        "variable": "age",
+        "delta_var": 0.01128,
+        "pred_ridge": 0.07699
+      },
+      {
+        "dataset": "hiba",
+        "rung": "resnet18",
+        "variable": "age",
+        "delta_var": 0.02485,
+        "pred_ridge": 0.07737
+      },
+      {
+        "dataset": "pad_ufes",
+        "rung": "hsv",
+        "variable": "grew",
+        "delta_var": 0.06873,
+        "pred_ridge": 0.01759
+      },
+      {
+        "dataset": "pad_ufes",
+        "rung": "hsv",
+        "variable": "bleed",
+        "delta_var": 0.06367,
+        "pred_ridge": 0.01645
+      }
+    ]
+  },
+  "interpretation": "See research/iteration4/SUMMARY.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 0.73,
+  "peak_rss_mb": 174.9
+}

@@ -1,0 +1,136 @@
+loaded 10015 images in 60s
+/Users/paradox/Desktop/CV EL/research/experiments/e14_finetune.py:60: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:219.)
+  x = torch.from_numpy(a).permute(2, 0, 1).float() / 255
+  resnet18 epoch 1/6 loss 0.2875 (179s)
+  resnet18 epoch 2/6 loss 0.2051 (160s)
+  resnet18 epoch 3/6 loss 0.1788 (174s)
+  resnet18 epoch 4/6 loss 0.1481 (173s)
+  resnet18 epoch 5/6 loss 0.1151 (99s)
+  resnet18 epoch 6/6 loss 0.0994 (94s)
+resnet18 fold 0 done; fold AUROC 0.941
+  resnet18 epoch 1/6 loss 0.3112 (87s)
+  resnet18 epoch 2/6 loss 0.2040 (85s)
+  resnet18 epoch 3/6 loss 0.1775 (83s)
+  resnet18 epoch 4/6 loss 0.1405 (120s)
+  resnet18 epoch 5/6 loss 0.1158 (131s)
+  resnet18 epoch 6/6 loss 0.0968 (211s)
+resnet18 fold 1 done; fold AUROC 0.916
+  resnet18 epoch 1/6 loss 0.2798 (293s)
+  resnet18 epoch 2/6 loss 0.2096 (133s)
+  resnet18 epoch 3/6 loss 0.1799 (128s)
+  resnet18 epoch 4/6 loss 0.1404 (142s)
+  resnet18 epoch 5/6 loss 0.1093 (233s)
+  resnet18 epoch 6/6 loss 0.0977 (100s)
+resnet18 fold 2 done; fold AUROC 0.919
+  resnet18 epoch 1/6 loss 0.2645 (92s)
+  resnet18 epoch 2/6 loss 0.2077 (98s)
+  resnet18 epoch 3/6 loss 0.1721 (104s)
+  resnet18 epoch 4/6 loss 0.1398 (105s)
+  resnet18 epoch 5/6 loss 0.1044 (110s)
+  resnet18 epoch 6/6 loss 0.0931 (122s)
+resnet18 fold 3 done; fold AUROC 0.903
+  resnet18 epoch 1/6 loss 0.3238 (119s)
+  resnet18 epoch 2/6 loss 0.2152 (123s)
+  resnet18 epoch 3/6 loss 0.1768 (124s)
+  resnet18 epoch 4/6 loss 0.1483 (132s)
+  resnet18 epoch 5/6 loss 0.1199 (112s)
+  resnet18 epoch 6/6 loss 0.1044 (94s)
+resnet18 fold 4 done; fold AUROC 0.909
+resnet18 {'finetuned_auroc': 0.9172, 'frozen_auroc': 0.8536, 'finetuned_image_logloss': 0.2039, 'added_value_finetuned': 0.00035, 'added_value_finetuned_ci95': [-0.00304, 0.00346], 'added_value_frozen': 0.00413, 'frozen_minus_finetuned_av': 0.00378, 'frozen_minus_finetuned_ci95': [0.00169, 0.00592], 'train_minutes': 66.8}
+  convnext_tiny epoch 1/6 loss 0.2686 (332s)
+  convnext_tiny epoch 2/6 loss 0.2029 (412s)
+  convnext_tiny epoch 3/6 loss 0.1555 (457s)
+  convnext_tiny epoch 4/6 loss 0.0998 (470s)
+  convnext_tiny epoch 5/6 loss 0.0616 (483s)
+  convnext_tiny epoch 6/6 loss 0.0444 (385s)
+convnext_tiny fold 0 done; fold AUROC 0.950
+  convnext_tiny epoch 1/6 loss 0.2690 (395s)
+  convnext_tiny epoch 2/6 loss 0.1968 (411s)
+  convnext_tiny epoch 3/6 loss 0.1424 (387s)
+  convnext_tiny epoch 4/6 loss 0.0953 (290s)
+  convnext_tiny epoch 5/6 loss 0.0524 (288s)
+  convnext_tiny epoch 6/6 loss 0.0410 (278s)
+convnext_tiny fold 1 done; fold AUROC 0.922
+  convnext_tiny epoch 1/6 loss 0.2703 (285s)
+  convnext_tiny epoch 2/6 loss 0.2073 (279s)
+  convnext_tiny epoch 3/6 loss 0.1620 (280s)
+  convnext_tiny epoch 4/6 loss 0.1153 (269s)
+  convnext_tiny epoch 5/6 loss 0.0723 (253s)
+  convnext_tiny epoch 6/6 loss 0.0521 (253s)
+convnext_tiny fold 2 done; fold AUROC 0.931
+  convnext_tiny epoch 1/6 loss 0.2679 (250s)
+  convnext_tiny epoch 2/6 loss 0.2035 (251s)
+  convnext_tiny epoch 3/6 loss 0.1456 (249s)
+  convnext_tiny epoch 4/6 loss 0.0980 (262s)
+  convnext_tiny epoch 5/6 loss 0.0560 (271s)
+  convnext_tiny epoch 6/6 loss 0.0405 (272s)
+convnext_tiny fold 3 done; fold AUROC 0.922
+  convnext_tiny epoch 1/6 loss 0.2616 (264s)
+  convnext_tiny epoch 2/6 loss 0.2048 (251s)
+  convnext_tiny epoch 3/6 loss 0.1481 (248s)
+  convnext_tiny epoch 4/6 loss 0.0884 (247s)
+  convnext_tiny epoch 5/6 loss 0.0587 (247s)
+  convnext_tiny epoch 6/6 loss 0.0418 (247s)
+convnext_tiny fold 4 done; fold AUROC 0.928
+convnext_tiny {'finetuned_auroc': 0.9299, 'frozen_auroc': 0.8873, 'finetuned_image_logloss': 0.193, 'added_value_finetuned': 0.00084, 'added_value_finetuned_ci95': [-0.00246, 0.00391], 'added_value_frozen': 0.00174, 'frozen_minus_finetuned_av': 0.0009, 'frozen_minus_finetuned_ci95': [-0.00108, 0.00284], 'train_minutes': 156.0}
+{
+  "id": "E14_finetune",
+  "hypothesis": "Fine-tuned models extract more than frozen ones; metadata added value on fine-tuned scores is no larger than on the frozen versions (attenuation holds).",
+  "data": {
+    "source": "HAM10000",
+    "split": "E10 seed-0 lesion-grouped 5-fold"
+  },
+  "config": {
+    "epochs": 6,
+    "lr": 0.0001,
+    "weight_decay": 0.05,
+    "batch": 32,
+    "device": "mps",
+    "aug": "RandomResizedCrop(0.7-1) + H/V flips",
+    "eval": "centre crop 224"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T10:59:23+00:00",
+  "results": {
+    "resnet18": {
+      "finetuned_auroc": 0.9172,
+      "frozen_auroc": 0.8536,
+      "finetuned_image_logloss": 0.2039,
+      "added_value_finetuned": 0.00035,
+      "added_value_finetuned_ci95": [
+        -0.00304,
+        0.00346
+      ],
+      "added_value_frozen": 0.00413,
+      "frozen_minus_finetuned_av": 0.00378,
+      "frozen_minus_finetuned_ci95": [
+        0.00169,
+        0.00592
+      ],
+      "train_minutes": 66.8
+    },
+    "convnext_tiny": {
+      "finetuned_auroc": 0.9299,
+      "frozen_auroc": 0.8873,
+      "finetuned_image_logloss": 0.193,
+      "added_value_finetuned": 0.00084,
+      "added_value_finetuned_ci95": [
+        -0.00246,
+        0.00391
+      ],
+      "added_value_frozen": 0.00174,
+      "frozen_minus_finetuned_av": 0.0009,
+      "frozen_minus_finetuned_ci95": [
+        -0.00108,
+        0.00284
+      ],
+      "train_minutes": 156.0
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 13426.97,
+  "peak_rss_mb": 3399.8
+}

@@ -1,0 +1,12 @@
+\begin{table}[tp]\centering\footnotesize
+\caption{HAM10000 robustness (fold assignment 0). $\Delta$AUROC and $\Delta$Brier ($10^{-3}$) from adding metadata, with 95\% lesion-bootstrap CIs. Last two columns: out-of-fold log-loss of score\,+\,metadata (two-stage, as in Table~\ref{tab:ham}) vs.\ all frozen features\,+\,metadata in one model; similar values mean the one-dimensional score loses little.}\label{tab:hamrobust}
+\setlength{\tabcolsep}{2pt}
+\resizebox{\columnwidth}{!}{\begin{tabular}{lcccc}\toprule
+ & $\Delta$AUROC & $\Delta$Brier & \multicolumn{2}{c}{Log-loss with metadata}\\
+Representation & [95\% CI] & [95\% CI] & two-stage & joint\\\midrule
+HSV histogram & +0.043 [+0.030, +0.056] & 4.84 [3.02, 6.70] & 0.288 & 0.285\\
+ResNet-18 & +0.007 [+0.001, +0.013] & 1.29 [0.23, 2.42] & 0.253 & 0.250\\
+ResNet-50 & +0.005 [\ensuremath{-}0.001, +0.011] & 1.16 [0.14, 2.23] & 0.255 & 0.255\\
+ConvNeXt-T & +0.003 [\ensuremath{-}0.002, +0.007] & 0.88 [\ensuremath{-}0.14, 1.93] & 0.231 & 0.228\\
+ViT-B/16 & +0.004 [\ensuremath{-}0.001, +0.008] & 0.79 [\ensuremath{-}0.25, 1.86] & 0.230 & 0.228\\
+\bottomrule\end{tabular}}\end{table}

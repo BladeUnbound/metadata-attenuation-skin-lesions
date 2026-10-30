@@ -1,0 +1,53 @@
+{
+  "id": "E14b_pad_ufes",
+  "hypothesis": "Fine-tuned scores leave no more metadata added value than frozen ones.",
+  "data": {
+    "dataset": "pad_ufes",
+    "n": 2298
+  },
+  "config": {
+    "backbones": [
+      "resnet18",
+      "convnext_tiny"
+    ],
+    "schedule": "as E14"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T20:57:38+00:00",
+  "results": {
+    "resnet18": {
+      "finetuned_auroc": 0.899,
+      "frozen_auroc": 0.8451,
+      "added_value_finetuned": 0.17271,
+      "added_value_finetuned_ci95": [
+        0.14625,
+        0.1978
+      ],
+      "added_value_frozen": 0.23417,
+      "frozen_minus_finetuned_ci95": [
+        0.04384,
+        0.07945
+      ]
+    },
+    "convnext_tiny": {
+      "finetuned_auroc": 0.9275,
+      "frozen_auroc": 0.8735,
+      "added_value_finetuned": 0.12394,
+      "added_value_finetuned_ci95": [
+        0.10001,
+        0.14622
+      ],
+      "added_value_frozen": 0.20644,
+      "frozen_minus_finetuned_ci95": [
+        0.06554,
+        0.09905
+      ]
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 2222.94,
+  "peak_rss_mb": 1947.7
+}

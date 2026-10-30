@@ -1,0 +1,309 @@
+hiba {'n_complete': 1085, 'n_dropped': 139, 'positive_rate': 0.446, 'I_A_nats': 0.24098, 'hsv': {'image_auroc': 0.8468, 'av': 0.07521, 'ci95': [0.04693, 0.10541], 'rho': 0.312}, 'resnet18': {'image_auroc': 0.9037, 'av': 0.03241, 'ci95': [0.01376, 0.05063], 'rho': 0.134}, 'resnet50': {'image_auroc': 0.9019, 'av': 0.04271, 'ci95': [0.02144, 0.06275], 'rho': 0.177}, 'convnext_tiny': {'image_auroc': 0.9232, 'av': 0.0141, 'ci95': [-0.00105, 0.02901], 'rho': 0.059}, 'vit_b_16': {'image_auroc': 0.9355, 'av': 0.01298, 'ci95': [-0.00052, 0.02633], 'rho': 0.054}, 'H1': {'diff': 0.06111, 'ci95': [0.03651, 0.08807], 'p_one_sided': 0.0004997501249375312}, 'H2': {'diff': 0.01831, 'ci95': [0.00838, 0.02908], 'p_one_sided': 0.0009995002498750624}}
+msk2020 {'n_complete': 1157, 'n_dropped': 17, 'positive_rate': 0.128, 'I_A_nats': 0.03621, 'hsv': {'image_auroc': 0.6084, 'av': 0.03362, 'ci95': [0.01878, 0.04797], 'rho': 0.928}, 'resnet18': {'image_auroc': 0.7171, 'av': 0.02671, 'ci95': [0.01437, 0.03938], 'rho': 0.738}, 'resnet50': {'image_auroc': 0.7113, 'av': 0.01739, 'ci95': [0.00617, 0.0288], 'rho': 0.48}, 'convnext_tiny': {'image_auroc': 0.7255, 'av': 0.02175, 'ci95': [0.01094, 0.03299], 'rho': 0.601}, 'vit_b_16': {'image_auroc': 0.7303, 'av': 0.01209, 'ci95': [0.00227, 0.02174], 'rho': 0.334}, 'H1': {'diff': 0.01187, 'ci95': [0.00224, 0.02125], 'p_one_sided': 0.008995502248875561}, 'H2': {'diff': 0.00496, 'ci95': [-0.00203, 0.01151], 'p_one_sided': 0.07296351824087956}}
+milk10k_derm {'n_complete': 5086, 'n_dropped': 31, 'positive_rate': 0.713, 'I_A_nats': 0.0805, 'hsv': {'image_auroc': 0.7157, 'av': 0.05066, 'ci95': [0.04184, 0.06001], 'rho': 0.629}, 'resnet18': {'image_auroc': 0.816, 'av': 0.01778, 'ci95': [0.01189, 0.0236], 'rho': 0.221}, 'resnet50': {'image_auroc': 0.8353, 'av': 0.01483, 'ci95': [0.00914, 0.0201], 'rho': 0.184}, 'convnext_tiny': {'image_auroc': 0.8418, 'av': 0.01234, 'ci95': [0.00709, 0.01745], 'rho': 0.153}, 'vit_b_16': {'image_auroc': 0.8502, 'av': 0.01037, 'ci95': [0.00579, 0.01477], 'rho': 0.129}, 'H1': {'diff': 0.03832, 'ci95': [0.03228, 0.04411], 'p_one_sided': 0.0004997501249375312}, 'H2': {'diff': 0.00545, 'ci95': [0.00268, 0.00827], 'p_one_sided': 0.0009995002498750624}}
+milk10k_clin {'n_complete': 5086, 'n_dropped': 31, 'positive_rate': 0.713, 'I_A_nats': 0.0805, 'hsv': {'image_auroc': 0.7145, 'av': 0.05761, 'ci95': [0.04757, 0.06713], 'rho': 0.716}, 'resnet18': {'image_auroc': 0.8139, 'av': 0.01328, 'ci95': [0.00801, 0.0183], 'rho': 0.165}, 'resnet50': {'image_auroc': 0.8074, 'av': 0.01803, 'ci95': [0.01219, 0.02438], 'rho': 0.224}, 'convnext_tiny': {'image_auroc': 0.8394, 'av': 0.00977, 'ci95': [0.00481, 0.01458], 'rho': 0.121}, 'vit_b_16': {'image_auroc': 0.8389, 'av': 0.01012, 'ci95': [0.00511, 0.01478], 'rho': 0.126}, 'H1': {'diff': 0.04784, 'ci95': [0.04121, 0.05406], 'p_one_sided': 0.0004997501249375312}, 'H2': {'diff': 0.0035, 'ci95': [0.00138, 0.00556], 'p_one_sided': 0.0004997501249375312}}
+{
+  "id": "E21_complete_case_wave2",
+  "hypothesis": "After removing rows whose missingness can carry the label, attenuation (H1) persists; PAD-UFES-20's floor shrinks.",
+  "data": {
+    "datasets": [
+      "pad_ufes",
+      "ham10000",
+      "isic2020",
+      "isic2019_nonham",
+      "hiba",
+      "msk2020",
+      "milk10k_derm",
+      "milk10k_clin"
+    ],
+    "note": "deviation from pre-registration; leakage correction"
+  },
+  "config": {
+    "folds": "assignment 0",
+    "rungs": [
+      "hsv",
+      "resnet18",
+      "resnet50",
+      "convnext_tiny",
+      "vit_b_16"
+    ]
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T18:49:52+00:00",
+  "results": {
+    "hiba": {
+      "n_complete": 1085,
+      "n_dropped": 139,
+      "positive_rate": 0.446,
+      "I_A_nats": 0.24098,
+      "hsv": {
+        "image_auroc": 0.8468,
+        "av": 0.07521,
+        "ci95": [
+          0.04693,
+          0.10541
+        ],
+        "rho": 0.312
+      },
+      "resnet18": {
+        "image_auroc": 0.9037,
+        "av": 0.03241,
+        "ci95": [
+          0.01376,
+          0.05063
+        ],
+        "rho": 0.134
+      },
+      "resnet50": {
+        "image_auroc": 0.9019,
+        "av": 0.04271,
+        "ci95": [
+          0.02144,
+          0.06275
+        ],
+        "rho": 0.177
+      },
+      "convnext_tiny": {
+        "image_auroc": 0.9232,
+        "av": 0.0141,
+        "ci95": [
+          -0.00105,
+          0.02901
+        ],
+        "rho": 0.059
+      },
+      "vit_b_16": {
+        "image_auroc": 0.9355,
+        "av": 0.01298,
+        "ci95": [
+          -0.00052,
+          0.02633
+        ],
+        "rho": 0.054
+      },
+      "H1": {
+        "diff": 0.06111,
+        "ci95": [
+          0.03651,
+          0.08807
+        ],
+        "p_one_sided": 0.0004997501249375312
+      },
+      "H2": {
+        "diff": 0.01831,
+        "ci95": [
+          0.00838,
+          0.02908
+        ],
+        "p_one_sided": 0.0009995002498750624
+      }
+    },
+    "msk2020": {
+      "n_complete": 1157,
+      "n_dropped": 17,
+      "positive_rate": 0.128,
+      "I_A_nats": 0.03621,
+      "hsv": {
+        "image_auroc": 0.6084,
+        "av": 0.03362,
+        "ci95": [
+          0.01878,
+          0.04797
+        ],
+        "rho": 0.928
+      },
+      "resnet18": {
+        "image_auroc": 0.7171,
+        "av": 0.02671,
+        "ci95": [
+          0.01437,
+          0.03938
+        ],
+        "rho": 0.738
+      },
+      "resnet50": {
+        "image_auroc": 0.7113,
+        "av": 0.01739,
+        "ci95": [
+          0.00617,
+          0.0288
+        ],
+        "rho": 0.48
+      },
+      "convnext_tiny": {
+        "image_auroc": 0.7255,
+        "av": 0.02175,
+        "ci95": [
+          0.01094,
+          0.03299
+        ],
+        "rho": 0.601
+      },
+      "vit_b_16": {
+        "image_auroc": 0.7303,
+        "av": 0.01209,
+        "ci95": [
+          0.00227,
+          0.02174
+        ],
+        "rho": 0.334
+      },
+      "H1": {
+        "diff": 0.01187,
+        "ci95": [
+          0.00224,
+          0.02125
+        ],
+        "p_one_sided": 0.008995502248875561
+      },
+      "H2": {
+        "diff": 0.00496,
+        "ci95": [
+          -0.00203,
+          0.01151
+        ],
+        "p_one_sided": 0.07296351824087956
+      }
+    },
+    "milk10k_derm": {
+      "n_complete": 5086,
+      "n_dropped": 31,
+      "positive_rate": 0.713,
+      "I_A_nats": 0.0805,
+      "hsv": {
+        "image_auroc": 0.7157,
+        "av": 0.05066,
+        "ci95": [
+          0.04184,
+          0.06001
+        ],
+        "rho": 0.629
+      },
+      "resnet18": {
+        "image_auroc": 0.816,
+        "av": 0.01778,
+        "ci95": [
+          0.01189,
+          0.0236
+        ],
+        "rho": 0.221
+      },
+      "resnet50": {
+        "image_auroc": 0.8353,
+        "av": 0.01483,
+        "ci95": [
+          0.00914,
+          0.0201
+        ],
+        "rho": 0.184
+      },
+      "convnext_tiny": {
+        "image_auroc": 0.8418,
+        "av": 0.01234,
+        "ci95": [
+          0.00709,
+          0.01745
+        ],
+        "rho": 0.153
+      },
+      "vit_b_16": {
+        "image_auroc": 0.8502,
+        "av": 0.01037,
+        "ci95": [
+          0.00579,
+          0.01477
+        ],
+        "rho": 0.129
+      },
+      "H1": {
+        "diff": 0.03832,
+        "ci95": [
+          0.03228,
+          0.04411
+        ],
+        "p_one_sided": 0.0004997501249375312
+      },
+      "H2": {
+        "diff": 0.00545,
+        "ci95": [
+          0.00268,
+          0.00827
+        ],
+        "p_one_sided": 0.0009995002498750624
+      }
+    },
+    "milk10k_clin": {
+      "n_complete": 5086,
+      "n_dropped": 31,
+      "positive_rate": 0.713,
+      "I_A_nats": 0.0805,
+      "hsv": {
+        "image_auroc": 0.7145,
+        "av": 0.05761,
+        "ci95": [
+          0.04757,
+          0.06713
+        ],
+        "rho": 0.716
+      },
+      "resnet18": {
+        "image_auroc": 0.8139,
+        "av": 0.01328,
+        "ci95": [
+          0.00801,
+          0.0183
+        ],
+        "rho": 0.165
+      },
+      "resnet50": {
+        "image_auroc": 0.8074,
+        "av": 0.01803,
+        "ci95": [
+          0.01219,
+          0.02438
+        ],
+        "rho": 0.224
+      },
+      "convnext_tiny": {
+        "image_auroc": 0.8394,
+        "av": 0.00977,
+        "ci95": [
+          0.00481,
+          0.01458
+        ],
+        "rho": 0.121
+      },
+      "vit_b_16": {
+        "image_auroc": 0.8389,
+        "av": 0.01012,
+        "ci95": [
+          0.00511,
+          0.01478
+        ],
+        "rho": 0.126
+      },
+      "H1": {
+        "diff": 0.04784,
+        "ci95": [
+          0.04121,
+          0.05406
+        ],
+        "p_one_sided": 0.0004997501249375312
+      },
+      "H2": {
+        "diff": 0.0035,
+        "ci95": [
+          0.00138,
+          0.00556
+        ],
+        "p_one_sided": 0.0004997501249375312
+      }
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 17.22,
+  "peak_rss_mb": 771.4
+}

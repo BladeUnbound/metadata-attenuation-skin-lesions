@@ -1,0 +1,15 @@
+\begin{table}[tp]\centering\footnotesize
+\caption{A larger pretrained representation (E18, exploratory; frozen, all images, fold assignment 0): ConvNeXt-T vs.\ ViT-L/16 SWAG~\cite{singh2022swag}. $\hat\Delta$ and the paired difference (ConvNeXt $-$ ViT-L) in $10^{-3}$ nats.}\label{tab:vitl}
+\setlength{\tabcolsep}{2.5pt}
+\resizebox{\columnwidth}{!}{\begin{tabular}{lccccc}\toprule
+ & \multicolumn{2}{c}{Image AUROC} & \multicolumn{2}{c}{$\hat\Delta$} & \\
+Dataset & CNX-T & ViT-L & CNX-T & ViT-L & Difference\\\midrule
+HAM10000 & 0.887 & 0.896 & 1.7 & 3.4 & \ensuremath{-}1.6 [\ensuremath{-}3.6, 0.4]\\
+ISIC 2020 & 0.859 & 0.879 & 1.0 & 0.5 & 0.5 [0.2, 0.8]\\
+ISIC 2019 (non-HAM) & 0.823 & 0.828 & 9.1 & 6.7 & 2.4 [0.2, 4.7]\\
+PAD-UFES-20 & 0.874 & 0.886 & 206.4 & 189.7 & 16.8 [\ensuremath{-}1.5, 34.7]\\
+HIBA & 0.928 & 0.936 & 2.6 & \ensuremath{-}0.0 & 2.6 [\ensuremath{-}6.1, 10.8]\\
+MSK 2020 & 0.727 & 0.730 & 18.0 & 18.7 & \ensuremath{-}0.7 [\ensuremath{-}6.0, 4.6]\\
+MILK10k (derm.) & 0.845 & 0.840 & 8.7 & 8.2 & 0.5 [\ensuremath{-}1.9, 3.0]\\
+MILK10k (clin.) & 0.842 & 0.840 & 5.6 & 5.9 & \ensuremath{-}0.2 [\ensuremath{-}2.0, 1.5]\\
+\bottomrule\end{tabular}}\end{table}

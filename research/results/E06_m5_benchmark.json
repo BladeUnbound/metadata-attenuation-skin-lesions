@@ -1,0 +1,71 @@
+{
+  "id": "E06_m5_benchmark",
+  "hypothesis": "MPS gives a large speedup over CPU for 3D CNN training; fp16 autocast helps further without harming numerical agreement; memory limits batch size before compute does.",
+  "data": {
+    "source": "synthetic tensors"
+  },
+  "config": {
+    "volume": [
+      96,
+      112,
+      96
+    ],
+    "model": "4-block 3D CNN (16-32-64-128), BatchNorm",
+    "torch": "2.14.1"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-26T09:31:47+00:00",
+  "results": {
+    "train_3d": {
+      "cpu_fp32_b2": {
+        "median_step_s": 1.1241,
+        "volumes_per_s": 1.78,
+        "mps_driver_mem_gb": null
+      },
+      "mps_fp32_b2": {
+        "median_step_s": 0.565,
+        "volumes_per_s": 3.54,
+        "mps_driver_mem_gb": 2.18
+      },
+      "mps_fp32_b4": {
+        "median_step_s": 1.1581,
+        "volumes_per_s": 3.45,
+        "mps_driver_mem_gb": 3.3
+      },
+      "mps_fp32_b8": {
+        "median_step_s": 2.3722,
+        "volumes_per_s": 3.37,
+        "mps_driver_mem_gb": 5.55
+      },
+      "mps_fp16_b2": {
+        "median_step_s": 0.6143,
+        "volumes_per_s": 3.26,
+        "mps_driver_mem_gb": 2.19
+      },
+      "mps_fp16_b4": {
+        "median_step_s": 1.2289,
+        "volumes_per_s": 3.25,
+        "mps_driver_mem_gb": 3.3
+      },
+      "mps_fp16_b8": {
+        "median_step_s": 2.5288,
+        "volumes_per_s": 3.16,
+        "mps_driver_mem_gb": 6.55
+      }
+    },
+    "fp16_check": {
+      "max_abs_logit_diff_fp16_vs_fp32": 3.034248948097229e-06,
+      "logit_scale": 0.014023776166141033
+    },
+    "vgg16_inference_img_per_s": {
+      "cpu": 31.2,
+      "mps": 126.0
+    }
+  },
+  "interpretation": "See research/HARDWARE.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 85.09,
+  "peak_rss_mb": 6535.6
+}

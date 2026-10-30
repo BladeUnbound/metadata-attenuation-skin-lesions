@@ -1,0 +1,107 @@
+"""Figure 1: added value of metadata along the capacity ladder, one panel per dataset.
+
+Single series per panel (no legend; the panel title names the dataset), point
+estimate with 95% grouped-bootstrap CI, zero reference line. Values come only
+from research/results/*.json. Panels without results are drawn as "pending".
+"""
+import json
+from pathlib import Path
+
+import matplotlib
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+PAPER = Path(__file__).resolve().parents[1]
+RES = PAPER.parent / "research/results"
+RUNGS = ["hsv", "resnet18", "resnet50", "convnext_tiny", "vit_b_16"]
+TICKS = ["HSV", "R18", "R50", "CNX-T", "ViT-B"]
+INK, MUTED, GRID, MARK = "#1d2b33", "#5b6b75", "#d5dde2", "#1f6f7a"
+
+
+def series(name):
+    p = RES / f"{name}.json"
+    if not p.exists():
+        return None
+    r = json.loads(p.read_text())["results"]
+    if name == "E10_ham_attenuation":
+        s0 = r["primary"]["seed0"]
+        return [(s0[k]["added_value"], s0[k]["added_value_ci95"]) for k in RUNGS]
+    s0 = r["seeds"]["0"]
+    return [(s0[k]["av_all"], s0[k]["av_all_ci95"]) for k in RUNGS]
+
+
+PANELS = [("HAM10000", "E10_ham_attenuation"), ("ISIC 2020", "E13_isic2020"),
+          ("ISIC 2019 (non-HAM)", "E13_isic2019_nonham"), ("PAD-UFES-20", "E13_pad_ufes")]
+
+
+def main():
+    plt.rcParams.update({"font.family": "serif", "font.size": 7, "axes.edgecolor": MUTED,
+                         "axes.labelcolor": INK, "xtick.color": MUTED, "ytick.color": MUTED})
+    fig, axes = plt.subplots(1, 4, figsize=(7.16, 1.85), sharey=False)
+    for ax, (title, key) in zip(axes, PANELS):
+        ax.set_title(title, fontsize=7.5, color=INK, pad=3)
+        ax.axhline(0, color=MUTED, lw=0.8)
+        ax.grid(axis="y", color=GRID, lw=0.5)
+        ax.set_axisbelow(True)
+        for side in ("top", "right"):
+            ax.spines[side].set_visible(False)
+        s = series(key)
+        ax.set_xticks(range(5), TICKS, fontsize=6)
+        if s is None:
+            ax.text(2, 0.5, "pending", ha="center", va="center", color=MUTED, transform=ax.get_xaxis_transform())
+            ax.set_yticks([])
+            continue
+        for i, (v, (lo, hi)) in enumerate(s):
+            ax.plot([i, i], [1e3 * lo, 1e3 * hi], color=MARK, lw=1.2, solid_capstyle="round")
+            ax.plot(i, 1e3 * v, "o", color=MARK, ms=3.5, mec="white", mew=0.6)
+        ax.tick_params(axis="y", labelsize=6)
+    axes[0].set_ylabel(r"$\hat\Delta$ ($10^{-3}$ nats)", fontsize=7)
+    fig.tight_layout(pad=0.4, w_pad=0.8)
+    (PAPER / "figures").mkdir(exist_ok=True)
+    fig.savefig(PAPER / "figures/attenuation.pdf")
+    print("wrote figures/attenuation.pdf")
+
+
+def retained_figure():
+    """Fig. 2: retained fraction rho along the ladder, one line per dataset.
+    Palette slots 1-4 validated (light, white surface): all hard checks pass; contrast WARN
+    for aqua/yellow is relieved by direct end labels, distinct markers, and Table VIII."""
+    p = RES / "E17_retained_fraction.json"
+    if not p.exists():
+        return
+    r = json.loads(p.read_text())["results"]
+    rungs, ticks = ["hsv", "resnet18", "convnext_tiny", "vit_b_16"], ["HSV", "R18", "CNX-T", "ViT-B"]
+    series = [("ham10000", "HAM10000", "#2a78d6", "o"), ("isic2020", "ISIC 2020", "#eb6834", "s"),
+              ("isic2019_nonham", "ISIC 2019", "#1baf7a", "^"), ("pad_ufes", "PAD-UFES-20", "#eda100", "D")]
+    fig, ax = plt.subplots(figsize=(3.45, 2.1))
+    ax.axhline(0, color=MUTED, lw=0.8)
+    ax.grid(axis="y", color=GRID, lw=0.5)
+    ax.set_axisbelow(True)
+    for side in ("top", "right"):
+        ax.spines[side].set_visible(False)
+    ends = []
+    for key, label, color, marker in series:
+        if key not in r:
+            continue
+        ys = [r[key][k]["rho"] for k in rungs]
+        ax.plot(range(4), ys, color=color, lw=1.6, marker=marker, ms=4, mec="white", mew=0.6)
+        ends.append([ys[-1], label])
+    ends.sort()
+    for i in range(1, len(ends)):  # keep end labels at least 0.07 apart
+        ends[i][0] = max(ends[i][0], ends[i - 1][0] + 0.07)
+    for y_lab, label in ends:
+        ax.text(3.12, y_lab, label, color=INK, fontsize=6.3, va="center")
+    ax.set_xticks(range(4), ticks, fontsize=6.5)
+    ax.set_xlim(-0.2, 4.1)
+    ax.set_ylim(-0.05, 1.05)
+    ax.tick_params(axis="y", labelsize=6.5)
+    ax.set_ylabel(r"retained fraction $\rho$", fontsize=7)
+    fig.tight_layout(pad=0.3)
+    fig.savefig(PAPER / "figures/retained.pdf")
+    print("wrote figures/retained.pdf")
+
+
+if __name__ == "__main__":
+    main()
+    retained_figure()

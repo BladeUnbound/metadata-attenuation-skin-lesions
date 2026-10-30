@@ -1,0 +1,4 @@
+ham10000 resnet34: 10015 images, 60s
+ham10000 resnet101: 10015 images, 127s
+ham10000 convnext_small: 10015 images, 149s
+ham10000 convnext_base: 10015 images, 224s

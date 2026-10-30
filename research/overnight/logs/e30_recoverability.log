@@ -1,0 +1,109 @@
+ham10000 hsv AUROC 0.770 delta_all 18.10e-3
+ham10000 resnet18 AUROC 0.859 delta_all 4.19e-3
+ham10000 resnet50 AUROC 0.852 delta_all 3.98e-3
+ham10000 convnext_tiny AUROC 0.892 delta_all 2.60e-3
+ham10000 vit_b_16 AUROC 0.889 delta_all 2.97e-3
+isic2020 hsv AUROC 0.765 delta_all 3.36e-3
+isic2020 resnet18 AUROC 0.846 delta_all 1.26e-3
+isic2020 resnet50 AUROC 0.847 delta_all 1.23e-3
+isic2020 convnext_tiny AUROC 0.862 delta_all 0.79e-3
+isic2020 vit_b_16 AUROC 0.880 delta_all 0.63e-3
+isic2019_nonham hsv AUROC 0.681 delta_all 13.81e-3
+isic2019_nonham resnet18 AUROC 0.803 delta_all 6.99e-3
+isic2019_nonham resnet50 AUROC 0.804 delta_all 6.71e-3
+isic2019_nonham convnext_tiny AUROC 0.826 delta_all 6.13e-3
+isic2019_nonham vit_b_16 AUROC 0.834 delta_all 4.23e-3
+pad_ufes hsv AUROC 0.570 delta_all 152.04e-3
+pad_ufes resnet18 AUROC 0.781 delta_all 73.44e-3
+pad_ufes resnet50 AUROC 0.772 delta_all 83.09e-3
+pad_ufes convnext_tiny AUROC 0.778 delta_all 73.80e-3
+pad_ufes vit_b_16 AUROC 0.794 delta_all 73.16e-3
+hiba hsv AUROC 0.847 delta_all 75.21e-3
+hiba resnet18 AUROC 0.904 delta_all 32.41e-3
+hiba resnet50 AUROC 0.902 delta_all 42.71e-3
+hiba convnext_tiny AUROC 0.923 delta_all 14.10e-3
+hiba vit_b_16 AUROC 0.935 delta_all 12.98e-3
+msk2020 hsv AUROC 0.608 delta_all 33.62e-3
+msk2020 resnet18 AUROC 0.717 delta_all 26.71e-3
+msk2020 resnet50 AUROC 0.711 delta_all 17.39e-3
+msk2020 convnext_tiny AUROC 0.726 delta_all 21.75e-3
+msk2020 vit_b_16 AUROC 0.730 delta_all 12.09e-3
+milk10k_derm hsv AUROC 0.716 delta_all 50.66e-3
+milk10k_derm resnet18 AUROC 0.816 delta_all 17.78e-3
+milk10k_derm resnet50 AUROC 0.835 delta_all 14.83e-3
+milk10k_derm convnext_tiny AUROC 0.842 delta_all 12.34e-3
+milk10k_derm vit_b_16 AUROC 0.850 delta_all 10.37e-3
+milk10k_clin hsv AUROC 0.714 delta_all 57.61e-3
+milk10k_clin resnet18 AUROC 0.814 delta_all 13.28e-3
+milk10k_clin resnet50 AUROC 0.807 delta_all 18.03e-3
+milk10k_clin convnext_tiny AUROC 0.839 delta_all 9.77e-3
+milk10k_clin vit_b_16 AUROC 0.839 delta_all 10.12e-3
+{'n_rows_used': 95, 'n_rows_total': 160, 'datasets_used': ['ham10000', 'hiba', 'isic2019_nonham', 'isic2020', 'milk10k_clin', 'milk10k_derm', 'msk2020', 'pad_ufes'], 'spearman_recov_within_vs_retained': -0.7502965785900455, 'spearman_recov_marginal_vs_retained': -0.8083566629339305, 'partial_spearman_within_given_Ivar_auroc': -0.5949017929656116, 'partial_spearman_dataset_cluster_ci95': [-0.724646, -0.39571], 'spearman_by_rung': {'convnext_tiny': -0.7456140350877193, 'hsv': -0.4089513337962553, 'resnet18': -0.6508771929824562, 'resnet50': -0.7245614035087719, 'vit_b_16': -0.6280701754385966}, 'lodo_mae_ridge': 0.15378675391305552, 'lodo_mae_median_baseline': 0.2890477077558773, 'lodo_n_folds': 8}
+{
+  "id": "E30_recoverability_utility",
+  "hypothesis": "H30 (exploratory): higher within-class recoverability goes with a lower retained fraction, controlling for I_var and image AUROC.",
+  "data": {
+    "datasets": [
+      "ham10000",
+      "isic2020",
+      "isic2019_nonham",
+      "pad_ufes",
+      "hiba",
+      "msk2020",
+      "milk10k_derm",
+      "milk10k_clin"
+    ],
+    "rows": "complete cases"
+  },
+  "config": {
+    "rungs": [
+      "hsv",
+      "resnet18",
+      "resnet50",
+      "convnext_tiny",
+      "vit_b_16",
+      "vitl16_swag"
+    ],
+    "bootstrap": 1000,
+    "folds": "seed 0"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T18:50:12+00:00",
+  "results": {
+    "n_rows_used": 95,
+    "n_rows_total": 160,
+    "datasets_used": [
+      "ham10000",
+      "hiba",
+      "isic2019_nonham",
+      "isic2020",
+      "milk10k_clin",
+      "milk10k_derm",
+      "msk2020",
+      "pad_ufes"
+    ],
+    "spearman_recov_within_vs_retained": -0.7502965785900455,
+    "spearman_recov_marginal_vs_retained": -0.8083566629339305,
+    "partial_spearman_within_given_Ivar_auroc": -0.5949017929656116,
+    "partial_spearman_dataset_cluster_ci95": [
+      -0.724646,
+      -0.39571
+    ],
+    "spearman_by_rung": {
+      "convnext_tiny": -0.7456140350877193,
+      "hsv": -0.4089513337962553,
+      "resnet18": -0.6508771929824562,
+      "resnet50": -0.7245614035087719,
+      "vit_b_16": -0.6280701754385966
+    },
+    "lodo_mae_ridge": 0.15378675391305552,
+    "lodo_mae_median_baseline": 0.2890477077558773,
+    "lodo_n_folds": 8
+  },
+  "interpretation": "See research/iteration4/SUMMARY.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 718.84,
+  "peak_rss_mb": 1300.0
+}

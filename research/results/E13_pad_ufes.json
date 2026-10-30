@@ -1,0 +1,267 @@
+{
+  "id": "E13_pad_ufes",
+  "hypothesis": "See research/iteration3/PREREGISTRATION_REPLICATION.md",
+  "data": {
+    "dataset": "pad_ufes",
+    "n_images": 2298,
+    "n_groups": 1373,
+    "positives": 1089,
+    "task": "malignant (BCC/SCC/MEL) vs benign",
+    "group_unit": "patient_id"
+  },
+  "config": {
+    "rungs": [
+      "hsv",
+      "resnet18",
+      "resnet50",
+      "convnext_tiny",
+      "vit_b_16"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "bootstrap": 2000
+  },
+  "seed": [
+    0,
+    1,
+    2
+  ],
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T10:37:23+00:00",
+  "results": {
+    "seeds": {
+      "0": {
+        "hsv": {
+          "image_auroc": 0.6536,
+          "av_all": 0.38642,
+          "av_all_ci95": [
+            0.35227,
+            0.41836
+          ],
+          "image_logloss": 0.6605,
+          "av_D_demographic": 0.31515,
+          "av_D_demographic_ci95": [
+            0.2877,
+            0.34368
+          ],
+          "av_S_symptoms": 0.23971,
+          "av_S_symptoms_ci95": [
+            0.20318,
+            0.2749
+          ]
+        },
+        "resnet18": {
+          "image_auroc": 0.8451,
+          "av_all": 0.23417,
+          "av_all_ci95": [
+            0.20561,
+            0.26251
+          ],
+          "image_logloss": 0.4939,
+          "av_D_demographic": 0.18592,
+          "av_D_demographic_ci95": [
+            0.16172,
+            0.20877
+          ],
+          "av_S_symptoms": 0.13118,
+          "av_S_symptoms_ci95": [
+            0.10282,
+            0.15852
+          ]
+        },
+        "resnet50": {
+          "image_auroc": 0.8523,
+          "av_all": 0.23464,
+          "av_all_ci95": [
+            0.20609,
+            0.26381
+          ],
+          "image_logloss": 0.4873,
+          "av_D_demographic": 0.18194,
+          "av_D_demographic_ci95": [
+            0.15968,
+            0.20507
+          ],
+          "av_S_symptoms": 0.13476,
+          "av_S_symptoms_ci95": [
+            0.10902,
+            0.16051
+          ]
+        },
+        "convnext_tiny": {
+          "image_auroc": 0.8735,
+          "av_all": 0.20644,
+          "av_all_ci95": [
+            0.17986,
+            0.23294
+          ],
+          "image_logloss": 0.4536,
+          "av_D_demographic": 0.15957,
+          "av_D_demographic_ci95": [
+            0.13745,
+            0.18191
+          ],
+          "av_S_symptoms": 0.11358,
+          "av_S_symptoms_ci95": [
+            0.08721,
+            0.13842
+          ]
+        },
+        "vit_b_16": {
+          "image_auroc": 0.8723,
+          "av_all": 0.20605,
+          "av_all_ci95": [
+            0.17716,
+            0.23447
+          ],
+          "image_logloss": 0.4501,
+          "av_D_demographic": 0.16044,
+          "av_D_demographic_ci95": [
+            0.13797,
+            0.18421
+          ],
+          "av_S_symptoms": 0.11167,
+          "av_S_symptoms_ci95": [
+            0.0851,
+            0.13957
+          ]
+        }
+      },
+      "1": {
+        "hsv": {
+          "image_auroc": 0.6342,
+          "av_all": 0.38571,
+          "image_logloss": 0.6664,
+          "av_D_demographic": 0.3225,
+          "av_S_symptoms": 0.24244
+        },
+        "resnet18": {
+          "image_auroc": 0.8399,
+          "av_all": 0.23542,
+          "image_logloss": 0.5025,
+          "av_D_demographic": 0.19412,
+          "av_S_symptoms": 0.13341
+        },
+        "resnet50": {
+          "image_auroc": 0.8544,
+          "av_all": 0.22365,
+          "image_logloss": 0.4827,
+          "av_D_demographic": 0.17936,
+          "av_S_symptoms": 0.12808
+        },
+        "convnext_tiny": {
+          "image_auroc": 0.8733,
+          "av_all": 0.19183,
+          "image_logloss": 0.4517,
+          "av_D_demographic": 0.1537,
+          "av_S_symptoms": 0.10776
+        },
+        "vit_b_16": {
+          "image_auroc": 0.8673,
+          "av_all": 0.20508,
+          "image_logloss": 0.4569,
+          "av_D_demographic": 0.16398,
+          "av_S_symptoms": 0.11555
+        }
+      },
+      "2": {
+        "hsv": {
+          "image_auroc": 0.6312,
+          "av_all": 0.37133,
+          "image_logloss": 0.668,
+          "av_D_demographic": 0.32102,
+          "av_S_symptoms": 0.22697
+        },
+        "resnet18": {
+          "image_auroc": 0.8399,
+          "av_all": 0.21817,
+          "image_logloss": 0.4999,
+          "av_D_demographic": 0.18918,
+          "av_S_symptoms": 0.1177
+        },
+        "resnet50": {
+          "image_auroc": 0.8516,
+          "av_all": 0.22794,
+          "image_logloss": 0.5055,
+          "av_D_demographic": 0.19087,
+          "av_S_symptoms": 0.1275
+        },
+        "convnext_tiny": {
+          "image_auroc": 0.8724,
+          "av_all": 0.18407,
+          "image_logloss": 0.4523,
+          "av_D_demographic": 0.15724,
+          "av_S_symptoms": 0.09804
+        },
+        "vit_b_16": {
+          "image_auroc": 0.8707,
+          "av_all": 0.18524,
+          "image_logloss": 0.4513,
+          "av_D_demographic": 0.15897,
+          "av_S_symptoms": 0.09617
+        }
+      }
+    },
+    "confirmatory_tests": {
+      "H1": {
+        "diff": 0.17998,
+        "ci95": [
+          0.15742,
+          0.20044
+        ],
+        "p_one_sided": 0.0004997501249375312
+      },
+      "H2": {
+        "diff": 0.02773,
+        "ci95": [
+          0.01028,
+          0.04564
+        ],
+        "p_one_sided": 0.0009995002498750624
+      }
+    },
+    "mechanism": {
+      "retained_fraction_hsv_to_convnext": {
+        "D_demographic": 0.506,
+        "S_symptoms": 0.474
+      },
+      "symptom_recoverability_auroc": {
+        "itch": {
+          "convnext": 0.752,
+          "hsv": 0.606
+        },
+        "grew": {
+          "convnext": 0.685,
+          "hsv": 0.555
+        },
+        "hurt": {
+          "convnext": 0.792,
+          "hsv": 0.622
+        },
+        "changed": {
+          "convnext": 0.629,
+          "hsv": 0.503
+        },
+        "bleed": {
+          "convnext": 0.837,
+          "hsv": 0.635
+        },
+        "elevation": {
+          "convnext": 0.797,
+          "hsv": 0.543
+        }
+      },
+      "M1_S_retains_half": false,
+      "M2_D_attenuates_more": false,
+      "M3_mean_symptom_auroc_convnext": 0.749
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 19.15,
+  "peak_rss_mb": 575.6
+}

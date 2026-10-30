@@ -1,0 +1,43 @@
+400 {'strict_null': 0.207, 'mediated_null': 0.237, 'direct_effect': 0.657}
+1600 {'strict_null': 0.117, 'mediated_null': 0.103, 'direct_effect': 0.997}
+{
+  "id": "E07_dml_direct_effect",
+  "hypothesis": "DML partialling-out keeps the false-positive rate near 5% when APOE acts only through atrophy, unlike the added-value LRT, while retaining power for a direct effect.",
+  "data": {
+    "source": "synthetic cohorts (no patient data), generator from E03"
+  },
+  "config": {
+    "n_sims": 300,
+    "p": 200,
+    "outcome_model": "L2 logistic C=0.1",
+    "treatment_model": "ridge alpha=50",
+    "folds": 5
+  },
+  "seed": 1,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-26T09:20:50+00:00",
+  "results": {
+    "rejection_rate_at_0.05": {
+      "n400": {
+        "strict_null": 0.207,
+        "mediated_null": 0.237,
+        "direct_effect": 0.657
+      },
+      "n1600": {
+        "strict_null": 0.117,
+        "mediated_null": 0.103,
+        "direct_effect": 0.997
+      }
+    },
+    "e03_lrt_out_of_fold_n400_for_comparison": {
+      "strict_null": 0.056,
+      "mediated_null": 0.856,
+      "direct_effect": 0.586
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 29.0,
+  "peak_rss_mb": 224.2
+}

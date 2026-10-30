@@ -1,0 +1,177 @@
+/Users/paradox/Desktop/CV EL/research/experiments/e14_finetune.py:60: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:219.)
+  x = torch.from_numpy(a).permute(2, 0, 1).float() / 255
+  resnet18 epoch 1/6 loss 0.5173 (7s)
+  resnet18 epoch 2/6 loss 0.2560 (6s)
+  resnet18 epoch 3/6 loss 0.1665 (6s)
+  resnet18 epoch 4/6 loss 0.1177 (6s)
+  resnet18 epoch 5/6 loss 0.1006 (6s)
+  resnet18 epoch 6/6 loss 0.0917 (6s)
+fraction 0.1 fold 0 done
+  resnet18 epoch 1/6 loss 0.6918 (7s)
+  resnet18 epoch 2/6 loss 0.3061 (6s)
+  resnet18 epoch 3/6 loss 0.2042 (6s)
+  resnet18 epoch 4/6 loss 0.1780 (7s)
+  resnet18 epoch 5/6 loss 0.1409 (6s)
+  resnet18 epoch 6/6 loss 0.1339 (6s)
+fraction 0.1 fold 1 done
+  resnet18 epoch 1/6 loss 0.4910 (7s)
+  resnet18 epoch 2/6 loss 0.2397 (6s)
+  resnet18 epoch 3/6 loss 0.1580 (6s)
+  resnet18 epoch 4/6 loss 0.1191 (7s)
+  resnet18 epoch 5/6 loss 0.0982 (6s)
+  resnet18 epoch 6/6 loss 0.0934 (7s)
+fraction 0.1 fold 2 done
+  resnet18 epoch 1/6 loss 0.3832 (7s)
+  resnet18 epoch 2/6 loss 0.2009 (7s)
+  resnet18 epoch 3/6 loss 0.1317 (7s)
+  resnet18 epoch 4/6 loss 0.1104 (7s)
+  resnet18 epoch 5/6 loss 0.0774 (7s)
+  resnet18 epoch 6/6 loss 0.0741 (6s)
+fraction 0.1 fold 3 done
+  resnet18 epoch 1/6 loss 0.8524 (7s)
+  resnet18 epoch 2/6 loss 0.3492 (7s)
+  resnet18 epoch 3/6 loss 0.2190 (7s)
+  resnet18 epoch 4/6 loss 0.1747 (6s)
+  resnet18 epoch 5/6 loss 0.1381 (7s)
+  resnet18 epoch 6/6 loss 0.1364 (7s)
+fraction 0.1 fold 4 done
+fraction 0.1 0.82 9.68
+  resnet18 epoch 1/6 loss 0.3807 (16s)
+  resnet18 epoch 2/6 loss 0.1944 (16s)
+  resnet18 epoch 3/6 loss 0.1592 (15s)
+  resnet18 epoch 4/6 loss 0.1105 (15s)
+  resnet18 epoch 5/6 loss 0.0842 (15s)
+  resnet18 epoch 6/6 loss 0.0834 (15s)
+fraction 0.25 fold 0 done
+  resnet18 epoch 1/6 loss 0.4852 (15s)
+  resnet18 epoch 2/6 loss 0.2340 (15s)
+  resnet18 epoch 3/6 loss 0.1746 (15s)
+  resnet18 epoch 4/6 loss 0.1181 (15s)
+  resnet18 epoch 5/6 loss 0.1035 (15s)
+  resnet18 epoch 6/6 loss 0.0927 (15s)
+fraction 0.25 fold 1 done
+  resnet18 epoch 1/6 loss 0.3795 (15s)
+  resnet18 epoch 2/6 loss 0.2083 (15s)
+  resnet18 epoch 3/6 loss 0.1650 (14s)
+  resnet18 epoch 4/6 loss 0.1138 (15s)
+  resnet18 epoch 5/6 loss 0.0937 (14s)
+  resnet18 epoch 6/6 loss 0.0858 (15s)
+fraction 0.25 fold 2 done
+  resnet18 epoch 1/6 loss 0.3431 (15s)
+  resnet18 epoch 2/6 loss 0.2286 (15s)
+  resnet18 epoch 3/6 loss 0.1595 (15s)
+  resnet18 epoch 4/6 loss 0.1214 (15s)
+  resnet18 epoch 5/6 loss 0.0976 (15s)
+  resnet18 epoch 6/6 loss 0.0847 (15s)
+fraction 0.25 fold 3 done
+  resnet18 epoch 1/6 loss 0.5872 (15s)
+  resnet18 epoch 2/6 loss 0.2322 (15s)
+  resnet18 epoch 3/6 loss 0.1829 (15s)
+  resnet18 epoch 4/6 loss 0.1542 (15s)
+  resnet18 epoch 5/6 loss 0.1230 (15s)
+  resnet18 epoch 6/6 loss 0.1154 (15s)
+fraction 0.25 fold 4 done
+fraction 0.25 0.8592 4.95
+  resnet18 epoch 1/6 loss 0.3245 (31s)
+  resnet18 epoch 2/6 loss 0.2064 (30s)
+  resnet18 epoch 3/6 loss 0.1679 (30s)
+  resnet18 epoch 4/6 loss 0.1340 (30s)
+  resnet18 epoch 5/6 loss 0.1112 (30s)
+  resnet18 epoch 6/6 loss 0.0915 (30s)
+fraction 0.5 fold 0 done
+  resnet18 epoch 1/6 loss 0.3619 (30s)
+  resnet18 epoch 2/6 loss 0.2030 (30s)
+  resnet18 epoch 3/6 loss 0.1664 (30s)
+  resnet18 epoch 4/6 loss 0.1314 (29s)
+  resnet18 epoch 5/6 loss 0.1017 (29s)
+  resnet18 epoch 6/6 loss 0.0889 (29s)
+fraction 0.5 fold 1 done
+  resnet18 epoch 1/6 loss 0.3257 (31s)
+  resnet18 epoch 2/6 loss 0.2070 (30s)
+  resnet18 epoch 3/6 loss 0.1709 (30s)
+  resnet18 epoch 4/6 loss 0.1331 (30s)
+  resnet18 epoch 5/6 loss 0.0981 (30s)
+  resnet18 epoch 6/6 loss 0.0922 (30s)
+fraction 0.5 fold 2 done
+  resnet18 epoch 1/6 loss 0.3098 (31s)
+  resnet18 epoch 2/6 loss 0.2199 (30s)
+  resnet18 epoch 3/6 loss 0.1731 (30s)
+  resnet18 epoch 4/6 loss 0.1399 (30s)
+  resnet18 epoch 5/6 loss 0.1101 (29s)
+  resnet18 epoch 6/6 loss 0.0924 (30s)
+fraction 0.5 fold 3 done
+  resnet18 epoch 1/6 loss 0.4279 (30s)
+  resnet18 epoch 2/6 loss 0.2322 (29s)
+  resnet18 epoch 3/6 loss 0.1936 (30s)
+  resnet18 epoch 4/6 loss 0.1540 (29s)
+  resnet18 epoch 5/6 loss 0.1236 (29s)
+  resnet18 epoch 6/6 loss 0.1125 (29s)
+fraction 0.5 fold 4 done
+fraction 0.5 0.8956 3.34
+{
+  "id": "E31c_ft_fraction",
+  "hypothesis": "H31: fine-tuned image models trained on less data leave more metadata value.",
+  "data": {
+    "dataset": "ham10000 (complete cases)"
+  },
+  "config": {
+    "fractions": [
+      0.1,
+      0.25,
+      0.5
+    ],
+    "schedule": "as E14"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T21:35:15+00:00",
+  "results": {
+    "0.1": {
+      "image": {
+        "auroc": 0.820019801440219,
+        "logloss": 0.2840632475269535,
+        "brier": 0.08274027594809859,
+        "calib_intercept": -0.06796014064150561,
+        "calib_slope": 0.9687067649253739
+      },
+      "delta": 0.009676437059339111,
+      "delta_ci95": [
+        0.00539,
+        0.013952
+      ]
+    },
+    "0.25": {
+      "image": {
+        "auroc": 0.8591866935999815,
+        "logloss": 0.25799420684123625,
+        "brier": 0.076073487363004,
+        "calib_intercept": -0.04384984201442377,
+        "calib_slope": 0.9796056083628852
+      },
+      "delta": 0.004952950477793608,
+      "delta_ci95": [
+        0.001444,
+        0.008337
+      ]
+    },
+    "0.5": {
+      "image": {
+        "auroc": 0.8956302584465519,
+        "logloss": 0.22883774860656683,
+        "brier": 0.06803109633224655,
+        "calib_intercept": -0.006037476847368838,
+        "calib_slope": 0.9974538094193065
+      },
+      "delta": 0.0033361852477530912,
+      "delta_ci95": [
+        0.000432,
+        0.006068
+      ]
+    }
+  },
+  "interpretation": "See research/iteration4/SUMMARY.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 1604.12,
+  "peak_rss_mb": 4550.0
+}

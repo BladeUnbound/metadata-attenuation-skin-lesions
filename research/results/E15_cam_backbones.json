@@ -1,0 +1,68 @@
+{
+  "id": "E15_cam_backbones",
+  "hypothesis": "Melanoma evidence concentrates on the lesion for every backbone; misses are smaller lesions; pixel permutation over-declares significance relative to the exact shift null.",
+  "data": {
+    "source": "HAM10000 + Tschandl lesion masks"
+  },
+  "config": {
+    "backbones": [
+      "resnet18",
+      "resnet50",
+      "convnext_tiny"
+    ],
+    "map_resolution": 56,
+    "maps": "melanoma evidence (+CAM)"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T10:54:40+00:00",
+  "results": {
+    "resnet18": {
+      "n_images": 2222,
+      "cam_logit_reconstruction_r_min": 1.0,
+      "frac_enrichment_gt1": 0.903,
+      "median_enrichment": 1.549,
+      "frac_sig_shift": 0.529,
+      "frac_sig_perm": 0.892,
+      "melanoma_sensitivity_at_0": 0.244,
+      "area_detected_vs_missed": [
+        0.49,
+        0.367
+      ],
+      "area_mw_p": 4.955569071055538e-12
+    },
+    "resnet50": {
+      "n_images": 2222,
+      "cam_logit_reconstruction_r_min": 1.0,
+      "frac_enrichment_gt1": 0.841,
+      "median_enrichment": 1.501,
+      "frac_sig_shift": 0.36,
+      "frac_sig_perm": 0.82,
+      "melanoma_sensitivity_at_0": 0.172,
+      "area_detected_vs_missed": [
+        0.521,
+        0.368
+      ],
+      "area_mw_p": 2.5942128944611673e-13
+    },
+    "convnext_tiny": {
+      "n_images": 2222,
+      "cam_logit_reconstruction_r_min": 1.0,
+      "frac_enrichment_gt1": 0.914,
+      "median_enrichment": 1.857,
+      "frac_sig_shift": 0.564,
+      "frac_sig_perm": 0.898,
+      "melanoma_sensitivity_at_0": 0.336,
+      "area_detected_vs_missed": [
+        0.49,
+        0.333
+      ],
+      "area_mw_p": 6.634493013113317e-18
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 278.39,
+  "peak_rss_mb": 1706.3
+}

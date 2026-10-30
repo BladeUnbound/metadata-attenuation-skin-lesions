@@ -1,0 +1,47 @@
+resnet18 {'dim': 512, 'images_per_s': 638.0, 'params_m': 11.2}
+resnet50 {'dim': 2048, 'images_per_s': 194.8, 'params_m': 23.5}
+convnext_tiny {'dim': 768, 'images_per_s': 171.2, 'params_m': 27.8}
+vit_b_16 {'dim': 768, 'images_per_s': 61.2, 'params_m': 85.8}
+{
+  "id": "E10_embed",
+  "hypothesis": "Cache ladder representations; measure M5 throughput.",
+  "data": {
+    "source": "HAM10000",
+    "n_images": 10015
+  },
+  "config": {
+    "input": "shorter side 224, centre crop 224, ImageNet norm",
+    "device": "mps"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-27T05:04:27+00:00",
+  "results": {
+    "decode_resize_s": 28.8,
+    "resnet18": {
+      "dim": 512,
+      "images_per_s": 638.0,
+      "params_m": 11.2
+    },
+    "resnet50": {
+      "dim": 2048,
+      "images_per_s": 194.8,
+      "params_m": 23.5
+    },
+    "convnext_tiny": {
+      "dim": 768,
+      "images_per_s": 171.2,
+      "params_m": 27.8
+    },
+    "vit_b_16": {
+      "dim": 768,
+      "images_per_s": 61.2,
+      "params_m": 85.8
+    }
+  },
+  "interpretation": "Embeddings cached.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 331.36,
+  "peak_rss_mb": 3885.1
+}

@@ -1,0 +1,346 @@
+{
+  "id": "E40_tests",
+  "hypothesis": "Sensitivity: H1/H2 under the corrected estimator (REGISTRY.md E40)",
+  "data": {},
+  "config": {
+    "B": 2000
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-28T16:56:31+00:00",
+  "results": {
+    "ham10000": {
+      "H1_original": {
+        "diff": 0.01668,
+        "ci95": [
+          0.01254,
+          0.02086
+        ],
+        "p_one_sided": 0.0004997501249375312
+      },
+      "H1_corrected": {
+        "diff": 0.01617,
+        "ci95": [
+          0.01216,
+          0.02031
+        ],
+        "p_one_sided": 0.0004997501249375312
+      },
+      "H2_original": {
+        "diff": 0.00239,
+        "ci95": [
+          0.00074,
+          0.00403
+        ],
+        "p_one_sided": 0.001999000499750125
+      },
+      "H2_corrected": {
+        "diff": 0.00184,
+        "ci95": [
+          0.00015,
+          0.00354
+        ],
+        "p_one_sided": 0.014492753623188406
+      }
+    },
+    "isic2020": {
+      "H1_original": {
+        "diff": 0.00258,
+        "ci95": [
+          0.00173,
+          0.00345
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave1": 0.0029985007496251873,
+        "holds": true
+      },
+      "H1_corrected": {
+        "diff": 0.00266,
+        "ci95": [
+          0.00184,
+          0.00351
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave1": 0.0029985007496251873,
+        "holds": true
+      },
+      "H2_original": {
+        "diff": 0.00023,
+        "ci95": [
+          -5e-05,
+          0.0005
+        ],
+        "p_one_sided": 0.05747126436781609,
+        "p_holm_wave1": 0.11494252873563218,
+        "holds": false
+      },
+      "H2_corrected": {
+        "diff": 0.00036,
+        "ci95": [
+          3e-05,
+          0.0007
+        ],
+        "p_one_sided": 0.013993003498250875,
+        "p_holm_wave1": 0.02798600699650175,
+        "holds": true
+      }
+    },
+    "isic2019_nonham": {
+      "H1_original": {
+        "diff": 0.01015,
+        "ci95": [
+          0.00583,
+          0.01444
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave1": 0.0029985007496251873,
+        "holds": true
+      },
+      "H1_corrected": {
+        "diff": 0.00954,
+        "ci95": [
+          0.00517,
+          0.01383
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave1": 0.0029985007496251873,
+        "holds": true
+      },
+      "H2_original": {
+        "diff": 0.00062,
+        "ci95": [
+          -0.00105,
+          0.00235
+        ],
+        "p_one_sided": 0.23288355822088955,
+        "p_holm_wave1": 0.23288355822088955,
+        "holds": false
+      },
+      "H2_corrected": {
+        "diff": 0.00036,
+        "ci95": [
+          -0.00124,
+          0.00205
+        ],
+        "p_one_sided": 0.33233383308345826,
+        "p_holm_wave1": 0.33233383308345826,
+        "holds": false
+      }
+    },
+    "pad_ufes": {
+      "H1_original": {
+        "diff": 0.17998,
+        "ci95": [
+          0.15831,
+          0.20098
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave1": 0.0029985007496251873,
+        "holds": true
+      },
+      "H1_corrected": {
+        "diff": 0.17956,
+        "ci95": [
+          0.15812,
+          0.20081
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave1": 0.0029985007496251873,
+        "holds": true
+      },
+      "H2_original": {
+        "diff": 0.02773,
+        "ci95": [
+          0.01114,
+          0.04496
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave1": 0.0029985007496251873,
+        "holds": true
+      },
+      "H2_corrected": {
+        "diff": 0.02886,
+        "ci95": [
+          0.01306,
+          0.0459
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave1": 0.0029985007496251873,
+        "holds": true
+      }
+    },
+    "hiba": {
+      "H1_original": {
+        "diff": 0.06963,
+        "ci95": [
+          0.03772,
+          0.10622
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave2": 0.00399800099950025,
+        "holds": true
+      },
+      "H1_corrected": {
+        "diff": 0.06834,
+        "ci95": [
+          0.03696,
+          0.10408
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave2": 0.00399800099950025,
+        "holds": true
+      },
+      "H2_original": {
+        "diff": 0.01625,
+        "ci95": [
+          0.00693,
+          0.02662
+        ],
+        "p_one_sided": 0.0009995002498750624,
+        "p_holm_wave2": 0.00399800099950025,
+        "holds": true
+      },
+      "H2_corrected": {
+        "diff": 0.0151,
+        "ci95": [
+          0.00569,
+          0.02523
+        ],
+        "p_one_sided": 0.0009995002498750624,
+        "p_holm_wave2": 0.00399800099950025,
+        "holds": true
+      }
+    },
+    "msk2020": {
+      "H1_original": {
+        "diff": 0.01337,
+        "ci95": [
+          0.00581,
+          0.02073
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave2": 0.00399800099950025,
+        "holds": true
+      },
+      "H1_corrected": {
+        "diff": 0.01448,
+        "ci95": [
+          0.00653,
+          0.02227
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave2": 0.00399800099950025,
+        "holds": true
+      },
+      "H2_original": {
+        "diff": 0.00345,
+        "ci95": [
+          -0.00161,
+          0.00848
+        ],
+        "p_one_sided": 0.08395802098950525,
+        "p_holm_wave2": 0.08395802098950525,
+        "holds": false
+      },
+      "H2_corrected": {
+        "diff": 0.00474,
+        "ci95": [
+          -0.00104,
+          0.01112
+        ],
+        "p_one_sided": 0.06696651674162919,
+        "p_holm_wave2": 0.06696651674162919,
+        "holds": false
+      }
+    },
+    "milk10k_derm": {
+      "H1_original": {
+        "diff": 0.04355,
+        "ci95": [
+          0.03718,
+          0.05013
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave2": 0.00399800099950025,
+        "holds": true
+      },
+      "H1_corrected": {
+        "diff": 0.04382,
+        "ci95": [
+          0.03738,
+          0.05068
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave2": 0.00399800099950025,
+        "holds": true
+      },
+      "H2_original": {
+        "diff": 0.00605,
+        "ci95": [
+          0.00299,
+          0.00895
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave2": 0.00399800099950025,
+        "holds": true
+      },
+      "H2_corrected": {
+        "diff": 0.00509,
+        "ci95": [
+          0.00232,
+          0.00792
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave2": 0.00399800099950025,
+        "holds": true
+      }
+    },
+    "milk10k_clin": {
+      "H1_original": {
+        "diff": 0.05288,
+        "ci95": [
+          0.04598,
+          0.06044
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave2": 0.00399800099950025,
+        "holds": true
+      },
+      "H1_corrected": {
+        "diff": 0.05213,
+        "ci95": [
+          0.04531,
+          0.05952
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "p_holm_wave2": 0.00399800099950025,
+        "holds": true
+      },
+      "H2_original": {
+        "diff": 0.00307,
+        "ci95": [
+          0.00123,
+          0.00495
+        ],
+        "p_one_sided": 0.0009995002498750624,
+        "p_holm_wave2": 0.00399800099950025,
+        "holds": true
+      },
+      "H2_corrected": {
+        "diff": 0.0029,
+        "ci95": [
+          0.00097,
+          0.00489
+        ],
+        "p_one_sided": 0.0014992503748125937,
+        "p_holm_wave2": 0.00399800099950025,
+        "holds": true
+      }
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 0.41,
+  "peak_rss_mb": 755.9
+}

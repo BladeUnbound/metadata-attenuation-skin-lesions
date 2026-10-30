@@ -1,0 +1,38 @@
+{
+  "id": "E14b_milk10k_derm",
+  "hypothesis": "Fine-tuned scores leave no more metadata added value than frozen ones.",
+  "data": {
+    "dataset": "milk10k_derm",
+    "n": 5117
+  },
+  "config": {
+    "backbones": [
+      "resnet18"
+    ],
+    "schedule": "as E14"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-28T05:24:47+00:00",
+  "results": {
+    "resnet18": {
+      "finetuned_auroc": 0.8685,
+      "frozen_auroc": 0.8145,
+      "added_value_finetuned": 0.01373,
+      "added_value_finetuned_ci95": [
+        0.006,
+        0.02077
+      ],
+      "added_value_frozen": 0.01473,
+      "frozen_minus_finetuned_ci95": [
+        -0.00239,
+        0.00448
+      ]
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 1116.42,
+  "peak_rss_mb": 2513.4
+}

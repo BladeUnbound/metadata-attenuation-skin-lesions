@@ -1,0 +1,38 @@
+{
+  "id": "E14b_isic2019_nonham",
+  "hypothesis": "Fine-tuned scores leave no more metadata added value than frozen ones.",
+  "data": {
+    "dataset": "isic2019_nonham",
+    "n": 15316
+  },
+  "config": {
+    "backbones": [
+      "resnet18"
+    ],
+    "schedule": "as E14"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-28T04:30:58+00:00",
+  "results": {
+    "resnet18": {
+      "finetuned_auroc": 0.8358,
+      "frozen_auroc": 0.8017,
+      "added_value_finetuned": 0.00707,
+      "added_value_finetuned_ci95": [
+        0.00147,
+        0.01246
+      ],
+      "added_value_frozen": 0.00966,
+      "frozen_minus_finetuned_ci95": [
+        -0.00016,
+        0.00568
+      ]
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 3219.27,
+  "peak_rss_mb": 4261.3
+}

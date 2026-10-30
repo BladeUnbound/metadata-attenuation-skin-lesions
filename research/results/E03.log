@@ -1,0 +1,58 @@
+strict_null {'in_sample': 0.04, 'out_of_fold': 0.056, 'oracle': 0.04}
+mediated_null {'in_sample': 0.056, 'out_of_fold': 0.856, 'oracle': 0.068}
+direct_effect {'in_sample': 0.32, 'out_of_fold': 0.586, 'oracle': 0.698}
+{
+  "id": "E03_crossfit_lrt",
+  "hypothesis": "Cross-fitted MRI scores keep the LRT valid; in-sample scores cost power; APOE effects mediated by atrophy make the LRT reject even with no direct genetic effect.",
+  "data": {
+    "source": "synthetic cohorts (no patient data)"
+  },
+  "config": {
+    "n": 400,
+    "p": 200,
+    "n_sims": 500,
+    "scenarios": {
+      "strict_null": [
+        0.0,
+        0.0
+      ],
+      "mediated_null": [
+        0.8,
+        0.0
+      ],
+      "direct_effect": [
+        0.0,
+        0.6
+      ]
+    },
+    "mri_model": "L2 logistic, C=0.1"
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-26T09:17:06+00:00",
+  "results": {
+    "rejection_rate_at_0.05": {
+      "strict_null": {
+        "in_sample": 0.04,
+        "out_of_fold": 0.056,
+        "oracle": 0.04
+      },
+      "mediated_null": {
+        "in_sample": 0.056,
+        "out_of_fold": 0.856,
+        "oracle": 0.068
+      },
+      "direct_effect": {
+        "in_sample": 0.32,
+        "out_of_fold": 0.586,
+        "oracle": 0.698
+      }
+    },
+    "mc_se_at_5pct": 0.0097
+  },
+  "interpretation": "See research/EXPERIMENTS.md for the written interpretation.",
+  "failures": [],
+  "next_step": "Pre-specify the estimand: 'added value over this MRI model', not 'direct genetic effect'.",
+  "runtime_s": 11.36,
+  "peak_rss_mb": 213.3
+}

@@ -1,0 +1,321 @@
+\newcommand{\HAMavHSV}{18.6}
+\newcommand{\HAMavResEighteen}{3.7}
+\newcommand{\HAMavConvNeXt}{1.7}
+\newcommand{\HAMdxtypeAUC}{0.76}
+\newcommand{\HAMsourceAUC}{0.73}
+\newcommand{\HAMsourceRecov}{0.995}
+\newcommand{\HAMageRecovHSV}{0.06}
+\newcommand{\HAMageRecovConvNeXt}{0.39}
+\newcommand{\HAMadjHSV}{15.3}
+\newcommand{\HAMadjConvNeXt}{2.1}
+\newcommand{\HAMpairedRConv}{2.4}
+\newcommand{\HAMpairedRConvCI}{[0.7, 4.0]}
+\newcommand{\HAMdaucHSV}{0.043}
+\newcommand{\HAMdaucHSVCI}{[0.030, 0.056]}
+\newcommand{\HAMdaucResEighteen}{0.007}
+\newcommand{\HAMdaucResEighteenCI}{[0.001, 0.013]}
+\newcommand{\HAMdaucConvNeXt}{0.003}
+\newcommand{\HAMdaucConvNeXtCI}{[\ensuremath{-}0.002, 0.007]}
+\newcommand{\HAMretainedAge}{14\%}
+\newcommand{\HAMretainedSex}{22\%}
+\newcommand{\HAMretainedSite}{18\%}
+\newcommand{\HAMsexRecovConvNeXt}{0.77}
+\newcommand{\INTfracEnriched}{84\%}
+\newcommand{\INTpermSig}{82\%}
+\newcommand{\INTshiftSig}{37\%}
+\newcommand{\INTareaDetected}{0.52}
+\newcommand{\INTareaMissed}{0.37}
+\newcommand{\REPwaveOneHone}{3}
+\newcommand{\REPwaveOneHtwo}{1}
+\newcommand{\REPwaveTwoHone}{4}
+\newcommand{\REPwaveTwoHtwo}{3}
+\newcommand{\REPindepN}{6}
+\newcommand{\REPindepHone}{6}
+\newcommand{\REPindepHtwo}{3}
+\newcommand{\REPmskHtwoP}{0.086}
+\newcommand{\REPfloors}{ISIC 2020 $1.0$ [0.3, 1.7]; ISIC 2019 (non-HAM) $9.1$ [3.1, 15.3]; PAD-UFES-20 $206.4$ [179.9, 232.9]; HIBA $2.6$ [\ensuremath{-}13.5, 17.9]; MSK 2020 $18.0$ [7.2, 28.6]; MILK10k (derm.) $8.7$ [0.8, 15.3]; MILK10k (clin.) $5.6$ [\ensuremath{-}2.7, 12.2]}
+\newcommand{\PADsymWithinMin}{0.64}
+\newcommand{\PADsymWithinMax}{0.76}
+\newcommand{\PADmechD}{0.506}
+\newcommand{\PADmechS}{0.474}
+\newcommand{\PADmechSymAUC}{0.749}
+\newcommand{\PoneN}{5{,}117}
+\newcommand{\PoneRhoDerm}{0.105}
+\newcommand{\PoneRhoClin}{0.069}
+\newcommand{\PoneDiff}{\ensuremath{-}0.036}
+\newcommand{\PoneCI}{[\ensuremath{-}0.071, \ensuremath{-}0.004]}
+\newcommand{\PtwoHSV}{8.6}
+\newcommand{\PtwoHSVCI}{[1.3, 16.4]}
+\newcommand{\PtwoCNX}{1.8}
+\newcommand{\PtwoCNXCI}{[\ensuremath{-}1.7, 5.1]}
+\newcommand{\PtwoRetained}{0.21}
+\newcommand{\MILKaucDerm}{0.845}
+\newcommand{\MILKaucClin}{0.842}
+\newcommand{\RHOHAMCNX}{0.07}
+\newcommand{\RHOISICtwentyCNX}{0.23}
+\newcommand{\RHOISICnineteenCNX}{0.44}
+\newcommand{\RHOPADCNX}{0.50}
+\newcommand{\RHOHIBACNX}{0.01}
+\newcommand{\RHOMSKCNX}{0.47}
+\newcommand{\RHOMILKdermCNX}{0.10}
+\newcommand{\RHOMILKclinCNX}{0.07}
+\newcommand{\RHOmin}{0.01}
+\newcommand{\RHOmax}{0.50}
+\newcommand{\RHOminDS}{HIBA}
+\newcommand{\RHOmaxDS}{PAD-UFES-20}
+\newcommand{\INTbbEnrichRange}{84\%--91\%}
+\newcommand{\INTbbShiftRange}{36\%--56\%}
+\newcommand{\INTbbPermRange}{82\%--90\%}
+\newcommand{\INTbbAreaPmax}{5\times10^{-12}}
+\newcommand{\CCholdHone}{8}
+\newcommand{\CCholdHtwo}{5}
+\newcommand{\CCfailHtwo}{ISIC 2019 (non-HAM), PAD-UFES-20, MSK 2020}
+\newcommand{\CCn}{8}
+\newcommand{\PADIAleak}{416}
+\newcommand{\PADIAcc}{155}
+\newcommand{\PADccKept}{1{,}089}
+\newcommand{\CCRHOHAM}{0.10}
+\newcommand{\CCRHOISICtwenty}{0.19}
+\newcommand{\CCRHOISICnineteen}{0.50}
+\newcommand{\CCRHOPAD}{0.47}
+\newcommand{\CCRHOHIBA}{0.06}
+\newcommand{\CCRHOMSK}{0.60}
+\newcommand{\CCRHOMILKderm}{0.15}
+\newcommand{\CCRHOMILKclin}{0.12}
+\newcommand{\CCRHOmin}{0.06}
+\newcommand{\CCRHOmax}{0.60}
+\newcommand{\PERMbeatAll}{8}
+\newcommand{\PERMn}{8}
+\newcommand{\PERMp}{0.02}
+\newcommand{\PERMR}{50}
+\newcommand{\FTham}{0.3}
+\newcommand{\FThamCI}{[\ensuremath{-}3.0, 3.5]}
+\newcommand{\FThamFrozen}{4.1}
+\newcommand{\FThamDiff}{3.8}
+\newcommand{\FThamDiffCI}{[1.7, 5.9]}
+\newcommand{\FThamAUC}{0.92}
+\newcommand{\FTcnxDiffCI}{[\ensuremath{-}1.1, 2.8]}
+\newcommand{\FTpadCNXfrozen}{206.4}
+\newcommand{\FTpadCNXft}{123.9}
+\newcommand{\FTIsicAUCfrz}{0.802}
+\newcommand{\FTIsicAUCft}{0.836}
+\newcommand{\FTIsicFrozen}{9.7}
+\newcommand{\FTIsicFt}{7.1}
+\newcommand{\FTIsicDiffCI}{[\ensuremath{-}0.2, 5.7]}
+\newcommand{\FTMilkAUCfrz}{0.815}
+\newcommand{\FTMilkAUCft}{0.869}
+\newcommand{\FTMilkFrozen}{14.7}
+\newcommand{\FTMilkFt}{13.7}
+\newcommand{\FTMilkDiffCI}{[\ensuremath{-}2.4, 4.5]}
+\newcommand{\FTfracTen}{8.9}
+\newcommand{\FTfracTenCI}{[5.4, 14.0]}
+\newcommand{\FTfracTenAUC}{0.822}
+\newcommand{\FTfracTwentyFive}{5.4}
+\newcommand{\FTfracTwentyFiveCI}{[1.4, 8.3]}
+\newcommand{\FTfracTwentyFiveAUC}{0.860}
+\newcommand{\FTfracFifty}{3.2}
+\newcommand{\FTfracFiftyCI}{[0.4, 6.1]}
+\newcommand{\FTfracFiftyAUC}{0.896}
+\newcommand{\FTfracTenRuns}{9.7, 8.1}
+\newcommand{\FTfracTwentyFiveRuns}{5.0, 5.9}
+\newcommand{\FTfracFiftyRuns}{3.3, 3.0}
+\newcommand{\FTfracFull}{1.2}
+\newcommand{\FTfracFullAUC}{0.905}
+\newcommand{\FTfracFullRuns}{1.2}
+\newcommand{\FTfracFullCI}{[\ensuremath{-}1.3, 3.8]}
+\newcommand{\FTfracSpearman}{\ensuremath{-}0.97}
+\newcommand{\FTfracNruns}{7}
+\newcommand{\FZhamTen}{8.4}
+\newcommand{\FZhamFull}{4.2}
+\newcommand{\FZisicTen}{10.2}
+\newcommand{\FZisicFull}{7.0}
+\newcommand{\SIZEn}{6}
+\newcommand{\SIZEsig}{0}
+\newcommand{\SIZEaucChangeMin}{\ensuremath{-}0.016}
+\newcommand{\SIZEaucChangeMax}{+0.009}
+\newcommand{\SIZEdatasets}{3}
+\newcommand{\VITLaucMin}{\ensuremath{-}0.005}
+\newcommand{\VITLaucMax}{+0.020}
+\newcommand{\VITLlower}{ISIC 2020, ISIC 2019 (non-HAM)}
+\newcommand{\VITLhigher}{0}
+\newcommand{\VITLn}{8}
+\newcommand{\RECrows}{95}
+\newcommand{\RECrowsAll}{160}
+\newcommand{\RECrho}{\ensuremath{-}0.75}
+\newcommand{\RECpartial}{\ensuremath{-}0.59}
+\newcommand{\RECpartialCI}{[\ensuremath{-}0.72, \ensuremath{-}0.40]}
+\newcommand{\RECrungMin}{\ensuremath{-}0.41}
+\newcommand{\RECrungMax}{\ensuremath{-}0.75}
+\newcommand{\RECdeepNeg}{8}
+\newcommand{\RECdeepN}{8}
+\newcommand{\RECdeepMin}{\ensuremath{-}0.40}
+\newcommand{\RECdeepMax}{\ensuremath{-}0.95}
+\newcommand{\RECdeepMinRows}{4}
+\newcommand{\RESholdsN}{3}
+\newcommand{\SHIFTn}{26}
+\newcommand{\SHIFThelp}{14}
+\newcommand{\SHIFThurt}{7}
+\newcommand{\SHIFTmin}{\ensuremath{-}0.147}
+\newcommand{\SHIFTmax}{0.063}
+\newcommand{\RULEzero}{0.0092}
+\newcommand{\RULEbase}{0.0082}
+\newcommand{\RULEridge}{0.0101}
+\newcommand{\RESholds}{PAD-UFES-20, MILK10k (derm.), MILK10k (clin.)}
+\newcommand{\RESn}{7}
+\newcommand{\LOSOtext}{\texttt{rosendahl} $-5.9$ [\ensuremath{-}13.9, 2.0]; \texttt{vidir\_modern} $6.3$ [1.8, 11.2]; \texttt{vidir\_molemax} $7.4$ [6.2, 8.6]; \texttt{vienna\_dias} $16.2$ [5.2, 28.0]}
+\newcommand{\RULEbaseAcc}{0.80}
+\newcommand{\RULEbasePrec}{0.81}
+\newcommand{\RULEbaseRec}{0.83}
+\newcommand{\ESTcells}{120}
+\newcommand{\ESTrepro}{120}
+\newcommand{\ESTmaxHW}{0.42}
+\newcommand{\ESThamOrig}{1.7}
+\newcommand{\ESThamCorr}{2.4}
+\newcommand{\ESTisicHtwoOrig}{0.092}
+\newcommand{\ESTisicHtwoCorr}{0.028}
+\newcommand{\ESTisicHtwoDiff}{0.36}
+\newcommand{\WGThibaImg}{3.8}
+\newcommand{\WGThibaGrp}{\ensuremath{-}0.8}
+\newcommand{\WGTisicImg}{0.9}
+\newcommand{\WGTisicGrp}{4.1}
+\newcommand{\ESTindepHone}{6}
+\newcommand{\ESTindepHtwo}{4}
+\newcommand{\SPREADpad}{22.2}
+\newcommand{\SPREADpadHW}{27.1}
+\newcommand{\SPREADhiba}{3.8, 10.0, 9.1}
+\newcommand{\KoverDmin}{1.0}
+\newcommand{\KoverDmax}{9}
+\newcommand{\LABisicMalRho}{0.20}
+\newcommand{\LABisicMalRhoCI}{[0.14, 0.25]}
+\newcommand{\LABisicMelRho}{0.48}
+\newcommand{\LABmilkIA}{1.8}
+\newcommand{\LABhOneHeld}{5}
+\newcommand{\LABhOneN}{6}
+\newcommand{\CChOne}{8}
+\newcommand{\CChTwo}{6}
+\newcommand{\ENCPadInd}{206.9}
+\newcommand{\ENCPadNoInd}{112.2}
+\newcommand{\ENCPadMI}{90.7}
+\newcommand{\ENCHibaInd}{3.8}
+\newcommand{\ENCHibaNoInd}{12.7}
+\newcommand{\ENCHibaMI}{13.0}
+\newcommand{\ENCIsicInd}{9.8}
+\newcommand{\ENCIsicNoInd}{8.0}
+\newcommand{\ENCIsicMI}{7.5}
+\newcommand{\SRChamText}{\texttt{rosendahl} $-6.5$ [\ensuremath{-}16.8, 3.6]; \texttt{vidir\_modern} $-14.4$ [\ensuremath{-}32.1, 0.9]; \texttt{vidir\_molemax} $7.6$ [6.1, 9.1]; \texttt{vienna\_dias} $18.0$ [3.2, 30.6]}
+\newcommand{\SRCbcnMsk}{\ensuremath{-}10.5}
+\newcommand{\SRCmskBcn}{29.2}
+\newcommand{\GRPhOne}{4}
+\newcommand{\GRPhTwo}{7}
+\newcommand{\GRPhFour}{0}
+\newcommand{\GRPkBest}{6}
+\newcommand{\GRPgBest}{ISIC 2020}
+\newcommand{\GRPcapMin}{70\%}
+\newcommand{\GRPcapMax}{105\%}
+\newcommand{\GRPhThreePos}{5}
+\newcommand{\GRPhThreeNeg}{1}
+\newcommand{\SMOOTHcnxSig}{2}
+\newcommand{\SMOOTHhsvSig}{6}
+\newcommand{\SMOOTHcnxMax}{1\%}
+\newcommand{\DECshareMin}{0.09}
+\newcommand{\DECshareMax}{0.33}
+\newcommand{\DECshareUpper}{0.58}
+\newcommand{\DECpad}{0.61}
+\newcommand{\DECpadCI}{[0.55, 0.66]}
+\newcommand{\ERASEheld}{6}
+\newcommand{\ERASEn}{8}
+\newcommand{\ERASEhamT}{2.0}
+\newcommand{\ERASEhamOne}{13.2}
+\newcommand{\ERASEmilkT}{12.4}
+\newcommand{\ERASEmilkOne}{69.0}
+\newcommand{\ERASEpadRsq}{0.02}
+\newcommand{\ERASEhamLLzero}{0.232}
+\newcommand{\ERASEhamLLone}{0.246}
+\newcommand{\ERASEhamSite}{1.5}
+\newcommand{\ERASEhamSex}{0.6}
+\newcommand{\RECallRows}{160}
+\newcommand{\RECallPartial}{\ensuremath{-}0.28}
+\newcommand{\RECallMixed}{\ensuremath{-}0.10 [\ensuremath{-}0.25, 0.05]}
+\newcommand{\RECfiltMixed}{\ensuremath{-}0.49 [\ensuremath{-}0.67, \ensuremath{-}0.31]}
+\newcommand{\SWAPrange}{10\%--19\%}
+\newcommand{\SWAPshiftRange}{37\%--57\%}
+\newcommand{\GAUSSshift}{88\%}
+\newcommand{\GAUSSswap}{5\%}
+\newcommand{\ERASEhamDelta}{11.2}
+\newcommand{\ERASEmilkLLconcept}{0.52}
+\newcommand{\ERASEmilkLLmatched}{0.50}
+\newcommand{\ERAconfN}{4}
+\newcommand{\ERAconfRej}{1}
+\newcommand{\ERAisicHolm}{0.002}
+\newcommand{\ERAIsic}{0.99 [0.69, 1.29]}
+\newcommand{\ERAHam}{9.05 [6.48, 11.70]}
+\newcommand{\ERAIsicNt}{6.92 [4.76, 9.14]}
+\newcommand{\ERAMilk}{9.53 [4.50, 14.20]}
+\newcommand{\ERAMilkClin}{11.63 [6.67, 16.59]}
+\newcommand{\ERAPad}{0.22 [\ensuremath{-}2.63, 3.11]}
+\newcommand{\ERAIsicSham}{1.21 [0.86, 1.55]}
+\newcommand{\ERAhiba}{\ensuremath{-}116.6}
+\newcommand{\ERAmsk}{\ensuremath{-}23.8}
+\newcommand{\ERAhibaSite}{\ensuremath{-}54.1}
+\newcommand{\ERAhibaAUCzero}{0.93}
+\newcommand{\ERAhibaAUCone}{0.65}
+\newcommand{\AGEaucHiba}{0.84}
+\newcommand{\AGEcorrHiba}{0.66}
+\newcommand{\AGEaucMsk}{0.72}
+\newcommand{\AGEcorrMsk}{0.39}
+\newcommand{\AGEaucIsic}{0.67}
+\newcommand{\AGEcorrIsic}{0.19}
+\newcommand{\ERAisicFolds}{0.85--1.08}
+\newcommand{\ERAfoldsAllPos}{9}
+\newcommand{\ERAisicFull}{1.49 [0.82, 2.20]}
+\newcommand{\ERAsdSmall}{1.8--3.1}
+\newcommand{\ERAsdLarge}{0.99--1.08}
+\newcommand{\ERAntrain}{871--980}
+\newcommand{\ERAdoseAllPos}{3}
+\newcommand{\ERArfT}{0.71--0.97}
+\newcommand{\ERArfR}{0.03--0.10}
+\newcommand{\ERAreapp}{74--93\%}
+\newcommand{\ERAahatN}{3}
+\newcommand{\ERAmlp}{0.05--0.23}
+\newcommand{\ERAmlpPos}{5}
+\newcommand{\ERAmlpIsicZero}{0.23}
+\newcommand{\ERAmlpIsicOne}{0.20}
+\newcommand{\ERAmlpIsicRand}{0.20}
+\newcommand{\ERAlinIsicZero}{0.23}
+\newcommand{\ERAlinIsicOne}{\ensuremath{-}0.03}
+\newcommand{\ERAcontN}{6}
+\newcommand{\ERAcontHeld}{6}
+\newcommand{\ERAmilkOld}{34.7}
+\newcommand{\ERArnHam}{8.89 [6.37, 11.31]}
+\newcommand{\ERArnIsicNt}{6.22 [4.08, 8.37]}
+\newcommand{\ERArnMilk}{22.19 [17.02, 27.22]}
+\newcommand{\ERArnPad}{1.89 [\ensuremath{-}0.16, 4.11]}
+\newcommand{\ERAcondN}{5}
+\newcommand{\ERAcond}{0.86--14.05}
+\newcommand{\ERAcondCost}{15--77\%}
+\newcommand{\SITEHam}{4.26 [1.75, 6.86]}
+\newcommand{\SPECHamAgeSite}{0.39 [\ensuremath{-}0.97, 1.69]}
+\newcommand{\SPECHamSiteAge}{0.55 [\ensuremath{-}0.49, 1.61]}
+\newcommand{\SITEMilk}{3.83 [1.23, 6.31]}
+\newcommand{\SPECMilkAgeSite}{\ensuremath{-}1.47 [\ensuremath{-}2.65, \ensuremath{-}0.25]}
+\newcommand{\SPECMilkSiteAge}{\ensuremath{-}1.15 [\ensuremath{-}2.48, 0.19]}
+\newcommand{\SPECboth}{2}
+\newcommand{\ESTnSets}{8}
+\newcommand{\ESThOneB}{8}
+\newcommand{\ESThOneC}{8}
+\newcommand{\ESTdep}{5}
+\newcommand{\ESTboostN}{5}
+\newcommand{\ESTboost}{4.5--7.4}
+\newcommand{\ESTmissPad}{77\%}
+\newcommand{\ESTmissIsic}{25\%}
+\newcommand{\SEEDn}{12}
+\newcommand{\SEEDheld}{12}
+\newcommand{\SEEDrange}{6.7}
+\newcommand{\RULESn}{7}
+\newcommand{\RULESNever}{9.5}
+\newcommand{\RULESAlways}{3.6}
+\newcommand{\RULESSrc}{3.9}
+\newcommand{\RULESColl}{3.6}
+\newcommand{\RULESthreeUse}{7}
+\newcommand{\RULEShurt}{1}
+\newcommand{\RULESpad}{\ensuremath{-}19.61 [\ensuremath{-}36.42, \ensuremath{-}2.41]}

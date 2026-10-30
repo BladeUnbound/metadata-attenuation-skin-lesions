@@ -1,0 +1,149 @@
+{
+  "id": "E45b_pad_ufes",
+  "hypothesis": "REGISTRY.md E45b: paired inference, age erasure vs matched random erasure",
+  "data": {
+    "dataset": "pad_ufes"
+  },
+  "config": {
+    "rungs": [
+      "convnext_tiny",
+      "resnet18"
+    ],
+    "n_random": 5,
+    "B": 2000
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-29T04:09:45+00:00",
+  "results": {
+    "convnext_tiny": {
+      "rank_concept": 1,
+      "rank_matched": 1,
+      "image_logloss": {
+        "t0": 0.52022,
+        "concept": 0.52286,
+        "same_rank": [
+          0.52644,
+          0.523,
+          0.52301,
+          0.52332,
+          0.52484
+        ],
+        "matched": [
+          0.5293,
+          0.52156,
+          0.51793,
+          0.52166,
+          0.51969
+        ]
+      },
+      "delta_age_x1e3": {
+        "t0": 0.638,
+        "concept": 0.884,
+        "same_rank_each": [
+          0.624,
+          0.462,
+          0.441,
+          0.643,
+          0.611
+        ],
+        "matched_each": [
+          0.412,
+          0.669,
+          0.709,
+          0.66,
+          0.736
+        ]
+      },
+      "concept_minus_matched": {
+        "diff": 0.247,
+        "ci95": [
+          -2.46,
+          3.3
+        ]
+      },
+      "concept_minus_same_rank": {
+        "diff": 0.328,
+        "ci95": [
+          -2.38,
+          3.31
+        ]
+      },
+      "concept_minus_t0": {
+        "diff": 0.246,
+        "ci95": [
+          -2.46,
+          3.32
+        ]
+      },
+      "claim_holds": false
+    },
+    "resnet18": {
+      "rank_concept": 1,
+      "rank_matched": 1,
+      "image_logloss": {
+        "t0": 0.5191,
+        "concept": 0.51896,
+        "same_rank": [
+          0.51901,
+          0.5208,
+          0.52021,
+          0.51852,
+          0.51769
+        ],
+        "matched": [
+          0.51816,
+          0.51916,
+          0.52047,
+          0.51941,
+          0.5187
+        ]
+      },
+      "delta_age_x1e3": {
+        "t0": 1.705,
+        "concept": 3.531,
+        "same_rank_each": [
+          1.787,
+          1.653,
+          1.818,
+          1.562,
+          1.825
+        ],
+        "matched_each": [
+          1.803,
+          1.786,
+          1.688,
+          1.676,
+          1.693
+        ]
+      },
+      "concept_minus_matched": {
+        "diff": 1.801,
+        "ci95": [
+          -0.1,
+          3.87
+        ]
+      },
+      "concept_minus_same_rank": {
+        "diff": 1.802,
+        "ci95": [
+          -0.15,
+          3.89
+        ]
+      },
+      "concept_minus_t0": {
+        "diff": 1.825,
+        "ci95": [
+          -0.11,
+          3.92
+        ]
+      },
+      "claim_holds": false
+    }
+  },
+  "interpretation": "See research/EXPERIMENTS.md.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 21.32,
+  "peak_rss_mb": 612.2
+}

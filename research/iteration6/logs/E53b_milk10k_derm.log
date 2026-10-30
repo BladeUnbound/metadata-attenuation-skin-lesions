@@ -1,0 +1,261 @@
+milk10k_derm t0 LL b0 0.42396 b1 0.41213 delta x1e3 11.830 max |score - E50| 0.00e+00
+milk10k_derm T-D1-1.0 LL b0 0.51842 b1 0.45139 delta x1e3 67.029 max |score - E50| 0.00e+00
+milk10k_derm R-D1-1.0-0 LL b0 0.55121 b1 0.50764 delta x1e3 43.576 max |score - E50| 0.00e+00
+milk10k_derm R-D1-1.0-1 LL b0 0.55457 b1 0.50734 delta x1e3 47.226 max |score - E50| 0.00e+00
+milk10k_derm R-D1-1.0-2 LL b0 0.56099 b1 0.52039 delta x1e3 40.597 max |score - E50| 0.00e+00
+milk10k_derm R-D1-1.0-3 LL b0 0.56224 b1 0.51990 delta x1e3 42.338 max |score - E50| 0.00e+00
+milk10k_derm R-D1-1.0-4 LL b0 0.56128 b1 0.51730 delta x1e3 43.976 max |score - E50| 0.00e+00
+{
+  "id": "E53b_milk10k_derm",
+  "hypothesis": "iteration6/REGISTRY.md E53b: E50 primary age-erasure contrast under full-feature regularised fusion (estimator b)",
+  "data": {
+    "dataset": "milk10k_derm"
+  },
+  "config": {
+    "rung": "convnext_tiny",
+    "fold_seed": 0,
+    "n_controls": 5,
+    "B": 2000,
+    "bootstrap_seed": 531,
+    "code_sha256_12": {
+      "e53b_erasure_fullfusion.py": "0023095a3bf3",
+      "e50_dose_restoration.py": "ca82ac760e14",
+      "e45_erasure.py": "58fa915d73e4",
+      "e40_crossfit_baseline.py": "d3a0db47d6db",
+      "e10_ham_attenuation.py": "ed41358e6a49",
+      "e13_replication.py": "02c613176b9b",
+      "x_common.py": "044c73d5de5a",
+      "e53_estimators.py": "e150655e4fa0"
+    }
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-29T17:59:37+00:00",
+  "results": {
+    "n": 5117,
+    "ranks_matched": [
+      512,
+      512,
+      512,
+      512,
+      512
+    ],
+    "rank_targeted": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "reproduces_E50_scores_max_abs": {
+      "t0": 0.0,
+      "T-D1-1.0": 0.0,
+      "R-D1-1.0-0": 0.0,
+      "R-D1-1.0-1": 0.0,
+      "R-D1-1.0-2": 0.0,
+      "R-D1-1.0-3": 0.0,
+      "R-D1-1.0-4": 0.0
+    },
+    "C": {
+      "t0": {
+        "b0": [
+          0.01,
+          0.001,
+          0.01,
+          0.01,
+          0.001
+        ],
+        "b1": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ]
+      },
+      "T-D1-1.0": {
+        "b0": [
+          0.001,
+          0.001,
+          0.001,
+          0.001,
+          0.001
+        ],
+        "b1": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ]
+      },
+      "R-D1-1.0-0": {
+        "b0": [
+          0.001,
+          0.001,
+          0.001,
+          0.001,
+          0.001
+        ],
+        "b1": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ]
+      },
+      "R-D1-1.0-1": {
+        "b0": [
+          0.001,
+          0.001,
+          0.001,
+          0.001,
+          0.001
+        ],
+        "b1": [
+          0.01,
+          0.01,
+          0.01,
+          0.001,
+          0.01
+        ]
+      },
+      "R-D1-1.0-2": {
+        "b0": [
+          0.001,
+          0.001,
+          0.001,
+          0.001,
+          0.001
+        ],
+        "b1": [
+          0.001,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ]
+      },
+      "R-D1-1.0-3": {
+        "b0": [
+          0.001,
+          0.001,
+          0.001,
+          0.001,
+          0.001
+        ],
+        "b1": [
+          0.001,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ]
+      },
+      "R-D1-1.0-4": {
+        "b0": [
+          0.001,
+          0.001,
+          0.001,
+          0.001,
+          0.001
+        ],
+        "b1": [
+          0.01,
+          0.01,
+          0.001,
+          0.001,
+          0.01
+        ]
+      }
+    },
+    "arms": {
+      "t0": {
+        "image_logloss_b0": 0.42396,
+        "fusion_logloss_b1": 0.41213,
+        "delta_x1e3": 11.83
+      },
+      "T-D1-1.0": {
+        "image_logloss_b0": 0.51842,
+        "fusion_logloss_b1": 0.45139,
+        "delta_x1e3": 67.029
+      },
+      "R-D1-1.0-0": {
+        "image_logloss_b0": 0.55121,
+        "fusion_logloss_b1": 0.50764,
+        "delta_x1e3": 43.576
+      },
+      "R-D1-1.0-1": {
+        "image_logloss_b0": 0.55457,
+        "fusion_logloss_b1": 0.50734,
+        "delta_x1e3": 47.226
+      },
+      "R-D1-1.0-2": {
+        "image_logloss_b0": 0.56099,
+        "fusion_logloss_b1": 0.52039,
+        "delta_x1e3": 40.597
+      },
+      "R-D1-1.0-3": {
+        "image_logloss_b0": 0.56224,
+        "fusion_logloss_b1": 0.5199,
+        "delta_x1e3": 42.338
+      },
+      "R-D1-1.0-4": {
+        "image_logloss_b0": 0.56128,
+        "fusion_logloss_b1": 0.5173,
+        "delta_x1e3": 43.976
+      }
+    },
+    "contrasts": {
+      "b_targeted_minus_matched": {
+        "diff_x1e3": 23.486,
+        "ci95_x1e3": [
+          17.2,
+          29.94
+        ],
+        "p_one_sided": 0.0005
+      },
+      "b_targeted_minus_t0": {
+        "diff_x1e3": 55.199,
+        "ci95_x1e3": [
+          46.77,
+          63.47
+        ]
+      },
+      "b_matched_minus_t0": {
+        "diff_x1e3": 31.712,
+        "ci95_x1e3": [
+          26.16,
+          37.38
+        ]
+      },
+      "b_matching_check_image_ll_targeted_minus_matched": {
+        "diff_x1e3": -39.641,
+        "ci95_x1e3": [
+          -48.14,
+          -31.13
+        ]
+      },
+      "a_targeted_minus_matched_E50": {
+        "diff_x1e3": 9.525,
+        "ci95_x1e3": [
+          4.39,
+          14.67
+        ]
+      },
+      "b_minus_a_contrast": {
+        "diff_x1e3": 13.962,
+        "ci95_x1e3": [
+          9.56,
+          18.27
+        ]
+      }
+    }
+  },
+  "interpretation": "See iteration6 reports.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 36.91,
+  "peak_rss_mb": 1211.1
+}

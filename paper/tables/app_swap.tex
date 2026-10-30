@@ -1,0 +1,10 @@
+\begin{table}[tp]\centering\footnotesize
+\caption{Share of images whose melanoma-evidence map overlaps its lesion mask significantly ($p\le0.05$) under the circular-shift null and under the mask-swap null (masks of 199 other images in the same lesion-area decile), for real class-activation maps and for a fixed centred Gaussian map that carries no image information (E48; HAM10000).}\label{tab:swap}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{\begin{tabular}{lccccc}\toprule
+ & & \multicolumn{2}{c}{Real maps} & \multicolumn{2}{c}{Centred Gaussian}\\
+Backbone & Images & Shift & Swap & Shift & Swap\\\midrule
+ResNet-18 & 2{,}225 & 55\% & 16\% & 88\% & 5\%\\
+ResNet-50 & 2{,}225 & 37\% & 10\% & 88\% & 5\%\\
+ConvNeXt-T & 2{,}225 & 57\% & 19\% & 88\% & 5\%\\
+\bottomrule\end{tabular}}\end{table}

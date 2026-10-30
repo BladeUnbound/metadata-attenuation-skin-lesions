@@ -1,0 +1,9 @@
+\begin{table*}[tp]\centering\footnotesize
+\caption{Backbone size within families (E31a, exploratory; frozen, complete cases, fold assignment 0). Each cell: image AUROC / $\hat\Delta$ ($10^{-3}$ nats). No smallest-vs-largest difference in $\hat\Delta$ was significant (paired grouped bootstrap).}\label{tab:family}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccccccc}\toprule
+Dataset & ResNet-18 & ResNet-34 & ResNet-50 & ResNet-101 & ConvNeXt-T & ConvNeXt-S & ConvNeXt-B\\\midrule
+HAM10000 & 0.859 / 4.2 & 0.854 / 4.8 & 0.851 / 4.0 & 0.843 / 3.7 & 0.891 / 2.6 & 0.875 / 3.2 & 0.891 / 1.6\\
+PAD-UFES-20 & 0.779 / 73.4 & 0.773 / 87.6 & 0.771 / 83.1 & 0.771 / 87.9 & 0.776 / 73.8 & 0.779 / 68.3 & 0.771 / 77.8\\
+ISIC 2019 (non-HAM) & 0.802 / 7.0 & 0.807 / 7.2 & 0.803 / 6.7 & 0.812 / 6.1 & 0.825 / 6.1 & 0.820 / 6.2 & 0.827 / 5.6\\
+\bottomrule\end{tabular}\end{table*}

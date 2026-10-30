@@ -1,0 +1,9 @@
+\begin{table*}[tp]\centering\footnotesize
+\caption{Training-set size with frozen features (E31b, exploratory; complete cases). The image head sees 10--100\% of each training fold's groups; the metadata stage uses all folds. Each cell: image AUROC / $\hat\Delta$ ($10^{-3}$ nats), mean of two subsamples below 100\%.}\label{tab:scaling}
+\begin{tabular}{llcccc}\toprule
+Dataset & Features & 10\% & 25\% & 50\% & 100\%\\\midrule
+HAM10000 & ResNet-18 & 0.798 / 8.4 & 0.828 / 7.0 & 0.842 / 4.9 & 0.859 / 4.2\\
+ & ConvNeXt-T & 0.810 / 7.4 & 0.852 / 3.5 & 0.877 / 3.8 & 0.891 / 2.6\\
+ISIC 2019 (non-HAM) & ResNet-18 & 0.747 / 10.2 & 0.775 / 7.0 & 0.793 / 7.0 & 0.802 / 7.0\\
+ & ConvNeXt-T & 0.767 / 9.0 & 0.797 / 6.8 & 0.811 / 5.8 & 0.825 / 6.1\\
+\bottomrule\end{tabular}\end{table*}

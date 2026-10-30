@@ -1,0 +1,18 @@
+\begin{table*}[tp]\centering\footnotesize
+\caption{Metadata added value under dataset shift (E33, exploratory; $10^{-3}$ nats). Image head and fusion model fitted on the source only (frozen ConvNeXt-T; harmonised age, sex, coarse site; complete cases) and applied unchanged to the target. $^{+}$/$^{-}$: 95\% target-group bootstrap CI above/below 0. Diagonal (italic): the target's own cross-validated value with the same harmonised metadata. Melanoma and malignancy datasets are paired only within their label family. Differences in prevalence and label definition between datasets are not separated from metadata effects.}\label{tab:shift}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccccc}\toprule
+\multicolumn{4}{l}{\textbf{Source} $\downarrow$ / \textbf{target} $\rightarrow$}\\
+ & HAM10000 & ISIC 2020 & ISIC 2019 (non-HAM)\\\midrule
+HAM10000 & \textit{2.1} & 1.1$^{+}$ & \ensuremath{-}26.8$^{-}$\\
+ISIC 2020 & 15.9$^{+}$ & \textit{0.8} & 11.3$^{+}$\\
+ISIC 2019 (non-HAM) & 9.7$^{+}$ & 6.7$^{+}$ & \textit{6.0}\\
+\midrule
+\multicolumn{6}{l}{\textbf{Source} $\downarrow$ / \textbf{target} $\rightarrow$}\\
+ & PAD-UFES-20 & HIBA & MSK 2020 & MILK10k (derm.) & MILK10k (clin.)\\\midrule
+PAD-UFES-20 & \textit{2.9} & \ensuremath{-}6.9 & 30.1$^{+}$ & \ensuremath{-}2.8 & \ensuremath{-}15.7$^{-}$\\
+HIBA & \ensuremath{-}20.2$^{-}$ & \textit{9.7} & 58.5$^{+}$ & 28.1$^{+}$ & 55.0$^{+}$\\
+MSK 2020 & \ensuremath{-}64.2$^{-}$ & 6.1 & \textit{21.7} & \ensuremath{-}146.6$^{-}$ & \ensuremath{-}115.3$^{-}$\\
+MILK10k (derm.) & \ensuremath{-}21.1$^{-}$ & 57.2$^{+}$ & \ensuremath{-}3.5 & \textit{12.3} & 62.7$^{+}$\\
+MILK10k (clin.) & \ensuremath{-}7.7 & 56.0$^{+}$ & 20.6$^{+}$ & 25.9$^{+}$ & \textit{9.8}\\
+\bottomrule\end{tabular}\end{table*}

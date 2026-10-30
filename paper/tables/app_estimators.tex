@@ -1,0 +1,14 @@
+\begin{table*}[tp]\centering\footnotesize
+\caption{Added value of all metadata at ConvNeXt-T under four fusion estimators (E53; $10^{-3}$ nats, 95\% grouped-bootstrap CIs; strictly cross-fitted, same folds, groups and test images; all images). (a) Score fusion: logistic second stage on the image score, as in the rest of the paper. (b) Full-feature fusion: $L_2$ logistic model on [image features, metadata], penalty by grouped inner CV. (c) Boosted fusion: gradient-boosted trees on [image score, raw metadata], fixed hyperparameters. (d) Image score plus missingness indicators only. H1: $\Delta_{\rm HSV}>\Delta_{\rm ConvNeXt}$ (paired, one-sided $p<0.05$) under (a)\,(b)\,(c).}\label{tab:estimators}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccccc}\toprule
+Image set & (a) Score & (b) Full-feature & (c) Boosted & (d) Missingness only & H1 (a)(b)(c)\\\midrule
+ISIC 2020 & 0.92 [0.11, 1.68] & 0.87 [0.14, 1.54] & 1.36 [0.49, 2.23] & \ensuremath{-}0.03 [\ensuremath{-}0.09, 0.02] & \checkmark\,\checkmark\,\checkmark\\
+HIBA & 3.80 [\ensuremath{-}12.63, 20.13] & 7.03 [2.32, 11.88] & 3.64 [\ensuremath{-}14.05, 20.38] & \ensuremath{-}12.82 [\ensuremath{-}24.01, \ensuremath{-}3.38] & \checkmark\,\checkmark\,\checkmark\\
+MSK 2020 & 17.40 [6.89, 27.94] & 1.66 [\ensuremath{-}5.89, 8.86] & 15.17 [1.27, 29.02] & 1.32 [0.60, 2.19] & \checkmark\,\checkmark\,\checkmark\\
+HAM10000 & 2.38 [\ensuremath{-}2.13, 6.19] & 4.96 [2.12, 7.90] & 6.83 [2.46, 11.21] & \ensuremath{-}0.69 [\ensuremath{-}3.42, 1.28] & \checkmark\,\checkmark\,\checkmark\\
+ISIC 2019 & 9.80 [3.93, 16.08] & 8.72 [5.36, 12.26] & 16.01 [9.02, 23.36] & 2.49 [0.94, 3.89] & \checkmark\,\checkmark\,\checkmark\\
+MILK10k (derm.) & 8.29 [\ensuremath{-}0.74, 15.53] & 11.99 [6.62, 17.21] & 15.69 [10.50, 20.84] & \ensuremath{-}0.22 [\ensuremath{-}0.86, 0.38] & \checkmark\,\checkmark\,\checkmark\\
+PAD-UFES-20 & 206.87 [179.27, 232.60] & 181.47 [160.46, 202.24] & 224.75 [196.95, 250.62] & 158.31 [137.94, 179.19] & \checkmark\,\checkmark\,\checkmark\\
+MILK10k (clin.) & 6.30 [\ensuremath{-}2.25, 13.03] & 7.56 [1.89, 12.97] & 12.32 [7.69, 16.98] & 0.11 [\ensuremath{-}0.60, 0.81] & \checkmark\,\checkmark\,\checkmark\\
+\bottomrule\end{tabular}\end{table*}

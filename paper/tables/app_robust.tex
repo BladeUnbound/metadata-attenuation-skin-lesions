@@ -1,0 +1,22 @@
+\begin{table*}[tp]\centering\footnotesize
+\caption{Robustness of H1 and H2 (\checkmark: holds; $\times$: fails; --: not derivable). Registered and strictly cross-fitted rows: Holm-adjusted within the registered waves (HAM10000 unadjusted). Alternative label: malignant vs.\ benign for HAM10000 and ISIC 2019, melanoma vs.\ rest elsewhere; ISIC 2020 has no distinct alternative. Alternative-label, complete-case and encoding rows use the strictly cross-fitted estimator and uncorrected one-sided tests ($p<0.05$) or point estimates as stated; fold assignment 0 unless stated.}\label{tab:robust}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcccccccc}\toprule
+Condition & HAM & ISIC20 & ISIC19 & PAD & HIBA & MSK & MILK-d & MILK-c\\\midrule
+\multicolumn{9}{l}{\textbf{H1}: $\Delta_{\mathrm{HSV}}>\Delta_{\mathrm{ConvNeXt}}$}\\
+Original estimator (registered) & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark\\
+Strictly cross-fitted & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark\\
+Fold assignments 0/1/2 (point $>0$) & 3/3 & 3/3 & 3/3 & 3/3 & 3/3 & 3/3 & 3/3 & 3/3\\
+Group-weighted (point $>0$) & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark\\
+Alternative label & \checkmark & -- & \checkmark & \checkmark & \checkmark & \checkmark & $\times$ & $\times$\\
+Complete cases & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark\\
+No missing indicators (point $>0$) & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark\\
+\multicolumn{9}{l}{\textbf{H2}: $\Delta_{\mathrm{ResNet\text{-}18}}>\Delta_{\mathrm{ConvNeXt}}$}\\
+Original estimator (registered) & \checkmark & $\times$ & $\times$ & \checkmark & \checkmark & $\times$ & \checkmark & \checkmark\\
+Strictly cross-fitted & \checkmark & \checkmark & $\times$ & \checkmark & \checkmark & $\times$ & \checkmark & \checkmark\\
+Fold assignments 0/1/2 (point $>0$) & 3/3 & 3/3 & 3/3 & 3/3 & 3/3 & 2/3 & 3/3 & 3/3\\
+Group-weighted (point $>0$) & \checkmark & \checkmark & $\times$ & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark\\
+Alternative label & \checkmark & -- & \checkmark & \checkmark & $\times$ & $\times$ & $\times$ & $\times$\\
+Complete cases & \checkmark & \checkmark & $\times$ & $\times$ & \checkmark & \checkmark & \checkmark & \checkmark\\
+No missing indicators (point $>0$) & -- & -- & -- & -- & -- & -- & -- & --\\
+\bottomrule\end{tabular}\end{table*}

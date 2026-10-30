@@ -1,0 +1,15 @@
+\begin{table}[tp]\centering\footnotesize
+\caption{Single-variable added value (E20, exploratory; $10^{-3}$ nats, 95\% CI, all images). Retained: ConvNeXt-T / HSV, shown only where the HSV value is significant. PAD-UFES-20 is omitted: its per-variable results were driven by label-informative missingness (Section~\ref{sec:cc}).}\label{tab:pervar}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{\begin{tabular}{llccc}\toprule
+Dataset & Variable & HSV & ConvNeXt-T & Retained\\\midrule
+HAM10000 & age & 14.7 [9.9, 19.6] & 2.0 [\ensuremath{-}1.0, 4.5] & 0.13\\
+ & sex & 2.5 [0.8, 4.2] & 0.4 [0.0, 0.8] & 0.14\\
+ & site & 5.7 [2.2, 9.3] & 1.1 [\ensuremath{-}1.6, 3.7] & 0.19\\
+ISIC 2020 & age & 3.3 [2.1, 4.4] & 1.1 [0.5, 1.7] & 0.32\\
+ & sex & 0.2 [\ensuremath{-}0.0, 0.5] & 0.1 [\ensuremath{-}0.1, 0.3] & --\\
+ & site & 0.3 [\ensuremath{-}0.2, 0.8] & \ensuremath{-}0.1 [\ensuremath{-}0.4, 0.2] & --\\
+ISIC 2019 (non-HAM) & age & 11.2 [5.7, 16.5] & 3.2 [0.6, 5.7] & 0.28\\
+ & sex & \ensuremath{-}0.8 [\ensuremath{-}1.6, \ensuremath{-}0.2] & \ensuremath{-}0.2 [\ensuremath{-}0.8, 0.3] & --\\
+ & site & 7.1 [2.2, 12.6] & 5.4 [0.1, 10.7] & 0.76\\
+\bottomrule\end{tabular}}\end{table}

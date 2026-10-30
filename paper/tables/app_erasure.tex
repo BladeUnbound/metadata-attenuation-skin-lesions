@@ -1,0 +1,15 @@
+\begin{table*}[tp]\centering\footnotesize
+\caption{Mechanism checks for age erasure (E50, E52; ConvNeXt-T, fold assignment 0; $10^{-3}$ nats). Dose: erased coordinates mixed with independent noise, $c_t=\sqrt{1-t}\,c+\sqrt t\,\sigma\varepsilon$, so linear decodability falls with $t$; entries are erasure minus matched random subspaces at the same dose ($^\dagger$95\% CI above 0). RF: rise in age's added value per unit rise in image-only log-loss, for erasure and for matched random subspaces (shown only where the denominator's CI excludes 0). Re-append: added value with the erased coordinate appended back, minus $t{=}0$. $\hat a$: cross-fitted image-derived age entered like a metadata variable after erasure, its added value minus the rise in age's added value (0 under pure redundancy). MLP $R^2$: held-out age decodability by a registered one-hidden-layer probe at $t=0$ / after erasure / after one matched random subspace.}\label{tab:apperasure}
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{lccccccccc}\toprule
+ & \multicolumn{4}{c}{Dose $t$ (erasure $-$ matched)} & \multicolumn{2}{c}{RF} & & & \\\cmidrule(lr){2-5}\cmidrule(lr){6-7}
+Image set & 0.25 & 0.5 & 0.75 & 1 & Erased & Matched & Re-append & $\hat a$ $-$ rise & MLP $R^2$\\\midrule
+ISIC 2020 & 0.23$^\dagger$ & 0.50$^\dagger$ & 0.80$^\dagger$ & 0.92$^\dagger$ & 0.71 & 0.10 & 0.15 [0.03, 0.27] & 0.25 [\ensuremath{-}0.28, 0.77] & 0.23 / 0.20 / 0.20\\
+HIBA & \ensuremath{-}8.32 & \ensuremath{-}8.84 & \ensuremath{-}17.70 & \ensuremath{-}53.55 & 0.37 & 0.52 & 49.84 [22.07, 77.07] & 160.09 [100.97, 232.01] & 0.11 / \ensuremath{-}1.14 / \ensuremath{-}2.53\\
+MSK 2020 & \ensuremath{-}2.44 & \ensuremath{-}3.87 & \ensuremath{-}9.19 & \ensuremath{-}7.45 & 0.34 & 0.49 & 5.44 [\ensuremath{-}0.10, 10.57] & 25.60 [11.54, 40.19] & 0.02 / \ensuremath{-}0.76 / \ensuremath{-}2.65\\
+HAM10000 & 1.56$^\dagger$ & 3.42$^\dagger$ & 6.08$^\dagger$ & 9.02$^\dagger$ & 0.79 & 0.08 & 0.82 [0.50, 1.13] & \ensuremath{-}0.04 [\ensuremath{-}3.37, 3.16] & 0.28 / 0.21 / 0.20\\
+ISIC 2019 & 1.32$^\dagger$ & 2.92$^\dagger$ & 4.75$^\dagger$ & 6.91$^\dagger$ & 0.97 & 0.03 & 1.91 [1.08, 2.75] & 0.07 [\ensuremath{-}2.79, 3.33] & 0.26 / 0.23 / 0.22\\
+MILK10k (derm.) & 0.12 & \ensuremath{-}0.09 & 2.24 & 5.95$^\dagger$ & 0.60 & 0.35 & 2.86 [1.79, 3.96] & 36.01 [27.04, 45.39] & 0.18 / 0.05 / \ensuremath{-}0.15\\
+PAD-UFES-20$^\ddagger$ & 0.10 & 0.03 & 0.44 & 0.31 & -- & -- & 0.42 [\ensuremath{-}0.86, 1.70] & 2.96 [\ensuremath{-}1.31, 7.20] & \ensuremath{-}0.18 / \ensuremath{-}1.34 / \ensuremath{-}0.30\\
+MILK10k (clin.) & 0.32 & 2.54 & 4.03$^\dagger$ & 7.98$^\dagger$ & 0.65 & 0.38 & 5.36 [3.80, 6.98] & 25.28 [17.18, 33.65] & 0.24 / 0.13 / \ensuremath{-}0.12\\
+\bottomrule\end{tabular}\end{table*}

@@ -1,0 +1,120 @@
+milk10k_derm site t0 {'mlp_logloss_gain': 0.324, 'mlp_logloss_gain_ci95': [0.28425, 0.36353], 'mlp_macro_auroc': 0.8178, 'linear_probe_from_E50': {'logloss_gain': 0.4722, 'macro_auroc': 0.8329, 'n_excluded_unseen_class': 0}}
+milk10k_derm site T-D1-1.0 {'mlp_logloss_gain': 0.1502, 'mlp_logloss_gain_ci95': [0.11232, 0.1921], 'mlp_macro_auroc': 0.7455, 'linear_probe_from_E50': {'logloss_gain': -0.0, 'macro_auroc': 0.4463, 'n_excluded_unseen_class': 0}}
+milk10k_derm site T-D2-0.5 {'mlp_logloss_gain': 0.3046, 'mlp_logloss_gain_ci95': [0.27278, 0.33498], 'mlp_macro_auroc': 0.7941, 'linear_probe_from_E50': None}
+milk10k_derm site R-D1-1.0-0 {'mlp_logloss_gain': 0.3224, 'mlp_logloss_gain_ci95': [0.28634, 0.35823], 'mlp_macro_auroc': 0.8271, 'linear_probe_from_E50': {'logloss_gain': 0.4115, 'macro_auroc': 0.8113, 'n_excluded_unseen_class': 0}}
+milk10k_derm site sham-0 {'mlp_logloss_gain': 0.2447, 'mlp_logloss_gain_ci95': [0.19758, 0.2898], 'mlp_macro_auroc': 0.8082, 'linear_probe_from_E50': {'logloss_gain': 0.4662, 'macro_auroc': 0.8324, 'n_excluded_unseen_class': 0}}
+{
+  "id": "E52_milk10k_derm_site",
+  "hypothesis": "iteration6/REGISTRY.md E52: residual nonlinear decodability after linear erasure",
+  "data": {
+    "dataset": "milk10k_derm"
+  },
+  "config": {
+    "concept": "site",
+    "mlp": {
+      "hidden_layer_sizes": [
+        256
+      ],
+      "activation": "relu",
+      "solver": "adam",
+      "learning_rate_init": 0.001,
+      "alpha": 0.001,
+      "batch_size": 256,
+      "max_iter": 200,
+      "early_stopping": true,
+      "validation_fraction": 0.1,
+      "random_state": 0
+    },
+    "rung": "convnext_tiny",
+    "fold_seed": 0,
+    "code_sha256_12": {
+      "e52_nonlinear_probe.py": "26fbf46ea7f0",
+      "e50_dose_restoration.py": "ca82ac760e14",
+      "e45_erasure.py": "58fa915d73e4",
+      "e40_crossfit_baseline.py": "d3a0db47d6db",
+      "e10_ham_attenuation.py": "ed41358e6a49",
+      "e13_replication.py": "02c613176b9b",
+      "x_common.py": "044c73d5de5a"
+    }
+  },
+  "seed": 0,
+  "machine": "arm64 macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "started": "2026-10-29T17:46:54+00:00",
+  "results": {
+    "ranks_matched": [
+      64,
+      32,
+      91,
+      91,
+      64
+    ],
+    "arms": {
+      "t0": {
+        "mlp_logloss_gain": 0.324,
+        "mlp_logloss_gain_ci95": [
+          0.28425,
+          0.36353
+        ],
+        "mlp_macro_auroc": 0.8178,
+        "linear_probe_from_E50": {
+          "logloss_gain": 0.4722,
+          "macro_auroc": 0.8329,
+          "n_excluded_unseen_class": 0
+        }
+      },
+      "T-D1-1.0": {
+        "mlp_logloss_gain": 0.1502,
+        "mlp_logloss_gain_ci95": [
+          0.11232,
+          0.1921
+        ],
+        "mlp_macro_auroc": 0.7455,
+        "linear_probe_from_E50": {
+          "logloss_gain": -0.0,
+          "macro_auroc": 0.4463,
+          "n_excluded_unseen_class": 0
+        }
+      },
+      "T-D2-0.5": {
+        "mlp_logloss_gain": 0.3046,
+        "mlp_logloss_gain_ci95": [
+          0.27278,
+          0.33498
+        ],
+        "mlp_macro_auroc": 0.7941,
+        "linear_probe_from_E50": null
+      },
+      "R-D1-1.0-0": {
+        "mlp_logloss_gain": 0.3224,
+        "mlp_logloss_gain_ci95": [
+          0.28634,
+          0.35823
+        ],
+        "mlp_macro_auroc": 0.8271,
+        "linear_probe_from_E50": {
+          "logloss_gain": 0.4115,
+          "macro_auroc": 0.8113,
+          "n_excluded_unseen_class": 0
+        }
+      },
+      "sham-0": {
+        "mlp_logloss_gain": 0.2447,
+        "mlp_logloss_gain_ci95": [
+          0.19758,
+          0.2898
+        ],
+        "mlp_macro_auroc": 0.8082,
+        "linear_probe_from_E50": {
+          "logloss_gain": 0.4662,
+          "macro_auroc": 0.8324,
+          "n_excluded_unseen_class": 0
+        }
+      }
+    }
+  },
+  "interpretation": "See iteration6 reports.",
+  "failures": [],
+  "next_step": null,
+  "runtime_s": 16.84,
+  "peak_rss_mb": 1590.0
+}
