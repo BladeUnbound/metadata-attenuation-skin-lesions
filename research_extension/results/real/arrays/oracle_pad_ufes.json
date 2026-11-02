@@ -1,0 +1,37 @@
+{
+ "set": "pad_ufes",
+ "mode": "oracle",
+ "leakage": {
+  "t0": {
+   "absA_r2": 0.00931192337512654,
+   "decile_gain_frac": -0.052695926485057554,
+   "within_class_r2": 0.13127648800074138,
+   "ridge_within_test_r2": 0.08496174619653363
+  },
+  "T": {
+   "absA_r2": -0.020803187369750287,
+   "decile_gain_frac": -0.07023807352905075,
+   "within_class_r2": -0.020256847486474334,
+   "ridge_within_test_r2": -0.0006453155898424878
+  },
+  "R0": {
+   "absA_r2": 0.007969312650171534,
+   "decile_gain_frac": -0.044455887698100535,
+   "within_class_r2": 0.12204762468643285,
+   "ridge_within_test_r2": 0.07636526076381189
+  },
+  "sham0": {
+   "absA_r2": 0.012842071130696797,
+   "decile_gain_frac": -0.07671402744447446,
+   "within_class_r2": 0.12379784791484236,
+   "ridge_within_test_r2": 0.0868130488802571
+  }
+ },
+ "rank_matched_from_E50": [
+  3,
+  2,
+  11,
+  6,
+  1
+ ]
+}

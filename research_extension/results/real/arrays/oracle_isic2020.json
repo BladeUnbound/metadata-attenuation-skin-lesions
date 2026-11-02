@@ -1,0 +1,37 @@
+{
+ "set": "isic2020",
+ "mode": "oracle",
+ "leakage": {
+  "t0": {
+   "absA_r2": 0.05089068259789964,
+   "decile_gain_frac": 0.03237754224795253,
+   "within_class_r2": 0.26841806165006366,
+   "ridge_within_test_r2": 0.22626436937933758
+  },
+  "T": {
+   "absA_r2": 0.042497060311606494,
+   "decile_gain_frac": 0.01950740207446282,
+   "within_class_r2": 0.22569861371713526,
+   "ridge_within_test_r2": -0.03423506851708713
+  },
+  "R0": {
+   "absA_r2": 0.041560658358903546,
+   "decile_gain_frac": 0.029661060816542864,
+   "within_class_r2": 0.24209212078377126,
+   "ridge_within_test_r2": 0.18529238314361696
+  },
+  "sham0": {
+   "absA_r2": 0.04911895055393145,
+   "decile_gain_frac": 0.03238805900934906,
+   "within_class_r2": 0.26685593589738715,
+   "ridge_within_test_r2": 0.22665176511285456
+  }
+ },
+ "rank_matched_from_E50": [
+  91,
+  128,
+  45,
+  128,
+  32
+ ]
+}

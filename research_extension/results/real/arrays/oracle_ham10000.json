@@ -1,0 +1,37 @@
+{
+ "set": "ham10000",
+ "mode": "oracle",
+ "leakage": {
+  "t0": {
+   "absA_r2": 0.17615421278374477,
+   "decile_gain_frac": 0.07857000004208857,
+   "within_class_r2": 0.33720578842033316,
+   "ridge_within_test_r2": 0.3251847942850987
+  },
+  "T": {
+   "absA_r2": 0.161249280252435,
+   "decile_gain_frac": 0.04501854708013112,
+   "within_class_r2": 0.2529274047700939,
+   "ridge_within_test_r2": -0.0036244095543291888
+  },
+  "R0": {
+   "absA_r2": 0.14478773623763808,
+   "decile_gain_frac": 0.05873129371838628,
+   "within_class_r2": 0.27490033241736267,
+   "ridge_within_test_r2": 0.24814451435419327
+  },
+  "sham0": {
+   "absA_r2": 0.17171963088455944,
+   "decile_gain_frac": 0.07902362667737217,
+   "within_class_r2": 0.3385765125834405,
+   "ridge_within_test_r2": 0.3250426717260698
+  }
+ },
+ "rank_matched_from_E50": [
+  181,
+  91,
+  181,
+  128,
+  91
+ ]
+}

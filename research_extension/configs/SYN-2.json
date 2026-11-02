@@ -1,0 +1,38 @@
+{
+  "experiment": "SYN-2",
+  "regimes": [
+    "R1_redundant",
+    "R2_entangled"
+  ],
+  "d": [
+    64,
+    256,
+    768
+  ],
+  "n_over_d": [
+    1.25,
+    1.5,
+    2,
+    3,
+    5,
+    10,
+    25
+  ],
+  "n_test": 10000,
+  "seeds": "50000 + 1000*regime_idx + 100*d_idx + 10*ratio_idx + rep",
+  "methods": [
+    "leace",
+    "leace_lw",
+    "orth",
+    "random_matched"
+  ],
+  "heads": {
+    "unpen": "logistic C=1e3",
+    "pen": "logistic C in [0.0001, 0.001, 0.01, 0.1, 1.0] by 3-fold CV"
+  },
+  "code_sha256_12": {
+    "synth.py": "7080795016ef",
+    "gauss_logit.py": "3791a449b222",
+    "e50_dose_restoration.py": "ca82ac760e14"
+  }
+}

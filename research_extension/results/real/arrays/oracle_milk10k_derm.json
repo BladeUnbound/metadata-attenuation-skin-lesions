@@ -1,0 +1,37 @@
+{
+ "set": "milk10k_derm",
+ "mode": "oracle",
+ "leakage": {
+  "t0": {
+   "absA_r2": 0.24518499359787793,
+   "decile_gain_frac": 0.051620684655517717,
+   "within_class_r2": 0.19479359484797742,
+   "ridge_within_test_r2": 0.2836990838908645
+  },
+  "T": {
+   "absA_r2": 0.16078828541112922,
+   "decile_gain_frac": 0.02352348633658778,
+   "within_class_r2": 0.10675471710059939,
+   "ridge_within_test_r2": 0.015420896071644874
+  },
+  "R0": {
+   "absA_r2": 0.07824831286350553,
+   "decile_gain_frac": 0.006905884284457694,
+   "within_class_r2": 0.049831984992271566,
+   "ridge_within_test_r2": 0.05604252698579082
+  },
+  "sham0": {
+   "absA_r2": 0.25880530880868446,
+   "decile_gain_frac": 0.05276486623322736,
+   "within_class_r2": 0.19314764851924932,
+   "ridge_within_test_r2": 0.28395790995949055
+  }
+ },
+ "rank_matched_from_E50": [
+  512,
+  512,
+  512,
+  512,
+  512
+ ]
+}

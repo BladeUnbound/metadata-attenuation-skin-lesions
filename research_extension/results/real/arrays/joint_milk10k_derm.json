@@ -1,0 +1,24 @@
+{
+ "set": "milk10k_derm",
+ "mode": "joint",
+ "rank_joint": [
+  6,
+  6,
+  6,
+  6,
+  6
+ ],
+ "rank_matched": [
+  512,
+  512,
+  512,
+  512,
+  512
+ ],
+ "leakage_T": {
+  "absA_r2": 0.13840364137836225,
+  "decile_gain_frac": 0.02071670651733906,
+  "within_class_r2": 0.09002326171352701,
+  "ridge_within_test_r2": 0.018615432296004264
+ }
+}

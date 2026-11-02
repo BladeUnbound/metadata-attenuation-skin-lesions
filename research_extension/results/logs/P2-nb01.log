@@ -1,0 +1,2 @@
+<cell 8>:32: RuntimeWarning: invalid value encountered in divide
+OK executed 13 cells: ../notebooks/01_information_theory_verification.ipynb

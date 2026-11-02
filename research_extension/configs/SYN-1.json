@@ -1,0 +1,68 @@
+{
+  "experiment": "SYN-1",
+  "regimes": {
+    "R1_redundant": {
+      "bA": 1.0,
+      "bU": 0.0,
+      "bG": 1.0,
+      "rAG": 0.0
+    },
+    "R2_entangled": {
+      "bA": 1.0,
+      "bU": 0.8,
+      "bG": 1.0,
+      "rAG": 0.0
+    },
+    "R3_irrelevant": {
+      "bA": 0.0,
+      "bU": 0.0,
+      "bG": 1.0,
+      "rAG": 0.0
+    },
+    "R6_strong_age_label": {
+      "bA": 2.5,
+      "bU": 0.0,
+      "bG": 0.5,
+      "rAG": 0.0
+    },
+    "R7_shared_component": {
+      "bA": 0.0,
+      "bU": 0.0,
+      "bG": 1.0,
+      "rAG": 0.6
+    }
+  },
+  "b0": -1.0,
+  "sig_u": 0.5,
+  "sig_e": 0.5,
+  "d": [
+    32,
+    128
+  ],
+  "n": [
+    1000,
+    5000,
+    20000
+  ],
+  "split": "50/50",
+  "seeds": "1000*regime_idx + 100*d_idx + 10*n_idx + rep, rep 0..4",
+  "methods": [
+    "leace",
+    "leace_lw",
+    "orth",
+    "random_rank1",
+    "random_matched",
+    "sham",
+    "oracle"
+  ],
+  "heads": {
+    "unpen": "logistic C=1e3",
+    "pen": "logistic C in [0.0001, 0.001, 0.01, 0.1, 1.0] by 3-fold CV"
+  },
+  "mlp_probe": "hidden (64,), early stopping, n <= 5000, methods leace/orth/random_matched/sham/none",
+  "code_sha256_12": {
+    "synth.py": "7080795016ef",
+    "gauss_logit.py": "3791a449b222",
+    "e50_dose_restoration.py": "ca82ac760e14"
+  }
+}

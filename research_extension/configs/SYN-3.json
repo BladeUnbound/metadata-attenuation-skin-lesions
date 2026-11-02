@@ -1,0 +1,59 @@
+{
+  "experiment": "SYN-3",
+  "regimes": {
+    "L1_lin_redundant": {
+      "bU": 0.0,
+      "nonlin": false
+    },
+    "L2_lin_entangled": {
+      "bU": 0.8,
+      "nonlin": false
+    },
+    "N1_nonlin_redundant": {
+      "bU": 0.0,
+      "nonlin": true
+    },
+    "N2_nonlin_entangled": {
+      "bU": 0.8,
+      "nonlin": true
+    }
+  },
+  "lams": [
+    0.5,
+    2.0,
+    8.0
+  ],
+  "lam_D": 1.0,
+  "lam_Y": 1.0,
+  "epochs": 60,
+  "batch": 256,
+  "lr": 0.001,
+  "adv_steps": 3,
+  "adversary": "MLP 2x128 (MSE, capped at 1 in the transform loss)",
+  "head_in_transform": "MLP 2x64",
+  "splits": {
+    "fit": 8000,
+    "head": 8000,
+    "test": 20000
+  },
+  "d": 32,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "eval_heads": [
+    "logistic tuned (C grid, 3-fold)",
+    "HGB"
+  ],
+  "probes": [
+    "ridge",
+    "MLP 2x128",
+    "HGB",
+    "HGB within class"
+  ],
+  "code_sha256_12": {
+    "synth3.py": "c3e18dba2102",
+    "nonlin.py": "879f2eca3e08"
+  }
+}

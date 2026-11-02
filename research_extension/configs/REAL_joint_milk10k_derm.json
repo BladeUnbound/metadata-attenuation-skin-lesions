@@ -1,0 +1,12 @@
+{
+ "mode": "joint",
+ "args": [
+  "milk10k_derm"
+ ],
+ "code_sha256_12": {
+  "real_new.py": "5c5f8074d8a3",
+  "nonlin.py": "0593bfc27dac",
+  "e50_dose_restoration.py": "ca82ac760e14"
+ },
+ "started": "2026-11-01 23:43 IST"
+}

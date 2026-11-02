@@ -1,0 +1,5 @@
+[Parallel(n_jobs=8)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   2 out of 150 | elapsed:    3.4s
+[Parallel(n_jobs=8)]: Done  56 out of 150 | elapsed:   14.5s
+[Parallel(n_jobs=8)]: Done 150 out of 150 | elapsed:   38.7s finished
+SYN-1 rows 1200 minutes 0.6

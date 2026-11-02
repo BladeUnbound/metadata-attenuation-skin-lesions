@@ -1,0 +1,8 @@
+/Users/paradox/Desktop/CV EL/research_extension/scripts/nonlin.py:81: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  hist.append(float(adv))
+NAE-mse-2.0 {'absA_r2': 0.1510120285823079, 'decile_gain_frac': 0.05434920489605472, 'within_class_r2': 0.24570252450879032, 'ridge_within_test_r2': 0.23396842334678758}
+NAE-mse-8.0 {'absA_r2': 0.1521222701390731, 'decile_gain_frac': 0.057136259548045416, 'within_class_r2': 0.2567100552718756, 'ridge_within_test_r2': 0.22431556015164045}
+NAE-decile-2.0 {'absA_r2': 0.1434424719817644, 'decile_gain_frac': 0.057038128030372594, 'within_class_r2': 0.2678919413968168, 'ridge_within_test_r2': 0.2569642839747365}
+NAE-decile-8.0 {'absA_r2': 0.14070727321208853, 'decile_gain_frac': 0.05360773402969009, 'within_class_r2': 0.2659177652453557, 'ridge_within_test_r2': 0.24478325087893182}
+done nae ['ham10000'] minutes 13.2

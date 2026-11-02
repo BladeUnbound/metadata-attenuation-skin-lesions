@@ -1,0 +1,32 @@
+{
+ "source": "ham10000",
+ "target": "isic2019_nonham",
+ "mode": "transfer",
+ "cos_src_vs_target_cov_direction": [
+  0.3283765702810188,
+  0.32587113156694625,
+  0.3402137598059988,
+  0.3352214406984464,
+  0.34601218570448516
+ ],
+ "leakage": {
+  "t0": {
+   "absA_r2": 0.08646962371280464,
+   "decile_gain_frac": 0.01770192558727372,
+   "within_class_r2": 0.3456040660371908,
+   "ridge_within_test_r2": 0.32312242625828447
+  },
+  "T-transfer": {
+   "absA_r2": 0.0845509444793977,
+   "decile_gain_frac": 0.012873757296409247,
+   "within_class_r2": 0.32766647811538074,
+   "ridge_within_test_r2": 0.306283922793106
+  },
+  "T-own": {
+   "absA_r2": 0.07606950173083116,
+   "decile_gain_frac": 0.007648126483813089,
+   "within_class_r2": 0.3057054343268771,
+   "ridge_within_test_r2": 0.013471830913198701
+  }
+ }
+}

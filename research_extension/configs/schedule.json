@@ -1,0 +1,411 @@
+{
+  "version": 1,
+  "note": "Machine-readable schedule (RESEARCH_SCHEDULE.md). cmd runs from scripts/; PY = project venv python with -I. Tasks are appended as phases are designed; a task is added only after its registry entry exists.",
+  "tasks": [
+    {
+      "id": "P2-nb01",
+      "phase": "P2",
+      "cmd": [
+        "PY",
+        "-I",
+        "nbrun.py",
+        "../notebooks/01_information_theory_verification.ipynb"
+      ],
+      "deps": []
+    },
+    {
+      "id": "SYN-1",
+      "phase": "P3",
+      "cmd": [
+        "PY",
+        "-I",
+        "synth.py",
+        "SYN-1"
+      ],
+      "deps": [
+        "P2-nb01"
+      ]
+    },
+    {
+      "id": "SYN-2",
+      "phase": "P3",
+      "cmd": [
+        "PY",
+        "-I",
+        "synth.py",
+        "SYN-2"
+      ],
+      "deps": [
+        "SYN-1"
+      ]
+    },
+    {
+      "id": "SYN-3",
+      "phase": "P3",
+      "cmd": [
+        "PY",
+        "-I",
+        "synth3.py"
+      ],
+      "deps": [
+        "SYN-2"
+      ]
+    },
+    {
+      "id": "SYN-3b",
+      "phase": "P3",
+      "cmd": [
+        "PY",
+        "-I",
+        "synth3.py",
+        "SYN-3b"
+      ],
+      "deps": [
+        "SYN-3"
+      ]
+    },
+    {
+      "id": "SYN-3c",
+      "phase": "P3",
+      "cmd": [
+        "PY",
+        "-I",
+        "synth3.py",
+        "SYN-3c"
+      ],
+      "deps": [
+        "SYN-3b"
+      ]
+    },
+    {
+      "id": "REAL-2-ham10000",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "../../research/experiments/e50_dose_restoration.py",
+        "ham10000",
+        "--rung",
+        "vitl16_swag",
+        "--minimal"
+      ],
+      "deps": [
+        "SYN-3c"
+      ]
+    },
+    {
+      "id": "REAL-2-isic2019_nonham",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "../../research/experiments/e50_dose_restoration.py",
+        "isic2019_nonham",
+        "--rung",
+        "vitl16_swag",
+        "--minimal"
+      ],
+      "deps": [
+        "SYN-3c"
+      ]
+    },
+    {
+      "id": "REAL-2-isic2020",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "../../research/experiments/e50_dose_restoration.py",
+        "isic2020",
+        "--rung",
+        "vitl16_swag",
+        "--minimal"
+      ],
+      "deps": [
+        "SYN-3c"
+      ]
+    },
+    {
+      "id": "REAL-3-ham10000-hsv",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "../../research/experiments/e50_dose_restoration.py",
+        "ham10000",
+        "--rung",
+        "hsv",
+        "--minimal"
+      ],
+      "deps": [
+        "REAL-2-isic2020"
+      ]
+    },
+    {
+      "id": "REAL-3-ham10000-vit_b_16",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "../../research/experiments/e50_dose_restoration.py",
+        "ham10000",
+        "--rung",
+        "vit_b_16",
+        "--minimal"
+      ],
+      "deps": [
+        "REAL-2-isic2020"
+      ]
+    },
+    {
+      "id": "REAL-3-isic2019_nonham-hsv",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "../../research/experiments/e50_dose_restoration.py",
+        "isic2019_nonham",
+        "--rung",
+        "hsv",
+        "--minimal"
+      ],
+      "deps": [
+        "REAL-2-isic2020"
+      ]
+    },
+    {
+      "id": "REAL-3-isic2019_nonham-vit_b_16",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "../../research/experiments/e50_dose_restoration.py",
+        "isic2019_nonham",
+        "--rung",
+        "vit_b_16",
+        "--minimal"
+      ],
+      "deps": [
+        "REAL-2-isic2020"
+      ]
+    },
+    {
+      "id": "REAL-smoke",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "real_new.py",
+        "oracle",
+        "pad_ufes"
+      ],
+      "deps": [
+        "REAL-3-isic2019_nonham-vit_b_16"
+      ],
+      "note": "smoke test of real_new.py on the smallest set; output kept as REAL-4 stress-test data"
+    },
+    {
+      "id": "REAL-4-ham10000",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "real_new.py",
+        "oracle",
+        "ham10000"
+      ],
+      "deps": [
+        "REAL-smoke"
+      ]
+    },
+    {
+      "id": "REAL-4-isic2019_nonham",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "real_new.py",
+        "oracle",
+        "isic2019_nonham"
+      ],
+      "deps": [
+        "REAL-smoke"
+      ]
+    },
+    {
+      "id": "REAL-4-milk10k_derm",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "real_new.py",
+        "oracle",
+        "milk10k_derm"
+      ],
+      "deps": [
+        "REAL-smoke"
+      ]
+    },
+    {
+      "id": "REAL-4-isic2020",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "real_new.py",
+        "oracle",
+        "isic2020"
+      ],
+      "deps": [
+        "REAL-smoke"
+      ]
+    },
+    {
+      "id": "REAL-4-hiba",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "real_new.py",
+        "oracle",
+        "hiba"
+      ],
+      "deps": [
+        "REAL-smoke"
+      ]
+    },
+    {
+      "id": "REAL-5-ham10000",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "real_new.py",
+        "nae",
+        "ham10000"
+      ],
+      "deps": [
+        "REAL-4-hiba"
+      ]
+    },
+    {
+      "id": "REAL-6-isic2019_nonham",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "real_new.py",
+        "ndscale",
+        "isic2019_nonham"
+      ],
+      "deps": [
+        "REAL-5-ham10000"
+      ]
+    },
+    {
+      "id": "REAL-7-sex-ham10000",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "../../research/experiments/e50_dose_restoration.py",
+        "ham10000",
+        "--concept",
+        "sex",
+        "--minimal"
+      ],
+      "deps": [
+        "REAL-6-isic2019_nonham"
+      ]
+    },
+    {
+      "id": "REAL-7-joint-ham10000",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "real_new.py",
+        "joint",
+        "ham10000"
+      ],
+      "deps": [
+        "REAL-7-sex-ham10000"
+      ]
+    },
+    {
+      "id": "REAL-7-sex-milk10k_derm",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "../../research/experiments/e50_dose_restoration.py",
+        "milk10k_derm",
+        "--concept",
+        "sex",
+        "--minimal"
+      ],
+      "deps": [
+        "REAL-6-isic2019_nonham"
+      ]
+    },
+    {
+      "id": "REAL-7-joint-milk10k_derm",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "real_new.py",
+        "joint",
+        "milk10k_derm"
+      ],
+      "deps": [
+        "REAL-7-sex-milk10k_derm"
+      ]
+    },
+    {
+      "id": "REAL-8-ham10000-isic2019_nonham",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "real_new.py",
+        "transfer",
+        "ham10000",
+        "isic2019_nonham"
+      ],
+      "deps": [
+        "REAL-7-joint-milk10k_derm"
+      ]
+    },
+    {
+      "id": "REAL-8-isic2019_nonham-ham10000",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "real_new.py",
+        "transfer",
+        "isic2019_nonham",
+        "ham10000"
+      ],
+      "deps": [
+        "REAL-7-joint-milk10k_derm"
+      ]
+    },
+    {
+      "id": "REAL-8-ham10000-isic2020",
+      "phase": "P6",
+      "cmd": [
+        "PY",
+        "-I",
+        "real_new.py",
+        "transfer",
+        "ham10000",
+        "isic2020"
+      ],
+      "deps": [
+        "REAL-7-joint-milk10k_derm"
+      ]
+    }
+  ]
+}

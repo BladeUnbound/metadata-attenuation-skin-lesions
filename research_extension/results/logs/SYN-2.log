@@ -1,0 +1,5 @@
+[Parallel(n_jobs=1)]: Done  17 out of 210 | elapsed:    3.8s
+[Parallel(n_jobs=1)]: Done  71 out of 210 | elapsed:   37.0s
+[Parallel(n_jobs=1)]: Done 161 out of 210 | elapsed:  4.4min
+[Parallel(n_jobs=1)]: Done 210 out of 210 | elapsed:  8.5min finished
+SYN-2 rows 1050 minutes 8.5

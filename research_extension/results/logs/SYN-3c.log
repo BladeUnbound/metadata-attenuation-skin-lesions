@@ -1,0 +1,22 @@
+[Parallel(n_jobs=6)]: Using backend LokyBackend with 6 concurrent workers.
+/Users/paradox/Desktop/CV EL/research_extension/scripts/nonlin.py:81: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  hist.append(float(adv))
+/Users/paradox/Desktop/CV EL/research_extension/scripts/nonlin.py:81: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  hist.append(float(adv))
+/Users/paradox/Desktop/CV EL/research_extension/scripts/nonlin.py:81: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  hist.append(float(adv))
+/Users/paradox/Desktop/CV EL/research_extension/scripts/nonlin.py:81: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  hist.append(float(adv))
+/Users/paradox/Desktop/CV EL/research_extension/scripts/nonlin.py:81: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  hist.append(float(adv))
+/Users/paradox/Desktop/CV EL/research_extension/scripts/nonlin.py:81: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  hist.append(float(adv))
+[Parallel(n_jobs=6)]: Done 3 out of 6 | elapsed:  2.0min remaining:  2.0min
+[Parallel(n_jobs=6)]: Done 6 out of 6 | elapsed:  2.1min finished
+SYN-3c rows 60 minutes 2.1
